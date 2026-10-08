@@ -1,0 +1,421 @@
+--- a/phase_extrapolator.py
++++ b/phase_extrapolator.py
+@@ -1,86 +1,351 @@
+ """
+-REAL MODE: High-Frame-Rate Temporal Phase Extrapolator
+-Estimates micro-derivatives (jerk, snap) from slow-motion temporal sequences
+-to project future state attractor convergence.
++REAL MODE: High-Frame-Rate Temporal Phase Extrapolator (v2)
++Estimates edge derivatives (velocity, acceleration, jerk, snap) from
++high-rate samples and extrapolates a short horizon ahead, with an error
++estimate measured from the data itself (walk-forward backtest).
++
++What v2 does differently from v1, and why:
++- Time is centered on the last sample and scaled by the window span, so the
++  least-squares fit is well conditioned (cond ~2e1-3e4 instead of ~3e13).
++  Derivatives are rescaled back by span**k.
++- Window length and polynomial degree are chosen by walk-forward
++  cross-validation at the requested horizon, not fixed at 16 / 4.
++- The forecast is the fitted polynomial evaluated ahead. A Taylor series of a
++  degree-d polynomial, truncated at order d, IS that polynomial, so v1's
++  "Taylor step" added nothing; jerk and snap carry no extra information.
++- x_now is the smoothed fit value p(t_now), not the raw (noisy) last sample.
++- The made-up confidence 0.95*exp(-dt/0.05) (floored at 0.5) is gone. v2
++  reports a backtest RMSE and an empirical prediction interval, and says
++  "UNRELIABLE" when the horizon is longer than the backtest can check.
++- Frame rate is computed from the data; uneven sampling and gaps are flagged.
++
++Limits: a polynomial cannot know about dynamics it has not seen (e.g. an
++upcoming snap-through). Backtest windows overlap, so errors are correlated
++and the interval is approximate. Picking the best of many models on the same
++backtest makes its error look slightly better than it is.
++
++Dependencies: numpy only.
++License: CC0 1.0 Universal (public domain). Copy, modify, use freely.
+ """
+ 
+-import numpy as np
+ from dataclasses import dataclass
+-from typing import Tuple
++from math import factorial
++from typing import Dict, Optional, Sequence, Tuple
++
++import numpy as np
++
++MIN_SAMPLES = 16          # below this, nothing meaningful can be backtested
++MIN_BACKTEST_ORIGINS = 5  # forecasts must be checked at least this many times
++UNEVEN_TOL = 0.01         # relative spread of sample spacing that counts as uneven
++DEFAULT_WINDOWS = (8, 10, 12, 16, 20, 24, 32, 48)
++DEFAULT_DEGREES = (1, 2, 3, 4, 5, 6)
+ 
+ 
+ @dataclass
+ class MicroTemporalState:
+-    t_sampled: np.ndarray  # Micro-second or high-rate time increments (s)
+-    x_observed: np.ndarray # High-frequency observed positions / amplitudes
++    t_sampled: np.ndarray   # sample times (s), strictly increasing
++    x_observed: np.ndarray  # observed positions / amplitudes
++
++
++@dataclass
++class LocalFit:
++    window: int
++    degree: int
++    span: float             # time scale used to normalize the window (s)
++    coeffs: np.ndarray      # coefficients in u = (t - t_end) / span, increasing order
++    cond: float             # condition number of the scaled design matrix
++    resid_std: float        # residual std of the fit (nan if no dof left)
++    cov: Optional[np.ndarray]  # coefficient covariance (None if no dof left)
++
++    def value(self, dt_ahead: float) -> float:
++        return float(np.polynomial.polynomial.polyval(dt_ahead / self.span, self.coeffs))
++
++    def derivative(self, k: int) -> float:
++        if k > self.degree:
++            return 0.0
++        return factorial(k) * float(self.coeffs[k]) / self.span ** k
++
++    def derivative_se(self, k: int) -> float:
++        if k > self.degree or self.cov is None:
++            return float("nan")
++        return factorial(k) * float(np.sqrt(max(self.cov[k, k], 0.0))) / self.span ** k
++
++
++def fit_local_poly(t: np.ndarray, x: np.ndarray, degree: int) -> LocalFit:
++    """Least-squares polynomial fit in centered, scaled time u = (t - t[-1]) / span."""
++    span = float(t[-1] - t[0])
++    u = (t - t[-1]) / span                       # u in [-1, 0]
++    V = np.vander(u, degree + 1, increasing=True)
++    coeffs, *_ = np.linalg.lstsq(V, x, rcond=None)
++    dof = len(t) - (degree + 1)
++    resid_std, cov = float("nan"), None
++    if dof > 0:
++        resid = x - V @ coeffs
++        resid_std = float(np.sqrt(resid @ resid / dof))
++        cov = resid_std ** 2 * np.linalg.pinv(V.T @ V)
++    return LocalFit(len(t), degree, span, coeffs, float(np.linalg.cond(V)), resid_std, cov)
++
++
++def _derivative_entry(f: LocalFit, k: int) -> Dict:
++    """Derivative k at t_now. 'resolved' needs degree >= k and std_err < half the value
++    (an assumed 2-sigma rule). std_err covers noise only, not model bias."""
++    if k > f.degree:
++        return {"value": None, "std_err": None, "resolved": False,
++                "note": f"model degree {f.degree} < {k}"}
++    v, se = f.derivative(k), f.derivative_se(k)
++    return {"value": v, "std_err": se, "resolved": bool(np.isfinite(se) and se < 0.5 * abs(v))}
++
++
++def validate_series(t, x) -> Tuple[np.ndarray, np.ndarray]:
++    t = np.asarray(t, dtype=float)
++    x = np.asarray(x, dtype=float)
++    if t.ndim != 1 or x.ndim != 1:
++        raise ValueError("t and x must be 1-D arrays")
++    if len(t) != len(x):
++        raise ValueError(f"t and x lengths differ ({len(t)} vs {len(x)})")
++    if len(t) < MIN_SAMPLES:
++        raise ValueError(f"need at least {MIN_SAMPLES} samples, got {len(t)}")
++    if not (np.all(np.isfinite(t)) and np.all(np.isfinite(x))):
++        raise ValueError("t and x must be finite (no NaN/inf)")
++    if np.any(np.diff(t) <= 0):
++        raise ValueError("t must be strictly increasing")
++    return t, x
++
++
++def sampling_report(t: np.ndarray) -> Dict:
++    d = np.diff(t)
++    med = float(np.median(d))
++    spread = float((d.max() - d.min()) / med)
++    return {
++        "n_samples": int(len(t)),
++        "duration_s": float(t[-1] - t[0]),
++        "median_dt_s": med,
++        "fps_from_data": 1.0 / med,
++        "uneven_sampling": bool(spread > UNEVEN_TOL),
++        "dt_relative_spread": spread,
++        "gaps_over_1p5x_median": int(np.sum(d > 1.5 * med)),
++    }
+ 
+ 
+ class HighSpeedKinematicPredictor:
+-    def __init__(self, state: MicroTemporalState):
+-        self.t = state.t_sampled
+-        self.x = state.x_observed
+-        self.dt = np.mean(np.diff(self.t))
+-
+-    def extract_derivatives(self) -> Tuple[float, float, float, float]:
+-        """Calculates 1st to 4th order derivatives (velocity, acceleration, jerk, snap)."""
+-        # Fit high-order localized orthogonal polynomial to filter sub-frame sensor noise
+-        poly = np.polyfit(self.t[-16:], self.x[-16:], deg=4)
+-        p = np.poly1d(poly)
+-        
+-        t_now = self.t[-1]
+-        p_dot = np.polyder(p, 1)(t_now)   # Velocity (dx/dt)
+-        p_ddot = np.polyder(p, 2)(t_now)  # Acceleration (d²x/dt²)
+-        p_jerk = np.polyder(p, 3)(t_now)  # Jerk (d³x/dt³)
+-        p_snap = np.polyder(p, 4)(t_now)  # Snap (d⁴x/dt⁴)
+-        
+-        return p_dot, p_ddot, p_jerk, p_snap
++    def __init__(self, state: MicroTemporalState,
++                 windows: Sequence[int] = DEFAULT_WINDOWS,
++                 degrees: Sequence[int] = DEFAULT_DEGREES,
++                 max_rel_error: float = 0.25):
++        self.t, self.x = validate_series(state.t_sampled, state.x_observed)
++        self.sampling = sampling_report(self.t)
++        self.dt = self.sampling["median_dt_s"]
++        n = len(self.t)
++        self.windows = sorted({w for w in windows if 4 <= w <= n - MIN_BACKTEST_ORIGINS})
++        self.degrees = sorted(set(degrees))
++        if not self.windows:
++            raise ValueError("no usable window lengths for this series length")
++        # Assumed threshold (a user choice, not physics): backtest RMSE above this
++        # fraction of the series range marks a forecast UNRELIABLE.
++        self.max_rel_error = max_rel_error
++        self._cache: Dict[float, Dict] = {}
++
++    # ---------- backtesting ----------
++    def max_supported_horizon(self) -> float:
++        """Longest horizon the smallest window can still backtest MIN_BACKTEST_ORIGINS times."""
++        last_needed = self.windows[0] - 1 + MIN_BACKTEST_ORIGINS - 1
++        return float(self.t[-1] - self.t[last_needed])
+ 
+-    def project_future_horizon(self, delta_t_future: float) -> dict:
++    def backtest(self, window: int, degree: int, horizon: float) -> np.ndarray:
++        """Signed errors (truth - forecast) for every origin whose target lies inside the data.
++
++        The target is the real sample nearest to t_origin + horizon (no interpolated
++        "truth"); the forecast is made for that sample's exact lead time.
+         """
+-        Projects state forward through high-order Taylor series expansion:
+-        x(t + Δt) = x(t) + v*Δt + (1/2)*a*Δt² + (1/6)*j*Δt³ + (1/24)*s*Δt⁴
++        errs = []
++        n = len(self.t)
++        for o in range(window - 1, n - 1):
++            want = self.t[o] + horizon
++            if want > self.t[-1] + 0.5 * self.dt:
++                break
++            j = int(np.clip(np.searchsorted(self.t, want), o + 1, n - 1))
++            if j > o + 1 and abs(self.t[j - 1] - want) < abs(self.t[j] - want):
++                j -= 1
++            f = fit_local_poly(self.t[o - window + 1:o + 1], self.x[o - window + 1:o + 1], degree)
++            errs.append(self.x[j] - f.value(self.t[j] - self.t[o]))
++        return np.asarray(errs)
++
++    def select_model(self, horizon: float) -> Dict:
++        """Pick (window, degree) with the lowest walk-forward RMSE at this horizon."""
++        key = round(horizon / self.dt, 9)
++        if key in self._cache:
++            return self._cache[key]
++        best = None
++        for w in self.windows:
++            for d in self.degrees:
++                if w < d + 2:  # keep at least 1 residual dof
++                    continue
++                e = self.backtest(w, d, horizon)
++                if len(e) < MIN_BACKTEST_ORIGINS:
++                    continue
++                rmse = float(np.sqrt(np.mean(e ** 2)))
++                if best is None or rmse < best["rmse"]:
++                    best = {"window": w, "degree": d, "rmse": rmse, "errors": e}
++        if best is None:
++            raise ValueError("no (window, degree) pair can be backtested at this horizon")
++        self._cache[key] = best
++        return best
++
++    def error_growth(self, window: int, degree: int, horizons: Sequence[float]) -> Dict:
++        """Backtest RMSE vs horizon for one model, and the empirical log-growth rate (1/s).
++
++        This is an error-growth rate of THIS predictor, not a Lyapunov exponent:
++        a real finite-time Lyapunov estimate needs a much longer record that
++        revisits similar states many times.
+         """
+-        x_now = self.x[-1]
+-        v, a, j, s = self.extract_derivatives()
+-
+-        # Taylor expansion truncated at 4th order
+-        x_pred = (
+-            x_now
+-            + v * delta_t_future
+-            + 0.5 * a * (delta_t_future ** 2)
+-            + (1.0 / 6.0) * j * (delta_t_future ** 3)
+-            + (1.0 / 24.0) * s * (delta_t_future ** 4)
+-        )
+-
+-        # Dynamic Truth Probability Calculation (Decays exponentially over Lyapunov horizon)
+-        lyapunov_tau = 0.05  # Typical decorrelation horizon (50ms macro window)
+-        confidence_tp = 0.95 * np.exp(-delta_t_future / lyapunov_tau)
+-        bounded_tp = max(0.50, min(0.95, confidence_tp))
+-
+-        return {
+-            "t_projection_s": round(delta_t_future, 4),
+-            "predicted_macro_state": round(float(x_pred), 4),
+-            "higher_order_derivatives": {
+-                "velocity": round(float(v), 3),
+-                "acceleration": round(float(a), 3),
+-                "jerk": round(float(j), 3),
+-                "snap": round(float(s), 3)
+-            },
+-            "projected_tp": round(float(bounded_tp), 3)
++        rows = []
++        for h in horizons:
++            e = self.backtest(window, degree, h)
++            if len(e) >= MIN_BACKTEST_ORIGINS:
++                rows.append((float(h), float(np.sqrt(np.mean(e ** 2)))))
++        rate = float("nan")
++        good = [(h, r) for h, r in rows if r > 0]
++        if len(good) >= 3:
++            hs, rs = np.array(good).T
++            rate = float(np.polyfit(hs, np.log(rs), 1)[0])
++        return {"rmse_by_horizon": rows, "log_growth_rate_per_s": rate}
++
++    # ---------- public API ----------
++    def edge_fit(self, horizon: Optional[float] = None) -> LocalFit:
++        """Fit of the model selected for `horizon` (default 5 samples ahead) on the newest window."""
++        h = 5 * self.dt if horizon is None else horizon
++        sel = self.select_model(min(h, self.max_supported_horizon()))
++        w, d = sel["window"], sel["degree"]
++        return fit_local_poly(self.t[-w:], self.x[-w:], d)
++
++    def extract_derivatives(self, horizon: Optional[float] = None) -> Tuple[float, float, float, float]:
++        """Velocity, acceleration, jerk, snap at t_now from the selected local fit."""
++        f = self.edge_fit(horizon)
++        return tuple(f.derivative(k) if k <= f.degree else float("nan") for k in range(1, 5))
++
++    def project_future_horizon(self, delta_t_future: float, interval: float = 0.90) -> Dict:
++        if not np.isfinite(delta_t_future) or delta_t_future <= 0:
++            raise ValueError("delta_t_future must be a positive finite number of seconds")
++        h_max = self.max_supported_horizon()
++        supported = delta_t_future <= h_max
++        sel_h = delta_t_future if supported else h_max
++        sel = self.select_model(sel_h)
++        w, d = sel["window"], sel["degree"]
++        f = fit_local_poly(self.t[-w:], self.x[-w:], d)
++        x_pred = f.value(delta_t_future)  # direct polynomial extrapolation (== Taylor to order d)
++
++        out = {
++            "t_projection_s": delta_t_future,
++            "horizon_samples": delta_t_future / self.dt,
++            "sampling": self.sampling,
++            "model": {"window": w, "degree": d, "cond_scaled": f.cond,
++                      "residual_std": f.resid_std},
++            "x_now_smoothed": f.value(0.0),
++            "x_now_raw": float(self.x[-1]),
++            "predicted_state": x_pred,
++            "derivatives": {name: _derivative_entry(f, k)
++                            for k, name in enumerate(["velocity", "acceleration", "jerk", "snap"], 1)},
++            "max_supported_horizon_s": h_max,
+         }
++        if not supported:
++            out["status"] = (f"UNRELIABLE: horizon {delta_t_future:.4g} s exceeds what the data "
++                             f"can backtest ({h_max:.4g} s). No interval given.")
++            out["prediction_interval"] = None
++            out["backtest"] = None
++            return out
++
++        e = sel["errors"]
++        lo_q, hi_q = (1 - interval) / 2, 1 - (1 - interval) / 2
++        lo, hi = np.quantile(e, [lo_q, hi_q])
++        rel = sel["rmse"] / float(np.ptp(self.x))
++        k = max(2, len(e) // 3)
++        trend = float(np.sqrt(np.mean(e[-k:] ** 2)) / max(np.sqrt(np.mean(e[:k] ** 2)), 1e-300))
++        # Domain check: was the current state ever seen at a backtest origin?
++        x_orig = self.x[w - 1:w - 1 + len(e)]
++        x_now = f.value(0.0)
++        excess = max(0.0, x_now - x_orig.max(), x_orig.min() - x_now) / max(float(np.ptp(x_orig)), 1e-300)
++        out["backtest"] = {"n_origins": int(len(e)), "rmse": sel["rmse"],
++                           "mean_error": float(np.mean(e)),
++                           "max_abs_error": float(np.max(np.abs(e))),
++                           "rmse_over_series_range": rel,
++                           "error_trend_last_vs_first_third": trend,
++                           "state_outside_backtest_range": excess,
++                           "note": "overlapping windows: errors are correlated; interval is approximate"}
++        out["prediction_interval"] = {"level": interval, "low": x_pred + float(lo),
++                                      "high": x_pred + float(hi)}
++        # Thresholds below are assumed settings (user choices), not physics.
++        problems = []
++        if rel > self.max_rel_error:
++            problems.append(f"backtest RMSE is {rel:.0%} of the series range")
++        if excess > 0.10:
++            problems.append(f"current state lies {excess:.0%} outside the range seen at "
++                            "backtest origins, so the interval is not supported")
++        if trend > 2.0 and np.sqrt(np.mean(e[-k:] ** 2)) > 0.01 * float(np.ptp(self.x)):
++            problems.append(f"backtest errors grew {trend:.1f}x across origins, "
++                            "so the interval is probably too narrow")
++        out["status"] = "OK" if not problems else "UNRELIABLE: " + "; ".join(problems)
++        if self.sampling["uneven_sampling"]:
++            out["status"] += " | WARNING: uneven sampling (fit uses actual times)"
++        return out
++
++
++def demo_signal(t: np.ndarray) -> np.ndarray:
++    return np.sin(200 * t) + np.exp(300 * (t - 0.01))
++
++
++def demo_truth(t: float) -> Dict[str, float]:
++    """Analytic value and derivatives of sin(200t) + exp(300(t - 0.01))."""
++    e = np.exp(300 * (t - 0.01))
++    s, c = np.sin(200 * t), np.cos(200 * t)
++    return {"x": s + e, "velocity": 200 * c + 300 * e, "acceleration": -4e4 * s + 9e4 * e,
++            "jerk": -8e6 * c + 2.7e7 * e, "snap": 1.6e9 * s + 8.1e9 * e}
++
++
++def _report(label: str, t: np.ndarray, x: np.ndarray, horizon: float) -> None:
++    eng = HighSpeedKinematicPredictor(MicroTemporalState(t, x))
++    r = eng.project_future_horizon(horizon)
++    truth_now, truth_next = demo_truth(t[-1]), demo_truth(t[-1] + horizon)
++    s = r["sampling"]
++    print(f"\n== {label} ==")
++    print(f"samples {s['n_samples']}, fps from data {s['fps_from_data']:.1f}, "
++          f"uneven={s['uneven_sampling']}")
++    m = r["model"]
++    print(f"selected window={m['window']} degree={m['degree']} cond={m['cond_scaled']:.2e}")
++    print(f"x_now smoothed {r['x_now_smoothed']:.4f} (raw {r['x_now_raw']:.4f})")
++    print(f"+{horizon * 1e3:g} ms: predicted {r['predicted_state']:.4f}, true {truth_next['x']:.4f}")
++    if r["prediction_interval"]:
++        pi, bt = r["prediction_interval"], r["backtest"]
++        print(f"  {pi['level']:.0%} interval [{pi['low']:.4f}, {pi['high']:.4f}], "
++              f"backtest RMSE {bt['rmse']:.2e} over {bt['n_origins']} origins")
++    print(f"  status: {r['status']}")
++    for k, v in r["derivatives"].items():
++        tv = truth_now[k]
++        if v["value"] is None:
++            print(f"  {k:12s} not estimated ({v['note']})  truth {tv:+.4e}")
++            continue
++        flag = "" if v["resolved"] else "  [NOT RESOLVED]"
++        print(f"  {k:12s} {v['value']:+.4e} (se {v['std_err']:.1e})  "
++              f"truth {tv:+.4e}  rel.err {(v['value'] - tv) / abs(tv):+.2e}{flag}")
+ 
+ 
+ # --- Execution Sandbox ---
+ if __name__ == "__main__":
+-    # Simulate a high-speed capture (10,000 fps -> dt = 0.0001s) of a non-linear buckling transition
+-    time_series = np.linspace(0, 0.01, 100)  # 10ms observed in 100 slices
+-    # Non-linear oscillation with impending snap-through bifurcation
+-    signal = np.sin(200 * time_series) + np.exp(300 * (time_series - 0.01))
+-
+-    engine = HighSpeedKinematicPredictor(MicroTemporalState(time_series, signal))
+-    
+-    # Predict macro outcome 5ms into the future
+-    forecast = engine.project_future_horizon(delta_t_future=0.005)
+-    
+-    import json
+-    print(json.dumps(forecast, indent=2))
++    # 100 samples over 10 ms -> 99 gaps -> ~9,900 fps (not 10,000)
++    time_series = np.linspace(0, 0.01, 100)
++    signal = demo_signal(time_series)
++    rng = np.random.default_rng(42)
++    noisy = signal + rng.normal(0.0, 0.01, size=signal.shape)
++
++    for h in (0.0005, 0.005):
++        _report(f"clean signal, +{h * 1e3:g} ms", time_series, signal, h)
++        _report(f"noisy signal (sigma=0.01, seed 42), +{h * 1e3:g} ms", time_series, noisy, h)
++    _report("horizon guard, +20 ms", time_series, signal, 0.020)
++
++    eng = HighSpeedKinematicPredictor(MicroTemporalState(time_series, signal))
++    m = eng.select_model(0.005)
++    g = eng.error_growth(m["window"], m["degree"], np.arange(1, 9) * 0.001)
++    print("\nbacktest RMSE vs horizon (clean, selected 5 ms model):")
++    for h, r in g["rmse_by_horizon"]:
++        print(f"  {h * 1e3:.0f} ms: {r:.2e}")
++    print(f"empirical error log-growth rate: {g['log_growth_rate_per_s']:.0f} /s "
++          "(predictor error growth, not a Lyapunov exponent)")
