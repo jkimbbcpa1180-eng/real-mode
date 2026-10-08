@@ -355,7 +355,7 @@ SCENARIOS = {  # forecast error sizes, ALL ASSUMED. Cameras do not measure wind 
 
 
 def demo_farm():
-    """John's v1 layout: 4 x 3.5 MW in a row plus a 2.5 ha tandem array."""
+    """The original v1 layout: 4 x 3.5 MW in a row plus a 2.5 ha tandem array."""
     return ([TurbineUnit("WTG_01", 0, 0), TurbineUnit("WTG_02", 350, 10),
              TurbineUnit("WTG_03", 700, 20), TurbineUnit("WTG_04", 1200, 300)],
             [SolarArray("PV_TANDEM_ALPHA", 25000)])

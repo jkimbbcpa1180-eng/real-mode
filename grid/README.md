@@ -6,7 +6,7 @@ every weather/demand distribution below is an ASSUMPTION, not a measurement.**
 Files: `dispatch_v2.py` (engine, camera interfaces, Monte Carlo), `test_dispatch_v2.py` (19 tests, all pass),
 `run_v2_report.py` (v1 vs v2 + 100k run), `mc_results_v2.json` (full results). Python 3.9+ stdlib, seed 20261008.
 
-## v1 vs v2 at John's demo point (850 W/m² clear-sky, cloud 0.15)
+## v1 vs v2 at the original demo point (850 W/m² clear-sky, cloud 0.15)
 | Wind | v1 solar | v1 wind | v1 total | v2 solar | v2 wind | v2 total |
 |---|---|---|---|---|---|---|
 | 4.8 m/s | 6.792 | 0.000 (all 4 cut by 0.25 MW floor) | 6.792 | 4.351 | 0.395 | 4.746 |
