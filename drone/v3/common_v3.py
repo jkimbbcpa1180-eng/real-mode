@@ -40,6 +40,7 @@ SEEDS = {
     "change": {"tuning": 20263005, "heldout": 20264005},
     "lidar": {"tuning": 20263003, "heldout": 20264003},
     "thermal": {"tuning": 20263002, "heldout": 20264002},
+    "ground_ref": {"tuning": 20263007, "heldout": 20264007},
 }
 
 # --- ASSUMED power model (not measured) ------------------------------------

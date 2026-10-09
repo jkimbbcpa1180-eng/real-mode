@@ -1,0 +1,6324 @@
+{
+ "seed_set": "tuning",
+ "seed": 20263007,
+ "summary": {
+  "gps_standard/lawnmower/slam": {
+   "coverage_median": 0.905,
+   "coverage_p5": 0.15,
+   "pct_ge_90": 50.0,
+   "point_err_median_m": 0.17,
+   "point_err_p95_median_m": 0.269,
+   "nees_mean": 2.89,
+   "nees_le_7_81": 0.944,
+   "datum_err_median_m": 0.388
+  },
+  "gps_standard/lawnmower/pad": {
+   "coverage_median": 0.937,
+   "coverage_p5": 0.023,
+   "pct_ge_90": 66.7,
+   "point_err_median_m": 0.132,
+   "point_err_p95_median_m": 0.213,
+   "nees_mean": 2.79,
+   "nees_le_7_81": 0.95,
+   "datum_err_median_m": 0.382
+  },
+  "gps_standard/lawnmower/pad_m3": {
+   "coverage_median": 0.978,
+   "coverage_p5": 0.963,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.037,
+   "point_err_p95_median_m": 0.113,
+   "nees_mean": 3.36,
+   "nees_le_7_81": 0.901,
+   "datum_err_median_m": 0.035,
+   "moved_marker_rejected": "4/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.976
+  },
+  "gps_standard/lawnmower/pad_m5": {
+   "coverage_median": 0.978,
+   "coverage_p5": 0.961,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.035,
+   "point_err_p95_median_m": 0.109,
+   "nees_mean": 2.92,
+   "nees_le_7_81": 0.927,
+   "datum_err_median_m": 0.028,
+   "moved_marker_rejected": "4/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.978
+  },
+  "gps_standard/lawnmower/relative": {
+   "coverage_median": 0.862,
+   "coverage_p5": 0.0,
+   "pct_ge_90": 50.0,
+   "point_err_median_m": 0.196,
+   "point_err_p95_median_m": 0.292,
+   "nees_mean": 3.52,
+   "nees_le_7_81": 0.921,
+   "datum_err_median_m": 0.439
+  },
+  "gps_standard/perimeter_orbit/slam": {
+   "coverage_median": 0.73,
+   "coverage_p5": 0.594,
+   "pct_ge_90": 16.7,
+   "point_err_median_m": 0.171,
+   "point_err_p95_median_m": 0.505,
+   "nees_mean": 3.45,
+   "nees_le_7_81": 0.92,
+   "datum_err_median_m": 0.348
+  },
+  "gps_standard/perimeter_orbit/pad": {
+   "coverage_median": 0.839,
+   "coverage_p5": 0.498,
+   "pct_ge_90": 50.0,
+   "point_err_median_m": 0.134,
+   "point_err_p95_median_m": 0.465,
+   "nees_mean": 3.63,
+   "nees_le_7_81": 0.884,
+   "datum_err_median_m": 0.272
+  },
+  "gps_standard/perimeter_orbit/pad_m3": {
+   "coverage_median": 0.986,
+   "coverage_p5": 0.897,
+   "pct_ge_90": 91.7,
+   "point_err_median_m": 0.06,
+   "point_err_p95_median_m": 0.159,
+   "nees_mean": 3.77,
+   "nees_le_7_81": 0.89,
+   "datum_err_median_m": 0.071,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.996
+  },
+  "gps_standard/perimeter_orbit/pad_m5": {
+   "coverage_median": 0.99,
+   "coverage_p5": 0.92,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.046,
+   "point_err_p95_median_m": 0.153,
+   "nees_mean": 3.72,
+   "nees_le_7_81": 0.888,
+   "datum_err_median_m": 0.047,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.994
+  },
+  "gps_standard/perimeter_orbit/relative": {
+   "coverage_median": 0.645,
+   "coverage_p5": 0.352,
+   "pct_ge_90": 8.3,
+   "point_err_median_m": 0.244,
+   "point_err_p95_median_m": 0.54,
+   "nees_mean": 4.33,
+   "nees_le_7_81": 0.89,
+   "datum_err_median_m": 0.338
+  },
+  "gps_standard/poi_close_pass/slam": {
+   "coverage_median": 0.763,
+   "coverage_p5": 0.53,
+   "pct_ge_90": 41.7,
+   "point_err_median_m": 0.259,
+   "point_err_p95_median_m": 0.563,
+   "nees_mean": 3.19,
+   "nees_le_7_81": 0.922,
+   "datum_err_median_m": 0.46
+  },
+  "gps_standard/poi_close_pass/pad": {
+   "coverage_median": 0.862,
+   "coverage_p5": 0.506,
+   "pct_ge_90": 41.7,
+   "point_err_median_m": 0.228,
+   "point_err_p95_median_m": 0.52,
+   "nees_mean": 4.04,
+   "nees_le_7_81": 0.866,
+   "datum_err_median_m": 0.427
+  },
+  "gps_standard/poi_close_pass/pad_m3": {
+   "coverage_median": 1.0,
+   "coverage_p5": 0.973,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.03,
+   "point_err_p95_median_m": 0.11,
+   "nees_mean": 5.7,
+   "nees_le_7_81": 0.972,
+   "datum_err_median_m": 0.045,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.997
+  },
+  "gps_standard/poi_close_pass/pad_m5": {
+   "coverage_median": 1.0,
+   "coverage_p5": 0.994,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.026,
+   "point_err_p95_median_m": 0.089,
+   "nees_mean": 1.46,
+   "nees_le_7_81": 0.977,
+   "datum_err_median_m": 0.028,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 1.0
+  },
+  "gps_standard/poi_close_pass/relative": {
+   "coverage_median": 0.787,
+   "coverage_p5": 0.535,
+   "pct_ge_90": 25.0,
+   "point_err_median_m": 0.227,
+   "point_err_p95_median_m": 0.588,
+   "nees_mean": 7.11,
+   "nees_le_7_81": 0.609,
+   "datum_err_median_m": 0.56
+  },
+  "gps_tau90/lawnmower/slam": {
+   "coverage_median": 0.434,
+   "coverage_p5": 0.021,
+   "pct_ge_90": 41.7,
+   "point_err_median_m": 0.314,
+   "point_err_p95_median_m": 0.396,
+   "nees_mean": 3.97,
+   "nees_le_7_81": 0.873,
+   "datum_err_median_m": 0.582
+  },
+  "gps_tau90/lawnmower/pad": {
+   "coverage_median": 0.921,
+   "coverage_p5": 0.003,
+   "pct_ge_90": 58.3,
+   "point_err_median_m": 0.214,
+   "point_err_p95_median_m": 0.295,
+   "nees_mean": 3.25,
+   "nees_le_7_81": 0.897,
+   "datum_err_median_m": 0.529
+  },
+  "gps_tau90/lawnmower/pad_m3": {
+   "coverage_median": 0.979,
+   "coverage_p5": 0.961,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.038,
+   "point_err_p95_median_m": 0.112,
+   "nees_mean": 3.14,
+   "nees_le_7_81": 0.904,
+   "datum_err_median_m": 0.035,
+   "moved_marker_rejected": "4/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.977
+  },
+  "gps_tau90/lawnmower/pad_m5": {
+   "coverage_median": 0.978,
+   "coverage_p5": 0.962,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.034,
+   "point_err_p95_median_m": 0.108,
+   "nees_mean": 2.68,
+   "nees_le_7_81": 0.935,
+   "datum_err_median_m": 0.03,
+   "moved_marker_rejected": "4/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.977
+  },
+  "gps_tau90/lawnmower/relative": {
+   "coverage_median": 0.903,
+   "coverage_p5": 0.002,
+   "pct_ge_90": 50.0,
+   "point_err_median_m": 0.224,
+   "point_err_p95_median_m": 0.306,
+   "nees_mean": 4.76,
+   "nees_le_7_81": 0.829,
+   "datum_err_median_m": 0.671
+  },
+  "gps_tau90/perimeter_orbit/slam": {
+   "coverage_median": 0.616,
+   "coverage_p5": 0.324,
+   "pct_ge_90": 33.3,
+   "point_err_median_m": 0.222,
+   "point_err_p95_median_m": 0.604,
+   "nees_mean": 4.42,
+   "nees_le_7_81": 0.875,
+   "datum_err_median_m": 0.54
+  },
+  "gps_tau90/perimeter_orbit/pad": {
+   "coverage_median": 0.872,
+   "coverage_p5": 0.364,
+   "pct_ge_90": 50.0,
+   "point_err_median_m": 0.141,
+   "point_err_p95_median_m": 0.443,
+   "nees_mean": 3.18,
+   "nees_le_7_81": 0.936,
+   "datum_err_median_m": 0.376
+  },
+  "gps_tau90/perimeter_orbit/pad_m3": {
+   "coverage_median": 0.994,
+   "coverage_p5": 0.982,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.046,
+   "point_err_p95_median_m": 0.126,
+   "nees_mean": 2.5,
+   "nees_le_7_81": 0.942,
+   "datum_err_median_m": 0.046,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.994
+  },
+  "gps_tau90/perimeter_orbit/pad_m5": {
+   "coverage_median": 0.994,
+   "coverage_p5": 0.982,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.035,
+   "point_err_p95_median_m": 0.12,
+   "nees_mean": 2.56,
+   "nees_le_7_81": 0.933,
+   "datum_err_median_m": 0.038,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 0.994
+  },
+  "gps_tau90/perimeter_orbit/relative": {
+   "coverage_median": 0.829,
+   "coverage_p5": 0.456,
+   "pct_ge_90": 41.7,
+   "point_err_median_m": 0.18,
+   "point_err_p95_median_m": 0.468,
+   "nees_mean": 5.51,
+   "nees_le_7_81": 0.753,
+   "datum_err_median_m": 0.465
+  },
+  "gps_tau90/poi_close_pass/slam": {
+   "coverage_median": 0.741,
+   "coverage_p5": 0.402,
+   "pct_ge_90": 41.7,
+   "point_err_median_m": 0.309,
+   "point_err_p95_median_m": 0.502,
+   "nees_mean": 3.64,
+   "nees_le_7_81": 0.902,
+   "datum_err_median_m": 0.535
+  },
+  "gps_tau90/poi_close_pass/pad": {
+   "coverage_median": 0.975,
+   "coverage_p5": 0.711,
+   "pct_ge_90": 75.0,
+   "point_err_median_m": 0.162,
+   "point_err_p95_median_m": 0.31,
+   "nees_mean": 2.24,
+   "nees_le_7_81": 0.956,
+   "datum_err_median_m": 0.32
+  },
+  "gps_tau90/poi_close_pass/pad_m3": {
+   "coverage_median": 1.0,
+   "coverage_p5": 0.999,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.028,
+   "point_err_p95_median_m": 0.095,
+   "nees_mean": 1.29,
+   "nees_le_7_81": 0.993,
+   "datum_err_median_m": 0.038,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 1.0
+  },
+  "gps_tau90/poi_close_pass/pad_m5": {
+   "coverage_median": 1.0,
+   "coverage_p5": 0.999,
+   "pct_ge_90": 100.0,
+   "point_err_median_m": 0.025,
+   "point_err_p95_median_m": 0.08,
+   "nees_mean": 1.32,
+   "nees_le_7_81": 0.985,
+   "datum_err_median_m": 0.026,
+   "moved_marker_rejected": "6/6",
+   "good_markers_rejected": 0,
+   "coverage_median_moved_scenes": 1.0
+  },
+  "gps_tau90/poi_close_pass/relative": {
+   "coverage_median": 0.982,
+   "coverage_p5": 0.746,
+   "pct_ge_90": 75.0,
+   "point_err_median_m": 0.137,
+   "point_err_p95_median_m": 0.291,
+   "nees_mean": 8.55,
+   "nees_le_7_81": 0.605,
+   "datum_err_median_m": 0.648
+  }
+ },
+ "runtime_s": 921.4,
+ "settings": {
+  "CLEAN_R_M": 0.3,
+  "CLIMB_MPS": 1.0,
+  "CORE_VS_GPS_SIG_M": 0.05,
+  "DWELL_S": 20.0,
+  "FACTOR_FLOOR_SIG_M": 0.05,
+  "GATE_CHI2": 11.34,
+  "MARKER_CHI2": 11.34,
+  "MARKER_NADIR_DEG": 50.0,
+  "MARKER_RANGE_M": 30.0,
+  "MARKER_SURVEY_SIG_M": 0.025,
+  "MEAS_SIG_M": 0.02,
+  "MEAS_SIG_PER_M": 0.01,
+  "PAD_PLACE_SIG_M": 0.03,
+  "PAD_SURVEY_SIG_M": 0.025,
+  "P_DET": 0.3,
+  "P_FALSE_MATCH": 0.03,
+  "SURVEY_SHARE": 10.0
+ },
+ "rows": [
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 195.3,
+   "marker_dets": [
+    254,
+    323,
+    450,
+    317,
+    258
+   ],
+   "false_matches": 50,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 27.7,
+   "slam": {
+    "coverage": 0.9753478154747376,
+    "acc_median": 0.07621926444489269,
+    "acc_p95": 0.16840271000449644,
+    "nees_mean": 1.4900618683712896,
+    "nees_le_7_81": 0.9846938775510204,
+    "datum_err_m": 0.3068618470914594,
+    "nav_err_median": 0.42609090497759444,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9720527215035392,
+    "acc_median": 0.04889454999767828,
+    "acc_p95": 0.13997810579072123,
+    "nees_mean": 1.5174077859050505,
+    "nees_le_7_81": 0.9795918367346939,
+    "datum_err_m": 0.2887285283617189,
+    "nav_err_median": 0.4578526354597028,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9903587991213083,
+    "acc_median": 0.03428488660702733,
+    "acc_p95": 0.10893411429261661,
+    "nees_mean": 1.702065754972229,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.013457487707385729,
+    "nav_err_median": 0.07669849327996942,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 293
+   },
+   "pad_m5": {
+    "coverage": 0.9930436905052478,
+    "acc_median": 0.03407962365045325,
+    "acc_p95": 0.1083293408704145,
+    "nees_mean": 1.9635532307036245,
+    "nees_le_7_81": 0.9897959183673469,
+    "datum_err_m": 0.01384038434636323,
+    "nav_err_median": 0.0713721091549426,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 476
+   },
+   "relative": {
+    "coverage": 0.8115694410544301,
+    "acc_median": 0.2780035289656764,
+    "acc_p95": 0.37400818499412425,
+    "nees_mean": 1.4535055334851656,
+    "nees_le_7_81": 0.9744897959183674,
+    "datum_err_m": 0.33276667396670057,
+    "nav_err_median": 0.42956159042103376,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 165.9,
+   "marker_dets": [
+    143,
+    178,
+    211,
+    250,
+    146
+   ],
+   "false_matches": 30,
+   "pad_gap_up_s": 12.6,
+   "pad_gap_down_s": 22.7,
+   "slam": {
+    "coverage": 0.27303336394245487,
+    "acc_median": 0.32776689804380066,
+    "acc_p95": 0.41698031109554456,
+    "nees_mean": 4.372756618240168,
+    "nees_le_7_81": 0.9337349397590361,
+    "datum_err_m": 0.4681581879411955,
+    "nav_err_median": 0.7890683874345967,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.872768084889297,
+    "acc_median": 0.21286149920404362,
+    "acc_p95": 0.30113598735249153,
+    "nees_mean": 3.695168673508546,
+    "nees_le_7_81": 0.9759036144578314,
+    "datum_err_m": 0.4569300771505847,
+    "nav_err_median": 0.7308864541779088,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9625548413427202,
+    "acc_median": 0.04564285496103615,
+    "acc_p95": 0.12090895917594935,
+    "nees_mean": 2.8063102924785417,
+    "nees_le_7_81": 0.9819277108433735,
+    "datum_err_m": 0.08878474706330863,
+    "nav_err_median": 0.15170841585441264,
+    "gate_rejects": 18,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 127
+   },
+   "pad_m5": {
+    "coverage": 0.9586776859504132,
+    "acc_median": 0.037592643642490486,
+    "acc_p95": 0.10902023525324678,
+    "nees_mean": 2.4875474694835282,
+    "nees_le_7_81": 0.9759036144578314,
+    "datum_err_m": 0.07201113687661152,
+    "nav_err_median": 0.12294054469576257,
+    "gate_rejects": 22,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 253
+   },
+   "relative": {
+    "coverage": 0.925211713090501,
+    "acc_median": 0.03518251625180446,
+    "acc_p95": 0.12177786051723208,
+    "nees_mean": 4.646381933352378,
+    "nees_le_7_81": 0.927710843373494,
+    "datum_err_m": 0.47336281283381454,
+    "nav_err_median": 0.784233989294807,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 170.5,
+   "marker_dets": [
+    277,
+    249,
+    491,
+    284,
+    304
+   ],
+   "false_matches": 54,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 30.2,
+   "slam": {
+    "coverage": 0.8627946127946128,
+    "acc_median": 0.21791940868137782,
+    "acc_p95": 0.3298168054780626,
+    "nees_mean": 4.798514476758808,
+    "nees_le_7_81": 0.7953216374269005,
+    "datum_err_m": 0.4001681892435617,
+    "nav_err_median": 0.9559772972648386,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7028619528619529,
+    "acc_median": 0.26773454696547283,
+    "acc_p95": 0.3729036120404369,
+    "nees_mean": 5.441054314882184,
+    "nees_le_7_81": 0.7309941520467836,
+    "datum_err_m": 0.4164284286584845,
+    "nav_err_median": 0.9673203249990507,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9815867003367004,
+    "acc_median": 0.03897229408195457,
+    "acc_p95": 0.11742919072209142,
+    "nees_mean": 2.2271535896621977,
+    "nees_le_7_81": 0.9941520467836257,
+    "datum_err_m": 0.028088929972543676,
+    "nav_err_median": 0.07528414447063414,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 310
+   },
+   "pad_m5": {
+    "coverage": 0.9810606060606061,
+    "acc_median": 0.03737639070275911,
+    "acc_p95": 0.11513079454435017,
+    "nees_mean": 2.7042868654061465,
+    "nees_le_7_81": 0.9473684210526315,
+    "datum_err_m": 0.017790290243940732,
+    "nav_err_median": 0.06398011899655014,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 486
+   },
+   "relative": {
+    "coverage": 0.9121422558922558,
+    "acc_median": 0.07700395085773008,
+    "acc_p95": 0.18537762180587225,
+    "nees_mean": 5.6532878546738115,
+    "nees_le_7_81": 0.7251461988304093,
+    "datum_err_m": 0.43078621256575267,
+    "nav_err_median": 0.9693996459052039,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 188.1,
+   "marker_dets": [
+    237,
+    467,
+    327,
+    449,
+    267
+   ],
+   "false_matches": 43,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 26.8,
+   "slam": {
+    "coverage": 0.6113939393939394,
+    "acc_median": 0.29788608114153625,
+    "acc_p95": 0.3976216375151136,
+    "nees_mean": 4.079519488311179,
+    "nees_le_7_81": 0.9042553191489362,
+    "datum_err_m": 0.710166856568307,
+    "nav_err_median": 0.7266081482085007,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.009575757575757576,
+    "acc_median": 0.44493186607998503,
+    "acc_p95": 0.5471656864910561,
+    "nees_mean": 6.089718903041939,
+    "nees_le_7_81": 0.8138297872340425,
+    "datum_err_m": 0.7552504458161521,
+    "nav_err_median": 0.782235413783797,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9867878787878788,
+    "acc_median": 0.041124557088508595,
+    "acc_p95": 0.1252632608683868,
+    "nees_mean": 9.715148519698635,
+    "nees_le_7_81": 0.35638297872340424,
+    "datum_err_m": 0.2901556246549143,
+    "nav_err_median": 0.3191378709748861,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 321
+   },
+   "pad_m5": {
+    "coverage": 0.9935757575757576,
+    "acc_median": 0.04040674903884245,
+    "acc_p95": 0.12346774931203175,
+    "nees_mean": 7.629257754975787,
+    "nees_le_7_81": 0.5531914893617021,
+    "datum_err_m": 0.17667622353564744,
+    "nav_err_median": 0.21025893581715158,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 541
+   },
+   "relative": {
+    "coverage": 0.0,
+    "acc_median": 0.5328084747850941,
+    "acc_p95": 0.6262757496329492,
+    "nees_mean": 6.155002682350644,
+    "nees_le_7_81": 0.7606382978723404,
+    "datum_err_m": 0.8556469330654304,
+    "nav_err_median": 0.845167609360778,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 140.2,
+   "marker_dets": [
+    162,
+    317,
+    396,
+    271,
+    152
+   ],
+   "false_matches": 36,
+   "pad_gap_up_s": 12.9,
+   "pad_gap_down_s": 29.6,
+   "slam": {
+    "coverage": 0.78734335839599,
+    "acc_median": 0.2581836003245761,
+    "acc_p95": 0.33562631584126534,
+    "nees_mean": 1.882108185943799,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3616267107588705,
+    "nav_err_median": 0.42950425177127005,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9164160401002506,
+    "acc_median": 0.20808310341235048,
+    "acc_p95": 0.2804586092708151,
+    "nees_mean": 1.5177806717366984,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2692968326953276,
+    "nav_err_median": 0.3585293435102946,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9627819548872181,
+    "acc_median": 0.04028369386968578,
+    "acc_p95": 0.11334508861016085,
+    "nees_mean": 2.6465964447837305,
+    "nees_le_7_81": 0.9785714285714285,
+    "datum_err_m": 0.03150665732197226,
+    "nav_err_median": 0.0837783886077129,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 267
+   },
+   "pad_m5": {
+    "coverage": 0.9635338345864661,
+    "acc_median": 0.03421168962242005,
+    "acc_p95": 0.10566945170593778,
+    "nees_mean": 1.9444022735979827,
+    "nees_le_7_81": 0.9857142857142858,
+    "datum_err_m": 0.023752148085302856,
+    "nav_err_median": 0.06664268828362209,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 409
+   },
+   "relative": {
+    "coverage": 0.9291979949874687,
+    "acc_median": 0.06772529999400412,
+    "acc_p95": 0.1479452206903125,
+    "nees_mean": 2.6149476773431553,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.44773855582644545,
+    "nav_err_median": 0.4946775697248543,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 177.1,
+   "marker_dets": [
+    199,
+    319,
+    417,
+    323,
+    188
+   ],
+   "false_matches": 39,
+   "pad_gap_up_s": 11.8,
+   "pad_gap_down_s": 30.1,
+   "slam": {
+    "coverage": 0.9400741752879173,
+    "acc_median": 0.037412488035317715,
+    "acc_p95": 0.11330081595774603,
+    "nees_mean": 1.990389010026616,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4557932449616298,
+    "nav_err_median": 0.604476799383655,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.943978137809877,
+    "acc_median": 0.03875201598822109,
+    "acc_p95": 0.11782151415519637,
+    "nees_mean": 1.7882250307129934,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3472863512351647,
+    "nav_err_median": 0.49400263479307144,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9754050361116533,
+    "acc_median": 0.03786945278310494,
+    "acc_p95": 0.11106386078813721,
+    "nees_mean": 2.0434308295513905,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.06478075275351884,
+    "nav_err_median": 0.09563221636318926,
+    "gate_rejects": 2,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 194
+   },
+   "pad_m5": {
+    "coverage": 0.9770642201834863,
+    "acc_median": 0.03189842629096429,
+    "acc_p95": 0.10102659427772359,
+    "nees_mean": 1.6362442422061658,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.028173204410191534,
+    "nav_err_median": 0.07253794004486917,
+    "gate_rejects": 3,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 351
+   },
+   "relative": {
+    "coverage": 0.4763810267421433,
+    "acc_median": 0.311697812142245,
+    "acc_p95": 0.3948684392870655,
+    "nees_mean": 2.608761380227908,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5459624048170488,
+    "nav_err_median": 0.6469309279245915,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 6,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 174.4,
+   "marker_dets": [
+    283,
+    355,
+    486,
+    398,
+    268
+   ],
+   "false_matches": 48,
+   "pad_gap_up_s": 12.7,
+   "pad_gap_down_s": 30.7,
+   "slam": {
+    "coverage": 0.8707110376188507,
+    "acc_median": 0.24082989129889754,
+    "acc_p95": 0.3353648709949522,
+    "nees_mean": 1.7421862693172119,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2938708434881991,
+    "nav_err_median": 0.4253955144228703,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9828441504754031,
+    "acc_median": 0.1151770084424868,
+    "acc_p95": 0.20434236489410562,
+    "nees_mean": 1.07821234995533,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2492075638969263,
+    "nav_err_median": 0.3591700020159438,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9734394377842084,
+    "acc_median": 0.0404093959512597,
+    "acc_p95": 0.11942558020257542,
+    "nees_mean": 2.578590402855833,
+    "nees_le_7_81": 0.96,
+    "datum_err_m": 0.029652969858159788,
+    "nav_err_median": 0.07822267852133175,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 335
+   },
+   "pad_m5": {
+    "coverage": 0.9726126498553122,
+    "acc_median": 0.03533258393351346,
+    "acc_p95": 0.10970047273249896,
+    "nees_mean": 2.1784979856925037,
+    "nees_le_7_81": 0.9771428571428571,
+    "datum_err_m": 0.03657111766674083,
+    "nav_err_median": 0.06646015880853416,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 538
+   },
+   "relative": {
+    "coverage": 0.0,
+    "acc_median": 0.5481666467407901,
+    "acc_p95": 0.635105021486191,
+    "nees_mean": 3.2357163482671822,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3985016573693997,
+    "nav_err_median": 0.5180598125379499,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 7,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 196.9,
+   "marker_dets": [
+    282,
+    430,
+    530,
+    433,
+    355
+   ],
+   "false_matches": 42,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 31.7,
+   "slam": {
+    "coverage": 9.156670634557275e-05,
+    "acc_median": 0.538165109746247,
+    "acc_p95": 0.6252505414056834,
+    "nees_mean": 6.03471449772065,
+    "nees_le_7_81": 0.868020304568528,
+    "datum_err_m": 0.6375774247151083,
+    "nav_err_median": 0.712690064760741,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.03351341452247963,
+    "acc_median": 0.4090302449562504,
+    "acc_p95": 0.4837761206788356,
+    "nees_mean": 4.296277806813076,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5134870547718419,
+    "nav_err_median": 0.5981069399352691,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9740866221042029,
+    "acc_median": 0.03655729279286746,
+    "acc_p95": 0.11336891382397124,
+    "nees_mean": 1.867667096407907,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.04296391059549409,
+    "nav_err_median": 0.08145820386214651,
+    "gate_rejects": 38,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 257
+   },
+   "pad_m5": {
+    "coverage": 0.9758263895247687,
+    "acc_median": 0.03658631042588567,
+    "acc_p95": 0.11701055344794886,
+    "nees_mean": 2.831611364663951,
+    "nees_le_7_81": 0.9695431472081218,
+    "datum_err_m": 0.04548511363174939,
+    "nav_err_median": 0.07215014201990215,
+    "gate_rejects": 81,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 492
+   },
+   "relative": {
+    "coverage": 0.9609010163904405,
+    "acc_median": 0.11313442664670942,
+    "acc_p95": 0.20058740344901785,
+    "nees_mean": 6.31612209036361,
+    "nees_le_7_81": 0.8426395939086294,
+    "datum_err_m": 0.6426822366349818,
+    "nav_err_median": 0.6955039350060516,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 8,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 194.1,
+   "marker_dets": [
+    279,
+    374,
+    312,
+    321,
+    318
+   ],
+   "false_matches": 48,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 28.4,
+   "slam": {
+    "coverage": 0.9412727447771253,
+    "acc_median": 0.051660923763419575,
+    "acc_p95": 0.15046619475532222,
+    "nees_mean": 1.8167855196745262,
+    "nees_le_7_81": 0.9690721649484536,
+    "datum_err_m": 0.37488919568788887,
+    "nav_err_median": 0.5956205821804899,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9507076152883412,
+    "acc_median": 0.06532069384314632,
+    "acc_p95": 0.16659637446613296,
+    "nees_mean": 1.699234750534248,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4334036305941362,
+    "nav_err_median": 0.5821217380523098,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9787234042553191,
+    "acc_median": 0.036577677580681645,
+    "acc_p95": 0.11235413176290843,
+    "nees_mean": 1.8951747932038205,
+    "nees_le_7_81": 0.9948453608247423,
+    "datum_err_m": 0.013834520499673106,
+    "nav_err_median": 0.09183945216206696,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 294
+   },
+   "pad_m5": {
+    "coverage": 0.9774718397997497,
+    "acc_median": 0.03396185068944746,
+    "acc_p95": 0.10989123216167544,
+    "nees_mean": 1.9086134824203929,
+    "nees_le_7_81": 0.9896907216494846,
+    "datum_err_m": 0.020617359882548328,
+    "nav_err_median": 0.06415146365576731,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 485
+   },
+   "relative": {
+    "coverage": 0.9312602291325696,
+    "acc_median": 0.07912187873688623,
+    "acc_p95": 0.18530662584034616,
+    "nees_mean": 2.0749416058686583,
+    "nees_le_7_81": 0.9536082474226805,
+    "datum_err_m": 0.42235826093457907,
+    "nav_err_median": 0.5974415798218071,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 9,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 183.1,
+   "marker_dets": [
+    360,
+    386,
+    349,
+    356,
+    339
+   ],
+   "false_matches": 41,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 25.7,
+   "slam": {
+    "coverage": 0.9744051910598414,
+    "acc_median": 0.1228223700469897,
+    "acc_p95": 0.20800248495103446,
+    "nees_mean": 1.5529422818265775,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.23192369433400878,
+    "nav_err_median": 0.49112499676643734,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9782504205719779,
+    "acc_median": 0.09574203009594928,
+    "acc_p95": 0.183555503696341,
+    "nees_mean": 1.313764030528362,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.14057079268443026,
+    "nav_err_median": 0.43820624712116524,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9855803893294881,
+    "acc_median": 0.03591823272137695,
+    "acc_p95": 0.10929630257986034,
+    "nees_mean": 8.818125428275826,
+    "nees_le_7_81": 0.5628415300546448,
+    "datum_err_m": 0.27492530231148316,
+    "nav_err_median": 0.2775185290900115,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 332
+   },
+   "pad_m5": {
+    "coverage": 0.9881038211968277,
+    "acc_median": 0.032260936899916715,
+    "acc_p95": 0.10553199748528819,
+    "nees_mean": 4.982416114629278,
+    "nees_le_7_81": 0.8087431693989071,
+    "datum_err_m": 0.16486605406655222,
+    "nav_err_median": 0.16837091617287261,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 551
+   },
+   "relative": {
+    "coverage": 0.9379956741167988,
+    "acc_median": 0.10497359048378563,
+    "acc_p95": 0.210478520457785,
+    "nees_mean": 1.8220154919805098,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.29845895660612903,
+    "nav_err_median": 0.5047737489897817,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 10,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 193.6,
+   "marker_dets": [
+    185,
+    324,
+    377,
+    296,
+    192
+   ],
+   "false_matches": 25,
+   "pad_gap_up_s": 11.1,
+   "pad_gap_down_s": 30.4,
+   "slam": {
+    "coverage": 0.9567280848687884,
+    "acc_median": 0.03018831957269441,
+    "acc_p95": 0.0970999389812679,
+    "nees_mean": 1.9989958387771882,
+    "nees_le_7_81": 0.9639175257731959,
+    "datum_err_m": 0.1947457634618374,
+    "nav_err_median": 0.5814769269877791,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9691047831751349,
+    "acc_median": 0.14806845328941076,
+    "acc_p95": 0.2225027400965578,
+    "nees_mean": 2.3463377865796278,
+    "nees_le_7_81": 0.9690721649484536,
+    "datum_err_m": 0.24986922051245258,
+    "nav_err_median": 0.590014653514559,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9871580122836404,
+    "acc_median": 0.03497852066600071,
+    "acc_p95": 0.10545650398022487,
+    "nees_mean": 2.3953899317420104,
+    "nees_le_7_81": 0.9845360824742269,
+    "datum_err_m": 0.03917807567959157,
+    "nav_err_median": 0.09946511141046324,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 287
+   },
+   "pad_m5": {
+    "coverage": 0.9871580122836404,
+    "acc_median": 0.03598380606999818,
+    "acc_p95": 0.10717414560647498,
+    "nees_mean": 3.082388214190341,
+    "nees_le_7_81": 0.9432989690721649,
+    "datum_err_m": 0.027789103809031938,
+    "nav_err_median": 0.0801882282435873,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 447
+   },
+   "relative": {
+    "coverage": 0.0,
+    "acc_median": 0.9008329407674875,
+    "acc_p95": 0.9749447205297941,
+    "nees_mean": 2.18566958555922,
+    "nees_le_7_81": 0.9587628865979382,
+    "datum_err_m": 0.18993141898212776,
+    "nav_err_median": 0.5885278062664979,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 11,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 166.1,
+   "marker_dets": [
+    187,
+    270,
+    363,
+    286,
+    156
+   ],
+   "false_matches": 32,
+   "pad_gap_up_s": 11.1,
+   "pad_gap_down_s": 28.7,
+   "slam": {
+    "coverage": 0.9579162410623084,
+    "acc_median": 0.0732568110595011,
+    "acc_p95": 0.15369330920401028,
+    "nees_mean": 2.970876052725724,
+    "nees_le_7_81": 0.9036144578313253,
+    "datum_err_m": 0.5997217091674767,
+    "nav_err_median": 0.7210705320995665,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9309499489274771,
+    "acc_median": 0.03676566024334349,
+    "acc_p95": 0.11395089894155576,
+    "nees_mean": 2.6900377875405193,
+    "nees_le_7_81": 0.927710843373494,
+    "datum_err_m": 0.5763674793921632,
+    "nav_err_median": 0.5997872625876672,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9768130745658835,
+    "acc_median": 0.03303668853546249,
+    "acc_p95": 0.10499527332014434,
+    "nees_mean": 1.565324889352556,
+    "nees_le_7_81": 0.9939759036144579,
+    "datum_err_m": 0.029639129144482718,
+    "nav_err_median": 0.08130470185513132,
+    "gate_rejects": 85,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 183
+   },
+   "pad_m5": {
+    "coverage": 0.9785495403472931,
+    "acc_median": 0.032275507983149154,
+    "acc_p95": 0.1026574407342357,
+    "nees_mean": 1.6955989482302705,
+    "nees_le_7_81": 0.9879518072289156,
+    "datum_err_m": 0.018364920589850776,
+    "nav_err_median": 0.07233980188199818,
+    "gate_rejects": 90,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 330
+   },
+   "relative": {
+    "coverage": 0.245658835546476,
+    "acc_median": 0.3380384958908899,
+    "acc_p95": 0.416678087758729,
+    "nees_mean": 3.464895734117281,
+    "nees_le_7_81": 0.9036144578313253,
+    "datum_err_m": 0.6814726110034585,
+    "nav_err_median": 0.8062413650178077,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 244.8,
+   "marker_dets": [
+    123,
+    126,
+    138,
+    124,
+    134
+   ],
+   "false_matches": 10,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 8.1,
+   "slam": {
+    "coverage": 0.9533222591362126,
+    "acc_median": 0.13184720110373682,
+    "acc_p95": 0.2538365327571591,
+    "nees_mean": 2.0295452179163087,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.1990446763550985,
+    "nav_err_median": 0.3926305323485149,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9280730897009967,
+    "acc_median": 0.13716901614919053,
+    "acc_p95": 0.28938940465488094,
+    "nees_mean": 2.3628270490909946,
+    "nees_le_7_81": 0.9755102040816327,
+    "datum_err_m": 0.2680381458343172,
+    "nav_err_median": 0.4387065617640915,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9588039867109635,
+    "acc_median": 0.0294198254666993,
+    "acc_p95": 0.13369054000793495,
+    "nees_mean": 2.5077938119114034,
+    "nees_le_7_81": 0.9591836734693877,
+    "datum_err_m": 0.040623809719287196,
+    "nav_err_median": 0.08304092679125964,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 130
+   },
+   "pad_m5": {
+    "coverage": 0.9960132890365448,
+    "acc_median": 0.02590555137581596,
+    "acc_p95": 0.09105697581687888,
+    "nees_mean": 2.102766001115214,
+    "nees_le_7_81": 0.9836734693877551,
+    "datum_err_m": 0.011705460010226187,
+    "nav_err_median": 0.05717784180788354,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 215
+   },
+   "relative": {
+    "coverage": 0.6838870431893688,
+    "acc_median": 0.2521819591523595,
+    "acc_p95": 0.5228664017815925,
+    "nees_mean": 2.2099702410063538,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.1861211282494298,
+    "nav_err_median": 0.4110719017507016,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 236.5,
+   "marker_dets": [
+    81,
+    94,
+    86,
+    71,
+    74
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.9,
+   "slam": {
+    "coverage": 0.6058700209643606,
+    "acc_median": 0.2166886325741939,
+    "acc_p95": 0.7355554489023632,
+    "nees_mean": 4.324112420266307,
+    "nees_le_7_81": 0.759493670886076,
+    "datum_err_m": 0.3462464647926241,
+    "nav_err_median": 0.628116806895225,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7735849056603774,
+    "acc_median": 0.13151239505120627,
+    "acc_p95": 0.8881213624547344,
+    "nees_mean": 4.276104118363233,
+    "nees_le_7_81": 0.8565400843881856,
+    "datum_err_m": 0.24318984495540807,
+    "nav_err_median": 0.5631499939555745,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9129979035639413,
+    "acc_median": 0.10255877438129035,
+    "acc_p95": 0.38161088690966416,
+    "nees_mean": 5.848009987410476,
+    "nees_le_7_81": 0.8059071729957806,
+    "datum_err_m": 0.051821638876034214,
+    "nav_err_median": 0.25973211016611636,
+    "gate_rejects": 22,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 52
+   },
+   "pad_m5": {
+    "coverage": 0.9358839972047519,
+    "acc_median": 0.09478194414945307,
+    "acc_p95": 0.33500667487790775,
+    "nees_mean": 6.847481739258895,
+    "nees_le_7_81": 0.7468354430379747,
+    "datum_err_m": 0.05732482226060445,
+    "nav_err_median": 0.23234710593790606,
+    "gate_rejects": 22,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 106
+   },
+   "relative": {
+    "coverage": 0.4802585604472397,
+    "acc_median": 0.3232217795868664,
+    "acc_p95": 1.0503315143399286,
+    "nees_mean": 4.708298219327361,
+    "nees_le_7_81": 0.7383966244725738,
+    "datum_err_m": 0.30391000920948275,
+    "nav_err_median": 0.5242415884073935,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 218.9,
+   "marker_dets": [
+    91,
+    87,
+    90,
+    90,
+    76
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.4,
+   "slam": {
+    "coverage": 0.6905395136778115,
+    "acc_median": 0.16014106890096658,
+    "acc_p95": 0.811721686873029,
+    "nees_mean": 4.280536173471815,
+    "nees_le_7_81": 0.8949771689497716,
+    "datum_err_m": 0.15635075976818733,
+    "nav_err_median": 0.6083321158534097,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9131838905775076,
+    "acc_median": 0.09454153758310513,
+    "acc_p95": 0.6944795944514827,
+    "nees_mean": 2.5840484929969416,
+    "nees_le_7_81": 0.91324200913242,
+    "datum_err_m": 0.20033763401273308,
+    "nav_err_median": 0.38427187820036396,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.984612462006079,
+    "acc_median": 0.07696618859462934,
+    "acc_p95": 0.16653792092254593,
+    "nees_mean": 3.37709166270803,
+    "nees_le_7_81": 0.8949771689497716,
+    "datum_err_m": 0.07738059532570707,
+    "nav_err_median": 0.18351486653039578,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 89
+   },
+   "pad_m5": {
+    "coverage": 0.9844224924012158,
+    "acc_median": 0.06432766199854445,
+    "acc_p95": 0.16035120975465791,
+    "nees_mean": 3.538421992071959,
+    "nees_le_7_81": 0.8767123287671232,
+    "datum_err_m": 0.05934234094192463,
+    "nav_err_median": 0.17677059814498253,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 147
+   },
+   "relative": {
+    "coverage": 0.7813449848024316,
+    "acc_median": 0.19255029897015508,
+    "acc_p95": 1.1064562446305257,
+    "nees_mean": 5.2205583260014805,
+    "nees_le_7_81": 0.867579908675799,
+    "datum_err_m": 0.19790647935164507,
+    "nav_err_median": 0.6403082443386418,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 262.8,
+   "marker_dets": [
+    119,
+    132,
+    142,
+    126,
+    110
+   ],
+   "false_matches": 14,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 7.7,
+   "slam": {
+    "coverage": 0.7215370018975332,
+    "acc_median": 0.2361415362048218,
+    "acc_p95": 0.5181962465728185,
+    "nees_mean": 3.8835744023921377,
+    "nees_le_7_81": 0.9695817490494296,
+    "datum_err_m": 0.34893664115249157,
+    "nav_err_median": 0.5776521392004439,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.2841555977229602,
+    "acc_median": 0.4685158477903446,
+    "acc_p95": 0.7523182345305455,
+    "nees_mean": 9.983138182500468,
+    "nees_le_7_81": 0.3574144486692015,
+    "datum_err_m": 0.6333078326176124,
+    "nav_err_median": 0.7396021229220421,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9965211891208097,
+    "acc_median": 0.04118188976030668,
+    "acc_p95": 0.17190798366971502,
+    "nees_mean": 4.415065535193283,
+    "nees_le_7_81": 0.8136882129277566,
+    "datum_err_m": 0.027115691583314304,
+    "nav_err_median": 0.13197740319591855,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 88
+   },
+   "pad_m5": {
+    "coverage": 0.997786211258697,
+    "acc_median": 0.03376937447385586,
+    "acc_p95": 0.14541259769751788,
+    "nees_mean": 3.999269603184738,
+    "nees_le_7_81": 0.8136882129277566,
+    "datum_err_m": 0.02463671832898295,
+    "nav_err_median": 0.08493055053118806,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 169
+   },
+   "relative": {
+    "coverage": 0.23323845667299178,
+    "acc_median": 0.6661427398882935,
+    "acc_p95": 1.2710041351338484,
+    "nees_mean": 3.507933746356318,
+    "nees_le_7_81": 0.9847908745247148,
+    "datum_err_m": 0.2946130088295063,
+    "nav_err_median": 0.5079980621867286,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 218.9,
+   "marker_dets": [
+    84,
+    78,
+    67,
+    74,
+    90
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.1,
+   "slam": {
+    "coverage": 0.6724924012158054,
+    "acc_median": 0.18138619222566188,
+    "acc_p95": 0.4660980800656612,
+    "nees_mean": 3.351869938770518,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4001354210363696,
+    "nav_err_median": 0.555079122495714,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.6730623100303952,
+    "acc_median": 0.23754731768289972,
+    "acc_p95": 0.5032088048198577,
+    "nees_mean": 4.526519900565992,
+    "nees_le_7_81": 0.9771689497716894,
+    "datum_err_m": 0.45566041199810065,
+    "nav_err_median": 0.5579672458272616,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9815729483282675,
+    "acc_median": 0.08910657678542178,
+    "acc_p95": 0.2683647251685256,
+    "nees_mean": 5.17620849735389,
+    "nees_le_7_81": 0.8356164383561644,
+    "datum_err_m": 0.11287816872096212,
+    "nav_err_median": 0.2515920797322195,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 81
+   },
+   "pad_m5": {
+    "coverage": 0.9891717325227963,
+    "acc_median": 0.06481277648746975,
+    "acc_p95": 0.2031252157197595,
+    "nees_mean": 3.5395137083067647,
+    "nees_le_7_81": 0.908675799086758,
+    "datum_err_m": 0.07973188855613746,
+    "nav_err_median": 0.2090819861912966,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 138
+   },
+   "relative": {
+    "coverage": 0.449468085106383,
+    "acc_median": 0.3446678724493862,
+    "acc_p95": 0.5008404848087846,
+    "nees_mean": 5.200135455416403,
+    "nees_le_7_81": 0.908675799086758,
+    "datum_err_m": 0.4662289340890243,
+    "nav_err_median": 0.5955864390924006,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 196.6,
+   "marker_dets": [
+    46,
+    43,
+    59,
+    68,
+    66
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.1,
+   "slam": {
+    "coverage": 0.7381599378881988,
+    "acc_median": 0.15984609012819107,
+    "acc_p95": 0.8710682718133294,
+    "nees_mean": 4.983681148675614,
+    "nees_le_7_81": 0.6345177664974619,
+    "datum_err_m": 0.32664436433321664,
+    "nav_err_median": 0.5381468319531766,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7600931677018633,
+    "acc_median": 0.10293123953695593,
+    "acc_p95": 0.6893942570350748,
+    "nees_mean": 4.05936177802375,
+    "nees_le_7_81": 0.7360406091370558,
+    "datum_err_m": 0.23186125662420137,
+    "nav_err_median": 0.5114797747480871,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9951475155279503,
+    "acc_median": 0.04633434098584033,
+    "acc_p95": 0.14199552253741848,
+    "nees_mean": 3.8703994866343234,
+    "nees_le_7_81": 0.8883248730964467,
+    "datum_err_m": 0.047176582576794836,
+    "nav_err_median": 0.14609220331503575,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 42
+   },
+   "pad_m5": {
+    "coverage": 0.9916537267080745,
+    "acc_median": 0.04302280778973833,
+    "acc_p95": 0.1315486793193122,
+    "nees_mean": 3.7594585896973483,
+    "nees_le_7_81": 0.9035532994923858,
+    "datum_err_m": 0.03643314832199497,
+    "nav_err_median": 0.0940894386951469,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 82
+   },
+   "relative": {
+    "coverage": 0.7162267080745341,
+    "acc_median": 0.14731872080403274,
+    "acc_p95": 0.6761315647762343,
+    "nees_mean": 5.952164076023444,
+    "nees_le_7_81": 0.6751269035532995,
+    "datum_err_m": 0.33620545835280186,
+    "nav_err_median": 0.4511879521140998,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 6,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 215.5,
+   "marker_dets": [
+    79,
+    85,
+    92,
+    92,
+    90
+   ],
+   "false_matches": 12,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.9,
+   "slam": {
+    "coverage": 0.7600644122383253,
+    "acc_median": 0.19509302027096975,
+    "acc_p95": 0.49208511282176165,
+    "nees_mean": 4.757318680483233,
+    "nees_le_7_81": 0.8333333333333334,
+    "datum_err_m": 0.5226873996437638,
+    "nav_err_median": 0.6217441129991674,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.910426731078905,
+    "acc_median": 0.10365965868556781,
+    "acc_p95": 0.24548496874429301,
+    "nees_mean": 2.7995183118490115,
+    "nees_le_7_81": 0.9074074074074074,
+    "datum_err_m": 0.2762717788555625,
+    "nav_err_median": 0.4675213042555588,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9526972624798712,
+    "acc_median": 0.09250787213359768,
+    "acc_p95": 0.1839610204026485,
+    "nees_mean": 6.9240067917631904,
+    "nees_le_7_81": 0.6574074074074074,
+    "datum_err_m": 0.12913084132128136,
+    "nav_err_median": 0.24901573771236973,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 89
+   },
+   "pad_m5": {
+    "coverage": 0.9541062801932367,
+    "acc_median": 0.09891231082517526,
+    "acc_p95": 0.19460425841535658,
+    "nees_mean": 7.9338808984046,
+    "nees_le_7_81": 0.6435185185185185,
+    "datum_err_m": 0.12909217140981347,
+    "nav_err_median": 0.2414132701034115,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 148
+   },
+   "relative": {
+    "coverage": 0.6060789049919485,
+    "acc_median": 0.16377074704885697,
+    "acc_p95": 0.6148729242398595,
+    "nees_mean": 5.142791864312384,
+    "nees_le_7_81": 0.8888888888888888,
+    "datum_err_m": 0.47511291909828857,
+    "nav_err_median": 0.5803898068966599,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 7,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 230.9,
+   "marker_dets": [
+    95,
+    100,
+    96,
+    67,
+    77
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.4,
+   "slam": {
+    "coverage": 0.896551724137931,
+    "acc_median": 0.11617960899339685,
+    "acc_p95": 0.48940940778152764,
+    "nees_mean": 2.3676129785919233,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.21426972128108784,
+    "nav_err_median": 0.5573548176187499,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.6957403651115619,
+    "acc_median": 0.1599937862138039,
+    "acc_p95": 0.5294490366842903,
+    "nees_mean": 4.001985903655544,
+    "nees_le_7_81": 0.9567099567099567,
+    "datum_err_m": 0.08846010917425827,
+    "nav_err_median": 0.6055428905697136,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.876605814739689,
+    "acc_median": 0.06378259064791303,
+    "acc_p95": 0.4318843924299626,
+    "nees_mean": 3.0114521903451172,
+    "nees_le_7_81": 0.9307359307359307,
+    "datum_err_m": 0.0840582008129934,
+    "nav_err_median": 0.2511818936872601,
+    "gate_rejects": 29,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 61
+   },
+   "pad_m5": {
+    "coverage": 0.9014536849222448,
+    "acc_median": 0.0543804564496746,
+    "acc_p95": 0.41322633636135997,
+    "nees_mean": 3.262883276435447,
+    "nees_le_7_81": 0.8917748917748918,
+    "datum_err_m": 0.08860457289685367,
+    "nav_err_median": 0.2514096827494715,
+    "gate_rejects": 37,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 116
+   },
+   "relative": {
+    "coverage": 0.594658553076403,
+    "acc_median": 0.2943663109542678,
+    "acc_p95": 0.5022281418836302,
+    "nees_mean": 5.3683001750331,
+    "nees_le_7_81": 0.8138528138528138,
+    "datum_err_m": 0.42643075777304595,
+    "nav_err_median": 0.6418704424697861,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 8,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 221.9,
+   "marker_dets": [
+    95,
+    81,
+    71,
+    98,
+    77
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.6,
+   "slam": {
+    "coverage": 0.6135057471264368,
+    "acc_median": 0.28021734356975525,
+    "acc_p95": 0.5686617173434325,
+    "nees_mean": 4.281711110169506,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4397020778478457,
+    "nav_err_median": 0.6378969309585921,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9669540229885057,
+    "acc_median": 0.10321926645633717,
+    "acc_p95": 0.22180429027741225,
+    "nees_mean": 1.968476155057581,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.35574675284566987,
+    "nav_err_median": 0.4329660072874456,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9872485632183908,
+    "acc_median": 0.0579270814388142,
+    "acc_p95": 0.13409751758556906,
+    "nees_mean": 3.0934239147113964,
+    "nees_le_7_81": 0.9774774774774775,
+    "datum_err_m": 0.13990897475588118,
+    "nav_err_median": 0.287052644430695,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 93
+   },
+   "pad_m5": {
+    "coverage": 0.9879669540229885,
+    "acc_median": 0.04854424024941206,
+    "acc_p95": 0.20462227983673711,
+    "nees_mean": 3.13841970979986,
+    "nees_le_7_81": 0.954954954954955,
+    "datum_err_m": 0.13181965073951407,
+    "nav_err_median": 0.2801492307604303,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 151
+   },
+   "relative": {
+    "coverage": 0.524066091954023,
+    "acc_median": 0.32840354707915953,
+    "acc_p95": 0.4838989131341143,
+    "nees_mean": 3.4836092267667027,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4075566083376796,
+    "nav_err_median": 0.5299460395485707,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 9,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 226.8,
+   "marker_dets": [
+    111,
+    128,
+    154,
+    124,
+    145
+   ],
+   "false_matches": 18,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 7.6,
+   "slam": {
+    "coverage": 0.9615231259968102,
+    "acc_median": 0.13596395649374848,
+    "acc_p95": 0.34566270213726025,
+    "nees_mean": 1.701807388631517,
+    "nees_le_7_81": 0.9515418502202643,
+    "datum_err_m": 0.24433769083069068,
+    "nav_err_median": 0.3042237275100366,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.905103668261563,
+    "acc_median": 0.16432475837146798,
+    "acc_p95": 0.3887181461937134,
+    "nees_mean": 2.8598589788789592,
+    "nees_le_7_81": 0.933920704845815,
+    "datum_err_m": 0.24875744373906566,
+    "nav_err_median": 0.39623077436805526,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9976076555023924,
+    "acc_median": 0.040235403884823384,
+    "acc_p95": 0.12992977795357394,
+    "nees_mean": 2.338191838130766,
+    "nees_le_7_81": 0.973568281938326,
+    "datum_err_m": 0.034988989277938344,
+    "nav_err_median": 0.09037019046229727,
+    "gate_rejects": 39,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 87
+   },
+   "pad_m5": {
+    "coverage": 0.9986044657097288,
+    "acc_median": 0.03468699408643161,
+    "acc_p95": 0.11035805485858519,
+    "nees_mean": 2.2916693426201893,
+    "nees_le_7_81": 0.973568281938326,
+    "datum_err_m": 0.02983884799839474,
+    "nav_err_median": 0.06203139526924708,
+    "gate_rejects": 39,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 171
+   },
+   "relative": {
+    "coverage": 0.7320574162679426,
+    "acc_median": 0.17396232900826747,
+    "acc_p95": 0.5568822495545349,
+    "nees_mean": 3.8279652226694587,
+    "nees_le_7_81": 0.9295154185022027,
+    "datum_err_m": 0.31954018397269207,
+    "nav_err_median": 0.44439964099504287,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 10,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 198.7,
+   "marker_dets": [
+    43,
+    49,
+    49,
+    27,
+    60
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 4.3,
+   "slam": {
+    "coverage": 0.7779017857142857,
+    "acc_median": 0.11889080859571921,
+    "acc_p95": 0.4152406239431235,
+    "nees_mean": 2.416395421625018,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.469658886269174,
+    "nav_err_median": 0.45107909582016276,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9854910714285714,
+    "acc_median": 0.05478026424742177,
+    "acc_p95": 0.23115845074184369,
+    "nees_mean": 1.3401291357841538,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2780559410492554,
+    "nav_err_median": 0.3286814883953442,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9973214285714286,
+    "acc_median": 0.06156902363401251,
+    "acc_p95": 0.15239068184706417,
+    "nees_mean": 2.8739035648910334,
+    "nees_le_7_81": 0.949748743718593,
+    "datum_err_m": 0.06464976937108816,
+    "nav_err_median": 0.12093154746584914,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 54
+   },
+   "pad_m5": {
+    "coverage": 0.9970982142857143,
+    "acc_median": 0.03585275117824249,
+    "acc_p95": 0.10646705591174221,
+    "nees_mean": 2.495759511966342,
+    "nees_le_7_81": 0.964824120603015,
+    "datum_err_m": 0.01250084681295295,
+    "nav_err_median": 0.08437941093930222,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 85
+   },
+   "relative": {
+    "coverage": 0.9622767857142858,
+    "acc_median": 0.12452050134708977,
+    "acc_p95": 0.22426051059226326,
+    "nees_mean": 2.1382134394669494,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3388717533619087,
+    "nav_err_median": 0.3826791493639848,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 11,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 129.1,
+   "marker_dets": [
+    26,
+    23,
+    25,
+    31,
+    31
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 3.5,
+   "slam": {
+    "coverage": 0.5786445012787724,
+    "acc_median": 0.24997719891719328,
+    "acc_p95": 0.5475651057275097,
+    "nees_mean": 3.0779523541368627,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5964158054281864,
+    "nav_err_median": 0.6195540263234718,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.6873401534526854,
+    "acc_median": 0.1709912535021667,
+    "acc_p95": 0.42631839307251834,
+    "nees_mean": 2.8516244442884338,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5008032563007285,
+    "nav_err_median": 0.5495467285857605,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9980818414322251,
+    "acc_median": 0.04664150496038255,
+    "acc_p95": 0.13272935546906206,
+    "nees_mean": 1.8632409047387648,
+    "nees_le_7_81": 0.9922480620155039,
+    "datum_err_m": 0.10098076092349027,
+    "nav_err_median": 0.1451942163652834,
+    "gate_rejects": 7,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 22
+   },
+   "pad_m5": {
+    "coverage": 0.9971227621483376,
+    "acc_median": 0.03810660039433422,
+    "acc_p95": 0.12855252580138607,
+    "nees_mean": 1.7855894954957747,
+    "nees_le_7_81": 0.9922480620155039,
+    "datum_err_m": 0.02275209253261273,
+    "nav_err_median": 0.08194539733992709,
+    "gate_rejects": 5,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 43
+   },
+   "relative": {
+    "coverage": 0.8596547314578005,
+    "acc_median": 0.23536321465333288,
+    "acc_p95": 0.3520999467290736,
+    "nees_mean": 5.170793516526389,
+    "nees_le_7_81": 0.875968992248062,
+    "datum_err_m": 0.6308566515567836,
+    "nav_err_median": 0.6978572864340818,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 195.3,
+   "marker_dets": [
+    254,
+    323,
+    450,
+    317,
+    258
+   ],
+   "false_matches": 50,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 27.7,
+   "slam": {
+    "coverage": 0.9687576275323407,
+    "acc_median": 0.03717523874275663,
+    "acc_p95": 0.12082904400789357,
+    "nees_mean": 1.4251202267076424,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.44781510973926486,
+    "nav_err_median": 0.41539695823776396,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9714425189162802,
+    "acc_median": 0.03435753635355798,
+    "acc_p95": 0.11210468991498564,
+    "nees_mean": 1.4372828179093442,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4264132017945212,
+    "nav_err_median": 0.4110299936822196,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9915792042958262,
+    "acc_median": 0.032746325131940424,
+    "acc_p95": 0.10714107541065834,
+    "nees_mean": 1.4519632843446004,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.019487678103290777,
+    "nav_err_median": 0.07247878049764044,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 292
+   },
+   "pad_m5": {
+    "coverage": 0.9930436905052478,
+    "acc_median": 0.03164001799856209,
+    "acc_p95": 0.10486452012156079,
+    "nees_mean": 1.4948656590543816,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.015492546101518295,
+    "nav_err_median": 0.06736940026806071,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 475
+   },
+   "relative": {
+    "coverage": 0.6551134976812302,
+    "acc_median": 0.3039808117124672,
+    "acc_p95": 0.3882678424827865,
+    "nees_mean": 1.6386592901890653,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.48020530127511746,
+    "nav_err_median": 0.42212905334133477,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 165.9,
+   "marker_dets": [
+    143,
+    178,
+    211,
+    250,
+    146
+   ],
+   "false_matches": 30,
+   "pad_gap_up_s": 12.6,
+   "pad_gap_down_s": 22.7,
+   "slam": {
+    "coverage": 0.07131925313743495,
+    "acc_median": 0.36712257126018555,
+    "acc_p95": 0.4516210075492974,
+    "nees_mean": 4.050201611238584,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5366260516180721,
+    "nav_err_median": 0.7510663843399974,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8576675849403123,
+    "acc_median": 0.2259924066632948,
+    "acc_p95": 0.3158776112687193,
+    "nees_mean": 2.988066635709227,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4743291443286995,
+    "nav_err_median": 0.6928760501966202,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9599020508111418,
+    "acc_median": 0.0433558431683041,
+    "acc_p95": 0.11821368449848284,
+    "nees_mean": 2.3941172219979703,
+    "nees_le_7_81": 0.9819277108433735,
+    "datum_err_m": 0.059556943214327536,
+    "nav_err_median": 0.13316308639174196,
+    "gate_rejects": 8,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 126
+   },
+   "pad_m5": {
+    "coverage": 0.9620446893174166,
+    "acc_median": 0.03660475505681848,
+    "acc_p95": 0.10956680876235896,
+    "nees_mean": 2.30045428882059,
+    "nees_le_7_81": 0.9578313253012049,
+    "datum_err_m": 0.05169759550207282,
+    "nav_err_median": 0.11591709256343605,
+    "gate_rejects": 21,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 252
+   },
+   "relative": {
+    "coverage": 0.9345985103560861,
+    "acc_median": 0.07790935410755812,
+    "acc_p95": 0.167657591324506,
+    "nees_mean": 3.7218563016389115,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.48861020286435364,
+    "nav_err_median": 0.7202513031509963,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 170.5,
+   "marker_dets": [
+    277,
+    249,
+    491,
+    284,
+    304
+   ],
+   "false_matches": 54,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 30.2,
+   "slam": {
+    "coverage": 0.13352272727272727,
+    "acc_median": 0.35833293847632497,
+    "acc_p95": 0.45401993387170697,
+    "nees_mean": 5.835617527274246,
+    "nees_le_7_81": 0.7426900584795322,
+    "datum_err_m": 0.7301147946396553,
+    "nav_err_median": 0.8498211784811806,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.34459175084175087,
+    "acc_median": 0.323620983914382,
+    "acc_p95": 0.42186096883988167,
+    "nees_mean": 5.4577840511875255,
+    "nees_le_7_81": 0.7602339181286549,
+    "datum_err_m": 0.6882422539322927,
+    "nav_err_median": 0.7809963630040224,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9820075757575758,
+    "acc_median": 0.03778932323539452,
+    "acc_p95": 0.1178300487822861,
+    "nees_mean": 2.115488873002652,
+    "nees_le_7_81": 0.9941520467836257,
+    "datum_err_m": 0.02832966682755139,
+    "nav_err_median": 0.07158449325832038,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 310
+   },
+   "pad_m5": {
+    "coverage": 0.9834806397306397,
+    "acc_median": 0.037612198935453645,
+    "acc_p95": 0.11446212318521498,
+    "nees_mean": 2.678620673027709,
+    "nees_le_7_81": 0.9649122807017544,
+    "datum_err_m": 0.01763776008196846,
+    "nav_err_median": 0.061780721473782885,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 486
+   },
+   "relative": {
+    "coverage": 0.9380260942760943,
+    "acc_median": 0.06381525827267343,
+    "acc_p95": 0.16474403537023985,
+    "nees_mean": 6.756630697648423,
+    "nees_le_7_81": 0.6549707602339181,
+    "datum_err_m": 0.7658161105465329,
+    "nav_err_median": 0.8350121394563742,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 188.1,
+   "marker_dets": [
+    237,
+    467,
+    327,
+    449,
+    267
+   ],
+   "false_matches": 43,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 26.8,
+   "slam": {
+    "coverage": 0.044,
+    "acc_median": 0.39603696975158975,
+    "acc_p95": 0.4880697928082878,
+    "nees_mean": 7.574896920556435,
+    "nees_le_7_81": 0.6223404255319149,
+    "datum_err_m": 1.1116991957632658,
+    "nav_err_median": 1.1243238671258604,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.004363636363636364,
+    "acc_median": 0.46798037990713226,
+    "acc_p95": 0.5684279435947173,
+    "nees_mean": 8.44185901355479,
+    "nees_le_7_81": 0.39893617021276595,
+    "datum_err_m": 1.0641805441009264,
+    "nav_err_median": 1.070156470032046,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9861818181818182,
+    "acc_median": 0.040406489828004766,
+    "acc_p95": 0.12351284978126978,
+    "nees_mean": 9.558711283109554,
+    "nees_le_7_81": 0.3617021276595745,
+    "datum_err_m": 0.2975418579416541,
+    "nav_err_median": 0.31573820277941567,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 321
+   },
+   "pad_m5": {
+    "coverage": 0.9938181818181818,
+    "acc_median": 0.03902652702076903,
+    "acc_p95": 0.11963662094300664,
+    "nees_mean": 7.18691057327835,
+    "nees_le_7_81": 0.5585106382978723,
+    "datum_err_m": 0.1777234746805455,
+    "nav_err_median": 0.20783033481211416,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 541
+   },
+   "relative": {
+    "coverage": 0.014545454545454545,
+    "acc_median": 0.4365533467990943,
+    "acc_p95": 0.532209425706527,
+    "nees_mean": 9.90137037044055,
+    "nees_le_7_81": 0.13297872340425532,
+    "datum_err_m": 1.2293984058578051,
+    "nav_err_median": 1.225361856141032,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 140.2,
+   "marker_dets": [
+    162,
+    317,
+    396,
+    271,
+    152
+   ],
+   "false_matches": 36,
+   "pad_gap_up_s": 12.9,
+   "pad_gap_down_s": 29.6,
+   "slam": {
+    "coverage": 0.22105263157894736,
+    "acc_median": 0.3340474448270472,
+    "acc_p95": 0.4107795271009619,
+    "nees_mean": 2.864881353022651,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5816527908061424,
+    "nav_err_median": 0.5671221301856828,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9140350877192982,
+    "acc_median": 0.21567169076277937,
+    "acc_p95": 0.2897871392181324,
+    "nees_mean": 1.6519009000713865,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4226871768453086,
+    "nav_err_median": 0.4805631261266604,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9617794486215538,
+    "acc_median": 0.03951604633391348,
+    "acc_p95": 0.11137992245749828,
+    "nees_mean": 2.461457134176158,
+    "nees_le_7_81": 0.9857142857142858,
+    "datum_err_m": 0.03198089161558133,
+    "nav_err_median": 0.07916203949891557,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 267
+   },
+   "pad_m5": {
+    "coverage": 0.9627819548872181,
+    "acc_median": 0.03301175639829168,
+    "acc_p95": 0.10368205770157841,
+    "nees_mean": 1.7422769078714095,
+    "nees_le_7_81": 0.9857142857142858,
+    "datum_err_m": 0.023774228941046995,
+    "nav_err_median": 0.06021740763440145,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 409
+   },
+   "relative": {
+    "coverage": 0.9295739348370927,
+    "acc_median": 0.19544192163580104,
+    "acc_p95": 0.27437262490147124,
+    "nees_mean": 3.8441195770262393,
+    "nees_le_7_81": 0.9357142857142857,
+    "datum_err_m": 0.6664144055676389,
+    "nav_err_median": 0.6574135806894095,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 177.1,
+   "marker_dets": [
+    199,
+    319,
+    417,
+    323,
+    188
+   ],
+   "false_matches": 39,
+   "pad_gap_up_s": 11.8,
+   "pad_gap_down_s": 30.1,
+   "slam": {
+    "coverage": 0.9601795822760102,
+    "acc_median": 0.08755792839278032,
+    "acc_p95": 0.17559956737398508,
+    "nees_mean": 2.6203837185866132,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.6982340695617809,
+    "nav_err_median": 0.720886091828783,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9591059925824712,
+    "acc_median": 0.08005729618215573,
+    "acc_p95": 0.16755619905729827,
+    "nees_mean": 2.2079157536795666,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.584585299835323,
+    "nav_err_median": 0.6414852870714038,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9752098379855554,
+    "acc_median": 0.037121038404807294,
+    "acc_p95": 0.11018045677680194,
+    "nees_mean": 1.91703354567112,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.06736982384472888,
+    "nav_err_median": 0.08993966751925364,
+    "gate_rejects": 2,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 194
+   },
+   "pad_m5": {
+    "coverage": 0.9757954323638494,
+    "acc_median": 0.030704932905260662,
+    "acc_p95": 0.0990890138959715,
+    "nees_mean": 1.4127891713891776,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.02901403439134224,
+    "nav_err_median": 0.06572281810858081,
+    "gate_rejects": 3,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 351
+   },
+   "relative": {
+    "coverage": 0.27835252781573294,
+    "acc_median": 0.33988211017489933,
+    "acc_p95": 0.4212018391455958,
+    "nees_mean": 3.931080856347362,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.7897083191316295,
+    "nav_err_median": 0.8199014979070988,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 6,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 174.4,
+   "marker_dets": [
+    283,
+    355,
+    486,
+    398,
+    268
+   ],
+   "false_matches": 48,
+   "pad_gap_up_s": 12.7,
+   "pad_gap_down_s": 30.7,
+   "slam": {
+    "coverage": 0.03896238114923522,
+    "acc_median": 0.394250817328051,
+    "acc_p95": 0.4749909003691248,
+    "nees_mean": 3.024703591256186,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4019113448471842,
+    "nav_err_median": 0.49035405170267654,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8813559322033898,
+    "acc_median": 0.23778851331549866,
+    "acc_p95": 0.3312061972289101,
+    "nees_mean": 1.40271835886916,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.25604261954249835,
+    "nav_err_median": 0.3500242221748486,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9741628772219926,
+    "acc_median": 0.03783353617124252,
+    "acc_p95": 0.11441052639328417,
+    "nees_mean": 2.0585115814032044,
+    "nees_le_7_81": 0.9885714285714285,
+    "datum_err_m": 0.028741954998197518,
+    "nav_err_median": 0.0734300029909972,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 335
+   },
+   "pad_m5": {
+    "coverage": 0.9719925589086399,
+    "acc_median": 0.034070870024554445,
+    "acc_p95": 0.10747040224986566,
+    "nees_mean": 1.915099232838531,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.036827723138281726,
+    "nav_err_median": 0.06294125906523404,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 538
+   },
+   "relative": {
+    "coverage": 0.002997106242248863,
+    "acc_median": 0.46266398917757456,
+    "acc_p95": 0.5617666156510808,
+    "nees_mean": 5.1337780403876865,
+    "nees_le_7_81": 0.9657142857142857,
+    "datum_err_m": 0.5156984893756026,
+    "nav_err_median": 0.5886800344333426,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 7,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 196.9,
+   "marker_dets": [
+    282,
+    430,
+    530,
+    433,
+    355
+   ],
+   "false_matches": 42,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 31.7,
+   "slam": {
+    "coverage": 0.0,
+    "acc_median": 0.6389779075610278,
+    "acc_p95": 0.7207695263850162,
+    "nees_mean": 8.512368218659837,
+    "nees_le_7_81": 0.39086294416243655,
+    "datum_err_m": 0.8369165429877352,
+    "nav_err_median": 0.8313686866868866,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.0019229008332570278,
+    "acc_median": 0.4828727631981451,
+    "acc_p95": 0.572456273864401,
+    "nees_mean": 5.9701494870030425,
+    "nees_le_7_81": 0.817258883248731,
+    "datum_err_m": 0.7020261975550594,
+    "nav_err_median": 0.7170468825511279,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.972346854683637,
+    "acc_median": 0.03319658691337235,
+    "acc_p95": 0.10882662475961799,
+    "nees_mean": 1.3683309203601568,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.038932697063390476,
+    "nav_err_median": 0.07315198914544303,
+    "gate_rejects": 48,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 257
+   },
+   "pad_m5": {
+    "coverage": 0.9763757897628422,
+    "acc_median": 0.035128199242160374,
+    "acc_p95": 0.11373948961978488,
+    "nees_mean": 2.461426399975644,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.043939523891096025,
+    "nav_err_median": 0.06988786018146344,
+    "gate_rejects": 84,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 492
+   },
+   "relative": {
+    "coverage": 0.8817873821078656,
+    "acc_median": 0.2520617259950718,
+    "acc_p95": 0.3366725934638123,
+    "nees_mean": 8.043984437538713,
+    "nees_le_7_81": 0.5583756345177665,
+    "datum_err_m": 0.8152092296013224,
+    "nav_err_median": 0.8090117513395497,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 8,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 194.1,
+   "marker_dets": [
+    279,
+    374,
+    312,
+    321,
+    318
+   ],
+   "false_matches": 48,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 28.4,
+   "slam": {
+    "coverage": 0.9589871955328776,
+    "acc_median": 0.10199566578640962,
+    "acc_p95": 0.19619632563529657,
+    "nees_mean": 2.726471042191577,
+    "nees_le_7_81": 0.9432989690721649,
+    "datum_err_m": 0.5821308670487984,
+    "nav_err_median": 0.6949044990912852,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9492635024549918,
+    "acc_median": 0.07062108671772549,
+    "acc_p95": 0.16418792424325704,
+    "nees_mean": 2.1210421526361163,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5841394000260552,
+    "nav_err_median": 0.7111817231799753,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9787234042553191,
+    "acc_median": 0.03728184051483474,
+    "acc_p95": 0.11389548969755836,
+    "nees_mean": 1.9181325481479088,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.01790019644939419,
+    "nav_err_median": 0.0823828382279792,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 294
+   },
+   "pad_m5": {
+    "coverage": 0.9779532107441995,
+    "acc_median": 0.03336817734565889,
+    "acc_p95": 0.10796804552476427,
+    "nees_mean": 1.6853753788770405,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.020102433819151007,
+    "nav_err_median": 0.06264121817901955,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 485
+   },
+   "relative": {
+    "coverage": 0.9238471165880427,
+    "acc_median": 0.16284698284972107,
+    "acc_p95": 0.2660499286671336,
+    "nees_mean": 3.447378993727504,
+    "nees_le_7_81": 0.9278350515463918,
+    "datum_err_m": 0.6753592760786549,
+    "nav_err_median": 0.7456264774218857,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 9,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 183.1,
+   "marker_dets": [
+    360,
+    386,
+    349,
+    356,
+    339
+   ],
+   "false_matches": 41,
+   "pad_gap_up_s": 13.0,
+   "pad_gap_down_s": 25.7,
+   "slam": {
+    "coverage": 0.6470800288392213,
+    "acc_median": 0.29316531336359297,
+    "acc_p95": 0.38100294755486425,
+    "nees_mean": 2.5529093580766666,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4550102201867381,
+    "nav_err_median": 0.5392107106678604,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9455659697188176,
+    "acc_median": 0.21250894064840864,
+    "acc_p95": 0.30094060766177766,
+    "nees_mean": 1.8823977068458777,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.35997988266993497,
+    "nav_err_median": 0.475228576714997,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9859408795962509,
+    "acc_median": 0.03819750660279553,
+    "acc_p95": 0.1136060104092303,
+    "nees_mean": 9.218746908562407,
+    "nees_le_7_81": 0.5300546448087432,
+    "datum_err_m": 0.27454889146097655,
+    "nav_err_median": 0.27320450663683316,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 333
+   },
+   "pad_m5": {
+    "coverage": 0.9882239846190819,
+    "acc_median": 0.033657729685801385,
+    "acc_p95": 0.1082479401641385,
+    "nees_mean": 5.250478247929526,
+    "nees_le_7_81": 0.7868852459016393,
+    "datum_err_m": 0.16457809932336268,
+    "nav_err_median": 0.16963122026109037,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 552
+   },
+   "relative": {
+    "coverage": 0.9652727709685172,
+    "acc_median": 0.13973636363593978,
+    "acc_p95": 0.22682892789902379,
+    "nees_mean": 3.3938121555348437,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5229390506126983,
+    "nav_err_median": 0.5716752567927859,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 10,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 193.6,
+   "marker_dets": [
+    185,
+    324,
+    377,
+    296,
+    192
+   ],
+   "false_matches": 25,
+   "pad_gap_up_s": 11.1,
+   "pad_gap_down_s": 30.4,
+   "slam": {
+    "coverage": 0.9704075935231714,
+    "acc_median": 0.10778816720107098,
+    "acc_p95": 0.18483064425947227,
+    "nees_mean": 1.828332612585466,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.32451234749423485,
+    "nav_err_median": 0.5542708508188833,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.958961474036851,
+    "acc_median": 0.040535191064771325,
+    "acc_p95": 0.1125341657096599,
+    "nees_mean": 1.463543599571644,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.29789728242031327,
+    "nav_err_median": 0.48847911142852896,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9860413176996091,
+    "acc_median": 0.032616001318768184,
+    "acc_p95": 0.10284714394172557,
+    "nees_mean": 1.9611837768954818,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.04166362689234877,
+    "nav_err_median": 0.09622742655212504,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 287
+   },
+   "pad_m5": {
+    "coverage": 0.9887399962776847,
+    "acc_median": 0.03475490476981857,
+    "acc_p95": 0.10595626297572698,
+    "nees_mean": 2.7723094045283485,
+    "nees_le_7_81": 0.9690721649484536,
+    "datum_err_m": 0.030326099306293597,
+    "nav_err_median": 0.0746448830745026,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 447
+   },
+   "relative": {
+    "coverage": 0.0,
+    "acc_median": 0.756860520473329,
+    "acc_p95": 0.8335986693393975,
+    "nees_mean": 2.2884310554170826,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.364553581040598,
+    "nav_err_median": 0.5260537262038656,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 11,
+   "template": "lawnmower",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 166.1,
+   "marker_dets": [
+    187,
+    270,
+    363,
+    286,
+    156
+   ],
+   "false_matches": 32,
+   "pad_gap_up_s": 11.1,
+   "pad_gap_down_s": 28.7,
+   "slam": {
+    "coverage": 0.9450459652706844,
+    "acc_median": 0.06749897100407765,
+    "acc_p95": 0.14936439012077907,
+    "nees_mean": 4.569563060495274,
+    "nees_le_7_81": 0.7771084337349398,
+    "datum_err_m": 0.9347102799099488,
+    "nav_err_median": 0.8859899580773423,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.92829417773238,
+    "acc_median": 0.03286387470501406,
+    "acc_p95": 0.10604768255015627,
+    "nees_mean": 4.032382800866337,
+    "nees_le_7_81": 0.7831325301204819,
+    "datum_err_m": 0.860190857983497,
+    "nav_err_median": 0.8070355577326622,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9784473953013278,
+    "acc_median": 0.03174070591096445,
+    "acc_p95": 0.1014479579168178,
+    "nees_mean": 1.2963678150999831,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.029046052033834743,
+    "nav_err_median": 0.07303588620043051,
+    "gate_rejects": 86,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 183
+   },
+   "pad_m5": {
+    "coverage": 0.9785495403472931,
+    "acc_median": 0.030149094350383265,
+    "acc_p95": 0.09806117477935032,
+    "nees_mean": 1.288453492353111,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.01672075096457767,
+    "nav_err_median": 0.06318264319087222,
+    "gate_rejects": 88,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 330
+   },
+   "relative": {
+    "coverage": 0.9661899897854954,
+    "acc_median": 0.12121664372658664,
+    "acc_p95": 0.18903743845519555,
+    "nees_mean": 5.030241841287969,
+    "nees_le_7_81": 0.7771084337349398,
+    "datum_err_m": 0.9858979509124985,
+    "nav_err_median": 0.8965202171657998,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 244.8,
+   "marker_dets": [
+    123,
+    126,
+    138,
+    124,
+    134
+   ],
+   "false_matches": 10,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 8.1,
+   "slam": {
+    "coverage": 0.9647840531561461,
+    "acc_median": 0.07016173756017219,
+    "acc_p95": 0.16986746090126292,
+    "nees_mean": 1.4426947658368021,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.308817080180805,
+    "nav_err_median": 0.2838080722787122,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9704318936877077,
+    "acc_median": 0.07213636849649152,
+    "acc_p95": 0.16480967187942744,
+    "nees_mean": 1.3800686366227632,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2897445429422902,
+    "nav_err_median": 0.28882693769655843,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.998671096345515,
+    "acc_median": 0.029380786751415755,
+    "acc_p95": 0.11073714663234754,
+    "nees_mean": 2.0917052342776628,
+    "nees_le_7_81": 0.9714285714285714,
+    "datum_err_m": 0.03308478442754021,
+    "nav_err_median": 0.07364635936650563,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 130
+   },
+   "pad_m5": {
+    "coverage": 0.9976744186046511,
+    "acc_median": 0.02431531095107564,
+    "acc_p95": 0.08589732078996702,
+    "nees_mean": 1.7634403417110596,
+    "nees_le_7_81": 0.9795918367346939,
+    "datum_err_m": 0.011037786785562363,
+    "nav_err_median": 0.049680991405482176,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 214
+   },
+   "relative": {
+    "coverage": 0.9511627906976744,
+    "acc_median": 0.17590468882839527,
+    "acc_p95": 0.2816176242961321,
+    "nees_mean": 1.4776996532155522,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2955221805447614,
+    "nav_err_median": 0.2749042106003203,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 236.5,
+   "marker_dets": [
+    81,
+    94,
+    86,
+    71,
+    74
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.9,
+   "slam": {
+    "coverage": 0.6252620545073375,
+    "acc_median": 0.28266619063363585,
+    "acc_p95": 0.4808302798395516,
+    "nees_mean": 3.160239810299075,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3870043349736973,
+    "nav_err_median": 0.5126881000377378,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9353598881900769,
+    "acc_median": 0.06771859557085635,
+    "acc_p95": 0.16131845432085368,
+    "nees_mean": 1.0961501839748422,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.23346513049583162,
+    "nav_err_median": 0.30091713193345376,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9902166317260657,
+    "acc_median": 0.049380077634063824,
+    "acc_p95": 0.14895243017440496,
+    "nees_mean": 2.9157338414844847,
+    "nees_le_7_81": 0.890295358649789,
+    "datum_err_m": 0.04336967454198214,
+    "nav_err_median": 0.12463813614947321,
+    "gate_rejects": 22,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 52
+   },
+   "pad_m5": {
+    "coverage": 0.9870719776380154,
+    "acc_median": 0.060061142127544986,
+    "acc_p95": 0.1669721649327528,
+    "nees_mean": 4.0598913064191935,
+    "nees_le_7_81": 0.8438818565400844,
+    "datum_err_m": 0.04710525104420564,
+    "nav_err_median": 0.13033599877698762,
+    "gate_rejects": 24,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 106
+   },
+   "relative": {
+    "coverage": 0.8282669461914745,
+    "acc_median": 0.12355383585812962,
+    "acc_p95": 0.6189616464302405,
+    "nees_mean": 3.2502647347625375,
+    "nees_le_7_81": 0.9789029535864979,
+    "datum_err_m": 0.3423489923436517,
+    "nav_err_median": 0.46950028275848904,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 218.9,
+   "marker_dets": [
+    91,
+    87,
+    90,
+    90,
+    76
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.4,
+   "slam": {
+    "coverage": 0.6333586626139818,
+    "acc_median": 0.1995258007223164,
+    "acc_p95": 0.7603617274403729,
+    "nees_mean": 5.199064538733887,
+    "nees_le_7_81": 0.8995433789954338,
+    "datum_err_m": 0.2938463678333104,
+    "nav_err_median": 0.6741123417023253,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8282674772036475,
+    "acc_median": 0.08677262529109653,
+    "acc_p95": 0.48151453244508385,
+    "nees_mean": 2.5535345760312786,
+    "nees_le_7_81": 0.9908675799086758,
+    "datum_err_m": 0.16949764214294932,
+    "nav_err_median": 0.40564178026855185,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9876519756838906,
+    "acc_median": 0.05319367494485938,
+    "acc_p95": 0.1277949792852573,
+    "nees_mean": 2.660155526398104,
+    "nees_le_7_81": 0.9178082191780822,
+    "datum_err_m": 0.04916611143043913,
+    "nav_err_median": 0.13073321803844298,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 89
+   },
+   "pad_m5": {
+    "coverage": 0.9905015197568389,
+    "acc_median": 0.04823820358594588,
+    "acc_p95": 0.1288721170960221,
+    "nees_mean": 3.2146189691105347,
+    "nees_le_7_81": 0.8538812785388128,
+    "datum_err_m": 0.040991604521576915,
+    "nav_err_median": 0.13887092975189638,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 147
+   },
+   "relative": {
+    "coverage": 0.8288373860182371,
+    "acc_median": 0.2285036421562867,
+    "acc_p95": 0.8034922866559582,
+    "nees_mean": 4.765325777080556,
+    "nees_le_7_81": 0.91324200913242,
+    "datum_err_m": 0.346393270673742,
+    "nav_err_median": 0.6026762860145009,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 262.8,
+   "marker_dets": [
+    119,
+    132,
+    142,
+    126,
+    110
+   ],
+   "false_matches": 14,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 7.7,
+   "slam": {
+    "coverage": 0.297438330170778,
+    "acc_median": 0.3668437471202388,
+    "acc_p95": 0.5339188791756616,
+    "nees_mean": 5.680747137007487,
+    "nees_le_7_81": 0.870722433460076,
+    "datum_err_m": 0.5316992220667311,
+    "nav_err_median": 0.620537162581464,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.1491144845034788,
+    "acc_median": 0.43581954485535146,
+    "acc_p95": 0.6492523764635331,
+    "nees_mean": 9.510884092198765,
+    "nees_le_7_81": 0.311787072243346,
+    "datum_err_m": 0.6363583202265437,
+    "nav_err_median": 0.6748104768431259,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.99573055028463,
+    "acc_median": 0.03595443381004948,
+    "acc_p95": 0.12358311953225426,
+    "nees_mean": 2.838848793858692,
+    "nees_le_7_81": 0.908745247148289,
+    "datum_err_m": 0.025569654470751758,
+    "nav_err_median": 0.09745316292044116,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 88
+   },
+   "pad_m5": {
+    "coverage": 0.9979443390259329,
+    "acc_median": 0.030285453190811218,
+    "acc_p95": 0.12205754346081843,
+    "nees_mean": 2.9055448338149703,
+    "nees_le_7_81": 0.8973384030418251,
+    "datum_err_m": 0.018876738224702233,
+    "nav_err_median": 0.07766640597152799,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 169
+   },
+   "relative": {
+    "coverage": 0.256483238456673,
+    "acc_median": 0.522891810693479,
+    "acc_p95": 1.0262057222375982,
+    "nees_mean": 5.365764492743865,
+    "nees_le_7_81": 0.870722433460076,
+    "datum_err_m": 0.4883436100558131,
+    "nav_err_median": 0.5633152668799408,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 218.9,
+   "marker_dets": [
+    84,
+    78,
+    67,
+    74,
+    90
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.1,
+   "slam": {
+    "coverage": 0.5944148936170213,
+    "acc_median": 0.18800487612302508,
+    "acc_p95": 0.565944501674565,
+    "nees_mean": 4.84205252010541,
+    "nees_le_7_81": 0.9908675799086758,
+    "datum_err_m": 0.548898095612925,
+    "nav_err_median": 0.6303371358236075,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.6512158054711246,
+    "acc_median": 0.23041119154011103,
+    "acc_p95": 0.47992540923094584,
+    "nees_mean": 4.787817589465445,
+    "nees_le_7_81": 0.9817351598173516,
+    "datum_err_m": 0.48527578763564005,
+    "nav_err_median": 0.5520617176690765,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9918313069908815,
+    "acc_median": 0.0775757424645156,
+    "acc_p95": 0.180512246905134,
+    "nees_mean": 4.417131109966248,
+    "nees_le_7_81": 0.8538812785388128,
+    "datum_err_m": 0.10302910252592662,
+    "nav_err_median": 0.16999169828341443,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 81
+   },
+   "pad_m5": {
+    "coverage": 0.9914513677811551,
+    "acc_median": 0.06612267173143849,
+    "acc_p95": 0.15586646519891015,
+    "nees_mean": 3.505024372207655,
+    "nees_le_7_81": 0.8858447488584474,
+    "datum_err_m": 0.07344751604055326,
+    "nav_err_median": 0.1440631932691923,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 138
+   },
+   "relative": {
+    "coverage": 0.6656534954407295,
+    "acc_median": 0.27571119682331985,
+    "acc_p95": 0.42231392794124284,
+    "nees_mean": 6.443313623755777,
+    "nees_le_7_81": 0.776255707762557,
+    "datum_err_m": 0.5783027214728711,
+    "nav_err_median": 0.635073083104546,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 196.6,
+   "marker_dets": [
+    46,
+    43,
+    59,
+    68,
+    66
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.1,
+   "slam": {
+    "coverage": 0.5145574534161491,
+    "acc_median": 0.2896807871870095,
+    "acc_p95": 0.8592574341787209,
+    "nees_mean": 4.803860108565661,
+    "nees_le_7_81": 0.6954314720812182,
+    "datum_err_m": 0.5878991334586617,
+    "nav_err_median": 0.5962165321669989,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.5394021739130435,
+    "acc_median": 0.20279357266708198,
+    "acc_p95": 0.543198621530645,
+    "nees_mean": 4.338748232659287,
+    "nees_le_7_81": 0.9695431472081218,
+    "datum_err_m": 0.4724310979295792,
+    "nav_err_median": 0.5249245373918549,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9937888198757764,
+    "acc_median": 0.03053511490733385,
+    "acc_p95": 0.11184134962705003,
+    "nees_mean": 1.692428867084755,
+    "nees_le_7_81": 0.9695431472081218,
+    "datum_err_m": 0.025411653212277854,
+    "nav_err_median": 0.10334604463586684,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 42
+   },
+   "pad_m5": {
+    "coverage": 0.9916537267080745,
+    "acc_median": 0.03380806081664822,
+    "acc_p95": 0.10515572322435823,
+    "nees_mean": 2.304250231030235,
+    "nees_le_7_81": 0.9746192893401016,
+    "datum_err_m": 0.03501605254046859,
+    "nav_err_median": 0.08410548664964736,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 82
+   },
+   "relative": {
+    "coverage": 0.9347826086956522,
+    "acc_median": 0.15912659813000385,
+    "acc_p95": 0.28160383660166666,
+    "nees_mean": 7.838586749394182,
+    "nees_le_7_81": 0.41116751269035534,
+    "datum_err_m": 0.6482097641030359,
+    "nav_err_median": 0.6938875565180123,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 6,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 215.5,
+   "marker_dets": [
+    79,
+    85,
+    92,
+    92,
+    90
+   ],
+   "false_matches": 12,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 5.9,
+   "slam": {
+    "coverage": 0.607085346215781,
+    "acc_median": 0.16025216113456953,
+    "acc_p95": 0.7948738798617387,
+    "nees_mean": 8.314156791113348,
+    "nees_le_7_81": 0.4444444444444444,
+    "datum_err_m": 0.7925542903902579,
+    "nav_err_median": 0.8376943208999281,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7288647342995169,
+    "acc_median": 0.11102686333917111,
+    "acc_p95": 0.4735269515920231,
+    "nees_mean": 3.803282204315884,
+    "nees_le_7_81": 0.9722222222222222,
+    "datum_err_m": 0.45900064796938356,
+    "nav_err_median": 0.5006038495215204,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9744363929146538,
+    "acc_median": 0.07969279675203511,
+    "acc_p95": 0.17760994621558007,
+    "nees_mean": 4.508217780317427,
+    "nees_le_7_81": 0.8148148148148148,
+    "datum_err_m": 0.11850357327407225,
+    "nav_err_median": 0.1653641777920859,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 89
+   },
+   "pad_m5": {
+    "coverage": 0.9756441223832528,
+    "acc_median": 0.0765247065276986,
+    "acc_p95": 0.17481953760465974,
+    "nees_mean": 4.679242143568801,
+    "nees_le_7_81": 0.8009259259259259,
+    "datum_err_m": 0.11003274493929649,
+    "nav_err_median": 0.15599009507406225,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 148
+   },
+   "relative": {
+    "coverage": 0.6457326892109501,
+    "acc_median": 0.2209981206008793,
+    "acc_p95": 0.5138132620201623,
+    "nees_mean": 10.336167823502787,
+    "nees_le_7_81": 0.24074074074074073,
+    "datum_err_m": 0.7654704258732061,
+    "nav_err_median": 0.7916718052103331,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 7,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 230.9,
+   "marker_dets": [
+    95,
+    100,
+    96,
+    67,
+    77
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.4,
+   "slam": {
+    "coverage": 0.9050033806626099,
+    "acc_median": 0.15335447746894593,
+    "acc_p95": 0.33020900992323654,
+    "nees_mean": 1.552523103031362,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2484261264311269,
+    "nav_err_median": 0.35991787024309013,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9457403651115619,
+    "acc_median": 0.08797175812188485,
+    "acc_p95": 0.19642997147638824,
+    "nees_mean": 1.2355823186712986,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.1210844719834246,
+    "nav_err_median": 0.3634658025655452,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9883367139959433,
+    "acc_median": 0.03685583386423996,
+    "acc_p95": 0.11192197036210766,
+    "nees_mean": 1.2714308556937195,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.04037252258322843,
+    "nav_err_median": 0.14558268730778945,
+    "gate_rejects": 34,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 61
+   },
+   "pad_m5": {
+    "coverage": 0.9874915483434753,
+    "acc_median": 0.0374660895172787,
+    "acc_p95": 0.12588356004462894,
+    "nees_mean": 1.3536523258487065,
+    "nees_le_7_81": 0.9956709956709957,
+    "datum_err_m": 0.04849262837322826,
+    "nav_err_median": 0.15793920546228696,
+    "gate_rejects": 43,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 116
+   },
+   "relative": {
+    "coverage": 0.6188302907369845,
+    "acc_median": 0.2235269458527922,
+    "acc_p95": 0.5990089299723627,
+    "nees_mean": 4.710847205170967,
+    "nees_le_7_81": 0.7445887445887446,
+    "datum_err_m": 0.40027892873228477,
+    "nav_err_median": 0.5246381222927455,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 8,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 221.9,
+   "marker_dets": [
+    95,
+    81,
+    71,
+    98,
+    77
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 6.6,
+   "slam": {
+    "coverage": 0.4130747126436782,
+    "acc_median": 0.522236860941844,
+    "acc_p95": 0.6808369563168104,
+    "nees_mean": 7.301803525561391,
+    "nees_le_7_81": 0.6801801801801802,
+    "datum_err_m": 0.6935839852236132,
+    "nav_err_median": 0.7341948103902866,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9161278735632183,
+    "acc_median": 0.19061366445303074,
+    "acc_p95": 0.3251850979511398,
+    "nees_mean": 2.8481762306577783,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4154227735328975,
+    "nav_err_median": 0.47266835033860305,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9982040229885057,
+    "acc_median": 0.04244316494521527,
+    "acc_p95": 0.10684363917958342,
+    "nees_mean": 1.6148773622493564,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.08480723043172578,
+    "nav_err_median": 0.14137110025706884,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 93
+   },
+   "pad_m5": {
+    "coverage": 0.9964080459770115,
+    "acc_median": 0.03641312839453459,
+    "acc_p95": 0.10255096206838296,
+    "nees_mean": 1.5371709817458112,
+    "nees_le_7_81": 0.9954954954954955,
+    "datum_err_m": 0.09023316310389898,
+    "nav_err_median": 0.13326321710090933,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 151
+   },
+   "relative": {
+    "coverage": 0.9355244252873564,
+    "acc_median": 0.18356190174841736,
+    "acc_p95": 0.31301736214531517,
+    "nees_mean": 6.994957632105547,
+    "nees_le_7_81": 0.6441441441441441,
+    "datum_err_m": 0.6067036215342174,
+    "nav_err_median": 0.6388768165209375,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 9,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 226.8,
+   "marker_dets": [
+    111,
+    128,
+    154,
+    124,
+    145
+   ],
+   "false_matches": 18,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 7.6,
+   "slam": {
+    "coverage": 0.9122807017543859,
+    "acc_median": 0.24054994795896434,
+    "acc_p95": 0.3975352126976739,
+    "nees_mean": 2.1255173536959364,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3288824745843123,
+    "nav_err_median": 0.36838290673797963,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9533492822966507,
+    "acc_median": 0.1704355030870623,
+    "acc_p95": 0.33926076281851214,
+    "nees_mean": 1.74047964127961,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.25719280383110904,
+    "nav_err_median": 0.3337566182179462,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9988038277511961,
+    "acc_median": 0.034464210049136135,
+    "acc_p95": 0.11154181421903996,
+    "nees_mean": 1.786308132727936,
+    "nees_le_7_81": 0.9955947136563876,
+    "datum_err_m": 0.03187182162489999,
+    "nav_err_median": 0.07528075340923922,
+    "gate_rejects": 39,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 87
+   },
+   "pad_m5": {
+    "coverage": 0.9994019138755981,
+    "acc_median": 0.031119859626224322,
+    "acc_p95": 0.10557320028130246,
+    "nees_mean": 1.8351834629618236,
+    "nees_le_7_81": 0.9911894273127754,
+    "datum_err_m": 0.029394970439993437,
+    "nav_err_median": 0.05551333077448687,
+    "gate_rejects": 39,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 171
+   },
+   "relative": {
+    "coverage": 0.7501993620414673,
+    "acc_median": 0.1608401031553388,
+    "acc_p95": 0.5171099166236371,
+    "nees_mean": 4.084943861826347,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.41884104867095223,
+    "nav_err_median": 0.4598757606772135,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 10,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 198.7,
+   "marker_dets": [
+    43,
+    49,
+    49,
+    27,
+    60
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 4.3,
+   "slam": {
+    "coverage": 0.9013392857142857,
+    "acc_median": 0.2024632700222675,
+    "acc_p95": 0.6420139086102541,
+    "nees_mean": 3.490979525574317,
+    "nees_le_7_81": 0.9195979899497487,
+    "datum_err_m": 0.5643481400795023,
+    "nav_err_median": 0.5732144111106692,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9243303571428572,
+    "acc_median": 0.05833194884862891,
+    "acc_p95": 0.4952843419349072,
+    "nees_mean": 1.7269247811939117,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3355821743706994,
+    "nav_err_median": 0.40167379215643806,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9959821428571428,
+    "acc_median": 0.058406925003068544,
+    "acc_p95": 0.14409785144105636,
+    "nees_mean": 2.4621299779215002,
+    "nees_le_7_81": 0.9798994974874372,
+    "datum_err_m": 0.06295734174229799,
+    "nav_err_median": 0.09994307910795683,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 54
+   },
+   "pad_m5": {
+    "coverage": 0.9964285714285714,
+    "acc_median": 0.03454829547111471,
+    "acc_p95": 0.10481096264713206,
+    "nees_mean": 2.255789758605037,
+    "nees_le_7_81": 0.9748743718592965,
+    "datum_err_m": 0.010489725737259434,
+    "nav_err_median": 0.07472929962680855,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 85
+   },
+   "relative": {
+    "coverage": 0.9383928571428571,
+    "acc_median": 0.16457878436353646,
+    "acc_p95": 0.39776282192898194,
+    "nees_mean": 3.499282623423505,
+    "nees_le_7_81": 0.9396984924623115,
+    "datum_err_m": 0.44195469122164527,
+    "nav_err_median": 0.5033890455374261,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 11,
+   "template": "perimeter_orbit",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 129.1,
+   "marker_dets": [
+    26,
+    23,
+    25,
+    31,
+    31
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 1.3,
+   "pad_gap_down_s": 3.5,
+   "slam": {
+    "coverage": 0.3452685421994885,
+    "acc_median": 0.43317423084261386,
+    "acc_p95": 0.6689708125843665,
+    "nees_mean": 5.121553163520957,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.7690634609862183,
+    "nav_err_median": 0.7871012323617311,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.655690537084399,
+    "acc_median": 0.2208822272072597,
+    "acc_p95": 0.41253715093659915,
+    "nees_mean": 3.161947794338553,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5376566092575752,
+    "nav_err_median": 0.5871557971446638,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.993925831202046,
+    "acc_median": 0.056993245973431694,
+    "acc_p95": 0.16185361139756496,
+    "nees_mean": 1.693413970874933,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.0760963867421842,
+    "nav_err_median": 0.11685606460204064,
+    "gate_rejects": 2,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 22
+   },
+   "pad_m5": {
+    "coverage": 0.9968030690537084,
+    "acc_median": 0.03433788483276379,
+    "acc_p95": 0.11719967260631443,
+    "nees_mean": 1.3108166698111285,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.014707395715693976,
+    "nav_err_median": 0.07470966617306213,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 43
+   },
+   "relative": {
+    "coverage": 0.9146419437340153,
+    "acc_median": 0.1535737889449864,
+    "acc_p95": 0.2594253850526376,
+    "nees_mean": 7.404887148202152,
+    "nees_le_7_81": 0.5116279069767442,
+    "datum_err_m": 0.7326765454928524,
+    "nav_err_median": 0.7592840802291848,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 0,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 57.7,
+   "marker_dets": [
+    50,
+    56,
+    54,
+    56,
+    54
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 0.7333333333333333,
+    "acc_median": 0.2362357822183636,
+    "acc_p95": 0.47948581884061414,
+    "nees_mean": 2.1365915537425577,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.37816401282614864,
+    "nav_err_median": 0.5683809780294864,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8041666666666667,
+    "acc_median": 0.26032934427282317,
+    "acc_p95": 0.5147700766858795,
+    "nees_mean": 3.164362681265634,
+    "nees_le_7_81": 0.9827586206896551,
+    "datum_err_m": 0.32997428834074183,
+    "nav_err_median": 0.5194766267667044,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.031240959058424167,
+    "acc_p95": 0.1207731093477099,
+    "nees_mean": 1.3728444621170481,
+    "nees_le_7_81": 0.9827586206896551,
+    "datum_err_m": 0.06336935712316505,
+    "nav_err_median": 0.0718939470086272,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 60
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.03824326379340626,
+    "acc_p95": 0.12685228999488235,
+    "nees_mean": 1.445949164609006,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.06608439988310903,
+    "nav_err_median": 0.08106546652088839,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 96
+   },
+   "relative": {
+    "coverage": 0.8791666666666667,
+    "acc_median": 0.20889035439238768,
+    "acc_p95": 0.5100841519867443,
+    "nees_mean": 3.522184854243379,
+    "nees_le_7_81": 0.9655172413793104,
+    "datum_err_m": 0.39778088212784785,
+    "nav_err_median": 0.5622581303023584,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 1,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 50.1,
+   "marker_dets": [
+    43,
+    40,
+    44,
+    32,
+    29
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.9,
+   "slam": {
+    "coverage": 0.9576923076923077,
+    "acc_median": 0.23835634262624827,
+    "acc_p95": 0.4052545491987968,
+    "nees_mean": 1.0494582041903033,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.261096024355798,
+    "nav_err_median": 0.4392961602610778,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9346153846153846,
+    "acc_median": 0.15762968797253252,
+    "acc_p95": 0.49588556576660314,
+    "nees_mean": 1.9780522428747518,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3304954517073306,
+    "nav_err_median": 0.49049663849705166,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9961538461538462,
+    "acc_median": 0.029420943570965363,
+    "acc_p95": 0.1145684971634684,
+    "nees_mean": 1.778225078366289,
+    "nees_le_7_81": 0.9803921568627451,
+    "datum_err_m": 0.04421116750693852,
+    "nav_err_median": 0.09267306239726994,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 28
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02277234434487596,
+    "acc_p95": 0.0799279275665551,
+    "nees_mean": 1.1802067480009444,
+    "nees_le_7_81": 0.9803921568627451,
+    "datum_err_m": 0.028611706539203516,
+    "nav_err_median": 0.06034279148214491,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 48
+   },
+   "relative": {
+    "coverage": 0.8384615384615385,
+    "acc_median": 0.1935560273144198,
+    "acc_p95": 0.5909340994560495,
+    "nees_mean": 1.5888232510346332,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2029573125072881,
+    "nav_err_median": 0.37321425752783294,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 2,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 51.7,
+   "marker_dets": [
+    35,
+    44,
+    32,
+    44,
+    33
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.9,
+   "slam": {
+    "coverage": 0.6858974358974359,
+    "acc_median": 0.3806051567874942,
+    "acc_p95": 0.7914491993408187,
+    "nees_mean": 3.7987048585234198,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.6121245390127902,
+    "nav_err_median": 0.7775069372504042,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7019230769230769,
+    "acc_median": 0.29882887444372663,
+    "acc_p95": 0.6911064237746967,
+    "nees_mean": 5.297109960587279,
+    "nees_le_7_81": 0.9807692307692307,
+    "datum_err_m": 0.5172689522416577,
+    "nav_err_median": 0.7093678944463365,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.028497380416726337,
+    "acc_p95": 0.10642214393386347,
+    "nees_mean": 2.2630683758756787,
+    "nees_le_7_81": 0.9423076923076923,
+    "datum_err_m": 0.04865421758609642,
+    "nav_err_median": 0.06321541363659751,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 45
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.025294633510061004,
+    "acc_p95": 0.08074474846778962,
+    "nees_mean": 1.9443225266139934,
+    "nees_le_7_81": 0.9423076923076923,
+    "datum_err_m": 0.016274830740474016,
+    "nav_err_median": 0.044519304226407375,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 75
+   },
+   "relative": {
+    "coverage": 0.7307692307692307,
+    "acc_median": 0.2638731738706819,
+    "acc_p95": 0.6091239181642569,
+    "nees_mean": 8.83642899216374,
+    "nees_le_7_81": 0.34615384615384615,
+    "datum_err_m": 0.7436458147429815,
+    "nav_err_median": 0.8883927948211806,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 3,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 46.9,
+   "marker_dets": [
+    29,
+    41,
+    50,
+    31,
+    32
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.7,
+   "slam": {
+    "coverage": 0.6458333333333334,
+    "acc_median": 0.3069699649355073,
+    "acc_p95": 0.6909399775374286,
+    "nees_mean": 3.405801660166396,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.7154397116803538,
+    "nav_err_median": 0.7405129541091224,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9635416666666666,
+    "acc_median": 0.22000734857334603,
+    "acc_p95": 0.37169289501462005,
+    "nees_mean": 2.522390343673095,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.408786152208031,
+    "nav_err_median": 0.46142850295463345,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.984375,
+    "acc_median": 0.03257439807865925,
+    "acc_p95": 0.11562020689200998,
+    "nees_mean": 1.6841191770774535,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.06237230407572506,
+    "nav_err_median": 0.07458481358152408,
+    "gate_rejects": 15,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 27
+   },
+   "pad_m5": {
+    "coverage": 0.9895833333333334,
+    "acc_median": 0.025904710981418333,
+    "acc_p95": 0.09734512110403591,
+    "nees_mean": 1.0804454498635423,
+    "nees_le_7_81": 0.9787234042553191,
+    "datum_err_m": 0.03927486042099889,
+    "nav_err_median": 0.04497900142026705,
+    "gate_rejects": 15,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 51
+   },
+   "relative": {
+    "coverage": 0.9114583333333334,
+    "acc_median": 0.18083762928364266,
+    "acc_p95": 0.3608638031163539,
+    "nees_mean": 14.956528315017922,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 1.0125192927461402,
+    "nav_err_median": 1.0052741093831843,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 4,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 79.5,
+   "marker_dets": [
+    98,
+    116,
+    124,
+    135,
+    105
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.7,
+   "slam": {
+    "coverage": 0.671875,
+    "acc_median": 0.2764360797924166,
+    "acc_p95": 0.645928657345064,
+    "nees_mean": 2.6631524410958365,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.490912749403851,
+    "nav_err_median": 0.6298479372495069,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.646875,
+    "acc_median": 0.26930561698401156,
+    "acc_p95": 0.6397690189679138,
+    "nees_mean": 4.317824254995931,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5854272440222764,
+    "nav_err_median": 0.6799005044739008,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.02773787497574265,
+    "acc_p95": 0.08913983362476417,
+    "nees_mean": 1.394459212841596,
+    "nees_le_7_81": 0.975,
+    "datum_err_m": 0.03219905456749775,
+    "nav_err_median": 0.05049400321969913,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 122
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02401111310810311,
+    "acc_p95": 0.08119555270930293,
+    "nees_mean": 1.364517704134693,
+    "nees_le_7_81": 0.9625,
+    "datum_err_m": 0.022886639310557438,
+    "nav_err_median": 0.041786828343062646,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 207
+   },
+   "relative": {
+    "coverage": 0.61875,
+    "acc_median": 0.29804814582503525,
+    "acc_p95": 0.7858711472505064,
+    "nees_mean": 4.127296360190728,
+    "nees_le_7_81": 0.9625,
+    "datum_err_m": 0.5318320671251386,
+    "nav_err_median": 0.6154530219598786,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 5,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 58.7,
+   "marker_dets": [
+    36,
+    44,
+    43,
+    53,
+    57
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 0.9458333333333333,
+    "acc_median": 0.1669711271533334,
+    "acc_p95": 0.363874997068448,
+    "nees_mean": 1.177235091843448,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.18977602507910657,
+    "nav_err_median": 0.4758783923354715,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 1.0,
+    "acc_median": 0.0679635131768504,
+    "acc_p95": 0.1885714051799693,
+    "nees_mean": 0.7442217820139108,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.1978928366705586,
+    "nav_err_median": 0.24623019623241105,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.9583333333333334,
+    "acc_median": 0.05179499646118835,
+    "acc_p95": 0.17101305532265934,
+    "nees_mean": 52.904649106918626,
+    "nees_le_7_81": 0.8135593220338984,
+    "datum_err_m": 0.20252350156945167,
+    "nav_err_median": 0.1357639896636435,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 32
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.037772865436026315,
+    "acc_p95": 0.14746184866812223,
+    "nees_mean": 1.5367291482393746,
+    "nees_le_7_81": 0.9830508474576272,
+    "datum_err_m": 0.07111205125418635,
+    "nav_err_median": 0.08931787169876315,
+    "gate_rejects": 3,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 76
+   },
+   "relative": {
+    "coverage": 0.7541666666666667,
+    "acc_median": 0.18899932971416789,
+    "acc_p95": 0.7699102769847955,
+    "nees_mean": 2.562195241181166,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.13565310439143377,
+    "nav_err_median": 0.4225244046893448,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 6,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 87.9,
+   "marker_dets": [
+    136,
+    95,
+    85,
+    138,
+    132
+   ],
+   "false_matches": 23,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.8,
+   "slam": {
+    "coverage": 0.7928571428571428,
+    "acc_median": 0.24120672169347834,
+    "acc_p95": 0.8101446019996703,
+    "nees_mean": 3.4594237567492225,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4789987382132365,
+    "nav_err_median": 0.7804977490110167,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8857142857142857,
+    "acc_median": 0.18781627715022164,
+    "acc_p95": 0.7450829846679268,
+    "nees_mean": 4.319874410609854,
+    "nees_le_7_81": 0.9545454545454546,
+    "datum_err_m": 0.565006916860447,
+    "nav_err_median": 0.797782464171195,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.022653982768035874,
+    "acc_p95": 0.07639912942555939,
+    "nees_mean": 0.969082579631091,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.011715623775229504,
+    "nav_err_median": 0.03789322277126212,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 110
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02331857274222493,
+    "acc_p95": 0.07300654090276248,
+    "nees_mean": 1.3763692497659463,
+    "nees_le_7_81": 0.9772727272727273,
+    "datum_err_m": 0.008493607273035898,
+    "nav_err_median": 0.03698585898015325,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 198
+   },
+   "relative": {
+    "coverage": 0.6952380952380952,
+    "acc_median": 0.24437788742819855,
+    "acc_p95": 0.5849335566898917,
+    "nees_mean": 3.3027314767127653,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.34579541934540214,
+    "nav_err_median": 0.5792215653742573,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 7,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 85.1,
+   "marker_dets": [
+    122,
+    119,
+    107,
+    109,
+    157
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 5.1,
+   "slam": {
+    "coverage": 0.5795454545454546,
+    "acc_median": 0.440461490513935,
+    "acc_p95": 0.7860653354745429,
+    "nees_mean": 5.779857682769336,
+    "nees_le_7_81": 0.8705882352941177,
+    "datum_err_m": 0.8387972776302862,
+    "nav_err_median": 0.8452692610370628,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.5142045454545454,
+    "acc_median": 0.41049047270428396,
+    "acc_p95": 0.7614262333616936,
+    "nees_mean": 8.971989886911755,
+    "nees_le_7_81": 0.2,
+    "datum_err_m": 0.7451051624361245,
+    "nav_err_median": 0.7731220570850892,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.030759263497035616,
+    "acc_p95": 0.10982348579968629,
+    "nees_mean": 1.5603674882699057,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.04495627795337291,
+    "nav_err_median": 0.0760466284358605,
+    "gate_rejects": 12,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 87
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02713982256531189,
+    "acc_p95": 0.10221996561394117,
+    "nees_mean": 2.4400158609732947,
+    "nees_le_7_81": 0.9529411764705882,
+    "datum_err_m": 0.050648837827486505,
+    "nav_err_median": 0.06674378184696553,
+    "gate_rejects": 25,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 177
+   },
+   "relative": {
+    "coverage": 0.4318181818181818,
+    "acc_median": 0.4504515021686011,
+    "acc_p95": 0.844240577015198,
+    "nees_mean": 9.804540657974753,
+    "nees_le_7_81": 0.10588235294117647,
+    "datum_err_m": 0.7920819356502132,
+    "nav_err_median": 0.8292288038091701,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 8,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 76.5,
+   "marker_dets": [
+    66,
+    74,
+    115,
+    65,
+    87
+   ],
+   "false_matches": 12,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.5,
+   "slam": {
+    "coverage": 0.47,
+    "acc_median": 0.5849084587963498,
+    "acc_p95": 1.0390164887671147,
+    "nees_mean": 10.386855592572667,
+    "nees_le_7_81": 0.19480519480519481,
+    "datum_err_m": 1.1037186088985476,
+    "nav_err_median": 1.3406611387982024,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.495,
+    "acc_median": 0.5085611611367646,
+    "acc_p95": 0.7284016025407474,
+    "nees_mean": 9.712852663739032,
+    "nees_le_7_81": 0.2987012987012987,
+    "datum_err_m": 0.845014210005621,
+    "nav_err_median": 1.1022688814033017,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.027224929311067125,
+    "acc_p95": 0.10310693118547537,
+    "nees_mean": 1.289323523901185,
+    "nees_le_7_81": 0.987012987012987,
+    "datum_err_m": 0.015652693524804036,
+    "nav_err_median": 0.04857855967469141,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 90
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02634134712349967,
+    "acc_p95": 0.10662215367193018,
+    "nees_mean": 1.8052195752017932,
+    "nees_le_7_81": 0.948051948051948,
+    "datum_err_m": 0.017080020093887736,
+    "nav_err_median": 0.04641276976018494,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 144
+   },
+   "relative": {
+    "coverage": 0.715,
+    "acc_median": 0.2949435313092985,
+    "acc_p95": 0.7194764429699658,
+    "nees_mean": 15.645679112308354,
+    "nees_le_7_81": 0.03896103896103896,
+    "datum_err_m": 1.0624595260865426,
+    "nav_err_median": 1.2906186523175192,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 9,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 80.1,
+   "marker_dets": [
+    85,
+    85,
+    94,
+    61,
+    97
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.5,
+   "slam": {
+    "coverage": 0.9473684210526315,
+    "acc_median": 0.2819221089218882,
+    "acc_p95": 0.47649337780122347,
+    "nees_mean": 2.0388122557298933,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.44049931015674415,
+    "nav_err_median": 0.4664408946753591,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9912280701754386,
+    "acc_median": 0.23525107565253478,
+    "acc_p95": 0.500129348981747,
+    "nees_mean": 2.8289441004234765,
+    "nees_le_7_81": 0.975,
+    "datum_err_m": 0.3058819798645761,
+    "nav_err_median": 0.40505997687981576,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.02348503739178609,
+    "acc_p95": 0.07865341971245214,
+    "nees_mean": 1.246676176123217,
+    "nees_le_7_81": 0.9875,
+    "datum_err_m": 0.035142812347056344,
+    "nav_err_median": 0.04979108218188615,
+    "gate_rejects": 5,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 60
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.023755357692570644,
+    "acc_p95": 0.07486016322417877,
+    "nees_mean": 1.3858751670859697,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.02776870768356604,
+    "nav_err_median": 0.04496805458882083,
+    "gate_rejects": 5,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 114
+   },
+   "relative": {
+    "coverage": 0.9298245614035088,
+    "acc_median": 0.2573001493016793,
+    "acc_p95": 0.46429715059831644,
+    "nees_mean": 14.316005221922747,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 0.9618493434842567,
+    "nav_err_median": 0.9499092364226149,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 10,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": false,
+   "mission_s": 57.7,
+   "marker_dets": [
+    46,
+    52,
+    55,
+    66,
+    56
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 1.0,
+    "acc_median": 0.1129303382904503,
+    "acc_p95": 0.3812682705542422,
+    "nees_mean": 1.2481121613265245,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.38343660935814927,
+    "nav_err_median": 0.48890142856484753,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.8375,
+    "acc_median": 0.21388783490350605,
+    "acc_p95": 0.43982574907505545,
+    "nees_mean": 3.0647690770480316,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.44602554863769184,
+    "nav_err_median": 0.6057053219378701,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.03737947639672701,
+    "acc_p95": 0.15932636947653175,
+    "nees_mean": 1.2705008820690336,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.0707197776576582,
+    "nav_err_median": 0.07202906176967028,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 51
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.03473732205936608,
+    "acc_p95": 0.16067874354746814,
+    "nees_mean": 1.2239157600316486,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.05726984045602556,
+    "nav_err_median": 0.0725175878223808,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 91
+   },
+   "relative": {
+    "coverage": 0.8208333333333333,
+    "acc_median": 0.19091528234031685,
+    "acc_p95": 0.4263155611285652,
+    "nees_mean": 3.1308394698643824,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.44262514646565776,
+    "nav_err_median": 0.5478144702307373,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 11,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    30.0
+   ],
+   "moved_marker": true,
+   "mission_s": 79.5,
+   "marker_dets": [
+    92,
+    111,
+    110,
+    133,
+    140
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.7,
+   "slam": {
+    "coverage": 0.90625,
+    "acc_median": 0.11220806023857666,
+    "acc_p95": 0.4328117536444217,
+    "nees_mean": 1.092215097862563,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.34066259624584233,
+    "nav_err_median": 0.4087182437878789,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.990625,
+    "acc_median": 0.1619190242184949,
+    "acc_p95": 0.5253411678017696,
+    "nees_mean": 1.5420502756895782,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3182232651710517,
+    "nav_err_median": 0.40102210435453334,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.996875,
+    "acc_median": 0.03164292754114584,
+    "acc_p95": 0.1108728847159748,
+    "nees_mean": 0.6879571021534047,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.028226673706886158,
+    "nav_err_median": 0.0621837318487921,
+    "gate_rejects": 46,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 67
+   },
+   "pad_m5": {
+    "coverage": 0.996875,
+    "acc_median": 0.02514253937620259,
+    "acc_p95": 0.07729453158575517,
+    "nees_mean": 0.6982527156117873,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.01499360867639234,
+    "nav_err_median": 0.0359809867418293,
+    "gate_rejects": 43,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 155
+   },
+   "relative": {
+    "coverage": 0.996875,
+    "acc_median": 0.11384734168618671,
+    "acc_p95": 0.3891751041276479,
+    "nees_mean": 3.57119679579352,
+    "nees_le_7_81": 0.8875,
+    "datum_err_m": 0.588008562684238,
+    "nav_err_median": 0.6113103343537949,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_standard"
+  },
+  {
+   "id": 0,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 57.7,
+   "marker_dets": [
+    50,
+    56,
+    54,
+    56,
+    54
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 0.6208333333333333,
+    "acc_median": 0.33347159279657634,
+    "acc_p95": 0.5347133905157707,
+    "nees_mean": 2.5699095515176933,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5667632709271088,
+    "nav_err_median": 0.6211889010931191,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9375,
+    "acc_median": 0.187631851223923,
+    "acc_p95": 0.30282589446162206,
+    "nees_mean": 1.2571952953832535,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.30518488358979934,
+    "nav_err_median": 0.3513694968261617,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.03826515098873262,
+    "acc_p95": 0.12303492183492104,
+    "nees_mean": 1.1806770456445088,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.054262595276449666,
+    "nav_err_median": 0.0813759498421844,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 60
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.03782997216526507,
+    "acc_p95": 0.1262688787760483,
+    "nees_mean": 1.198618335335944,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.05755736306665103,
+    "nav_err_median": 0.06725295804439053,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 96
+   },
+   "relative": {
+    "coverage": 0.9458333333333333,
+    "acc_median": 0.09072470120835044,
+    "acc_p95": 0.24028702026490975,
+    "nees_mean": 4.30510116409837,
+    "nees_le_7_81": 0.9655172413793104,
+    "datum_err_m": 0.649739392785072,
+    "nav_err_median": 0.6655283116605466,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 1,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 50.1,
+   "marker_dets": [
+    43,
+    40,
+    44,
+    32,
+    29
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.9,
+   "slam": {
+    "coverage": 0.9884615384615385,
+    "acc_median": 0.07414813837298695,
+    "acc_p95": 0.3364243463237464,
+    "nees_mean": 0.637063840370619,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2774339344197598,
+    "nav_err_median": 0.28949963485397956,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 1.0,
+    "acc_median": 0.12678006604329228,
+    "acc_p95": 0.2460840509261476,
+    "nees_mean": 0.8873113062023017,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2297184673892363,
+    "nav_err_median": 0.2661705381846763,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.025661431424567005,
+    "acc_p95": 0.08827080889367664,
+    "nees_mean": 1.256546303162209,
+    "nees_le_7_81": 0.9803921568627451,
+    "datum_err_m": 0.04188474229166352,
+    "nav_err_median": 0.06384383935664102,
+    "gate_rejects": 13,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 28
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.021823178794786458,
+    "acc_p95": 0.07950053187377937,
+    "nees_mean": 1.206995902044301,
+    "nees_le_7_81": 0.9803921568627451,
+    "datum_err_m": 0.025510280293583678,
+    "nav_err_median": 0.052074191013163795,
+    "gate_rejects": 16,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 49
+   },
+   "relative": {
+    "coverage": 1.0,
+    "acc_median": 0.1349822784677901,
+    "acc_p95": 0.2559376456835371,
+    "nees_mean": 3.2689980181994,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.489819448306805,
+    "nav_err_median": 0.4910018173910238,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 2,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 51.7,
+   "marker_dets": [
+    35,
+    44,
+    32,
+    44,
+    33
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.9,
+   "slam": {
+    "coverage": 0.6602564102564102,
+    "acc_median": 0.3464400264676374,
+    "acc_p95": 0.8617888090310214,
+    "nees_mean": 4.029082966769545,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.6800457373105434,
+    "nav_err_median": 0.8252545700317622,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.7884615384615384,
+    "acc_median": 0.1508832846612096,
+    "acc_p95": 0.549245182363341,
+    "nees_mean": 2.6582203611213306,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3480315404536951,
+    "nav_err_median": 0.49960511344662917,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.028161910686939073,
+    "acc_p95": 0.09973905603107802,
+    "nees_mean": 2.250641680134419,
+    "nees_le_7_81": 0.9615384615384616,
+    "datum_err_m": 0.04149076525608233,
+    "nav_err_median": 0.05816895273951109,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 45
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.024584920644613817,
+    "acc_p95": 0.07969075707494062,
+    "nees_mean": 1.7525704171591638,
+    "nees_le_7_81": 0.9423076923076923,
+    "datum_err_m": 0.016024440274226413,
+    "nav_err_median": 0.0421687752925614,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 75
+   },
+   "relative": {
+    "coverage": 0.9262820512820513,
+    "acc_median": 0.1662935078218113,
+    "acc_p95": 0.4481132635077559,
+    "nees_mean": 9.506494185834564,
+    "nees_le_7_81": 0.34615384615384615,
+    "datum_err_m": 0.7894715525269256,
+    "nav_err_median": 0.9596588159463726,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 3,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 46.9,
+   "marker_dets": [
+    29,
+    41,
+    50,
+    31,
+    32
+   ],
+   "false_matches": 7,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 2.7,
+   "slam": {
+    "coverage": 0.4166666666666667,
+    "acc_median": 0.35709732415554707,
+    "acc_p95": 0.79563600800338,
+    "nees_mean": 5.720324849194686,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.9559624480121559,
+    "nav_err_median": 0.9447977067177501,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9583333333333334,
+    "acc_median": 0.1870904600944474,
+    "acc_p95": 0.28060894438866907,
+    "nees_mean": 1.5855888015514643,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.32678958655316775,
+    "nav_err_median": 0.33183527323890444,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.029694189620101064,
+    "acc_p95": 0.09447842900491245,
+    "nees_mean": 1.1700936249928027,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.056618842102492656,
+    "nav_err_median": 0.0718877420075498,
+    "gate_rejects": 15,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 27
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.023399302645211506,
+    "acc_p95": 0.07544881028598707,
+    "nees_mean": 0.7534202532202622,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.03223782678740151,
+    "nav_err_median": 0.045512031705906064,
+    "gate_rejects": 15,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 51
+   },
+   "relative": {
+    "coverage": 0.984375,
+    "acc_median": 0.12231289638629406,
+    "acc_p95": 0.28227205861513943,
+    "nees_mean": 17.07623268365702,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 1.0645734613062883,
+    "nav_err_median": 1.0842204067797079,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 4,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 79.5,
+   "marker_dets": [
+    98,
+    116,
+    124,
+    135,
+    105
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.7,
+   "slam": {
+    "coverage": 0.821875,
+    "acc_median": 0.2836104836690276,
+    "acc_p95": 0.41361107037372447,
+    "nees_mean": 2.1118046164221544,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4889065605629177,
+    "nav_err_median": 0.5787412472583169,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.946875,
+    "acc_median": 0.17946532089265865,
+    "acc_p95": 0.3171120679569295,
+    "nees_mean": 2.04630030815387,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4041206946601336,
+    "nav_err_median": 0.4289824789310059,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.025884844325276823,
+    "acc_p95": 0.08401919093662569,
+    "nees_mean": 1.2574394274984093,
+    "nees_le_7_81": 0.9875,
+    "datum_err_m": 0.031118808083032336,
+    "nav_err_median": 0.05074822641715297,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 122
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.022398975801893872,
+    "acc_p95": 0.07733132552184102,
+    "nees_mean": 1.1666870747694607,
+    "nees_le_7_81": 0.975,
+    "datum_err_m": 0.022649230697050767,
+    "nav_err_median": 0.04411983633456434,
+    "gate_rejects": 2,
+    "rejected_markers": [],
+    "marker_factors": 207
+   },
+   "relative": {
+    "coverage": 0.878125,
+    "acc_median": 0.2161602354103458,
+    "acc_p95": 0.433109544680533,
+    "nees_mean": 3.8031615888692967,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.5564261687004803,
+    "nav_err_median": 0.6072337428917135,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 5,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 58.7,
+   "marker_dets": [
+    36,
+    44,
+    43,
+    53,
+    57
+   ],
+   "false_matches": 5,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 0.925,
+    "acc_median": 0.18732364621051323,
+    "acc_p95": 0.338306082890816,
+    "nees_mean": 0.7965326983758803,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3093659828283117,
+    "nav_err_median": 0.3437170137182103,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9916666666666667,
+    "acc_median": 0.030583009755244195,
+    "acc_p95": 0.1152593230410949,
+    "nees_mean": 0.2771351353745381,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.11793352904173249,
+    "nav_err_median": 0.17148340021101321,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.031504736787146825,
+    "acc_p95": 0.09581411319957521,
+    "nees_mean": 0.8288061520552054,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.035463311056331805,
+    "nav_err_median": 0.06185390231952247,
+    "gate_rejects": 1,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 32
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02982575397851228,
+    "acc_p95": 0.09109477381342446,
+    "nees_mean": 1.1626677063922395,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.0430864896596575,
+    "nav_err_median": 0.05945593564964632,
+    "gate_rejects": 7,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 76
+   },
+   "relative": {
+    "coverage": 0.9958333333333333,
+    "acc_median": 0.10591452612949759,
+    "acc_p95": 0.22997331764749265,
+    "nees_mean": 3.3298950743171836,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.47180115377903387,
+    "nav_err_median": 0.48920528730919843,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 6,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 87.9,
+   "marker_dets": [
+    136,
+    95,
+    85,
+    138,
+    132
+   ],
+   "false_matches": 23,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.8,
+   "slam": {
+    "coverage": 0.9761904761904762,
+    "acc_median": 0.12926218889511176,
+    "acc_p95": 0.2756894090412258,
+    "nees_mean": 1.2561611593602666,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.42467838165460925,
+    "nav_err_median": 0.4543206365791127,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 1.0,
+    "acc_median": 0.05888466334728726,
+    "acc_p95": 0.18211061539453,
+    "nees_mean": 1.7930374609023216,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.4766927121694346,
+    "nav_err_median": 0.46313201266705406,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.02354853252393596,
+    "acc_p95": 0.07289505971618516,
+    "nees_mean": 1.1166986296920067,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.00796594899108891,
+    "nav_err_median": 0.03891410410927816,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 110
+   },
+   "pad_m5": {
+    "coverage": 0.9976190476190476,
+    "acc_median": 0.023106655135122445,
+    "acc_p95": 0.06932352164994571,
+    "nees_mean": 1.28334279481016,
+    "nees_le_7_81": 0.9886363636363636,
+    "datum_err_m": 0.007836153597500688,
+    "nav_err_median": 0.03556301986142896,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 198
+   },
+   "relative": {
+    "coverage": 1.0,
+    "acc_median": 0.07446136678486459,
+    "acc_p95": 0.18125242704420375,
+    "nees_mean": 1.8945856270951962,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.3397991875382053,
+    "nav_err_median": 0.4061782598369357,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 7,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 85.1,
+   "marker_dets": [
+    122,
+    119,
+    107,
+    109,
+    157
+   ],
+   "false_matches": 17,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 5.1,
+   "slam": {
+    "coverage": 0.4090909090909091,
+    "acc_median": 0.43837052445881475,
+    "acc_p95": 0.8459409340047278,
+    "nees_mean": 7.86096304923891,
+    "nees_le_7_81": 0.5764705882352941,
+    "datum_err_m": 0.9948162794502108,
+    "nav_err_median": 1.00449290460762,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.6931818181818182,
+    "acc_median": 0.3458085635958046,
+    "acc_p95": 0.593562914291081,
+    "nees_mean": 5.45000500347692,
+    "nees_le_7_81": 0.9647058823529412,
+    "datum_err_m": 0.5702173276330662,
+    "nav_err_median": 0.5783403440031313,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.027417149250311468,
+    "acc_p95": 0.094581061310882,
+    "nees_mean": 1.323572185467052,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.042692398926999005,
+    "nav_err_median": 0.07101919906940188,
+    "gate_rejects": 12,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 87
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02710347118687295,
+    "acc_p95": 0.09207189430798086,
+    "nees_mean": 1.966832442313787,
+    "nees_le_7_81": 0.9764705882352941,
+    "datum_err_m": 0.04944555328594263,
+    "nav_err_median": 0.0671879931076186,
+    "gate_rejects": 19,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 177
+   },
+   "relative": {
+    "coverage": 0.7017045454545454,
+    "acc_median": 0.3116974922049851,
+    "acc_p95": 0.5338827744053086,
+    "nees_mean": 11.30194273914371,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 0.8657973623931733,
+    "nav_err_median": 0.8507882262083761,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 8,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 76.5,
+   "marker_dets": [
+    66,
+    74,
+    115,
+    65,
+    87
+   ],
+   "false_matches": 12,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.5,
+   "slam": {
+    "coverage": 0.3925,
+    "acc_median": 0.5699500947803289,
+    "acc_p95": 1.0108218467974877,
+    "nees_mean": 11.76531054985146,
+    "nees_le_7_81": 0.24675324675324675,
+    "datum_err_m": 1.1754215510351573,
+    "nav_err_median": 1.2654757600069755,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.725,
+    "acc_median": 0.3289483201633514,
+    "acc_p95": 0.5556286129764544,
+    "nees_mean": 7.144375185607583,
+    "nees_le_7_81": 0.5064935064935064,
+    "datum_err_m": 0.7149583454729074,
+    "nav_err_median": 0.8985482224376162,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.027126432509672505,
+    "acc_p95": 0.1012093042919484,
+    "nees_mean": 1.3841539022001392,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.023709344536239987,
+    "nav_err_median": 0.04562023046157347,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 90
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.026427679266054493,
+    "acc_p95": 0.10165859411129526,
+    "nees_mean": 2.191972950843895,
+    "nees_le_7_81": 0.961038961038961,
+    "datum_err_m": 0.025495870545616545,
+    "nav_err_median": 0.04488857935426445,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 144
+   },
+   "relative": {
+    "coverage": 0.7825,
+    "acc_median": 0.2980073134661917,
+    "acc_p95": 0.5125354035126529,
+    "nees_mean": 20.462813357158563,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 1.1016927095696698,
+    "nav_err_median": 1.2298088372734206,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 9,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 80.1,
+   "marker_dets": [
+    85,
+    85,
+    94,
+    61,
+    97
+   ],
+   "false_matches": 8,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.5,
+   "slam": {
+    "coverage": 0.5087719298245614,
+    "acc_median": 0.39263840690642937,
+    "acc_p95": 0.7172067942429259,
+    "nees_mean": 4.544987981628914,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.7045529931742087,
+    "nav_err_median": 0.7208181850179944,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 1.0,
+    "acc_median": 0.1412774362176994,
+    "acc_p95": 0.27961508547521907,
+    "nees_mean": 1.026307424603336,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2107416715621891,
+    "nav_err_median": 0.22412899033619693,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.02588900191845589,
+    "acc_p95": 0.0759027792266404,
+    "nees_mean": 1.4073326670894653,
+    "nees_le_7_81": 0.9875,
+    "datum_err_m": 0.03139003291936739,
+    "nav_err_median": 0.05461743224644529,
+    "gate_rejects": 3,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 60
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.022710153691538615,
+    "acc_p95": 0.07237400529292781,
+    "nees_mean": 1.2132083581242221,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.025038977756838283,
+    "nav_err_median": 0.03919095275470273,
+    "gate_rejects": 3,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 114
+   },
+   "relative": {
+    "coverage": 1.0,
+    "acc_median": 0.13820579427017154,
+    "acc_p95": 0.29905216977731147,
+    "nees_mean": 21.341584447509756,
+    "nees_le_7_81": 0.0,
+    "datum_err_m": 1.0958752604013522,
+    "nav_err_median": 1.097337688778568,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 10,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": false,
+   "mission_s": 57.7,
+   "marker_dets": [
+    46,
+    52,
+    55,
+    66,
+    56
+   ],
+   "false_matches": 9,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 3.4,
+   "slam": {
+    "coverage": 1.0,
+    "acc_median": 0.1670342360070678,
+    "acc_p95": 0.29249404267642115,
+    "nees_mean": 0.7259661789019878,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.2676462807854525,
+    "nav_err_median": 0.3347007636929294,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 0.9916666666666667,
+    "acc_median": 0.17327912377021448,
+    "acc_p95": 0.3641304446176159,
+    "nees_mean": 1.7466092754094078,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.31406617488882926,
+    "nav_err_median": 0.3730589366868223,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 1.0,
+    "acc_median": 0.050176517686132405,
+    "acc_p95": 0.14657743001549461,
+    "nees_mean": 1.8549959324308078,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.07672497646154684,
+    "nav_err_median": 0.08690571751859978,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 51
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.03306659010925417,
+    "acc_p95": 0.11983632582497311,
+    "nees_mean": 1.3080595854030361,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.04659593770520083,
+    "nav_err_median": 0.06733697580484069,
+    "gate_rejects": 1,
+    "rejected_markers": [],
+    "marker_factors": 91
+   },
+   "relative": {
+    "coverage": 0.9791666666666666,
+    "acc_median": 0.1496725207406584,
+    "acc_p95": 0.3632631148242256,
+    "nees_mean": 2.9201626956533575,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.39474277441360156,
+    "nav_err_median": 0.445277561458732,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  },
+  {
+   "id": 11,
+   "template": "poi_close_pass",
+   "gps": [
+    0.5,
+    90.0
+   ],
+   "moved_marker": true,
+   "mission_s": 79.5,
+   "marker_dets": [
+    92,
+    111,
+    110,
+    133,
+    140
+   ],
+   "false_matches": 15,
+   "pad_gap_up_s": 0.9,
+   "pad_gap_down_s": 4.7,
+   "slam": {
+    "coverage": 0.946875,
+    "acc_median": 0.1279315314335694,
+    "acc_p95": 0.4686767113320775,
+    "nees_mean": 1.6379887375069848,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.503020502568407,
+    "nav_err_median": 0.5310208537695298,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad": {
+    "coverage": 1.0,
+    "acc_median": 0.11480903072765791,
+    "acc_p95": 0.3341818697192587,
+    "nees_mean": 0.9951053438864201,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.27953106039026876,
+    "nav_err_median": 0.3432124251925426,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "pad_m3": {
+    "coverage": 0.996875,
+    "acc_median": 0.028449143603710425,
+    "acc_p95": 0.09329877138116305,
+    "nees_mean": 0.5027065143778733,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.029779954761348475,
+    "nav_err_median": 0.055826041031325685,
+    "gate_rejects": 42,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 67
+   },
+   "pad_m5": {
+    "coverage": 1.0,
+    "acc_median": 0.02454542847381269,
+    "acc_p95": 0.07307539905338374,
+    "nees_mean": 0.6847248122240748,
+    "nees_le_7_81": 1.0,
+    "datum_err_m": 0.013491925558209928,
+    "nav_err_median": 0.033070407009834366,
+    "gate_rejects": 42,
+    "rejected_markers": [
+     1
+    ],
+    "marker_factors": 155
+   },
+   "relative": {
+    "coverage": 1.0,
+    "acc_median": 0.05958473252897534,
+    "acc_p95": 0.27038561488966856,
+    "nees_mean": 3.4158670433356777,
+    "nees_le_7_81": 0.95,
+    "datum_err_m": 0.6461523105580713,
+    "nav_err_median": 0.6074014001003689,
+    "gate_rejects": 0,
+    "rejected_markers": [],
+    "marker_factors": 0
+   },
+   "gps_mode": "gps_tau90"
+  }
+ ]
+}

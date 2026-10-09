@@ -98,7 +98,7 @@ def relay_curve(d):
 
 def tables():
     print("== Monte Carlo summaries (from the json files) ==")
-    for name in ("safe_return", "repass", "swarm", "change", "lidar", "thermal"):
+    for name in ("safe_return", "repass", "swarm", "change", "lidar", "thermal", "ground_ref"):
         for which in ("tuning", "heldout") + (("fresh",) if name == "swarm" else ()):
             p = os.path.join(C.HERE, f"mc_{name}_{which}_v3.json")
             if not os.path.exists(p):
@@ -131,6 +131,12 @@ def tables():
                     print(f"   {k:40s} cov {c['coverage'].get('median')}  err median {c['acc_median_m'].get('median')} "
                           f"p95 {c['acc_p95_m'].get('median')}  energy {c['energy_wh'].get('median')} Wh  "
                           f"endurance {c['endurance_min'].get('median')} min")
+            elif name == "ground_ref":
+                for k, c in s.items():
+                    print(f"   {k:40s} cov median {c['coverage_median']} p5 {c['coverage_p5']} >=90% {c['pct_ge_90']}%  "
+                          f"point err {c['point_err_median_m']} m  NEES {c['nees_mean']}  datum err {c['datum_err_median_m']} m"
+                          + (f"  moved marker rejected {c['moved_marker_rejected']}, good rejected {c['good_markers_rejected']}"
+                             if "moved_marker_rejected" in c else ""))
             elif name == "thermal":
                 for k, c in s.items():
                     print(f"   {k:18s} precision {c['precision']}  recall {c['recall_by_kind']}  FP/mission "

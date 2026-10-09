@@ -10,7 +10,7 @@ LO, HI, TARGET = 40, 60, 50
 INF = float("inf")
 HERE = os.path.dirname(os.path.abspath(__file__))
 FILES = ("common_v3.py", "safe_return_v3.py", "mission_v3.py", "repass_v3.py", "swarm_v3.py",
-         "change_v3.py", "sensors_v3.py", "thermal_v3.py")
+         "change_v3.py", "sensors_v3.py", "thermal_v3.py", "ground_ref_v3.py")
 
 
 def cuts_for(lines):

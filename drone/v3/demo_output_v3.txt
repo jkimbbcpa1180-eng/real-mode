@@ -126,3 +126,65 @@ mission_s=162.1 coverage aligned=0.625 unaligned=0.632 near_miss=0 min_sep_m=3.9
    gps_rtk/10m        precision 0.729  recall {'vent': 0.845, 'person': 0.744, 'person_indoor': 0.0}  FP/mission 1.45 (hot-glass share 0.759)
    gps_rtk/20m        precision 0.618  recall {'vent': 0.879, 'person': 0.769, 'person_indoor': 0.0}  FP/mission 2.5 (hot-glass share 0.4)
    gps_rtk/40m        precision 0.386  recall {'vent': 0.293, 'person': 0.564, 'person_indoor': 0.0}  FP/mission 3.1 (hot-glass share 0.339)
+-- ground_ref / tuning (seed 20263007, runtime 921.4 s)
+   gps_standard/lawnmower/slam              cov median 0.905 p5 0.15 >=90% 50.0%  point err 0.17 m  NEES 2.89  datum err 0.388 m
+   gps_standard/lawnmower/pad               cov median 0.937 p5 0.023 >=90% 66.7%  point err 0.132 m  NEES 2.79  datum err 0.382 m
+   gps_standard/lawnmower/pad_m3            cov median 0.978 p5 0.963 >=90% 100.0%  point err 0.037 m  NEES 3.36  datum err 0.035 m  moved marker rejected 4/6, good rejected 0
+   gps_standard/lawnmower/pad_m5            cov median 0.978 p5 0.961 >=90% 100.0%  point err 0.035 m  NEES 2.92  datum err 0.028 m  moved marker rejected 4/6, good rejected 0
+   gps_standard/lawnmower/relative          cov median 0.862 p5 0.0 >=90% 50.0%  point err 0.196 m  NEES 3.52  datum err 0.439 m
+   gps_standard/perimeter_orbit/slam        cov median 0.73 p5 0.594 >=90% 16.7%  point err 0.171 m  NEES 3.45  datum err 0.348 m
+   gps_standard/perimeter_orbit/pad         cov median 0.839 p5 0.498 >=90% 50.0%  point err 0.134 m  NEES 3.63  datum err 0.272 m
+   gps_standard/perimeter_orbit/pad_m3      cov median 0.986 p5 0.897 >=90% 91.7%  point err 0.06 m  NEES 3.77  datum err 0.071 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/perimeter_orbit/pad_m5      cov median 0.99 p5 0.92 >=90% 100.0%  point err 0.046 m  NEES 3.72  datum err 0.047 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/perimeter_orbit/relative    cov median 0.645 p5 0.352 >=90% 8.3%  point err 0.244 m  NEES 4.33  datum err 0.338 m
+   gps_standard/poi_close_pass/slam         cov median 0.763 p5 0.53 >=90% 41.7%  point err 0.259 m  NEES 3.19  datum err 0.46 m
+   gps_standard/poi_close_pass/pad          cov median 0.862 p5 0.506 >=90% 41.7%  point err 0.228 m  NEES 4.04  datum err 0.427 m
+   gps_standard/poi_close_pass/pad_m3       cov median 1.0 p5 0.973 >=90% 100.0%  point err 0.03 m  NEES 5.7  datum err 0.045 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/poi_close_pass/pad_m5       cov median 1.0 p5 0.994 >=90% 100.0%  point err 0.026 m  NEES 1.46  datum err 0.028 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/poi_close_pass/relative     cov median 0.787 p5 0.535 >=90% 25.0%  point err 0.227 m  NEES 7.11  datum err 0.56 m
+   gps_tau90/lawnmower/slam                 cov median 0.434 p5 0.021 >=90% 41.7%  point err 0.314 m  NEES 3.97  datum err 0.582 m
+   gps_tau90/lawnmower/pad                  cov median 0.921 p5 0.003 >=90% 58.3%  point err 0.214 m  NEES 3.25  datum err 0.529 m
+   gps_tau90/lawnmower/pad_m3               cov median 0.979 p5 0.961 >=90% 100.0%  point err 0.038 m  NEES 3.14  datum err 0.035 m  moved marker rejected 4/6, good rejected 0
+   gps_tau90/lawnmower/pad_m5               cov median 0.978 p5 0.962 >=90% 100.0%  point err 0.034 m  NEES 2.68  datum err 0.03 m  moved marker rejected 4/6, good rejected 0
+   gps_tau90/lawnmower/relative             cov median 0.903 p5 0.002 >=90% 50.0%  point err 0.224 m  NEES 4.76  datum err 0.671 m
+   gps_tau90/perimeter_orbit/slam           cov median 0.616 p5 0.324 >=90% 33.3%  point err 0.222 m  NEES 4.42  datum err 0.54 m
+   gps_tau90/perimeter_orbit/pad            cov median 0.872 p5 0.364 >=90% 50.0%  point err 0.141 m  NEES 3.18  datum err 0.376 m
+   gps_tau90/perimeter_orbit/pad_m3         cov median 0.994 p5 0.982 >=90% 100.0%  point err 0.046 m  NEES 2.5  datum err 0.046 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/perimeter_orbit/pad_m5         cov median 0.994 p5 0.982 >=90% 100.0%  point err 0.035 m  NEES 2.56  datum err 0.038 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/perimeter_orbit/relative       cov median 0.829 p5 0.456 >=90% 41.7%  point err 0.18 m  NEES 5.51  datum err 0.465 m
+   gps_tau90/poi_close_pass/slam            cov median 0.741 p5 0.402 >=90% 41.7%  point err 0.309 m  NEES 3.64  datum err 0.535 m
+   gps_tau90/poi_close_pass/pad             cov median 0.975 p5 0.711 >=90% 75.0%  point err 0.162 m  NEES 2.24  datum err 0.32 m
+   gps_tau90/poi_close_pass/pad_m3          cov median 1.0 p5 0.999 >=90% 100.0%  point err 0.028 m  NEES 1.29  datum err 0.038 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/poi_close_pass/pad_m5          cov median 1.0 p5 0.999 >=90% 100.0%  point err 0.025 m  NEES 1.32  datum err 0.026 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/poi_close_pass/relative        cov median 0.982 p5 0.746 >=90% 75.0%  point err 0.137 m  NEES 8.55  datum err 0.648 m
+-- ground_ref / heldout (seed 20264007, runtime 851.5 s)
+   gps_standard/lawnmower/slam              cov median 0.904 p5 0.003 >=90% 50.0%  point err 0.212 m  NEES 3.42  datum err 0.539 m
+   gps_standard/lawnmower/pad               cov median 0.933 p5 0.014 >=90% 66.7%  point err 0.171 m  NEES 3.19  datum err 0.428 m
+   gps_standard/lawnmower/pad_m3            cov median 0.978 p5 0.964 >=90% 100.0%  point err 0.037 m  NEES 5.91  datum err 0.059 m  moved marker rejected 1/6, good rejected 0
+   gps_standard/lawnmower/pad_m5            cov median 0.976 p5 0.964 >=90% 100.0%  point err 0.035 m  NEES 4.54  datum err 0.042 m  moved marker rejected 1/6, good rejected 0
+   gps_standard/lawnmower/relative          cov median 0.814 p5 0.0 >=90% 33.3%  point err 0.257 m  NEES 3.57  datum err 0.463 m
+   gps_standard/perimeter_orbit/slam        cov median 0.738 p5 0.248 >=90% 16.7%  point err 0.18 m  NEES 4.39  datum err 0.338 m
+   gps_standard/perimeter_orbit/pad         cov median 0.845 p5 0.499 >=90% 33.3%  point err 0.158 m  NEES 3.73  datum err 0.301 m
+   gps_standard/perimeter_orbit/pad_m3      cov median 0.981 p5 0.91 >=90% 91.7%  point err 0.044 m  NEES 3.75  datum err 0.053 m  moved marker rejected 5/6, good rejected 2
+   gps_standard/perimeter_orbit/pad_m5      cov median 0.995 p5 0.916 >=90% 91.7%  point err 0.037 m  NEES 3.09  datum err 0.042 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/perimeter_orbit/relative    cov median 0.721 p5 0.484 >=90% 0.0%  point err 0.239 m  NEES 6.02  datum err 0.374 m
+   gps_standard/poi_close_pass/slam         cov median 0.722 p5 0.465 >=90% 0.0%  point err 0.279 m  NEES 4.95  datum err 0.754 m
+   gps_standard/poi_close_pass/pad          cov median 0.828 p5 0.591 >=90% 25.0%  point err 0.264 m  NEES 4.68  datum err 0.545 m
+   gps_standard/poi_close_pass/pad_m3       cov median 1.0 p5 0.996 >=90% 100.0%  point err 0.03 m  NEES 5.43  datum err 0.035 m  moved marker rejected 5/6, good rejected 0
+   gps_standard/poi_close_pass/pad_m5       cov median 1.0 p5 0.997 >=90% 100.0%  point err 0.025 m  NEES 1.64  datum err 0.024 m  moved marker rejected 6/6, good rejected 0
+   gps_standard/poi_close_pass/relative     cov median 0.858 p5 0.505 >=90% 41.7%  point err 0.245 m  NEES 10.73  datum err 0.8 m
+   gps_tau90/lawnmower/slam                 cov median 0.43 p5 0.0 >=90% 33.3%  point err 0.316 m  NEES 4.44  datum err 0.619 m
+   gps_tau90/lawnmower/pad                  cov median 0.783 p5 0.001 >=90% 41.7%  point err 0.25 m  NEES 3.68  datum err 0.532 m
+   gps_tau90/lawnmower/pad_m3               cov median 0.979 p5 0.962 >=90% 100.0%  point err 0.036 m  NEES 5.69  datum err 0.047 m  moved marker rejected 1/6, good rejected 0
+   gps_tau90/lawnmower/pad_m5               cov median 0.977 p5 0.963 >=90% 100.0%  point err 0.034 m  NEES 3.66  datum err 0.031 m  moved marker rejected 2/6, good rejected 0
+   gps_tau90/lawnmower/relative             cov median 0.92 p5 0.0 >=90% 58.3%  point err 0.234 m  NEES 4.5  datum err 0.561 m
+   gps_tau90/perimeter_orbit/slam           cov median 0.627 p5 0.196 >=90% 16.7%  point err 0.259 m  NEES 6.36  datum err 0.528 m
+   gps_tau90/perimeter_orbit/pad            cov median 0.824 p5 0.526 >=90% 25.0%  point err 0.183 m  NEES 3.54  datum err 0.319 m
+   gps_tau90/perimeter_orbit/pad_m3         cov median 0.99 p5 0.958 >=90% 100.0%  point err 0.044 m  NEES 2.95  datum err 0.049 m  moved marker rejected 5/6, good rejected 2
+   gps_tau90/perimeter_orbit/pad_m5         cov median 0.995 p5 0.958 >=90% 100.0%  point err 0.034 m  NEES 2.36  datum err 0.038 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/perimeter_orbit/relative       cov median 0.806 p5 0.585 >=90% 25.0%  point err 0.207 m  NEES 9.31  datum err 0.507 m
+   gps_tau90/poi_close_pass/slam            cov median 0.677 p5 0.407 >=90% 16.7%  point err 0.312 m  NEES 6.26  datum err 0.863 m
+   gps_tau90/poi_close_pass/pad             cov median 0.947 p5 0.745 >=90% 66.7%  point err 0.173 m  NEES 3.01  datum err 0.48 m
+   gps_tau90/poi_close_pass/pad_m3          cov median 1.0 p5 0.996 >=90% 100.0%  point err 0.028 m  NEES 6.39  datum err 0.035 m  moved marker rejected 5/6, good rejected 0
+   gps_tau90/poi_close_pass/pad_m5          cov median 1.0 p5 0.998 >=90% 100.0%  point err 0.024 m  NEES 1.73  datum err 0.022 m  moved marker rejected 6/6, good rejected 0
+   gps_tau90/poi_close_pass/relative        cov median 0.972 p5 0.748 >=90% 75.0%  point err 0.141 m  NEES 11.35  datum err 0.848 m

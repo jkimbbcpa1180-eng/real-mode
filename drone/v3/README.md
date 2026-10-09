@@ -27,8 +27,73 @@ avoidance) and was not rerun for v3.1. The numbers below are from the held-out r
 
 Seeds (tuning / held-out): safe return 20263006 / 20264006, re-pass 20263004 / 20264004,
 swarm 20263001 / 20264001 (+ fresh 20265001 for v3.1), change 20263005 / 20264005, lidar 20263003 / 20264003,
-thermal 20263002 / 20264002. The development scenes used seeds 1, 5, 9, 42, 123 and 321.
+thermal 20263002 / 20264002, ground reference 20263007 / 20264007. The development scenes used seeds 1, 5, 9, 42, 123 and 321.
 The demo uses seed 7.
+
+## Ground-reference mode (`ground_ref_v3.py`)
+
+This mode removes the common GPS datum offset that sonar SLAM cannot observe. It adds
+absolute anchor factors to the v2 SLAM state, which is the core position error per
+keyframe.
+
+- **(a) Surveyed pad.** The drone dwells 20 s on the pad before take-off and after
+  landing. The pad survey error is ±2.5 cm, plus 3 cm for placement and 5 cm for the
+  core filter vs raw GPS. The dwell mean is linked to the first and last keyframes
+  through the Gauss–Markov model, with the exact conditional covariance, so the anchor
+  weakens over the climb and return time.
+- **(b) Ground markers.** Up to 5 surveyed coded markers (±2.5 cm) are seen by an assumed
+  downward camera: slant range ≤ 30 m, ≤ 50° from nadir, detection 30 % per tick, and
+  3 % false matches 0.5–3 m off. Outliers are handled with a per-factor chi-square gate,
+  a leave-one-marker-out chi-square test at mission end, and a final per-factor check.
+- **(c) Relative mode.** The pad coordinates come from GPS. This gives a pad-frame
+  metric and is not counted as absolute accuracy.
+
+In every odd scene, marker #1 was moved 0.5–1.5 m. Seeds: tuning 20263007, held-out
+20264007 (never used before). One tuning pass; the settings were then frozen. The gate
+config was chosen as pad + 5 markers before the held-out run.
+
+Held-out results (12 scenes per cell). Coverage is median / p5 / % of missions ≥ 90 %;
+point error is the median in m; NEES is the mean (ideal 3); then the datum error in m.
+
+| GPS | Template | SLAM only | Pad | Pad + 3 markers | Pad + 5 markers | Relative (pad frame) |
+|---|---|---|---|---|---|---|
+| tau 30 s | lawnmower | 0.904 / 0.003 / 50 %, 0.21, NEES 3.4, 0.54 | 0.933 / 0.014 / 67 %, 0.17, 3.2, 0.43 | 0.978 / 0.964 / 100 %, 0.037, 5.9, 0.06 | **0.976 / 0.964 / 100 %, 0.035, 4.5, 0.04** | 0.814 / 0.0 / 33 % |
+| tau 30 s | perimeter | 0.738 / 0.248 / 17 %, 0.18, 4.4, 0.34 | 0.845 / 0.499 / 33 %, 0.16, 3.7, 0.30 | 0.981 / 0.910 / 92 %, 0.044, 3.8, 0.05 | **0.995 / 0.916 / 92 %, 0.037, 3.1, 0.04** | 0.721 / 0.484 / 0 % |
+| tau 30 s | poi pass | 0.722 / 0.465 / 0 %, 0.28, 5.0, 0.75 | 0.828 / 0.591 / 25 %, 0.26, 4.7, 0.55 | 1.0 / 0.996 / 100 %, 0.030, 5.4, 0.04 | **1.0 / 0.997 / 100 %, 0.025, 1.6, 0.02** | 0.858 / 0.505 / 42 % |
+| tau 90 s | lawnmower | 0.430 / 0.0 / 33 %, 0.32, 4.4 | 0.783 / 0.001 / 42 %, 0.25, 3.7 | 0.979 / 0.962 / 100 %, 0.036, 5.7 | 0.977 / 0.963 / 100 %, 0.034, 3.7 | 0.920 / 0.0 / 58 % |
+| tau 90 s | perimeter | 0.627 / 0.196 / 17 %, 0.26, 6.4 | 0.824 / 0.526 / 25 %, 0.18, 3.5 | 0.990 / 0.958 / 100 %, 0.044, 3.0 | 0.995 / 0.958 / 100 %, 0.034, 2.4 | 0.806 / 0.585 / 25 % |
+| tau 90 s | poi pass | 0.677 / 0.407 / 17 %, 0.31, 6.3 | 0.947 / 0.745 / 67 %, 0.17, 3.0 | 1.0 / 0.996 / 100 %, 0.028, 6.4 | 1.0 / 0.998 / 100 %, 0.024, 1.7 | 0.972 / 0.748 / 75 % |
+
+**Gate:** pad + 5 markers reaches ≥ 90 % median coverage on all three templates on the
+held-out seed (0.976 / 0.995 / 1.0). It passed.
+
+Caveats and failure cases:
+
+- **Moved-marker rejection is incomplete on lawnmower.** On tuning it was rejected 4/6
+  (both 3 and 5 markers). On held-out it was 1/6 (pad + 3) and 1/6 or 2/6 (pad + 5,
+  tau 30 / tau 90). Lawnmower markers are mostly seen alone, and a marker that no other
+  anchor sees at the same time cannot be checked (the unit test shows it is caught when
+  co-visible). Coverage in those scenes stayed at 0.98 because the 0.5–1.5 m error is
+  diluted, but the map is pulled locally.
+- On perimeter and poi, the moved marker was rejected 6/6 (pad + 5). Pad + 3 wrongly
+  rejected 2 good markers on held-out perimeter.
+- **NEES is above 3** in some cells (pad + 3 up to 6.4; SLAM only up to 6.4 at tau 90 s),
+  so the covariance is somewhat optimistic. Pad + 5 sits at 1.6–4.5.
+- **Pad alone** helps (perimeter 0.74 → 0.85) but not enough. The anchor decays over the
+  climb time and the GPS drifts between take-off and landing. Lawnmower p5 stays near 0.
+- **Relative mode** is not better than SLAM-only on these metrics. Tying the map to the
+  pad removes only the take-off error, not the drift during the mission.
+- **Physical limits:**
+  - The survey needs RTK / total-station gear or known benchmarks.
+  - Markers must be placed (and stay put) under the flight path, visible from the air and
+    not occluded. Occlusion was not simulated.
+  - Marker detection needs a camera (the sonar cannot identify a marker); detection
+    rates and noise are assumed.
+  - With 0 markers the absolute accuracy is still set by GPS drift.
+- **Run note:** the held-out run finished at 15:10 KST. A relaunch was started at 15:16
+  with no code or settings change: the result file was not visible in the box at that
+  moment after a VM restore. The relaunch was stopped. The results are the 15:10 run,
+  and the held-out log was rebuilt from its json.
 
 ## Failure cases (all seen in the runs above)
 
@@ -103,6 +168,7 @@ The demo uses seed 7.
   - `change_v3.py`: feature 5.
   - `sensors_v3.py`: ray casting and the lidar (feature 3).
   - `thermal_v3.py`: feature 2.
+  - `ground_ref_v3.py`: ground-reference mode (surveyed pad + markers).
 - Monte Carlo runs: `python3 mc_<feature>_v3.py tuning|heldout`.
 - Tests: `python3 -m unittest`. These include the flight-loop isolation test: flight outputs
   are bit-identical with the heavy mission work on or off.
