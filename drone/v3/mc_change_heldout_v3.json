@@ -1,0 +1,2868 @@
+{
+ "seed_set": "heldout",
+ "seed": 20264005,
+ "n_scenes": 8,
+ "summary": {
+  "gps_standard/v2_noalign": {
+   "precision": 0.042,
+   "recall": 0.143,
+   "recall_by_size_m": {
+    "0.3": {
+     "truth": 17,
+     "recall": 0.0
+    },
+    "0.5": {
+     "truth": 10,
+     "recall": 0.1
+    },
+    "1.0": {
+     "truth": 14,
+     "recall": 0.286
+    },
+    "2.0": {
+     "truth": 1,
+     "recall": 1.0
+    }
+   },
+   "false_alarms_per_nochange_pair": 17.5,
+   "nochange_pairs_with_any_alarm_pct": 100.0
+  },
+  "gps_standard/v3_aligned": {
+   "precision": 0.042,
+   "recall": 0.167,
+   "recall_by_size_m": {
+    "0.3": {
+     "truth": 17,
+     "recall": 0.0
+    },
+    "0.5": {
+     "truth": 10,
+     "recall": 0.2
+    },
+    "1.0": {
+     "truth": 14,
+     "recall": 0.357
+    },
+    "2.0": {
+     "truth": 1,
+     "recall": 0.0
+    }
+   },
+   "false_alarms_per_nochange_pair": 19.12,
+   "nochange_pairs_with_any_alarm_pct": 100.0
+  },
+  "gps_standard/alignment": {
+   "err_before_m": {
+    "n": 16,
+    "median": 0.495,
+    "mean": 0.493,
+    "p90": 0.656,
+    "max": 0.779
+   },
+   "err_after_m": {
+    "n": 16,
+    "median": 0.471,
+    "mean": 0.492,
+    "p90": 0.728,
+    "max": 0.784
+   },
+   "n_obs": {
+    "n": 16,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   }
+  },
+  "gps_rtk/v2_noalign": {
+   "precision": 0.5,
+   "recall": 0.182,
+   "recall_by_size_m": {
+    "0.3": {
+     "truth": 22,
+     "recall": 0.0
+    },
+    "0.5": {
+     "truth": 14,
+     "recall": 0.0
+    },
+    "1.0": {
+     "truth": 4,
+     "recall": 1.0
+    },
+    "2.0": {
+     "truth": 4,
+     "recall": 1.0
+    }
+   },
+   "false_alarms_per_nochange_pair": 0.25,
+   "nochange_pairs_with_any_alarm_pct": 25.0
+  },
+  "gps_rtk/v3_aligned": {
+   "precision": 0.533,
+   "recall": 0.182,
+   "recall_by_size_m": {
+    "0.3": {
+     "truth": 22,
+     "recall": 0.0
+    },
+    "0.5": {
+     "truth": 14,
+     "recall": 0.0
+    },
+    "1.0": {
+     "truth": 4,
+     "recall": 1.0
+    },
+    "2.0": {
+     "truth": 4,
+     "recall": 1.0
+    }
+   },
+   "false_alarms_per_nochange_pair": 0.25,
+   "nochange_pairs_with_any_alarm_pct": 25.0
+  },
+  "gps_rtk/alignment": {
+   "err_before_m": {
+    "n": 16,
+    "median": 0.029,
+    "mean": 0.031,
+    "p90": 0.047,
+    "max": 0.055
+   },
+   "err_after_m": {
+    "n": 16,
+    "median": 0.024,
+    "mean": 0.026,
+    "p90": 0.043,
+    "max": 0.051
+   },
+   "n_obs": {
+    "n": 16,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   }
+  }
+ },
+ "runtime_s": 295.1,
+ "rows": [
+  {
+   "id": 0,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      -2.1254761928963237,
+      11.0443736779503,
+      0.15
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      7.191972021133884,
+      16.589112121812345,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      7.6370229497404925,
+      11.056551881950679,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 1.0,
+     "pos": [
+      -3.867936815468214,
+      17.24255427238943,
+      0.5
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      3.7417140988143416,
+      15.410492872930604,
+      0.15
+     ],
+     "new_pos": [
+      2.27658057024093,
+      16.771883244370784,
+      0.15
+     ],
+     "dist": 2.0
+    },
+    {
+     "kind": "moved",
+     "size": 1.0,
+     "pos": [
+      -7.779397797159458,
+      16.17390595819425,
+      0.5
+     ],
+     "new_pos": [
+      -7.932733794567408,
+      15.185731848080598,
+      0.5
+     ],
+     "dist": 1.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.5927023485164999,
+    -0.39931052957338314,
+    -0.31076676628414196
+   ],
+   "align_c": [
+    -2.065089481045471e-05,
+    -0.0002575902298473994,
+    0.011707334775341555
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.7793079981572452,
+   "align_err_after_m": 0.7839033033152529,
+   "v2_noalign": {
+    "n_det": 16,
+    "tp": 1,
+    "fp": 15,
+    "n_truth": 8,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 16,
+    "tp": 1,
+    "fp": 15,
+    "n_truth": 8,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 0,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.19919527823297561,
+    0.35535396679455966,
+    0.22150297664893667
+   ],
+   "align_c": [
+    -0.00027110963617937026,
+    -0.00025678776835613313,
+    0.04016790407890717
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.4637011637372511,
+   "align_err_after_m": 0.4459957871513035,
+   "v2_noalign": {
+    "n_det": 20,
+    "tp": 0,
+    "fp": 20,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 16,
+    "tp": 0,
+    "fp": 16,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 0,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      0.3173297816440339,
+      11.211673445761765,
+      0.15
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 2.0,
+     "pos": [
+      7.213318885012299,
+      16.573377943067957,
+      1.0
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      3.4280429583311403,
+      14.047927395017993,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -7.674826347779092,
+      13.297258056448818,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.5,
+     "pos": [
+      -3.2008867098272455,
+      11.847422100282905,
+      0.25
+     ],
+     "new_pos": [
+      0.7112044871788243,
+      12.681413986518987,
+      0.25
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    0.011947669672656284,
+    0.020341680277470367,
+    0.008753531422921287
+   ],
+   "align_c": [
+    -4.2475920296534685e-06,
+    6.212553181027131e-06,
+    0.014714757548817068
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.025162572990252964,
+   "align_err_after_m": 0.024329319571076657,
+   "v2_noalign": {
+    "n_det": 3,
+    "tp": 1,
+    "fp": 2,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 3,
+    "tp": 1,
+    "fp": 2,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 0,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.024622780735497223,
+    -0.012633868215168063,
+    -0.017738966447299387
+   ],
+   "align_c": [
+    9.495205245361786e-07,
+    -3.867034326071298e-05,
+    -0.018388636204369608
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.032871977242706595,
+   "align_err_after_m": 0.027663977526819143,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 1,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      11.473330466932797,
+      6.422072880039385,
+      0.25
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      14.849812262410904,
+      5.8684379844593035,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      15.866441479117444,
+      -7.80177406352154,
+      0.25
+     ]
+    }
+   ],
+   "true_rel_offset": [
+    -0.3927116362002254,
+    0.31750701835600703,
+    -0.20869344625346473
+   ],
+   "align_c": [
+    -0.0028668860802648875,
+    -0.0022927344456340018,
+    -0.2675587287254875
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.5464303161625714,
+   "align_err_after_m": 0.5076572983505666,
+   "v2_noalign": {
+    "n_det": 19,
+    "tp": 0,
+    "fp": 19,
+    "n_truth": 3,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 38,
+    "tp": 0,
+    "fp": 38,
+    "n_truth": 3,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 1,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.3668384861331906,
+    -0.0012644054501924629,
+    -0.11085023315503392
+   ],
+   "align_c": [
+    -0.0012066162271156839,
+    -0.007171003358879526,
+    -0.29952344883808385
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.3832229740244691,
+   "align_err_after_m": 0.41148406348976685,
+   "v2_noalign": {
+    "n_det": 10,
+    "tp": 0,
+    "fp": 10,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 18,
+    "tp": 0,
+    "fp": 18,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 1,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      9.589197242972645,
+      2.128062920613745,
+      0.5
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      13.269988443428655,
+      -5.2226818731994555,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      10.683869177259012,
+      6.774276061876803,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      17.65870823451072,
+      -5.718611559870328,
+      0.15
+     ],
+     "new_pos": [
+      13.859190017859445,
+      -4.468147117618921,
+      0.15
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    0.004718882886424875,
+    -0.019661646542142693,
+    -0.00012263298335184105
+   ],
+   "align_c": [
+    -4.191951459416618e-07,
+    -5.133724826269754e-07,
+    0.0002197540095101167
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.020220366942579233,
+   "align_err_after_m": 0.02022249239102606,
+   "v2_noalign": {
+    "n_det": 1,
+    "tp": 1,
+    "fp": 0,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 1,
+    "tp": 1,
+    "fp": 0,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 1,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.026321823182433566,
+    -0.0408139299442774,
+    -0.02376390753855607
+   ],
+   "align_c": [
+    -2.8983778728484857e-05,
+    2.5852239634880016e-05,
+    -0.02452710234305231
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.05406790688240781,
+   "align_err_after_m": 0.04860900433709207,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 2,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "removed",
+     "size": 1.0,
+     "pos": [
+      7.012273923836824,
+      11.017815145592333,
+      0.5
+     ]
+    }
+   ],
+   "true_rel_offset": [
+    -0.2449645013423535,
+    0.4133398684999158,
+    -0.15258481768277293
+   ],
+   "align_c": [
+    -3.6659439552981147e-05,
+    0.0002866550223695744,
+    -0.024933682669792484
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.5041225846921764,
+   "align_err_after_m": 0.49688773095478295,
+   "v2_noalign": {
+    "n_det": 26,
+    "tp": 1,
+    "fp": 25,
+    "n_truth": 1,
+    "truth_hits": [
+     [
+      "removed",
+      1.0,
+      true
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 24,
+    "tp": 1,
+    "fp": 23,
+    "n_truth": 1,
+    "truth_hits": [
+     [
+      "removed",
+      1.0,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "id": 2,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.5591506043796235,
+    0.42315305692634353,
+    -0.10724838535884451
+   ],
+   "align_c": [
+    -0.00010009504878743286,
+    -0.0021932169818827834,
+    0.1340962032403238
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.7093730500422798,
+   "align_err_after_m": 0.7429185742629407,
+   "v2_noalign": {
+    "n_det": 17,
+    "tp": 0,
+    "fp": 17,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 21,
+    "tp": 0,
+    "fp": 21,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 2,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      6.721910053991665,
+      14.06703074797769,
+      0.15
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      -2.069817166886165,
+      8.339476661028339,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 2.0,
+     "pos": [
+      -1.3644907594484321,
+      13.18268242660525,
+      1.0
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -6.932339769648902,
+      14.144045740002262,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      1.3211434759238108,
+      8.813903303009354,
+      0.15
+     ],
+     "new_pos": [
+      -0.15583533270801042,
+      10.1624334653908,
+      0.15
+     ],
+     "dist": 2.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.00291601712426442,
+    -0.004925426635831648,
+    -0.02818829999180009
+   ],
+   "align_c": [
+    -3.759113825827384e-05,
+    4.0206577819981086e-05,
+    -0.03301776809262807
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.028763574879379653,
+   "align_err_after_m": 0.007501107352008146,
+   "v2_noalign": {
+    "n_det": 2,
+    "tp": 1,
+    "fp": 1,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 2,
+    "tp": 1,
+    "fp": 1,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 2,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.029981506638297607,
+    -0.022510995297406494,
+    0.002175681277141463
+   ],
+   "align_c": [
+    1.2362578423565334e-06,
+    2.0611352900694588e-06,
+    0.00083903846733255
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.03755488301941366,
+   "align_err_after_m": 0.03751785169114598,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 3,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      -1.1752418468224297,
+      14.212233454282925,
+      0.25
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      4.688190939594575,
+      8.943455166517868,
+      0.5
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 2.0,
+     "pos": [
+      -7.0586794277695155,
+      13.134744743752163,
+      1.0
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -0.23033477721679319,
+      6.716254279481194,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      8.73658891565947,
+      8.84081803018173,
+      0.15
+     ],
+     "new_pos": [
+      4.833897068820496,
+      7.963893661369571,
+      0.15
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    0.10735569422698694,
+    -0.38763555797246274,
+    -0.2738158860156863
+   ],
+   "align_c": [
+    -0.0035060699930079503,
+    -0.002463856785892315,
+    0.20362553388606888
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.4865816584316924,
+   "align_err_after_m": 0.6233761942829791,
+   "v2_noalign": {
+    "n_det": 26,
+    "tp": 1,
+    "fp": 25,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 20,
+    "tp": 0,
+    "fp": 20,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 3,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.15027774050616408,
+    0.22364451045247705,
+    0.5343711230111567
+   ],
+   "align_c": [
+    0.0031316031443163815,
+    -0.021849186917503136,
+    0.4302501964096185
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.5984586564294737,
+   "align_err_after_m": 0.3076406174808807,
+   "v2_noalign": {
+    "n_det": 8,
+    "tp": 0,
+    "fp": 8,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 16,
+    "tp": 0,
+    "fp": 16,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 3,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      -4.482232896760408,
+      13.416558876955069,
+      0.15
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 2.0,
+     "pos": [
+      -2.6510106546671546,
+      7.771896001490527,
+      1.0
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      2.981420193092516,
+      7.6728988382578915,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 1.0,
+     "pos": [
+      -8.002129755492989,
+      14.121561927975739,
+      0.5
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      8.365881330609836,
+      8.893177199170381,
+      0.15
+     ],
+     "new_pos": [
+      6.527256229348598,
+      9.680233573906081,
+      0.15
+     ],
+     "dist": 2.0
+    }
+   ],
+   "true_rel_offset": [
+    0.005232618935346997,
+    0.03025298659303848,
+    0.02142628295079746
+   ],
+   "align_c": [
+    4.576537169594769e-06,
+    1.4859662947174383e-05,
+    0.02172177323634605
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.037439405708541255,
+   "align_err_after_m": 0.030688174629102772,
+   "v2_noalign": {
+    "n_det": 4,
+    "tp": 2,
+    "fp": 2,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 4,
+    "tp": 2,
+    "fp": 2,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 3,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.017879872312322506,
+    -0.047216584375001834,
+    -0.02144161876818188
+   ],
+   "align_c": [
+    2.2948658613276266e-05,
+    5.495497399700934e-05,
+    -0.020634382133000454
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.0548528822337229,
+   "align_err_after_m": 0.050554535524782576,
+   "v2_noalign": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 4,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      -12.006656562391825,
+      8.28931198426616,
+      0.25
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      -12.42487879620955,
+      0.6508168694576373,
+      0.5
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      -9.773406000165126,
+      -3.2256702346464037,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -14.500594213973462,
+      -3.0567003710131555,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 1.0,
+     "pos": [
+      -9.574984415383529,
+      4.6996837493766765,
+      0.5
+     ],
+     "new_pos": [
+      -12.714196675820077,
+      2.2207028329666967,
+      0.5
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    0.16879428130501853,
+    -0.40444352243779147,
+    -0.0414763226909598
+   ],
+   "align_c": [
+    0.00013965051707146082,
+    0.0005288673024648456,
+    0.03837283628814955
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.4402117190479266,
+   "align_err_after_m": 0.44589562582270736,
+   "v2_noalign": {
+    "n_det": 33,
+    "tp": 2,
+    "fp": 31,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      true
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 36,
+    "tp": 2,
+    "fp": 34,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 4,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.2843526713549528,
+    -0.0011465690310155652,
+    -0.07757101641210368
+   ],
+   "align_c": [
+    -2.9003524316510236e-05,
+    -0.0003106099049985319,
+    -0.012890006595188904
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.2947456851498382,
+   "align_err_after_m": 0.291589231535155,
+   "v2_noalign": {
+    "n_det": 21,
+    "tp": 0,
+    "fp": 21,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 23,
+    "tp": 0,
+    "fp": 23,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 4,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "removed",
+     "size": 1.0,
+     "pos": [
+      -9.448788257933003,
+      0.44235412061007473,
+      0.5
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -12.678203195315616,
+      8.536442704277977,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      -9.664505759572254,
+      -7.502815093846178,
+      0.15
+     ],
+     "new_pos": [
+      -5.964717196239272,
+      -9.023198133290668,
+      0.15
+     ],
+     "dist": 4.0
+    },
+    {
+     "kind": "moved",
+     "size": 0.5,
+     "pos": [
+      -9.589598726268616,
+      -3.3586949302925015,
+      0.25
+     ],
+     "new_pos": [
+      -12.894694851089254,
+      -5.611768299203421,
+      0.25
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.02094514324341171,
+    0.006279036291879275,
+    0.0059891578518899
+   ],
+   "align_c": [
+    3.0849843049112246e-05,
+    -2.138569365246867e-05,
+    0.0112564926561786
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.022671465193423796,
+   "align_err_after_m": 0.02252626065505536,
+   "v2_noalign": {
+    "n_det": 2,
+    "tp": 1,
+    "fp": 1,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 2,
+    "tp": 1,
+    "fp": 1,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 4,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.013980797548302676,
+    0.01525738684862626,
+    -0.03360812598887988
+   ],
+   "align_c": [
+    8.524799081801945e-06,
+    -0.00022150914155601173,
+    -0.04240604402739386
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.03946842644468719,
+   "align_err_after_m": 0.022632365953782,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 5,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      17.7204537573561,
+      1.040747676567337,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      10.199268748661293,
+      3.7862011371390674,
+      0.15
+     ],
+     "new_pos": [
+      9.22255730990104,
+      4.000758274971569,
+      0.15
+     ],
+     "dist": 1.0
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      11.143889394052383,
+      -5.819930274591368,
+      0.15
+     ],
+     "new_pos": [
+      11.260033453116053,
+      -1.8216168104487407,
+      0.15
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.15963929029239776,
+    -0.24202422998831133,
+    -0.4638382945333157
+   ],
+   "align_c": [
+    0.013398127407836566,
+    -0.009671881804552177,
+    -0.6854437050432872
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.5469976182599613,
+   "align_err_after_m": 0.36474445794030264,
+   "v2_noalign": {
+    "n_det": 9,
+    "tp": 0,
+    "fp": 9,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 20,
+    "tp": 0,
+    "fp": 20,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 5,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.3719571321719631,
+    -0.231026021120813,
+    0.4134456776806222
+   ],
+   "align_c": [
+    0.0002627564853982997,
+    0.0016599079611270995,
+    0.18971007073342802
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.6022146286842378,
+   "align_err_after_m": 0.49229774763427486,
+   "v2_noalign": {
+    "n_det": 10,
+    "tp": 0,
+    "fp": 10,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 13,
+    "tp": 0,
+    "fp": 13,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 5,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      12.269124900872935,
+      5.354228826794126,
+      0.25
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      10.934016854076454,
+      -6.032394427849422,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      10.342495350624041,
+      -1.1227867640636662,
+      0.25
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.5,
+     "pos": [
+      13.018660840548236,
+      2.21433400489377,
+      0.25
+     ],
+     "new_pos": [
+      15.01538301544713,
+      2.099876343433164,
+      0.25
+     ],
+     "dist": 2.0
+    }
+   ],
+   "true_rel_offset": [
+    0.01355159331736475,
+    0.005852637086688267,
+    0.008097183039201351
+   ],
+   "align_c": [
+    1.5922431627295308e-05,
+    4.463987336375572e-05,
+    0.007429944894842693
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.01683637180267928,
+   "align_err_after_m": 0.014744233608372903,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 5,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.012082007875704733,
+    0.019167057312615914,
+    0.01599794614271962
+   ],
+   "align_c": [
+    7.040259488015002e-06,
+    1.2441950814379494e-05,
+    0.014153364204991801
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.02773599252089335,
+   "align_err_after_m": 0.022725467145882,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 6,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      -10.271797473516441,
+      -2.9020285398118912,
+      0.5
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 0.3,
+     "pos": [
+      -13.044069338326413,
+      1.8415797487507808,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      -9.862140608433808,
+      -6.512260555785479,
+      0.25
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      -13.299278117082302,
+      -6.102080558124006,
+      0.15
+     ],
+     "new_pos": [
+      -12.467199271578728,
+      -5.547423191035602,
+      0.15
+     ],
+     "dist": 1.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.37907431575494255,
+    -0.2382289854056361,
+    -0.07246451974303977
+   ],
+   "align_c": [
+    0.0006947187890155295,
+    0.00024400432618013675,
+    -0.09611498131952216
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.45354326472131196,
+   "align_err_after_m": 0.4490581596662749,
+   "v2_noalign": {
+    "n_det": 19,
+    "tp": 0,
+    "fp": 19,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 30,
+    "tp": 0,
+    "fp": 30,
+    "n_truth": 5,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 6,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.08216457640591865,
+    -0.08911825289728784,
+    0.22173963409559533
+   ],
+   "align_c": [
+    -0.0012499300064440432,
+    -0.00170602017100536,
+    0.13114676225008362
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.2527084208020728,
+   "align_err_after_m": 0.15101637904356327,
+   "v2_noalign": {
+    "n_det": 36,
+    "tp": 0,
+    "fp": 36,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 33,
+    "tp": 0,
+    "fp": 33,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 6,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      -14.84087171461817,
+      -6.094733324051148,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -16.264398390635353,
+      1.907033536685252,
+      0.15
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.5,
+     "pos": [
+      -16.042313582217083,
+      5.752045956926747,
+      0.25
+     ],
+     "new_pos": [
+      -12.053995906681557,
+      5.44655926489109,
+      0.25
+     ],
+     "dist": 4.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.007876328596810077,
+    0.010418727470426487,
+    -0.0009729126971339305
+   ],
+   "align_c": [
+    -2.8946255060529325e-06,
+    1.979870280990481e-05,
+    0.0060581302345728925
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.013097060486391292,
+   "align_err_after_m": 0.01481770045324012,
+   "v2_noalign": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 4,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 4,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 6,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    -0.021820706821486784,
+    0.017653151076137,
+    0.004082427967564266
+   ],
+   "align_c": [
+    1.485702060647488e-05,
+    5.350958556846464e-06,
+    0.004659059078236837
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.028362708037430902,
+   "align_err_after_m": 0.028081474333267974,
+   "v2_noalign": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 0,
+    "tp": 0,
+    "fp": 0,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 7,
+   "gps": "gps_standard",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      -10.395251238328253,
+      -7.793449815417349,
+      0.5
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      3.3581479787183657,
+      11.619076057219923,
+      0.5
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.5,
+     "pos": [
+      -11.126094379127508,
+      8.56539926172409,
+      0.25
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 1.0,
+     "pos": [
+      -10.813763645592967,
+      5.081454747104816,
+      0.5
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.5,
+     "pos": [
+      -6.39095743750577,
+      12.415874342355744,
+      0.25
+     ],
+     "new_pos": [
+      -4.656638766506008,
+      11.419812724070198,
+      0.25
+     ],
+     "dist": 2.0
+    },
+    {
+     "kind": "moved",
+     "size": 1.0,
+     "pos": [
+      -10.995453509098816,
+      -3.5890111463034264,
+      0.5
+     ],
+     "new_pos": [
+      -11.86100882237089,
+      -3.0881978081558854,
+      0.5
+     ],
+     "dist": 1.0
+    }
+   ],
+   "true_rel_offset": [
+    -0.23647229087265803,
+    0.547061743490575,
+    -0.0580838777306914
+   ],
+   "align_c": [
+    0.00017756637731512252,
+    0.005698068536440435,
+    0.20678884202430914
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.5988066736382825,
+   "align_err_after_m": 0.6474838539814639,
+   "v2_noalign": {
+    "n_det": 18,
+    "tp": 2,
+    "fp": 16,
+    "n_truth": 8,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      false
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 32,
+    "tp": 5,
+    "fp": 27,
+    "n_truth": 8,
+    "truth_hits": [
+     [
+      "added",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "removed",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      0.5,
+      true
+     ],
+     [
+      "removed",
+      1.0,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 7,
+   "gps": "gps_standard",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.04856860535983732,
+    -0.09937274930865296,
+    -0.192235469306273
+   ],
+   "align_c": [
+    0.011721165841524708,
+    -0.007282046120871857,
+    0.513878973053524
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.2217844187294568,
+   "align_err_after_m": 0.7130470090546365,
+   "v2_noalign": {
+    "n_det": 18,
+    "tp": 0,
+    "fp": 18,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 13,
+    "tp": 0,
+    "fp": 13,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  },
+  {
+   "id": 7,
+   "gps": "gps_rtk",
+   "change": true,
+   "events": [
+    {
+     "kind": "added",
+     "size": 0.5,
+     "pos": [
+      -10.056002796426654,
+      2.0668426007701832,
+      0.25
+     ]
+    },
+    {
+     "kind": "added",
+     "size": 1.0,
+     "pos": [
+      -8.268045185712529,
+      -6.312396413966129,
+      0.5
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 0.3,
+     "pos": [
+      -5.48089797678651,
+      14.744289484894542,
+      0.15
+     ]
+    },
+    {
+     "kind": "removed",
+     "size": 2.0,
+     "pos": [
+      -10.00090195468357,
+      8.141561156059996,
+      1.0
+     ]
+    },
+    {
+     "kind": "moved",
+     "size": 0.3,
+     "pos": [
+      -7.755769369071427,
+      -2.894158793185248,
+      0.15
+     ],
+     "new_pos": [
+      -8.651300024567302,
+      -3.339158619103336,
+      0.15
+     ],
+     "dist": 1.0
+    }
+   ],
+   "true_rel_offset": [
+    0.00483924609187808,
+    -0.006024419406366546,
+    0.02562928139086231
+   ],
+   "align_c": [
+    -3.7931431572826026e-05,
+    -5.5485478125458924e-05,
+    0.024971105031929123
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.026768862443771576,
+   "align_err_after_m": 0.007736163710420097,
+   "v2_noalign": {
+    "n_det": 3,
+    "tp": 2,
+    "fp": 1,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   },
+   "v3_aligned": {
+    "n_det": 2,
+    "tp": 2,
+    "fp": 0,
+    "n_truth": 6,
+    "truth_hits": [
+     [
+      "added",
+      0.5,
+      false
+     ],
+     [
+      "added",
+      1.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "removed",
+      2.0,
+      true
+     ],
+     [
+      "removed",
+      0.3,
+      false
+     ],
+     [
+      "added",
+      0.3,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "id": 7,
+   "gps": "gps_rtk",
+   "change": false,
+   "events": [],
+   "true_rel_offset": [
+    0.01076785070081415,
+    -0.028668115276847997,
+    0.008705434780016818
+   ],
+   "align_c": [
+    1.8742136195051457e-05,
+    -3.8465567011219584e-05,
+    0.010533311164988768
+   ],
+   "align_ok": true,
+   "align_nobs": 1,
+   "align_err_before_m": 0.03183696023414917,
+   "align_err_after_m": 0.030635621578820018,
+   "v2_noalign": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 0,
+    "truth_hits": []
+   },
+   "v3_aligned": {
+    "n_det": 1,
+    "tp": 0,
+    "fp": 1,
+    "n_truth": 0,
+    "truth_hits": []
+   }
+  }
+ ]
+}

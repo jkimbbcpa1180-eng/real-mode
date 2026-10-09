@@ -1,0 +1,1821 @@
+{
+  "seed": 20261008,
+  "n_flights": 300,
+  "settings": {
+    "dt_s": 0.05,
+    "sonar_rate_hz": 10.0,
+    "telemetry_latency_s": 0.05,
+    "gps_sigma_m_choices": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "gps_noise": "white per tick (all runs except v2_gps_correlated_tau5s: Gauss-Markov, tau 5 s, same sigma)",
+    "variants": {
+      "v1": "drone_core_v1 unchanged",
+      "v1_gate_off": "diagnostic: v1 with its drone-distance gate disabled (voxels still fused into the pose)",
+      "v2": "drone_core_v2",
+      "v2_no_ir": "v2 with no IR at all",
+      "v2_gps_correlated_tau5s": "v2, filter still assumes white GPS"
+    },
+    "speed_mps": [
+      2,
+      12
+    ],
+    "heading_deg": [
+      -30,
+      30
+    ],
+    "obstacle_dist_m": [
+      18,
+      30
+    ],
+    "obstacles": "70% wall, 30% pole (r=0.3 m) on path",
+    "drone_radius_m": 0.25,
+    "vehicle_accel_limit_mps2": 5.0,
+    "actuator_lag_s": 0.1,
+    "sonar": {
+      "max_range_m": 15.0,
+      "half_beam_deg": 15,
+      "range_noise_m": 0.015,
+      "p_multipath_per_echo": 0.1,
+      "p_spike_per_ping": 0.05,
+      "p_dropout_per_ping": 0.1
+    },
+    "ir": "provided whenever sonar has a hit (generous to v1, which drops sonar without IR); bias 0.03 m",
+    "controller": "same for both: P-loop on velocity toward v0*heading (v2: its safe_velocity_mps); the version's command_accel is applied while its action is a brake/flare"
+  },
+  "runs": {
+    "v1": {
+      "label": "v1",
+      "all": {
+        "flights": 300,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.148,
+          "p5": -0.384,
+          "min": -0.479
+        },
+        "pos_err_m": {
+          "median": 0.251,
+          "p95": 1.29
+        },
+        "nees_mean_expect_3": 41.94,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.941
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 97,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.166,
+            "p5": -0.365,
+            "min": -0.449
+          },
+          "pos_err_m": {
+            "median": 0.146,
+            "p95": 0.428
+          },
+          "nees_mean_expect_3": 5.06,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.974
+        },
+        "1.0": {
+          "flights": 94,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.15,
+            "p5": -0.403,
+            "min": -0.479
+          },
+          "pos_err_m": {
+            "median": 0.235,
+            "p95": 0.861
+          },
+          "nees_mean_expect_3": 17.04,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.956
+        },
+        "2.0": {
+          "flights": 109,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.145,
+            "p5": -0.379,
+            "min": -0.477
+          },
+          "pos_err_m": {
+            "median": 0.525,
+            "p95": 1.859
+          },
+          "nees_mean_expect_3": 99.29,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.896
+        }
+      },
+      "v0_le_9": {
+        "flights": 215,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.117,
+          "p5": -0.321,
+          "min": -0.416
+        },
+        "pos_err_m": {
+          "median": 0.237,
+          "p95": 1.212
+        },
+        "nees_mean_expect_3": 39.89,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.942
+      },
+      "v0_gt_9": {
+        "flights": 85,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.241,
+          "p5": -0.441,
+          "min": -0.479
+        },
+        "pos_err_m": {
+          "median": 0.364,
+          "p95": 1.604
+        },
+        "nees_mean_expect_3": 53.61,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.934
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 228,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.152,
+            "p5": -0.386,
+            "min": -0.479
+          },
+          "pos_err_m": {
+            "median": 0.251,
+            "p95": 1.281
+          },
+          "nees_mean_expect_3": 40.05,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.939
+        },
+        "pole": {
+          "flights": 72,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.12,
+            "p5": -0.356,
+            "min": -0.477
+          },
+          "pos_err_m": {
+            "median": 0.254,
+            "p95": 1.331
+          },
+          "nees_mean_expect_3": 48.0,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.948
+        }
+      },
+      "runtime_s": 12.9,
+      "collided_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    "v1_gate_off": {
+      "label": "v1_gate_off",
+      "all": {
+        "flights": 300,
+        "collision_rate": 0.8733,
+        "min_clearance_m": {
+          "median": -0.107,
+          "p5": -0.328,
+          "min": -0.459
+        },
+        "pos_err_m": {
+          "median": 91.793,
+          "p95": 591.617
+        },
+        "nees_mean_expect_3": 644982.52,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.292
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 97,
+          "collision_rate": 0.9485,
+          "min_clearance_m": {
+            "median": -0.131,
+            "p5": -0.308,
+            "min": -0.404
+          },
+          "pos_err_m": {
+            "median": 72.572,
+            "p95": 344.226
+          },
+          "nees_mean_expect_3": 603391.22,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.327
+        },
+        "1.0": {
+          "flights": 94,
+          "collision_rate": 0.8298,
+          "min_clearance_m": {
+            "median": -0.097,
+            "p5": -0.351,
+            "min": -0.459
+          },
+          "pos_err_m": {
+            "median": 99.175,
+            "p95": 686.097
+          },
+          "nees_mean_expect_3": 662021.47,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.277
+        },
+        "2.0": {
+          "flights": 109,
+          "collision_rate": 0.844,
+          "min_clearance_m": {
+            "median": -0.1,
+            "p5": -0.325,
+            "min": -0.442
+          },
+          "pos_err_m": {
+            "median": 102.182,
+            "p95": 680.82
+          },
+          "nees_mean_expect_3": 664750.57,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.276
+        }
+      },
+      "v0_le_9": {
+        "flights": 215,
+        "collision_rate": 0.8326,
+        "min_clearance_m": {
+          "median": -0.092,
+          "p5": -0.256,
+          "min": -0.363
+        },
+        "pos_err_m": {
+          "median": 114.981,
+          "p95": 628.241
+        },
+        "nees_mean_expect_3": 660946.17,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.285
+      },
+      "v0_gt_9": {
+        "flights": 85,
+        "collision_rate": 0.9765,
+        "min_clearance_m": {
+          "median": -0.232,
+          "p5": -0.415,
+          "min": -0.459
+        },
+        "pos_err_m": {
+          "median": 37.333,
+          "p95": 100.795
+        },
+        "nees_mean_expect_3": 537520.65,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.339
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 228,
+          "collision_rate": 0.9386,
+          "min_clearance_m": {
+            "median": -0.113,
+            "p5": -0.329,
+            "min": -0.459
+          },
+          "pos_err_m": {
+            "median": 91.843,
+            "p95": 647.443
+          },
+          "nees_mean_expect_3": 651096.25,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.308
+        },
+        "pole": {
+          "flights": 72,
+          "collision_rate": 0.6667,
+          "min_clearance_m": {
+            "median": -0.074,
+            "p5": -0.314,
+            "min": -0.423
+          },
+          "pos_err_m": {
+            "median": 91.555,
+            "p95": 470.815
+          },
+          "nees_mean_expect_3": 629095.09,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.25
+        }
+      },
+      "runtime_s": 19.2,
+      "collided_ids": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        53,
+        54,
+        55
+      ]
+    },
+    "v2": {
+      "label": "v2",
+      "all": {
+        "flights": 300,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.977,
+          "p5": 0.745,
+          "min": 0.44
+        },
+        "pos_err_m": {
+          "median": 0.172,
+          "p95": 0.722
+        },
+        "nees_mean_expect_3": 3.03,
+        "map_point_err_world_m": {
+          "median": 0.086,
+          "p95": 0.54
+        },
+        "map_point_err_relative_m": {
+          "median": 0.022,
+          "p95": 0.333
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.947
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 97,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.913,
+            "min": 0.551
+          },
+          "pos_err_m": {
+            "median": 0.099,
+            "p95": 0.267
+          },
+          "nees_mean_expect_3": 3.09,
+          "map_point_err_world_m": {
+            "median": 0.043,
+            "p95": 0.156
+          },
+          "map_point_err_relative_m": {
+            "median": 0.015,
+            "p95": 0.125
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.955
+        },
+        "1.0": {
+          "flights": 94,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.977,
+            "p5": 0.55,
+            "min": 0.44
+          },
+          "pos_err_m": {
+            "median": 0.164,
+            "p95": 0.512
+          },
+          "nees_mean_expect_3": 2.92,
+          "map_point_err_world_m": {
+            "median": 0.085,
+            "p95": 0.287
+          },
+          "map_point_err_relative_m": {
+            "median": 0.018,
+            "p95": 0.207
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.945
+        },
+        "2.0": {
+          "flights": 109,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.979,
+            "p5": 0.668,
+            "min": 0.463
+          },
+          "pos_err_m": {
+            "median": 0.33,
+            "p95": 1.077
+          },
+          "nees_mean_expect_3": 3.07,
+          "map_point_err_world_m": {
+            "median": 0.169,
+            "p95": 0.691
+          },
+          "map_point_err_relative_m": {
+            "median": 0.041,
+            "p95": 0.419
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.942
+        }
+      },
+      "v0_le_9": {
+        "flights": 215,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.976,
+          "p5": 0.673,
+          "min": 0.44
+        },
+        "pos_err_m": {
+          "median": 0.167,
+          "p95": 0.694
+        },
+        "nees_mean_expect_3": 3.0,
+        "map_point_err_world_m": {
+          "median": 0.076,
+          "p95": 0.504
+        },
+        "map_point_err_relative_m": {
+          "median": 0.019,
+          "p95": 0.297
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.946
+      },
+      "v0_gt_9": {
+        "flights": 85,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.982,
+          "p5": 0.849,
+          "min": 0.491
+        },
+        "pos_err_m": {
+          "median": 0.193,
+          "p95": 0.792
+        },
+        "nees_mean_expect_3": 3.14,
+        "map_point_err_world_m": {
+          "median": 0.114,
+          "p95": 0.594
+        },
+        "map_point_err_relative_m": {
+          "median": 0.034,
+          "p95": 0.386
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.949
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 228,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.98,
+            "p5": 0.932,
+            "min": 0.908
+          },
+          "pos_err_m": {
+            "median": 0.171,
+            "p95": 0.744
+          },
+          "nees_mean_expect_3": 3.14,
+          "map_point_err_world_m": {
+            "median": 0.091,
+            "p95": 0.548
+          },
+          "map_point_err_relative_m": {
+            "median": 0.025,
+            "p95": 0.343
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.938
+        },
+        "pole": {
+          "flights": 72,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.966,
+            "p5": 0.482,
+            "min": 0.44
+          },
+          "pos_err_m": {
+            "median": 0.174,
+            "p95": 0.661
+          },
+          "nees_mean_expect_3": 2.69,
+          "map_point_err_world_m": {
+            "median": 0.07,
+            "p95": 0.42
+          },
+          "map_point_err_relative_m": {
+            "median": 0.011,
+            "p95": 0.204
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.974
+        }
+      },
+      "runtime_s": 44.2,
+      "collided_ids": []
+    },
+    "v2_no_ir": {
+      "label": "v2_no_ir",
+      "all": {
+        "flights": 300,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.977,
+          "p5": 0.745,
+          "min": 0.44
+        },
+        "pos_err_m": {
+          "median": 0.172,
+          "p95": 0.722
+        },
+        "nees_mean_expect_3": 3.03,
+        "map_point_err_world_m": {
+          "median": 0.086,
+          "p95": 0.54
+        },
+        "map_point_err_relative_m": {
+          "median": 0.022,
+          "p95": 0.333
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.947
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 97,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.913,
+            "min": 0.551
+          },
+          "pos_err_m": {
+            "median": 0.099,
+            "p95": 0.267
+          },
+          "nees_mean_expect_3": 3.09,
+          "map_point_err_world_m": {
+            "median": 0.043,
+            "p95": 0.156
+          },
+          "map_point_err_relative_m": {
+            "median": 0.015,
+            "p95": 0.125
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.955
+        },
+        "1.0": {
+          "flights": 94,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.977,
+            "p5": 0.55,
+            "min": 0.44
+          },
+          "pos_err_m": {
+            "median": 0.164,
+            "p95": 0.512
+          },
+          "nees_mean_expect_3": 2.92,
+          "map_point_err_world_m": {
+            "median": 0.085,
+            "p95": 0.287
+          },
+          "map_point_err_relative_m": {
+            "median": 0.018,
+            "p95": 0.207
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.945
+        },
+        "2.0": {
+          "flights": 109,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.979,
+            "p5": 0.668,
+            "min": 0.463
+          },
+          "pos_err_m": {
+            "median": 0.33,
+            "p95": 1.077
+          },
+          "nees_mean_expect_3": 3.07,
+          "map_point_err_world_m": {
+            "median": 0.169,
+            "p95": 0.691
+          },
+          "map_point_err_relative_m": {
+            "median": 0.041,
+            "p95": 0.419
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.942
+        }
+      },
+      "v0_le_9": {
+        "flights": 215,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.976,
+          "p5": 0.673,
+          "min": 0.44
+        },
+        "pos_err_m": {
+          "median": 0.167,
+          "p95": 0.694
+        },
+        "nees_mean_expect_3": 3.0,
+        "map_point_err_world_m": {
+          "median": 0.076,
+          "p95": 0.504
+        },
+        "map_point_err_relative_m": {
+          "median": 0.019,
+          "p95": 0.297
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.946
+      },
+      "v0_gt_9": {
+        "flights": 85,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.982,
+          "p5": 0.849,
+          "min": 0.491
+        },
+        "pos_err_m": {
+          "median": 0.193,
+          "p95": 0.792
+        },
+        "nees_mean_expect_3": 3.14,
+        "map_point_err_world_m": {
+          "median": 0.114,
+          "p95": 0.594
+        },
+        "map_point_err_relative_m": {
+          "median": 0.034,
+          "p95": 0.386
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.949
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 228,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.98,
+            "p5": 0.932,
+            "min": 0.908
+          },
+          "pos_err_m": {
+            "median": 0.171,
+            "p95": 0.744
+          },
+          "nees_mean_expect_3": 3.14,
+          "map_point_err_world_m": {
+            "median": 0.091,
+            "p95": 0.548
+          },
+          "map_point_err_relative_m": {
+            "median": 0.025,
+            "p95": 0.343
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.938
+        },
+        "pole": {
+          "flights": 72,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.966,
+            "p5": 0.482,
+            "min": 0.44
+          },
+          "pos_err_m": {
+            "median": 0.174,
+            "p95": 0.661
+          },
+          "nees_mean_expect_3": 2.69,
+          "map_point_err_world_m": {
+            "median": 0.07,
+            "p95": 0.42
+          },
+          "map_point_err_relative_m": {
+            "median": 0.011,
+            "p95": 0.204
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.974
+        }
+      },
+      "runtime_s": 42.7,
+      "collided_ids": []
+    },
+    "v2_gps_correlated_tau5s": {
+      "label": "v2_gps_correlated_tau5s",
+      "all": {
+        "flights": 300,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.97,
+          "p5": 0.598,
+          "min": 0.253
+        },
+        "pos_err_m": {
+          "median": 1.2,
+          "p95": 3.956
+        },
+        "nees_mean_expect_3": 170.52,
+        "map_point_err_world_m": {
+          "median": 0.627,
+          "p95": 2.718
+        },
+        "map_point_err_relative_m": {
+          "median": 0.037,
+          "p95": 0.88
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.035
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 97,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.972,
+            "p5": 0.828,
+            "min": 0.512
+          },
+          "pos_err_m": {
+            "median": 0.699,
+            "p95": 1.134
+          },
+          "nees_mean_expect_3": 144.36,
+          "map_point_err_world_m": {
+            "median": 0.331,
+            "p95": 0.923
+          },
+          "map_point_err_relative_m": {
+            "median": 0.018,
+            "p95": 0.307
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.03
+        },
+        "1.0": {
+          "flights": 94,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.788,
+            "min": 0.321
+          },
+          "pos_err_m": {
+            "median": 1.283,
+            "p95": 2.342
+          },
+          "nees_mean_expect_3": 184.63,
+          "map_point_err_world_m": {
+            "median": 0.539,
+            "p95": 1.63
+          },
+          "map_point_err_relative_m": {
+            "median": 0.027,
+            "p95": 0.506
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.029
+        },
+        "2.0": {
+          "flights": 109,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.964,
+            "p5": 0.47,
+            "min": 0.253
+          },
+          "pos_err_m": {
+            "median": 2.48,
+            "p95": 4.637
+          },
+          "nees_mean_expect_3": 181.81,
+          "map_point_err_world_m": {
+            "median": 1.272,
+            "p95": 3.266
+          },
+          "map_point_err_relative_m": {
+            "median": 0.099,
+            "p95": 1.174
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.046
+        }
+      },
+      "v0_le_9": {
+        "flights": 215,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.965,
+          "p5": 0.553,
+          "min": 0.253
+        },
+        "pos_err_m": {
+          "median": 1.19,
+          "p95": 3.823
+        },
+        "nees_mean_expect_3": 173.66,
+        "map_point_err_world_m": {
+          "median": 0.613,
+          "p95": 2.517
+        },
+        "map_point_err_relative_m": {
+          "median": 0.03,
+          "p95": 0.827
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.034
+      },
+      "v0_gt_9": {
+        "flights": 85,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.982,
+          "p5": 0.669,
+          "min": 0.513
+        },
+        "pos_err_m": {
+          "median": 1.246,
+          "p95": 4.381
+        },
+        "nees_mean_expect_3": 159.88,
+        "map_point_err_world_m": {
+          "median": 0.664,
+          "p95": 3.125
+        },
+        "map_point_err_relative_m": {
+          "median": 0.06,
+          "p95": 0.977
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.04
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 228,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.974,
+            "p5": 0.924,
+            "min": 0.868
+          },
+          "pos_err_m": {
+            "median": 1.209,
+            "p95": 3.846
+          },
+          "nees_mean_expect_3": 167.22,
+          "map_point_err_world_m": {
+            "median": 0.616,
+            "p95": 2.559
+          },
+          "map_point_err_relative_m": {
+            "median": 0.047,
+            "p95": 0.887
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.034
+        },
+        "pole": {
+          "flights": 72,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.955,
+            "p5": 0.418,
+            "min": 0.253
+          },
+          "pos_err_m": {
+            "median": 1.166,
+            "p95": 4.195
+          },
+          "nees_mean_expect_3": 180.76,
+          "map_point_err_world_m": {
+            "median": 0.735,
+            "p95": 3.797
+          },
+          "map_point_err_relative_m": {
+            "median": 0.016,
+            "p95": 0.799
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.041
+        }
+      },
+      "runtime_s": 43.3,
+      "collided_ids": []
+    },
+    "holdout_seed_v1": {
+      "label": "holdout_seed_v1",
+      "all": {
+        "flights": 150,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.15,
+          "p5": -0.452,
+          "min": -0.539
+        },
+        "pos_err_m": {
+          "median": 0.264,
+          "p95": 1.259
+        },
+        "nees_mean_expect_3": 50.16,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.939
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 47,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.152,
+            "p5": -0.458,
+            "min": -0.5
+          },
+          "pos_err_m": {
+            "median": 0.139,
+            "p95": 0.431
+          },
+          "nees_mean_expect_3": 5.21,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.978
+        },
+        "1.0": {
+          "flights": 45,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.144,
+            "p5": -0.426,
+            "min": -0.522
+          },
+          "pos_err_m": {
+            "median": 0.263,
+            "p95": 0.91
+          },
+          "nees_mean_expect_3": 18.1,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.93
+        },
+        "2.0": {
+          "flights": 58,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.163,
+            "p5": -0.445,
+            "min": -0.539
+          },
+          "pos_err_m": {
+            "median": 0.493,
+            "p95": 1.74
+          },
+          "nees_mean_expect_3": 112.17,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.914
+        }
+      },
+      "v0_le_9": {
+        "flights": 97,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.121,
+          "p5": -0.294,
+          "min": -0.409
+        },
+        "pos_err_m": {
+          "median": 0.25,
+          "p95": 1.222
+        },
+        "nees_mean_expect_3": 48.63,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.939
+      },
+      "v0_gt_9": {
+        "flights": 53,
+        "collision_rate": 1.0,
+        "min_clearance_m": {
+          "median": -0.29,
+          "p5": -0.489,
+          "min": -0.539
+        },
+        "pos_err_m": {
+          "median": 0.332,
+          "p95": 1.308
+        },
+        "nees_mean_expect_3": 56.96,
+        "map_point_err_world_m": null,
+        "map_point_err_relative_m": null,
+        "frac_nees_le_7.81_expect_0.95": 0.943
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 106,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.148,
+            "p5": -0.449,
+            "min": -0.522
+          },
+          "pos_err_m": {
+            "median": 0.243,
+            "p95": 1.182
+          },
+          "nees_mean_expect_3": 42.97,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.948
+        },
+        "pole": {
+          "flights": 44,
+          "collision_rate": 1.0,
+          "min_clearance_m": {
+            "median": -0.162,
+            "p5": -0.457,
+            "min": -0.539
+          },
+          "pos_err_m": {
+            "median": 0.335,
+            "p95": 1.392
+          },
+          "nees_mean_expect_3": 69.35,
+          "map_point_err_world_m": null,
+          "map_point_err_relative_m": null,
+          "frac_nees_le_7.81_expect_0.95": 0.916
+        }
+      },
+      "runtime_s": 6.1,
+      "scenario_seed": 20261009
+    },
+    "holdout_seed_v2": {
+      "label": "holdout_seed_v2",
+      "all": {
+        "flights": 150,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.976,
+          "p5": 0.814,
+          "min": 0.471
+        },
+        "pos_err_m": {
+          "median": 0.177,
+          "p95": 0.738
+        },
+        "nees_mean_expect_3": 3.0,
+        "map_point_err_world_m": {
+          "median": 0.094,
+          "p95": 0.466
+        },
+        "map_point_err_relative_m": {
+          "median": 0.023,
+          "p95": 0.306
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.959
+      },
+      "by_gps_sigma": {
+        "0.5": {
+          "flights": 47,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.794,
+            "min": 0.53
+          },
+          "pos_err_m": {
+            "median": 0.101,
+            "p95": 0.251
+          },
+          "nees_mean_expect_3": 3.08,
+          "map_point_err_world_m": {
+            "median": 0.049,
+            "p95": 0.156
+          },
+          "map_point_err_relative_m": {
+            "median": 0.014,
+            "p95": 0.104
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.956
+        },
+        "1.0": {
+          "flights": 45,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.975,
+            "p5": 0.795,
+            "min": 0.665
+          },
+          "pos_err_m": {
+            "median": 0.171,
+            "p95": 0.532
+          },
+          "nees_mean_expect_3": 3.14,
+          "map_point_err_world_m": {
+            "median": 0.098,
+            "p95": 0.37
+          },
+          "map_point_err_relative_m": {
+            "median": 0.024,
+            "p95": 0.224
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.947
+        },
+        "2.0": {
+          "flights": 58,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.915,
+            "min": 0.471
+          },
+          "pos_err_m": {
+            "median": 0.319,
+            "p95": 1.001
+          },
+          "nees_mean_expect_3": 2.83,
+          "map_point_err_world_m": {
+            "median": 0.145,
+            "p95": 0.61
+          },
+          "map_point_err_relative_m": {
+            "median": 0.035,
+            "p95": 0.424
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.97
+        }
+      },
+      "v0_le_9": {
+        "flights": 97,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.975,
+          "p5": 0.909,
+          "min": 0.471
+        },
+        "pos_err_m": {
+          "median": 0.172,
+          "p95": 0.754
+        },
+        "nees_mean_expect_3": 2.9,
+        "map_point_err_world_m": {
+          "median": 0.087,
+          "p95": 0.558
+        },
+        "map_point_err_relative_m": {
+          "median": 0.018,
+          "p95": 0.302
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.96
+      },
+      "v0_gt_9": {
+        "flights": 53,
+        "collision_rate": 0.0,
+        "min_clearance_m": {
+          "median": 0.979,
+          "p5": 0.756,
+          "min": 0.665
+        },
+        "pos_err_m": {
+          "median": 0.186,
+          "p95": 0.71
+        },
+        "nees_mean_expect_3": 3.25,
+        "map_point_err_world_m": {
+          "median": 0.111,
+          "p95": 0.44
+        },
+        "map_point_err_relative_m": {
+          "median": 0.036,
+          "p95": 0.311
+        },
+        "frac_nees_le_7.81_expect_0.95": 0.956
+      },
+      "by_kind": {
+        "wall": {
+          "flights": 106,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.976,
+            "p5": 0.922,
+            "min": 0.899
+          },
+          "pos_err_m": {
+            "median": 0.166,
+            "p95": 0.706
+          },
+          "nees_mean_expect_3": 2.94,
+          "map_point_err_world_m": {
+            "median": 0.095,
+            "p95": 0.468
+          },
+          "map_point_err_relative_m": {
+            "median": 0.028,
+            "p95": 0.332
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.962
+        },
+        "pole": {
+          "flights": 44,
+          "collision_rate": 0.0,
+          "min_clearance_m": {
+            "median": 0.975,
+            "p5": 0.667,
+            "min": 0.471
+          },
+          "pos_err_m": {
+            "median": 0.202,
+            "p95": 0.797
+          },
+          "nees_mean_expect_3": 3.15,
+          "map_point_err_world_m": {
+            "median": 0.093,
+            "p95": 0.408
+          },
+          "map_point_err_relative_m": {
+            "median": 0.011,
+            "p95": 0.145
+          },
+          "frac_nees_le_7.81_expect_0.95": 0.951
+        }
+      },
+      "runtime_s": 23.7,
+      "scenario_seed": 20261009
+    }
+  },
+  "heading_settings": {
+    "gyro_z_bias_dps": [
+      -1.0,
+      1.0
+    ],
+    "yaw_init_err_deg_sigma": 5.0,
+    "gyro_arw_rad_s_sqrt_hz": 0.0003,
+    "tilt_noise_deg": 0.5,
+    "tilt_model": "roll/pitch from horizontal thrust acceleration, yaw = heading (constant)",
+    "mag_noise_ut": 0.5,
+    "hard_iron_ut_sigma": 15.0,
+    "hard_iron_cal_err_ut": 0.3,
+    "soft_iron_sigma": 0.03,
+    "soft_iron_cal_err": 0.005,
+    "motor_k_ut_per_a_sigma": 0.3,
+    "motor_k_cal_err_frac": 0.1,
+    "motor_current_a": "10 + 2*|thrust accel|",
+    "bursts": {
+      "start_p_per_tick": 0.01,
+      "len_s": [
+        0.5,
+        3.0
+      ],
+      "ut": [
+        10.0,
+        40.0
+      ]
+    },
+    "site_field": "same assumed declination/field/dip in truth and core (site model assumed correct)",
+    "sonar": "body-frame bearing computed through the true tilted attitude",
+    "anomaly": {
+      "ut": 20.0,
+      "wavelength_m": 10.0,
+      "model": "world-frame sinusoidal field added to the Earth field, random phases"
+    },
+    "landmarks": {
+      "lateral_m": [
+        -6.0,
+        0.0,
+        6.0
+      ],
+      "placement": "on the obstacle plane ahead",
+      "fov_half_deg": 60.0,
+      "bearing_noise_deg": 0.5,
+      "rate_hz": 5.0,
+      "occlusion": "not modeled"
+    },
+    "map_error_metric": "distance from each active map point to the true surface (along-surface error not counted); world = as stored, relative = re-anchored at the true drone position (what guidance uses)"
+  },
+  "heading": {
+    "main_seed_mag_off": {
+      "label": "main_seed_mag_off",
+      "flights": 300,
+      "heading_err_deg": {
+        "median": 4.253,
+        "p95": 12.193,
+        "max": 18.366
+      },
+      "final_heading_err_deg": {
+        "median": 5.704,
+        "p95": 15.135
+      },
+      "heading_nees_mean_expect_1": 0.604,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.99,
+      "mag_accepted": 0,
+      "mag_rejected": 0,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.279,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.108,
+        "p95": 0.812
+      },
+      "map_point_err_relative_m": {
+        "median": 0.048,
+        "p95": 0.755
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.928,
+        "p5": 0.56,
+        "min": 0.295
+      },
+      "pos_err_m": {
+        "median": 0.17,
+        "p95": 0.722
+      },
+      "runtime_s": 47.6
+    },
+    "main_seed_mag_on": {
+      "label": "main_seed_mag_on",
+      "flights": 300,
+      "heading_err_deg": {
+        "median": 0.675,
+        "p95": 2.083,
+        "max": 4.854
+      },
+      "final_heading_err_deg": {
+        "median": 0.576,
+        "p95": 1.902
+      },
+      "heading_nees_mean_expect_1": 0.925,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.955,
+      "mag_accepted": 62274,
+      "mag_rejected": 13,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.0,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.089,
+        "p95": 0.547
+      },
+      "map_point_err_relative_m": {
+        "median": 0.024,
+        "p95": 0.358
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.975,
+        "p5": 0.72,
+        "min": 0.206
+      },
+      "pos_err_m": {
+        "median": 0.173,
+        "p95": 0.722
+      },
+      "runtime_s": 54.8
+    },
+    "main_seed_mag_bursts": {
+      "label": "main_seed_mag_bursts",
+      "flights": 300,
+      "heading_err_deg": {
+        "median": 0.712,
+        "p95": 2.16,
+        "max": 28.352
+      },
+      "final_heading_err_deg": {
+        "median": 0.668,
+        "p95": 1.969
+      },
+      "heading_nees_mean_expect_1": 1.005,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.958,
+      "mag_accepted": 47701,
+      "mag_rejected": 14586,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.0,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.088,
+        "p95": 0.535
+      },
+      "map_point_err_relative_m": {
+        "median": 0.024,
+        "p95": 0.346
+      },
+      "frac_ticks_in_burst": 0.241,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.975,
+        "p5": 0.598,
+        "min": 0.304
+      },
+      "pos_err_m": {
+        "median": 0.172,
+        "p95": 0.722
+      },
+      "runtime_s": 56.2
+    },
+    "main_seed_mag_anomaly": {
+      "label": "main_seed_mag_anomaly",
+      "flights": 300,
+      "heading_err_deg": {
+        "median": 9.834,
+        "p95": 43.83,
+        "max": 77.679
+      },
+      "final_heading_err_deg": {
+        "median": 18.628,
+        "p95": 55.534
+      },
+      "heading_nees_mean_expect_1": 44.38,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.493,
+      "mag_accepted": 8313,
+      "mag_rejected": 52487,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.032,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.186,
+        "p95": 2.417
+      },
+      "map_point_err_relative_m": {
+        "median": 0.145,
+        "p95": 2.381
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0467,
+      "min_clearance_m": {
+        "median": 0.899,
+        "p5": 0.018,
+        "min": -0.126
+      },
+      "pos_err_m": {
+        "median": 0.172,
+        "p95": 0.731
+      },
+      "runtime_s": 56.8
+    },
+    "main_seed_mag_anomaly_landmarks": {
+      "label": "main_seed_mag_anomaly_landmarks",
+      "flights": 300,
+      "heading_err_deg": {
+        "median": 0.795,
+        "p95": 6.708,
+        "max": 55.84
+      },
+      "final_heading_err_deg": {
+        "median": 2.429,
+        "p95": 13.981
+      },
+      "heading_nees_mean_expect_1": 4.395,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.794,
+      "mag_accepted": 6528,
+      "mag_rejected": 55759,
+      "landmark_bearings_accepted": 22238,
+      "landmark_bearings_rejected": 108,
+      "frac_ticks_heading_uncertain": 0.001,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.085,
+        "p95": 0.56
+      },
+      "map_point_err_relative_m": {
+        "median": 0.026,
+        "p95": 0.367
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.975,
+        "p5": 0.706,
+        "min": 0.326
+      },
+      "pos_err_m": {
+        "median": 0.172,
+        "p95": 0.721
+      },
+      "runtime_s": 52.5
+    },
+    "holdout_seed_mag_off": {
+      "label": "holdout_seed_mag_off",
+      "flights": 150,
+      "heading_err_deg": {
+        "median": 3.9,
+        "p95": 11.681,
+        "max": 21.339
+      },
+      "final_heading_err_deg": {
+        "median": 4.962,
+        "p95": 13.891
+      },
+      "heading_nees_mean_expect_1": 0.567,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.99,
+      "mag_accepted": 0,
+      "mag_rejected": 0,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.271,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.108,
+        "p95": 0.756
+      },
+      "map_point_err_relative_m": {
+        "median": 0.054,
+        "p95": 0.762
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.904,
+        "p5": 0.498,
+        "min": 0.153
+      },
+      "pos_err_m": {
+        "median": 0.178,
+        "p95": 0.738
+      },
+      "runtime_s": 22.5
+    },
+    "holdout_seed_mag_on": {
+      "label": "holdout_seed_mag_on",
+      "flights": 150,
+      "heading_err_deg": {
+        "median": 0.792,
+        "p95": 2.167,
+        "max": 12.722
+      },
+      "final_heading_err_deg": {
+        "median": 0.675,
+        "p95": 1.895
+      },
+      "heading_nees_mean_expect_1": 1.106,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.95,
+      "mag_accepted": 30763,
+      "mag_rejected": 3,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.0,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.096,
+        "p95": 0.478
+      },
+      "map_point_err_relative_m": {
+        "median": 0.026,
+        "p95": 0.34
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.972,
+        "p5": 0.654,
+        "min": 0.384
+      },
+      "pos_err_m": {
+        "median": 0.178,
+        "p95": 0.738
+      },
+      "runtime_s": 24.9
+    },
+    "holdout_seed_mag_bursts": {
+      "label": "holdout_seed_mag_bursts",
+      "flights": 150,
+      "heading_err_deg": {
+        "median": 0.896,
+        "p95": 2.557,
+        "max": 39.118
+      },
+      "final_heading_err_deg": {
+        "median": 0.8,
+        "p95": 2.26
+      },
+      "heading_nees_mean_expect_1": 1.335,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.935,
+      "mag_accepted": 23048,
+      "mag_rejected": 7718,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.0,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.097,
+        "p95": 0.525
+      },
+      "map_point_err_relative_m": {
+        "median": 0.028,
+        "p95": 0.374
+      },
+      "frac_ticks_in_burst": 0.256,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.967,
+        "p5": 0.699,
+        "min": 0.409
+      },
+      "pos_err_m": {
+        "median": 0.178,
+        "p95": 0.738
+      },
+      "runtime_s": 25.8
+    },
+    "holdout_seed_mag_anomaly": {
+      "label": "holdout_seed_mag_anomaly",
+      "flights": 150,
+      "heading_err_deg": {
+        "median": 11.013,
+        "p95": 45.54,
+        "max": 76.233
+      },
+      "final_heading_err_deg": {
+        "median": 22.159,
+        "p95": 58.44
+      },
+      "heading_nees_mean_expect_1": 53.558,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.48,
+      "mag_accepted": 3933,
+      "mag_rejected": 26748,
+      "landmark_bearings_accepted": 0,
+      "landmark_bearings_rejected": 0,
+      "frac_ticks_heading_uncertain": 0.049,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.179,
+        "p95": 1.924
+      },
+      "map_point_err_relative_m": {
+        "median": 0.136,
+        "p95": 1.888
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0067,
+      "min_clearance_m": {
+        "median": 0.873,
+        "p5": 0.261,
+        "min": -0.043
+      },
+      "pos_err_m": {
+        "median": 0.183,
+        "p95": 0.739
+      },
+      "runtime_s": 24.3
+    },
+    "holdout_seed_mag_anomaly_landmarks": {
+      "label": "holdout_seed_mag_anomaly_landmarks",
+      "flights": 150,
+      "heading_err_deg": {
+        "median": 0.804,
+        "p95": 6.199,
+        "max": 49.552
+      },
+      "final_heading_err_deg": {
+        "median": 2.067,
+        "p95": 11.092
+      },
+      "heading_nees_mean_expect_1": 5.369,
+      "frac_heading_nees_le_3.84_expect_0.95": 0.767,
+      "mag_accepted": 2584,
+      "mag_rejected": 28182,
+      "landmark_bearings_accepted": 11071,
+      "landmark_bearings_rejected": 39,
+      "frac_ticks_heading_uncertain": 0.0,
+      "frac_flights_reached_2m": 1.0,
+      "map_point_err_world_m": {
+        "median": 0.093,
+        "p95": 0.472
+      },
+      "map_point_err_relative_m": {
+        "median": 0.026,
+        "p95": 0.35
+      },
+      "frac_ticks_in_burst": 0.0,
+      "collision_rate": 0.0,
+      "min_clearance_m": {
+        "median": 0.975,
+        "p5": 0.764,
+        "min": 0.567
+      },
+      "pos_err_m": {
+        "median": 0.176,
+        "p95": 0.738
+      },
+      "runtime_s": 27.5
+    }
+  },
+  "total_runtime_s": 585.2
+}

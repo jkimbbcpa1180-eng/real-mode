@@ -1,0 +1,1460 @@
+{
+  "seed_main": 20261009,
+  "seed_holdout": 20261010,
+  "n_main": 12,
+  "n_holdout": 12,
+  "settings": {
+    "speed_mps": 2.0,
+    "sonar": {
+      "beams": "5x5 inside +/-15 deg (ASSUMED gimballed multibeam)",
+      "rate_hz": 10.0,
+      "max_range_m": 15.0,
+      "range_noise_m": 0.015,
+      "bearing_noise_deg": 1.0,
+      "p_ping_drop": 0.1,
+      "p_beam_miss": 0.1,
+      "p_multipath": 0.05
+    },
+    "standoff_m": {
+      "lawnmower": 6.0,
+      "perimeter_orbit": 4.0,
+      "poi_close_pass": 2.0,
+      "interior_room_authorized": 1.2
+    },
+    "overlap": 0.3,
+    "grid_res_m": 0.25,
+    "coverage_tol_m": 0.3,
+    "gps_modes_sigma_tau": {
+      "gps_standard": [
+        0.5,
+        30.0
+      ],
+      "gps_rtk": [
+        0.03,
+        30.0
+      ]
+    },
+    "indoor_position_sigma_tau": [
+      0.1,
+      10.0
+    ],
+    "gyro_bias_dps": 1.0,
+    "links": {
+      "wifi": {
+        "name": "wifi",
+        "bandwidth_Bps": 1000000.0,
+        "latency_s": 0.005,
+        "mean_up_s": 120.0,
+        "mean_down_s": 1.0,
+        "range_m": 100.0,
+        "power_w": 1.0,
+        "cost_rank": 0
+      },
+      "lte": {
+        "name": "lte",
+        "bandwidth_Bps": 250000.0,
+        "latency_s": 0.06,
+        "mean_up_s": 60.0,
+        "mean_down_s": 4.0,
+        "range_m": null,
+        "power_w": 3.0,
+        "cost_rank": 1
+      },
+      "satellite": {
+        "name": "satellite",
+        "bandwidth_Bps": 100000.0,
+        "latency_s": 0.05,
+        "mean_up_s": 90.0,
+        "mean_down_s": 3.0,
+        "range_m": null,
+        "power_w": 50.0,
+        "cost_rank": 2
+      }
+    },
+    "wifi_station_dist_m": [
+      60.0,
+      150.0
+    ],
+    "targets": {
+      "lawnmower": "roof tops + open ground in the area box",
+      "perimeter_orbit": "building facades",
+      "poi_close_pass": "POI column sides",
+      "interior_room_authorized": "room walls, floor, ceiling (inside; authorized)"
+    }
+  },
+  "results": {
+    "main|lawnmower|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.558,
+        "p5": 0.28,
+        "min": 0.251
+      },
+      "frac_missions_coverage_ge_90": 0.083,
+      "point_acc_m": {
+        "median_of_medians": 0.25,
+        "median_of_p95": 0.645
+      },
+      "frac_points_within_tol": 0.609,
+      "raw_point_acc_p95_median": 0.842,
+      "effective_detail_m_median": 0.237,
+      "pos_err_median_m": 0.713,
+      "hdg_err_median_deg": 0.221,
+      "mission_s_median": 165.4,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 4.1,
+      "uplink_worker_ms_max": 536.24,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.603,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.672,
+          "frac_points_in_cloud_median": 0.697,
+          "delta_kBps_median": 34.32,
+          "sent_kBps_median": 23.47,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 9316,
+          "radio_energy_wh_median": {
+            "wifi": 0.046
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.995,
+            "min": 0.964
+          },
+          "frac_all_cells_in_cloud_median": 0.994,
+          "frac_points_in_cloud_median": 0.996,
+          "delta_kBps_median": 34.32,
+          "sent_kBps_median": 34.04,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.138
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.991,
+            "min": 0.975
+          },
+          "frac_all_cells_in_cloud_median": 0.987,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 34.32,
+          "sent_kBps_median": 34.1,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.298
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.997,
+            "min": 0.982
+          },
+          "frac_all_cells_in_cloud_median": 0.993,
+          "frac_points_in_cloud_median": 0.995,
+          "delta_kBps_median": 34.32,
+          "sent_kBps_median": 34.17,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.046,
+            "lte": 0.138,
+            "satellite": 2.298
+          },
+          "failovers_total": 49,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|lawnmower|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.976,
+        "p5": 0.959,
+        "min": 0.953
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.032,
+        "median_of_p95": 0.108
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.131,
+      "effective_detail_m_median": 0.229,
+      "pos_err_median_m": 0.05,
+      "hdg_err_median_deg": 0.221,
+      "mission_s_median": 165.4,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 4.1,
+      "uplink_worker_ms_max": 430.84,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.623,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.674,
+          "frac_points_in_cloud_median": 0.697,
+          "delta_kBps_median": 34.04,
+          "sent_kBps_median": 23.59,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 9347,
+          "radio_energy_wh_median": {
+            "wifi": 0.046
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.991,
+            "min": 0.949
+          },
+          "frac_all_cells_in_cloud_median": 0.994,
+          "frac_points_in_cloud_median": 0.996,
+          "delta_kBps_median": 34.04,
+          "sent_kBps_median": 33.85,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.138
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.981,
+            "min": 0.973
+          },
+          "frac_all_cells_in_cloud_median": 0.987,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 34.04,
+          "sent_kBps_median": 33.83,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.298
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.988,
+            "min": 0.973
+          },
+          "frac_all_cells_in_cloud_median": 0.992,
+          "frac_points_in_cloud_median": 0.995,
+          "delta_kBps_median": 34.04,
+          "sent_kBps_median": 33.83,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.046,
+            "lte": 0.138,
+            "satellite": 2.298
+          },
+          "failovers_total": 48,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|perimeter_orbit|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.605,
+        "p5": 0.457,
+        "min": 0.456
+      },
+      "frac_missions_coverage_ge_90": 0.0,
+      "point_acc_m": {
+        "median_of_medians": 0.303,
+        "median_of_p95": 0.79
+      },
+      "frac_points_within_tol": 0.496,
+      "raw_point_acc_p95_median": 0.881,
+      "effective_detail_m_median": 0.122,
+      "pos_err_median_m": 0.725,
+      "hdg_err_median_deg": 0.198,
+      "mission_s_median": 224.9,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.243,
+      "uplink_worker_ms_max": 110.46,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.987,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.996,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 8.31,
+          "sent_kBps_median": 8.26,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 145,
+          "radio_energy_wh_median": {
+            "wifi": 0.062
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.992,
+            "min": 0.971
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 8.31,
+          "sent_kBps_median": 8.3,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.187
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.992,
+            "min": 0.971
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 8.31,
+          "sent_kBps_median": 8.3,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 3.124
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.992,
+            "min": 0.971
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 8.31,
+          "sent_kBps_median": 8.3,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.062,
+            "lte": 0.187,
+            "satellite": 3.124
+          },
+          "failovers_total": 54,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|perimeter_orbit|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.999,
+        "p5": 0.995,
+        "min": 0.994
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.029,
+        "median_of_p95": 0.093
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.253,
+      "effective_detail_m_median": 0.101,
+      "pos_err_median_m": 0.051,
+      "hdg_err_median_deg": 0.198,
+      "mission_s_median": 224.9,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.243,
+      "uplink_worker_ms_max": 111.64,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.991,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 7.94,
+          "sent_kBps_median": 7.88,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 103,
+          "radio_energy_wh_median": {
+            "wifi": 0.062
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.993,
+            "min": 0.976
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 7.94,
+          "sent_kBps_median": 7.93,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.187
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.992,
+            "min": 0.976
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 7.94,
+          "sent_kBps_median": 7.93,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 3.124
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.993,
+            "min": 0.976
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.999,
+          "delta_kBps_median": 7.94,
+          "sent_kBps_median": 7.93,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.062,
+            "lte": 0.187,
+            "satellite": 3.124
+          },
+          "failovers_total": 54,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|poi_close_pass|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.722,
+        "p5": 0.374,
+        "min": 0.37
+      },
+      "frac_missions_coverage_ge_90": 0.0,
+      "point_acc_m": {
+        "median_of_medians": 0.274,
+        "median_of_p95": 0.779
+      },
+      "frac_points_within_tol": 0.538,
+      "raw_point_acc_p95_median": 0.869,
+      "effective_detail_m_median": 0.088,
+      "pos_err_median_m": 0.664,
+      "hdg_err_median_deg": 0.141,
+      "mission_s_median": 79.2,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.875,
+      "uplink_worker_ms_max": 26.36,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.467,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.495,
+          "frac_points_in_cloud_median": 0.496,
+          "delta_kBps_median": 5.21,
+          "sent_kBps_median": 2.28,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.022
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.952,
+            "min": 0.918
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 5.21,
+          "sent_kBps_median": 5.19,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.066
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.952,
+            "min": 0.918
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 5.21,
+          "sent_kBps_median": 5.19,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 1.1
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.952,
+            "min": 0.918
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 5.21,
+          "sent_kBps_median": 5.19,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.022,
+            "lte": 0.066,
+            "satellite": 1.1
+          },
+          "failovers_total": 14,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|poi_close_pass|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 1.0,
+        "p5": 0.999,
+        "min": 0.998
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.03,
+        "median_of_p95": 0.085
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.171,
+      "effective_detail_m_median": 0.056,
+      "pos_err_median_m": 0.053,
+      "hdg_err_median_deg": 0.141,
+      "mission_s_median": 79.2,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.875,
+      "uplink_worker_ms_max": 33.1,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.442,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.495,
+          "frac_points_in_cloud_median": 0.496,
+          "delta_kBps_median": 4.99,
+          "sent_kBps_median": 2.17,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.022
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.946,
+            "min": 0.885
+          },
+          "frac_all_cells_in_cloud_median": 0.996,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 4.99,
+          "sent_kBps_median": 4.97,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.066
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.946,
+            "min": 0.885
+          },
+          "frac_all_cells_in_cloud_median": 0.996,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 4.99,
+          "sent_kBps_median": 4.97,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 1.1
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.946,
+            "min": 0.885
+          },
+          "frac_all_cells_in_cloud_median": 0.996,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 4.99,
+          "sent_kBps_median": 4.97,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.022,
+            "lte": 0.066,
+            "satellite": 1.1
+          },
+          "failovers_total": 14,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "main|interior_room_authorized|indoor_pos": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.993,
+        "p5": 0.983,
+        "min": 0.978
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.072,
+        "median_of_p95": 0.18
+      },
+      "frac_points_within_tol": 0.998,
+      "raw_point_acc_p95_median": 0.261,
+      "effective_detail_m_median": 0.043,
+      "pos_err_median_m": 0.162,
+      "hdg_err_median_deg": 0.145,
+      "mission_s_median": 138.1,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 1.2,
+      "uplink_worker_ms_max": 38.1,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.494,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.496,
+          "frac_points_in_cloud_median": 0.495,
+          "delta_kBps_median": 3.37,
+          "sent_kBps_median": 1.5,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.038
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.992,
+            "min": 0.91
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.996,
+          "delta_kBps_median": 3.37,
+          "sent_kBps_median": 3.3,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.115
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.993,
+            "min": 0.988
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.996,
+          "delta_kBps_median": 3.37,
+          "sent_kBps_median": 3.36,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 1.918
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.993,
+            "min": 0.988
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.996,
+          "delta_kBps_median": 3.37,
+          "sent_kBps_median": 3.36,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.038,
+            "lte": 0.115,
+            "satellite": 1.918
+          },
+          "failovers_total": 39,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|lawnmower|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.386,
+        "p5": 0.157,
+        "min": 0.155
+      },
+      "frac_missions_coverage_ge_90": 0.0,
+      "point_acc_m": {
+        "median_of_medians": 0.412,
+        "median_of_p95": 0.801
+      },
+      "frac_points_within_tol": 0.412,
+      "raw_point_acc_p95_median": 0.852,
+      "effective_detail_m_median": 0.232,
+      "pos_err_median_m": 0.695,
+      "hdg_err_median_deg": 0.127,
+      "mission_s_median": 176.7,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 4.393,
+      "uplink_worker_ms_max": 774.34,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.99,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.964,
+          "frac_points_in_cloud_median": 0.983,
+          "delta_kBps_median": 32.45,
+          "sent_kBps_median": 25.8,
+          "resyncs_total": 1,
+          "dropped_msgs_total": 9103,
+          "radio_energy_wh_median": {
+            "wifi": 0.049
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.997,
+            "min": 0.98
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.45,
+          "sent_kBps_median": 32.37,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.147
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.997,
+            "min": 0.975
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.45,
+          "sent_kBps_median": 32.34,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.454
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.997,
+            "min": 0.98
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.45,
+          "sent_kBps_median": 32.34,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.049,
+            "lte": 0.147,
+            "satellite": 2.454
+          },
+          "failovers_total": 40,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|lawnmower|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.985,
+        "p5": 0.975,
+        "min": 0.967
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.035,
+        "median_of_p95": 0.109
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.126,
+      "effective_detail_m_median": 0.222,
+      "pos_err_median_m": 0.049,
+      "hdg_err_median_deg": 0.127,
+      "mission_s_median": 176.7,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 4.393,
+      "uplink_worker_ms_max": 759.34,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.933,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.963,
+          "frac_points_in_cloud_median": 0.983,
+          "delta_kBps_median": 32.25,
+          "sent_kBps_median": 25.57,
+          "resyncs_total": 1,
+          "dropped_msgs_total": 9078,
+          "radio_energy_wh_median": {
+            "wifi": 0.049
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.986,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.25,
+          "sent_kBps_median": 32.17,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.147
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.986,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.25,
+          "sent_kBps_median": 32.15,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.454
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.986,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.991,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 32.25,
+          "sent_kBps_median": 32.15,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.049,
+            "lte": 0.147,
+            "satellite": 2.454
+          },
+          "failovers_total": 41,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|perimeter_orbit|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.591,
+        "p5": 0.448,
+        "min": 0.409
+      },
+      "frac_missions_coverage_ge_90": 0.0,
+      "point_acc_m": {
+        "median_of_medians": 0.302,
+        "median_of_p95": 0.875
+      },
+      "frac_points_within_tol": 0.496,
+      "raw_point_acc_p95_median": 1.01,
+      "effective_detail_m_median": 0.122,
+      "pos_err_median_m": 0.811,
+      "hdg_err_median_deg": 0.315,
+      "mission_s_median": 189.9,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.492,
+      "uplink_worker_ms_max": 132.15,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.866,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.934,
+          "frac_points_in_cloud_median": 0.943,
+          "delta_kBps_median": 8.14,
+          "sent_kBps_median": 7.78,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.053
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.989,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.996,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 8.14,
+          "sent_kBps_median": 8.12,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.158
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.99,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 8.14,
+          "sent_kBps_median": 8.12,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.638
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.99,
+            "min": 0.978
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 8.14,
+          "sent_kBps_median": 8.12,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.053,
+            "lte": 0.158,
+            "satellite": 2.638
+          },
+          "failovers_total": 33,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|perimeter_orbit|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.998,
+        "p5": 0.994,
+        "min": 0.994
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.029,
+        "median_of_p95": 0.097
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.244,
+      "effective_detail_m_median": 0.101,
+      "pos_err_median_m": 0.054,
+      "hdg_err_median_deg": 0.315,
+      "mission_s_median": 189.9,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.492,
+      "uplink_worker_ms_max": 162.99,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.883,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.935,
+          "frac_points_in_cloud_median": 0.943,
+          "delta_kBps_median": 7.92,
+          "sent_kBps_median": 7.56,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.053
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.991,
+            "min": 0.969
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.997,
+          "delta_kBps_median": 7.92,
+          "sent_kBps_median": 7.9,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.158
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.994,
+            "min": 0.969
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 7.92,
+          "sent_kBps_median": 7.91,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.638
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.994,
+            "min": 0.969
+          },
+          "frac_all_cells_in_cloud_median": 0.998,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 7.92,
+          "sent_kBps_median": 7.91,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.053,
+            "lte": 0.158,
+            "satellite": 2.638
+          },
+          "failovers_total": 33,
+          "hash_match_before_reconcile": 0.083,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|poi_close_pass|gps_standard": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.684,
+        "p5": 0.402,
+        "min": 0.363
+      },
+      "frac_missions_coverage_ge_90": 0.333,
+      "point_acc_m": {
+        "median_of_medians": 0.337,
+        "median_of_p95": 0.703
+      },
+      "frac_points_within_tol": 0.443,
+      "raw_point_acc_p95_median": 0.845,
+      "effective_detail_m_median": 0.089,
+      "pos_err_median_m": 0.694,
+      "hdg_err_median_deg": 0.165,
+      "mission_s_median": 67.0,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.875,
+      "uplink_worker_ms_max": 23.87,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.846,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.987,
+          "frac_points_in_cloud_median": 0.988,
+          "delta_kBps_median": 5.08,
+          "sent_kBps_median": 4.79,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.019
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.925,
+            "min": 0.824
+          },
+          "frac_all_cells_in_cloud_median": 0.993,
+          "frac_points_in_cloud_median": 0.993,
+          "delta_kBps_median": 5.08,
+          "sent_kBps_median": 5.04,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.056
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.932,
+            "min": 0.824
+          },
+          "frac_all_cells_in_cloud_median": 0.993,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 5.08,
+          "sent_kBps_median": 5.04,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 0.931
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.94,
+            "min": 0.824
+          },
+          "frac_all_cells_in_cloud_median": 0.994,
+          "frac_points_in_cloud_median": 0.995,
+          "delta_kBps_median": 5.08,
+          "sent_kBps_median": 5.04,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.019,
+            "lte": 0.056,
+            "satellite": 0.931
+          },
+          "failovers_total": 6,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|poi_close_pass|gps_rtk": {
+      "missions": 12,
+      "coverage": {
+        "median": 1.0,
+        "p5": 1.0,
+        "min": 1.0
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.031,
+        "median_of_p95": 0.088
+      },
+      "frac_points_within_tol": 1.0,
+      "raw_point_acc_p95_median": 0.158,
+      "effective_detail_m_median": 0.056,
+      "pos_err_median_m": 0.052,
+      "hdg_err_median_deg": 0.165,
+      "mission_s_median": 67.0,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 0.875,
+      "uplink_worker_ms_max": 26.42,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.9,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.988,
+          "frac_points_in_cloud_median": 0.988,
+          "delta_kBps_median": 4.83,
+          "sent_kBps_median": 4.54,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.019
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.931,
+            "min": 0.793
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.993,
+          "delta_kBps_median": 4.83,
+          "sent_kBps_median": 4.79,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.056
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.937,
+            "min": 0.867
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.994,
+          "delta_kBps_median": 4.83,
+          "sent_kBps_median": 4.79,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 0.931
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.946,
+            "min": 0.895
+          },
+          "frac_all_cells_in_cloud_median": 0.995,
+          "frac_points_in_cloud_median": 0.995,
+          "delta_kBps_median": 4.83,
+          "sent_kBps_median": 4.79,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.019,
+            "lte": 0.056,
+            "satellite": 0.931
+          },
+          "failovers_total": 6,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    },
+    "holdout|interior_room_authorized|indoor_pos": {
+      "missions": 12,
+      "coverage": {
+        "median": 0.991,
+        "p5": 0.987,
+        "min": 0.986
+      },
+      "frac_missions_coverage_ge_90": 1.0,
+      "point_acc_m": {
+        "median_of_medians": 0.062,
+        "median_of_p95": 0.181
+      },
+      "frac_points_within_tol": 0.998,
+      "raw_point_acc_p95_median": 0.254,
+      "effective_detail_m_median": 0.043,
+      "pos_err_median_m": 0.157,
+      "hdg_err_median_deg": 0.113,
+      "mission_s_median": 160.8,
+      "completed_frac": 1.0,
+      "min_surface_dist_m": 1.2,
+      "uplink_worker_ms_max": 27.07,
+      "uplink": {
+        "wifi_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.493,
+            "min": 0.0
+          },
+          "frac_all_cells_in_cloud_median": 0.492,
+          "frac_points_in_cloud_median": 0.491,
+          "delta_kBps_median": 3.24,
+          "sent_kBps_median": 1.59,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.045
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.0,
+          "hash_match_after_reconcile": 1.0
+        },
+        "lte_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.996,
+            "min": 0.987
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 3.24,
+          "sent_kBps_median": 3.22,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "lte": 0.134
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.25,
+          "hash_match_after_reconcile": 1.0
+        },
+        "satellite_only": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.996,
+            "min": 0.987
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 3.24,
+          "sent_kBps_median": 3.22,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "satellite": 2.233
+          },
+          "failovers_total": 0,
+          "hash_match_before_reconcile": 0.25,
+          "hash_match_after_reconcile": 1.0
+        },
+        "wifi+lte+satellite": {
+          "frac_occupied_cells_in_cloud": {
+            "median": 0.996,
+            "min": 0.987
+          },
+          "frac_all_cells_in_cloud_median": 0.997,
+          "frac_points_in_cloud_median": 0.998,
+          "delta_kBps_median": 3.24,
+          "sent_kBps_median": 3.22,
+          "resyncs_total": 0,
+          "dropped_msgs_total": 0,
+          "radio_energy_wh_median": {
+            "wifi": 0.045,
+            "lte": 0.134,
+            "satellite": 2.233
+          },
+          "failovers_total": 28,
+          "hash_match_before_reconcile": 0.25,
+          "hash_match_after_reconcile": 1.0
+        }
+      }
+    }
+  },
+  "runtime_s": 698.3
+}

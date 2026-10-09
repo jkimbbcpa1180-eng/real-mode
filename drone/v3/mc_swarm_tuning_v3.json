@@ -1,0 +1,7840 @@
+{
+ "seed_set": "tuning",
+ "seed": 20263001,
+ "n_scenes": 6,
+ "summary": {
+  "perimeter_orbit/n1": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 229.6,
+    "mean": 248.7,
+    "p90": 312.3,
+    "max": 365.0
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.504,
+    "mean": 0.481,
+    "p90": 0.589,
+    "max": 0.645
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.504,
+    "mean": 0.481,
+    "p90": 0.589,
+    "max": 0.645
+   },
+   "near_miss_episodes_total": 0,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 0
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 6,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 6,
+    "median": 0.469,
+    "mean": 0.426,
+    "p90": 0.799,
+    "max": 0.909
+   },
+   "relayed_msgs_total": 0,
+   "relay_queue_max": 0,
+   "align_ok_pct": null,
+   "align_err_obs_before_m": {
+    "n": 0
+   },
+   "align_err_obs_after_m": {
+    "n": 0
+   },
+   "align_err_3d_before_m": {
+    "n": 0
+   },
+   "align_err_3d_after_m": {
+    "n": 0
+   },
+   "consistency_before_m": {
+    "n": 0
+   },
+   "consistency_after_m": {
+    "n": 0
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 3.916,
+    "mean": 4.241,
+    "p90": 5.326,
+    "max": 6.225
+   }
+  },
+  "perimeter_orbit/n2": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 162.3,
+    "mean": 167.517,
+    "p90": 200.1,
+    "max": 229.4
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.616,
+    "mean": 0.591,
+    "p90": 0.735,
+    "max": 0.742
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.59,
+    "mean": 0.571,
+    "p90": 0.706,
+    "max": 0.721
+   },
+   "near_miss_episodes_total": 0,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 3.726,
+    "mean": 3.469,
+    "p90": 4.0,
+    "max": 4.0
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 12,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 12,
+    "median": 0.446,
+    "mean": 0.385,
+    "p90": 0.809,
+    "max": 0.866
+   },
+   "relayed_msgs_total": 1818,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 6,
+    "median": 0.272,
+    "mean": 0.332,
+    "p90": 0.607,
+    "max": 0.862
+   },
+   "align_err_obs_after_m": {
+    "n": 6,
+    "median": 0.222,
+    "mean": 0.276,
+    "p90": 0.503,
+    "max": 0.695
+   },
+   "align_err_3d_before_m": {
+    "n": 6,
+    "median": 0.65,
+    "mean": 0.585,
+    "p90": 0.816,
+    "max": 0.941
+   },
+   "align_err_3d_after_m": {
+    "n": 6,
+    "median": 0.516,
+    "mean": 0.529,
+    "p90": 0.814,
+    "max": 0.974
+   },
+   "consistency_before_m": {
+    "n": 6,
+    "median": 0.762,
+    "mean": 0.8,
+    "p90": 1.101,
+    "max": 1.11
+   },
+   "consistency_after_m": {
+    "n": 6,
+    "median": 0.563,
+    "mean": 0.595,
+    "p90": 0.872,
+    "max": 1.155
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 5.205,
+    "mean": 5.525,
+    "p90": 6.726,
+    "max": 7.752
+   }
+  },
+  "perimeter_orbit/n3": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 148.2,
+    "mean": 149.15,
+    "p90": 174.25,
+    "max": 195.6
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.604,
+    "mean": 0.579,
+    "p90": 0.761,
+    "max": 0.765
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.591,
+    "mean": 0.565,
+    "p90": 0.708,
+    "max": 0.751
+   },
+   "near_miss_episodes_total": 8,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 1.278,
+    "mean": 1.491,
+    "p90": 2.41,
+    "max": 2.576
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 18,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 18,
+    "median": 0.31,
+    "mean": 0.335,
+    "p90": 0.737,
+    "max": 0.813
+   },
+   "relayed_msgs_total": 2789,
+   "relay_queue_max": 40,
+   "align_ok_pct": 91.7,
+   "align_err_obs_before_m": {
+    "n": 11,
+    "median": 0.427,
+    "mean": 0.353,
+    "p90": 0.584,
+    "max": 0.925
+   },
+   "align_err_obs_after_m": {
+    "n": 11,
+    "median": 0.233,
+    "mean": 0.342,
+    "p90": 0.662,
+    "max": 0.991
+   },
+   "align_err_3d_before_m": {
+    "n": 12,
+    "median": 0.722,
+    "mean": 0.753,
+    "p90": 1.198,
+    "max": 1.452
+   },
+   "align_err_3d_after_m": {
+    "n": 12,
+    "median": 0.703,
+    "mean": 0.73,
+    "p90": 1.072,
+    "max": 1.407
+   },
+   "consistency_before_m": {
+    "n": 12,
+    "median": 0.561,
+    "mean": 0.661,
+    "p90": 1.018,
+    "max": 1.404
+   },
+   "consistency_after_m": {
+    "n": 12,
+    "median": 0.632,
+    "mean": 0.649,
+    "p90": 0.883,
+    "max": 1.6
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 6.599,
+    "mean": 6.939,
+    "p90": 8.315,
+    "max": 9.307
+   }
+  },
+  "perimeter_orbit/n4": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 137.75,
+    "mean": 139.367,
+    "p90": 157.45,
+    "max": 166.2
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.585,
+    "mean": 0.594,
+    "p90": 0.69,
+    "max": 0.743
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.65,
+    "mean": 0.66,
+    "p90": 0.782,
+    "max": 0.864
+   },
+   "near_miss_episodes_total": 21,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 0.923,
+    "mean": 1.197,
+    "p90": 1.924,
+    "max": 2.577
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.264,
+    "mean": 0.309,
+    "p90": 0.693,
+    "max": 0.767
+   },
+   "relayed_msgs_total": 3321,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 18,
+    "median": 0.258,
+    "mean": 0.33,
+    "p90": 0.753,
+    "max": 0.89
+   },
+   "align_err_obs_after_m": {
+    "n": 18,
+    "median": 0.229,
+    "mean": 0.349,
+    "p90": 0.901,
+    "max": 1.07
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.734,
+    "mean": 0.746,
+    "p90": 1.16,
+    "max": 1.553
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.691,
+    "mean": 0.747,
+    "p90": 1.229,
+    "max": 1.676
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.499,
+    "mean": 0.583,
+    "p90": 1.049,
+    "max": 1.245
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.43,
+    "mean": 0.564,
+    "p90": 1.072,
+    "max": 1.317
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 7.876,
+    "mean": 8.244,
+    "p90": 9.594,
+    "max": 10.518
+   }
+  },
+  "perimeter_orbit/n4_nodeconflict": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 118.6,
+    "mean": 122.767,
+    "p90": 143.1,
+    "max": 163.4
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.643,
+    "mean": 0.643,
+    "p90": 0.745,
+    "max": 0.771
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.69,
+    "mean": 0.678,
+    "p90": 0.776,
+    "max": 0.823
+   },
+   "near_miss_episodes_total": 17,
+   "collision_ticks_total": 48,
+   "min_sep_m": {
+    "n": 6,
+    "median": 1.039,
+    "mean": 0.942,
+    "p90": 1.505,
+    "max": 1.797
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.281,
+    "mean": 0.334,
+    "p90": 0.739,
+    "max": 0.817
+   },
+   "relayed_msgs_total": 3156,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 18,
+    "median": 0.231,
+    "mean": 0.316,
+    "p90": 0.745,
+    "max": 0.864
+   },
+   "align_err_obs_after_m": {
+    "n": 18,
+    "median": 0.303,
+    "mean": 0.437,
+    "p90": 0.821,
+    "max": 1.066
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.727,
+    "mean": 0.738,
+    "p90": 1.141,
+    "max": 1.571
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.796,
+    "mean": 0.797,
+    "p90": 1.177,
+    "max": 1.699
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.653,
+    "mean": 0.754,
+    "p90": 1.131,
+    "max": 1.843
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.665,
+    "mean": 0.703,
+    "p90": 1.156,
+    "max": 1.837
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 7.289,
+    "mean": 7.718,
+    "p90": 9.132,
+    "max": 10.42
+   }
+  },
+  "perimeter_orbit/n4_norelay": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 137.75,
+    "mean": 139.367,
+    "p90": 157.45,
+    "max": 166.2
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.585,
+    "mean": 0.594,
+    "p90": 0.69,
+    "max": 0.743
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.65,
+    "mean": 0.66,
+    "p90": 0.782,
+    "max": 0.864
+   },
+   "near_miss_episodes_total": 21,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 0.923,
+    "mean": 1.197,
+    "p90": 1.924,
+    "max": 2.577
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.417,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.264,
+    "mean": 0.309,
+    "p90": 0.693,
+    "max": 0.767
+   },
+   "relayed_msgs_total": 0,
+   "relay_queue_max": 0,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 18,
+    "median": 0.258,
+    "mean": 0.33,
+    "p90": 0.753,
+    "max": 0.89
+   },
+   "align_err_obs_after_m": {
+    "n": 18,
+    "median": 0.229,
+    "mean": 0.349,
+    "p90": 0.901,
+    "max": 1.07
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.734,
+    "mean": 0.746,
+    "p90": 1.16,
+    "max": 1.553
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.691,
+    "mean": 0.747,
+    "p90": 1.229,
+    "max": 1.676
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.499,
+    "mean": 0.583,
+    "p90": 1.049,
+    "max": 1.245
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.43,
+    "mean": 0.564,
+    "p90": 1.072,
+    "max": 1.317
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 7.876,
+    "mean": 8.244,
+    "p90": 9.594,
+    "max": 10.518
+   }
+  },
+  "lawnmower/n1": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 231.95,
+    "mean": 234.183,
+    "p90": 258.9,
+    "max": 278.5
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.537,
+    "mean": 0.46,
+    "p90": 0.622,
+    "max": 0.622
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.537,
+    "mean": 0.46,
+    "p90": 0.622,
+    "max": 0.622
+   },
+   "near_miss_episodes_total": 0,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 0
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 6,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 6,
+    "median": 0.471,
+    "mean": 0.419,
+    "p90": 0.745,
+    "max": 0.883
+   },
+   "relayed_msgs_total": 0,
+   "relay_queue_max": 0,
+   "align_ok_pct": null,
+   "align_err_obs_before_m": {
+    "n": 0
+   },
+   "align_err_obs_after_m": {
+    "n": 0
+   },
+   "align_err_3d_before_m": {
+    "n": 0
+   },
+   "align_err_3d_after_m": {
+    "n": 0
+   },
+   "consistency_before_m": {
+    "n": 0
+   },
+   "consistency_after_m": {
+    "n": 0
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 3.968,
+    "mean": 4.006,
+    "p90": 4.43,
+    "max": 4.765
+   }
+  },
+  "lawnmower/n2": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 161.45,
+    "mean": 162.5,
+    "p90": 179.95,
+    "max": 183.0
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.646,
+    "mean": 0.549,
+    "p90": 0.766,
+    "max": 0.82
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.593,
+    "mean": 0.574,
+    "p90": 0.729,
+    "max": 0.774
+   },
+   "near_miss_episodes_total": 0,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 3.94,
+    "mean": 3.458,
+    "p90": 4.0,
+    "max": 4.0
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 12,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 12,
+    "median": 0.426,
+    "mean": 0.383,
+    "p90": 0.777,
+    "max": 0.858
+   },
+   "relayed_msgs_total": 6174,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 6,
+    "median": 0.274,
+    "mean": 0.324,
+    "p90": 0.636,
+    "max": 0.738
+   },
+   "align_err_obs_after_m": {
+    "n": 6,
+    "median": 0.179,
+    "mean": 0.19,
+    "p90": 0.337,
+    "max": 0.414
+   },
+   "align_err_3d_before_m": {
+    "n": 6,
+    "median": 0.575,
+    "mean": 0.534,
+    "p90": 0.742,
+    "max": 0.769
+   },
+   "align_err_3d_after_m": {
+    "n": 6,
+    "median": 0.376,
+    "mean": 0.432,
+    "p90": 0.583,
+    "max": 0.746
+   },
+   "consistency_before_m": {
+    "n": 6,
+    "median": 1.132,
+    "mean": 1.058,
+    "p90": 1.376,
+    "max": 1.47
+   },
+   "consistency_after_m": {
+    "n": 6,
+    "median": 0.998,
+    "mean": 0.914,
+    "p90": 1.284,
+    "max": 1.291
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 5.405,
+    "mean": 5.467,
+    "p90": 6.044,
+    "max": 6.165
+   }
+  },
+  "lawnmower/n3": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 158.7,
+    "mean": 157.783,
+    "p90": 172.1,
+    "max": 181.3
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.505,
+    "mean": 0.439,
+    "p90": 0.54,
+    "max": 0.551
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.504,
+    "mean": 0.513,
+    "p90": 0.705,
+    "max": 0.77
+   },
+   "near_miss_episodes_total": 4,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 2.416,
+    "mean": 2.605,
+    "p90": 3.438,
+    "max": 4.0
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 18,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 18,
+    "median": 0.413,
+    "mean": 0.349,
+    "p90": 0.671,
+    "max": 0.824
+   },
+   "relayed_msgs_total": 9306,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 12,
+    "median": 0.271,
+    "mean": 0.368,
+    "p90": 0.737,
+    "max": 1.009
+   },
+   "align_err_obs_after_m": {
+    "n": 12,
+    "median": 0.241,
+    "mean": 0.394,
+    "p90": 0.891,
+    "max": 1.16
+   },
+   "align_err_3d_before_m": {
+    "n": 12,
+    "median": 0.683,
+    "mean": 0.739,
+    "p90": 1.117,
+    "max": 1.393
+   },
+   "align_err_3d_after_m": {
+    "n": 12,
+    "median": 0.632,
+    "mean": 0.741,
+    "p90": 1.285,
+    "max": 1.32
+   },
+   "consistency_before_m": {
+    "n": 12,
+    "median": 1.026,
+    "mean": 1.029,
+    "p90": 1.491,
+    "max": 1.699
+   },
+   "consistency_after_m": {
+    "n": 12,
+    "median": 0.894,
+    "mean": 0.955,
+    "p90": 1.462,
+    "max": 1.598
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 7.29,
+    "mean": 7.499,
+    "p90": 8.417,
+    "max": 9.009
+   }
+  },
+  "lawnmower/n4": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 148.85,
+    "mean": 154.133,
+    "p90": 176.75,
+    "max": 184.0
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.458,
+    "mean": 0.453,
+    "p90": 0.603,
+    "max": 0.7
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.534,
+    "mean": 0.517,
+    "p90": 0.674,
+    "max": 0.733
+   },
+   "near_miss_episodes_total": 2,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 2.171,
+    "mean": 2.111,
+    "p90": 2.879,
+    "max": 3.464
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.344,
+    "mean": 0.332,
+    "p90": 0.653,
+    "max": 0.747
+   },
+   "relayed_msgs_total": 11573,
+   "relay_queue_max": 40,
+   "align_ok_pct": 94.4,
+   "align_err_obs_before_m": {
+    "n": 17,
+    "median": 0.249,
+    "mean": 0.334,
+    "p90": 0.702,
+    "max": 0.77
+   },
+   "align_err_obs_after_m": {
+    "n": 17,
+    "median": 0.276,
+    "mean": 0.365,
+    "p90": 0.776,
+    "max": 0.95
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.7,
+    "mean": 0.755,
+    "p90": 1.244,
+    "max": 1.487
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.651,
+    "mean": 0.771,
+    "p90": 1.333,
+    "max": 1.487
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.806,
+    "mean": 0.914,
+    "p90": 1.406,
+    "max": 1.494
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.729,
+    "mean": 0.848,
+    "p90": 1.363,
+    "max": 1.504
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 9.171,
+    "mean": 9.363,
+    "p90": 10.483,
+    "max": 10.948
+   }
+  },
+  "lawnmower/n4_nodeconflict": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 134.35,
+    "mean": 140.65,
+    "p90": 163.85,
+    "max": 175.4
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.451,
+    "mean": 0.442,
+    "p90": 0.592,
+    "max": 0.655
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.506,
+    "mean": 0.498,
+    "p90": 0.664,
+    "max": 0.726
+   },
+   "near_miss_episodes_total": 6,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 2.107,
+    "mean": 2.301,
+    "p90": 3.111,
+    "max": 3.929
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.363,
+    "mean": 0.349,
+    "p90": 0.734,
+    "max": 0.813
+   },
+   "relayed_msgs_total": 11839,
+   "relay_queue_max": 40,
+   "align_ok_pct": 100.0,
+   "align_err_obs_before_m": {
+    "n": 18,
+    "median": 0.268,
+    "mean": 0.382,
+    "p90": 0.769,
+    "max": 1.21
+   },
+   "align_err_obs_after_m": {
+    "n": 18,
+    "median": 0.219,
+    "mean": 0.305,
+    "p90": 0.616,
+    "max": 1.175
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.669,
+    "mean": 0.749,
+    "p90": 1.256,
+    "max": 1.495
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.626,
+    "mean": 0.701,
+    "p90": 1.116,
+    "max": 1.468
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.858,
+    "mean": 0.84,
+    "p90": 1.206,
+    "max": 1.555
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.754,
+    "mean": 0.786,
+    "p90": 1.171,
+    "max": 1.596
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 8.623,
+    "mean": 8.885,
+    "p90": 10.049,
+    "max": 10.64
+   }
+  },
+  "lawnmower/n4_norelay": {
+   "runs": 6,
+   "completed_pct": 100.0,
+   "mission_s": {
+    "n": 6,
+    "median": 148.85,
+    "mean": 154.133,
+    "p90": 176.75,
+    "max": 184.0
+   },
+   "coverage_merged_aligned": {
+    "n": 6,
+    "median": 0.458,
+    "mean": 0.445,
+    "p90": 0.603,
+    "max": 0.7
+   },
+   "coverage_merged_unaligned": {
+    "n": 6,
+    "median": 0.534,
+    "mean": 0.517,
+    "p90": 0.674,
+    "max": 0.733
+   },
+   "near_miss_episodes_total": 2,
+   "collision_ticks_total": 0,
+   "min_sep_m": {
+    "n": 6,
+    "median": 2.171,
+    "mean": 2.111,
+    "p90": 2.879,
+    "max": 3.464
+   },
+   "min_clear_m": {
+    "n": 6,
+    "median": 0.5,
+    "mean": 0.5,
+    "p90": 0.5,
+    "max": 0.5
+   },
+   "delivered_points_frac": {
+    "n": 24,
+    "median": 1.0,
+    "mean": 1.0,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "out_of_direct_range_frac": {
+    "n": 24,
+    "median": 0.344,
+    "mean": 0.332,
+    "p90": 0.653,
+    "max": 0.747
+   },
+   "relayed_msgs_total": 0,
+   "relay_queue_max": 0,
+   "align_ok_pct": 94.4,
+   "align_err_obs_before_m": {
+    "n": 17,
+    "median": 0.249,
+    "mean": 0.333,
+    "p90": 0.702,
+    "max": 0.77
+   },
+   "align_err_obs_after_m": {
+    "n": 17,
+    "median": 0.276,
+    "mean": 0.376,
+    "p90": 0.776,
+    "max": 0.95
+   },
+   "align_err_3d_before_m": {
+    "n": 18,
+    "median": 0.7,
+    "mean": 0.755,
+    "p90": 1.244,
+    "max": 1.487
+   },
+   "align_err_3d_after_m": {
+    "n": 18,
+    "median": 0.651,
+    "mean": 0.778,
+    "p90": 1.333,
+    "max": 1.487
+   },
+   "consistency_before_m": {
+    "n": 18,
+    "median": 0.801,
+    "mean": 0.919,
+    "p90": 1.406,
+    "max": 1.494
+   },
+   "consistency_after_m": {
+    "n": 18,
+    "median": 0.749,
+    "mean": 0.849,
+    "p90": 1.363,
+    "max": 1.504
+   },
+   "energy_wh_total": {
+    "n": 6,
+    "median": 9.171,
+    "mean": 9.363,
+    "p90": 10.483,
+    "max": 10.948
+   }
+  }
+ },
+ "runtime_s": 380.0,
+ "rows": [
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 226.6,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.3984995586937486
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.05665839536807279
+    ],
+    [
+     60.0,
+     0.21877584780810588
+    ],
+    [
+     90.0,
+     0.24296939619520264
+    ],
+    [
+     120.0,
+     0.2812241521918941
+    ],
+    [
+     150.0,
+     0.3926799007444169
+    ],
+    [
+     180.0,
+     0.4801488833746898
+    ],
+    [
+     210.0,
+     0.5310173697270472
+    ]
+   ],
+   "coverage_merged_aligned": 0.5318444995864351,
+   "coverage_merged_raw": 0.5318444995864351,
+   "coverage_onboard_union": 0.5341191066997518,
+   "alignment": [],
+   "energy_wh": [
+    3.864286886084885
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 158.7,
+   "completed": true,
+   "min_sep_m": 3.7370785834487115,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    23
+   ],
+   "out_of_range_frac": [
+    0.48015122873347366,
+    0.30497794580971294
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 303,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.06699751861042183
+    ],
+    [
+     60.0,
+     0.38937138130686516
+    ],
+    [
+     90.0,
+     0.4904880066170389
+    ],
+    [
+     120.0,
+     0.6435070306038048
+    ],
+    [
+     150.0,
+     0.7206368899917287
+    ]
+   ],
+   "coverage_merged_aligned": 0.728287841191067,
+   "coverage_merged_raw": 0.7206368899917287,
+   "coverage_onboard_union": 0.7222911497105046,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.1100329433905947,
+     "true_rel_offset_m": 0.6483778645038955,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 13754,
+     "consistency_after_m": 1.1550462448807912,
+     "offset_err_after_m": 0.5526180005225119,
+     "offset_err_obs_before_m": 0.352165768297588,
+     "offset_err_obs_after_m": 0.1074346833994814
+    }
+   ],
+   "energy_wh": [
+    2.5715522547799865,
+    2.70592723895534
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 140.8,
+   "completed": true,
+   "min_sep_m": 1.4491998403725521,
+   "near_miss_episodes": 2,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    88,
+    68
+   ],
+   "out_of_range_frac": [
+    0.31392045454546286,
+    0.6221590909091074,
+    0.01917613636363687
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 505,
+    "relay_queue_max": 15,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.13523573200992556
+    ],
+    [
+     60.0,
+     0.3715880893300248
+    ],
+    [
+     90.0,
+     0.4851116625310174
+    ],
+    [
+     120.0,
+     0.6639784946236559
+    ]
+   ],
+   "coverage_merged_aligned": 0.7650951199338296,
+   "coverage_merged_raw": 0.6643920595533499,
+   "coverage_onboard_union": 0.6660463192721258,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.471337979355968,
+     "true_rel_offset_m": 0.7004730444991463,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6976,
+     "consistency_after_m": 0.6027748833100071,
+     "offset_err_after_m": 0.7246702647184042,
+     "offset_err_obs_before_m": 0.04726309544574658,
+     "offset_err_obs_after_m": 0.18973899428875288
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.56332316326696,
+     "true_rel_offset_m": 0.6004264406490107,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 11202,
+     "consistency_after_m": 0.5603824336220184,
+     "offset_err_after_m": 0.3714742745205837,
+     "offset_err_obs_before_m": 0.5359815749956583,
+     "offset_err_obs_after_m": 0.23282667568899268
+    }
+   ],
+   "energy_wh": [
+    2.02244686298131,
+    2.400175009573615,
+    2.217504787773065
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 122.2,
+   "completed": true,
+   "min_sep_m": 0.971628721050549,
+   "near_miss_episodes": 6,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    79,
+    57,
+    67
+   ],
+   "out_of_range_frac": [
+    0.21603927986907184,
+    0.6824877250409315,
+    0.3813420621931344,
+    0.003273322422258664
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 571,
+    "relay_queue_max": 15,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.13875103391232424
+    ],
+    [
+     60.0,
+     0.4509925558312655
+    ],
+    [
+     90.0,
+     0.6548800661703887
+    ],
+    [
+     120.0,
+     0.6712158808933002
+    ]
+   ],
+   "coverage_merged_aligned": 0.5992555831265509,
+   "coverage_merged_raw": 0.6712158808933002,
+   "coverage_onboard_union": 0.6726633581472291,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.34876704302876627,
+     "true_rel_offset_m": 0.8602970268297919,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8656,
+     "consistency_after_m": 0.24605143098906745,
+     "offset_err_after_m": 0.8484597635551454,
+     "offset_err_obs_before_m": 0.14552064393369243,
+     "offset_err_obs_after_m": 0.02502079366560161
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7276667704008758,
+     "true_rel_offset_m": 0.6875074222074361,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6842,
+     "consistency_after_m": 1.317343800818594,
+     "offset_err_after_m": 0.40301474697996204,
+     "offset_err_obs_before_m": 0.5703239028106336,
+     "offset_err_obs_after_m": 0.1588793665661409
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.2446818093332517,
+     "true_rel_offset_m": 0.38637141487822924,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10171,
+     "consistency_after_m": 1.0078157171875366,
+     "offset_err_after_m": 0.32192693933005506,
+     "offset_err_obs_before_m": 0.3478373822572645,
+     "offset_err_obs_after_m": 0.2766030432615627
+    }
+   ],
+   "energy_wh": [
+    1.737715678423646,
+    2.0829244687750434,
+    2.0200995581996866,
+    1.9788211321853486
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 111.5,
+   "completed": true,
+   "min_sep_m": 0.47083307910515526,
+   "near_miss_episodes": 4,
+   "collision_ticks": 4,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.2367713004484349,
+    0.6950672645740039,
+    0.440358744394627,
+    0.003587443946188407
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 558,
+    "relay_queue_max": 15,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.2001654259718776
+    ],
+    [
+     60.0,
+     0.5080645161290323
+    ],
+    [
+     90.0,
+     0.7270471464019851
+    ]
+   ],
+   "coverage_merged_aligned": 0.7181555004135649,
+   "coverage_merged_raw": 0.7303556658395368,
+   "coverage_onboard_union": 0.7336641852770885,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.45986953909893025,
+     "true_rel_offset_m": 0.901049390205579,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6989,
+     "consistency_after_m": 0.4424098147928107,
+     "offset_err_after_m": 0.8946802298269891,
+     "offset_err_obs_before_m": 0.14287297721927963,
+     "offset_err_obs_after_m": 0.09365142730161281
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.9997081099415628,
+     "true_rel_offset_m": 0.6995104001346415,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6435,
+     "consistency_after_m": 0.9956453905640623,
+     "offset_err_after_m": 0.8579350516260108,
+     "offset_err_obs_before_m": 0.5783717748500526,
+     "offset_err_obs_after_m": 0.7627405075399922
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.01949513027639,
+     "true_rel_offset_m": 0.3734363751139029,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 8714,
+     "consistency_after_m": 0.9379909487118656,
+     "offset_err_after_m": 0.3253391372322144,
+     "offset_err_obs_before_m": 0.3486702613091262,
+     "offset_err_obs_after_m": 0.29679982356530354
+    }
+   ],
+   "energy_wh": [
+    1.737715678423646,
+    1.8962863126071494,
+    1.9013967497864608,
+    1.8330708028440823
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 122.2,
+   "completed": true,
+   "min_sep_m": 0.971628721050549,
+   "near_miss_episodes": 6,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    79,
+    57,
+    67
+   ],
+   "out_of_range_frac": [
+    0.21603927986907184,
+    0.6824877250409315,
+    0.3813420621931344,
+    0.003273322422258664
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07154673283705541
+    ],
+    [
+     60.0,
+     0.3933002481389578
+    ],
+    [
+     90.0,
+     0.5306038047973531
+    ],
+    [
+     120.0,
+     0.6712158808933002
+    ]
+   ],
+   "coverage_merged_aligned": 0.5992555831265509,
+   "coverage_merged_raw": 0.6712158808933002,
+   "coverage_onboard_union": 0.6726633581472291,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.34876704302876627,
+     "true_rel_offset_m": 0.8602970268297919,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8656,
+     "consistency_after_m": 0.24605143098906745,
+     "offset_err_after_m": 0.8484597635551454,
+     "offset_err_obs_before_m": 0.14552064393369243,
+     "offset_err_obs_after_m": 0.02502079366560161
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7276667704008758,
+     "true_rel_offset_m": 0.6875074222074361,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6842,
+     "consistency_after_m": 1.317343800818594,
+     "offset_err_after_m": 0.40301474697996204,
+     "offset_err_obs_before_m": 0.5703239028106336,
+     "offset_err_obs_after_m": 0.1588793665661409
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.2446818093332517,
+     "true_rel_offset_m": 0.38637141487822924,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10171,
+     "consistency_after_m": 1.0078157171875366,
+     "offset_err_after_m": 0.32192693933005506,
+     "offset_err_obs_before_m": 0.3478373822572645,
+     "offset_err_obs_after_m": 0.2766030432615627
+    }
+   ],
+   "energy_wh": [
+    1.737715678423646,
+    2.0829244687750434,
+    2.0200995581996866,
+    1.9788211321853486
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 199.1,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.5133098945253822
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.003554201574003554
+    ],
+    [
+     60.0,
+     0.016755521706016754
+    ],
+    [
+     90.0,
+     0.14572226453414572
+    ],
+    [
+     120.0,
+     0.3304138106118304
+    ],
+    [
+     150.0,
+     0.5594059405940595
+    ],
+    [
+     180.0,
+     0.6210967250571211
+    ]
+   ],
+   "coverage_merged_aligned": 0.6212236608276213,
+   "coverage_merged_raw": 0.6212236608276213,
+   "coverage_onboard_union": 0.65003808073115,
+   "alignment": [],
+   "energy_wh": [
+    3.405650617366923
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 146.4,
+   "completed": true,
+   "min_sep_m": 3.880122264242716,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    31
+   ],
+   "out_of_range_frac": [
+    0.5894808743169562,
+    0.3510928961748731
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1597,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 15,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.019548108657019548
+    ],
+    [
+     60.0,
+     0.07552678344757553
+    ],
+    [
+     90.0,
+     0.17872556486417873
+    ],
+    [
+     120.0,
+     0.40175171363290174
+    ]
+   ],
+   "coverage_merged_aligned": 0.7110941863417111,
+   "coverage_merged_raw": 0.556994160954557,
+   "coverage_onboard_union": 0.58999746128459,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.6041427659830596,
+     "true_rel_offset_m": 0.6359978654101124,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10698,
+     "consistency_after_m": 0.2766926986409324,
+     "offset_err_after_m": 0.3388433268479777,
+     "offset_err_obs_before_m": 0.5344941908738949,
+     "offset_err_obs_after_m": 0.022565917229010468
+    }
+   ],
+   "energy_wh": [
+    2.472343110305125,
+    2.5028302595433702
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 160.7,
+   "completed": true,
+   "min_sep_m": 2.8768258134601807,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    121,
+    45
+   ],
+   "out_of_range_frac": [
+    0.4716863721219806,
+    0.5108898568761822,
+    0.21593030491599904
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2574,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 3,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.05178979436405179
+    ],
+    [
+     60.0,
+     0.1431835491241432
+    ],
+    [
+     90.0,
+     0.24168570703224168
+    ],
+    [
+     120.0,
+     0.3681137344503681
+    ],
+    [
+     150.0,
+     0.4036557501904037
+    ]
+   ],
+   "coverage_merged_aligned": 0.5507743082000508,
+   "coverage_merged_raw": 0.4036557501904037,
+   "coverage_onboard_union": 0.436024371667936,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.9035345201287625,
+     "true_rel_offset_m": 0.6885630667974584,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11500,
+     "consistency_after_m": 0.8244129543315402,
+     "offset_err_after_m": 0.5189200300954339,
+     "offset_err_obs_before_m": 0.5183780849044463,
+     "offset_err_obs_after_m": 0.22957763182090424
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.2927269648719417,
+     "true_rel_offset_m": 0.588568673623056,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4032,
+     "consistency_after_m": 0.31168129276095136,
+     "offset_err_after_m": 0.5320619643364594,
+     "offset_err_obs_before_m": 0.28044217386532866,
+     "offset_err_obs_after_m": 0.12162054292693528
+    }
+   ],
+   "energy_wh": [
+    2.0635937826200395,
+    2.744976689776134,
+    2.175590205955054
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 141.1,
+   "completed": true,
+   "min_sep_m": 1.4332339034458503,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    141,
+    67,
+    37
+   ],
+   "out_of_range_frac": [
+    0.5251594613749253,
+    0.6109142452161749,
+    0.3437278525868269,
+    0.21970233876683784
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2715,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 20,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.024117796395024118
+    ],
+    [
+     60.0,
+     0.16488956587966488
+    ],
+    [
+     90.0,
+     0.2854785478547855
+    ],
+    [
+     120.0,
+     0.3634171109418634
+    ]
+   ],
+   "coverage_merged_aligned": 0.41241431835491243,
+   "coverage_merged_raw": 0.3634171109418634,
+   "coverage_onboard_union": 0.38905813658288907,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.8531599997306769,
+     "true_rel_offset_m": 0.7065414058578249,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10869,
+     "consistency_after_m": 0.7557343883476114,
+     "offset_err_after_m": 0.4814437641826568,
+     "offset_err_obs_before_m": 0.5912152157605826,
+     "offset_err_obs_after_m": 0.2824007788695664
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.5465975294416334,
+     "true_rel_offset_m": 0.6050502275409047,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4692,
+     "consistency_after_m": 0.274996906062301,
+     "offset_err_after_m": 0.5663212401609338,
+     "offset_err_obs_before_m": 0.2751764963769376,
+     "offset_err_obs_after_m": 0.1932931157426121
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.2425712128472974,
+     "true_rel_offset_m": 0.3797607751887837,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 2583,
+     "consistency_after_m": 1.0003891121061739,
+     "offset_err_after_m": 0.5659935822496397,
+     "offset_err_obs_before_m": 0.1987638057108462,
+     "offset_err_obs_after_m": 0.4626593292348373
+    }
+   ],
+   "energy_wh": [
+    2.003054631851453,
+    2.4095613808547203,
+    2.2674766081369846,
+    2.123733654695846
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 122.9,
+   "completed": true,
+   "min_sep_m": 1.4337494564219022,
+   "near_miss_episodes": 5,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.6029292107404527,
+    0.5305126118795885,
+    0.3653376729048087,
+    0.2522375915378412
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2769,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 35,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.10002538715410003
+    ],
+    [
+     60.0,
+     0.17275958365067276
+    ],
+    [
+     90.0,
+     0.27278497080477276
+    ],
+    [
+     120.0,
+     0.3392993145468393
+    ]
+   ],
+   "coverage_merged_aligned": 0.5293221629855294,
+   "coverage_merged_raw": 0.3392993145468393,
+   "coverage_onboard_union": 0.3736989083523737,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.8806063151442325,
+     "true_rel_offset_m": 0.7749966593559215,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8275,
+     "consistency_after_m": 0.7126514473711221,
+     "offset_err_after_m": 0.4358257281859636,
+     "offset_err_obs_before_m": 0.6672017850299187,
+     "offset_err_obs_after_m": 0.19769235922582865
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.3941167447862071,
+     "true_rel_offset_m": 0.5972345039493293,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5085,
+     "consistency_after_m": 0.39199404699085494,
+     "offset_err_after_m": 0.5372872336278821,
+     "offset_err_obs_before_m": 0.2816588789580411,
+     "offset_err_obs_after_m": 0.10646407399563765
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.5546830103358475,
+     "true_rel_offset_m": 0.36494661932523986,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 2559,
+     "consistency_after_m": 1.5964393331796105,
+     "offset_err_after_m": 0.3383061112511173,
+     "offset_err_obs_before_m": 0.20033676216344015,
+     "offset_err_obs_after_m": 0.14662417260432886
+    }
+   ],
+   "energy_wh": [
+    2.003054631851453,
+    2.080758661627939,
+    2.1011772692130455,
+    2.03039304565732
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 141.1,
+   "completed": true,
+   "min_sep_m": 1.4332339034458503,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    141,
+    67,
+    37
+   ],
+   "out_of_range_frac": [
+    0.5251594613749253,
+    0.6109142452161749,
+    0.3437278525868269,
+    0.21970233876683784
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.13480578827113482
+    ],
+    [
+     90.0,
+     0.27735465854277735
+    ],
+    [
+     120.0,
+     0.3634171109418634
+    ]
+   ],
+   "coverage_merged_aligned": 0.35986290936785986,
+   "coverage_merged_raw": 0.3634171109418634,
+   "coverage_onboard_union": 0.38905813658288907,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.8424437293494035,
+     "true_rel_offset_m": 0.7065414058578249,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10869,
+     "consistency_after_m": 0.7964253401670696,
+     "offset_err_after_m": 0.517151673109196,
+     "offset_err_obs_before_m": 0.5912891405817394,
+     "offset_err_obs_after_m": 0.3393368942760208
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.5909607496091323,
+     "true_rel_offset_m": 0.6050502275409047,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4692,
+     "consistency_after_m": 0.27217187353025357,
+     "offset_err_after_m": 0.5952220392591466,
+     "offset_err_obs_before_m": 0.26622208759103944,
+     "offset_err_obs_after_m": 0.25847877993747725
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.2943259546609807,
+     "true_rel_offset_m": 0.3797607751887837,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 2583,
+     "consistency_after_m": 0.9921558200563223,
+     "offset_err_after_m": 0.6229130183736658,
+     "offset_err_obs_before_m": 0.19796889922204744,
+     "offset_err_obs_after_m": 0.5285024898079828
+    }
+   ],
+   "energy_wh": [
+    2.003054631851453,
+    2.4095613808547203,
+    2.2674766081369846,
+    2.123733654695846
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 259.6,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.003081664098613364
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07421875
+    ],
+    [
+     60.0,
+     0.23165760869565216
+    ],
+    [
+     90.0,
+     0.32404891304347827
+    ],
+    [
+     120.0,
+     0.40625
+    ],
+    [
+     150.0,
+     0.4622961956521739
+    ],
+    [
+     180.0,
+     0.47265625
+    ],
+    [
+     210.0,
+     0.4663722826086957
+    ],
+    [
+     240.0,
+     0.52734375
+    ]
+   ],
+   "coverage_merged_aligned": 0.5302309782608695,
+   "coverage_merged_raw": 0.5302309782608695,
+   "coverage_onboard_union": 0.5315896739130435,
+   "alignment": [],
+   "energy_wh": [
+    4.427295989514093
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 170.8,
+   "completed": true,
+   "min_sep_m": 2.985652786604481,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    22
+   ],
+   "out_of_range_frac": [
+    0.002927400468384168,
+    0.030444964871195346
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 33,
+    "relay_queue_max": 7,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.08169157608695653
+    ],
+    [
+     60.0,
+     0.2905910326086957
+    ],
+    [
+     90.0,
+     0.46280570652173914
+    ],
+    [
+     120.0,
+     0.6255095108695652
+    ],
+    [
+     150.0,
+     0.6545516304347826
+    ]
+   ],
+   "coverage_merged_aligned": 0.7418478260869565,
+   "coverage_merged_raw": 0.6547214673913043,
+   "coverage_onboard_union": 0.6560801630434783,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.8766932062256705,
+     "true_rel_offset_m": 0.31371079697104387,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 14745,
+     "consistency_after_m": 0.5588653745993676,
+     "offset_err_after_m": 0.22303137525909633,
+     "offset_err_obs_before_m": 0.23993206984463786,
+     "offset_err_obs_after_m": 0.09920210013709649
+    }
+   ],
+   "energy_wh": [
+    2.786729864887855,
+    2.9125111384396902
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 151.6,
+   "completed": true,
+   "min_sep_m": 1.1077073729431068,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    125,
+    86
+   ],
+   "out_of_range_frac": [
+    0.003298153034300886,
+    0.034300791556729215,
+    0.01583113456464425
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 29,
+    "relay_queue_max": 7,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.08101222826086957
+    ],
+    [
+     60.0,
+     0.23233695652173914
+    ],
+    [
+     90.0,
+     0.48420516304347827
+    ],
+    [
+     120.0,
+     0.6238111413043478
+    ],
+    [
+     150.0,
+     0.6309442934782609
+    ]
+   ],
+   "coverage_merged_aligned": 0.5579144021739131,
+   "coverage_merged_raw": 0.6309442934782609,
+   "coverage_onboard_union": 0.6348505434782609,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.24506449172796085,
+     "true_rel_offset_m": 0.3009805253976249,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7046,
+     "consistency_after_m": 0.2608993185034836,
+     "offset_err_after_m": 0.2993354170571603,
+     "offset_err_obs_before_m": 0.03133378822146285,
+     "offset_err_obs_after_m": 0.0024757012776797102
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.4043384399307346,
+     "true_rel_offset_m": 0.6044788579088232,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 11655,
+     "consistency_after_m": 1.6002219502803552,
+     "offset_err_after_m": 0.6808067714224827,
+     "offset_err_obs_before_m": 0.583830296941236,
+     "offset_err_obs_after_m": 0.6624878136667631
+    }
+   ],
+   "energy_wh": [
+    2.309130599298176,
+    2.584087772605307,
+    2.42900954611936
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 133.6,
+   "completed": true,
+   "min_sep_m": 0.6304694853547554,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    103,
+    108,
+    150
+   ],
+   "out_of_range_frac": [
+    0.003742514970059973,
+    0.03892215568862372,
+    0.017964071856287872,
+    0.014221556886227898
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 19,
+    "relay_queue_max": 4,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07218070652173914
+    ],
+    [
+     60.0,
+     0.46467391304347827
+    ],
+    [
+     90.0,
+     0.7596807065217391
+    ],
+    [
+     120.0,
+     0.8636209239130435
+    ]
+   ],
+   "coverage_merged_aligned": 0.7432065217391305,
+   "coverage_merged_raw": 0.8636209239130435,
+   "coverage_onboard_union": 0.8643002717391305,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.25005499390136354,
+     "true_rel_offset_m": 0.3649771948555747,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9115,
+     "consistency_after_m": 0.24755836727266337,
+     "offset_err_after_m": 0.36525933206885514,
+     "offset_err_obs_before_m": 0.004230970240164757,
+     "offset_err_obs_after_m": 0.014709517541117538
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.0252099478698735,
+     "true_rel_offset_m": 0.6005030562154772,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7614,
+     "consistency_after_m": 1.1192471080512851,
+     "offset_err_after_m": 0.542164410867542,
+     "offset_err_obs_before_m": 0.28064594534731757,
+     "offset_err_obs_after_m": 0.09665885034947752
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.3486233542009092,
+     "true_rel_offset_m": 0.7200541578249755,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10920,
+     "consistency_after_m": 0.3550994663236118,
+     "offset_err_after_m": 0.38229603147832836,
+     "offset_err_obs_before_m": 0.7052213493630796,
+     "offset_err_obs_after_m": 0.35406304402056893
+    }
+   ],
+   "energy_wh": [
+    2.014090187206985,
+    2.27728450902723,
+    2.118482075762487,
+    2.2610047981121206
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 119.0,
+   "completed": true,
+   "min_sep_m": 1.2139562036681268,
+   "near_miss_episodes": 3,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.004201680672268996,
+    0.04201680672268996,
+    0.02016806722689118,
+    0.015966386554622184
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 37,
+    "relay_queue_max": 6,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.21891983695652173
+    ],
+    [
+     60.0,
+     0.5288722826086957
+    ],
+    [
+     90.0,
+     0.8079144021739131
+    ]
+   ],
+   "coverage_merged_aligned": 0.6465692934782609,
+   "coverage_merged_raw": 0.8225203804347826,
+   "coverage_onboard_union": 0.8245584239130435,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.8432295944457973,
+     "true_rel_offset_m": 0.3229084987046906,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7913,
+     "consistency_after_m": 1.8367551123135457,
+     "offset_err_after_m": 0.3522734654768302,
+     "offset_err_obs_before_m": 0.023847751654804798,
+     "offset_err_obs_after_m": 0.1435012583380814
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.0209594501280805,
+     "true_rel_offset_m": 0.5720046102627877,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6934,
+     "consistency_after_m": 0.7971367664127988,
+     "offset_err_after_m": 0.5797823039705288,
+     "offset_err_obs_before_m": 0.25787752931133534,
+     "offset_err_obs_after_m": 0.2611565486585347
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.44813442600477327,
+     "true_rel_offset_m": 0.7117519904794343,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10210,
+     "consistency_after_m": 0.31882426926340984,
+     "offset_err_after_m": 0.57816511893373,
+     "offset_err_obs_before_m": 0.7015214785166276,
+     "offset_err_obs_after_m": 0.5622172303603653
+    }
+   ],
+   "energy_wh": [
+    2.014090187206985,
+    2.029476566009002,
+    1.8964422581907596,
+    1.904838973345762
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 133.6,
+   "completed": true,
+   "min_sep_m": 0.6304694853547554,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    103,
+    108,
+    150
+   ],
+   "out_of_range_frac": [
+    0.003742514970059973,
+    0.03892215568862372,
+    0.017964071856287872,
+    0.014221556886227898
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07218070652173914
+    ],
+    [
+     60.0,
+     0.46467391304347827
+    ],
+    [
+     90.0,
+     0.7596807065217391
+    ],
+    [
+     120.0,
+     0.8636209239130435
+    ]
+   ],
+   "coverage_merged_aligned": 0.7432065217391305,
+   "coverage_merged_raw": 0.8636209239130435,
+   "coverage_onboard_union": 0.8643002717391305,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.25005499390136354,
+     "true_rel_offset_m": 0.3649771948555747,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9115,
+     "consistency_after_m": 0.24755836727266337,
+     "offset_err_after_m": 0.36525933206885514,
+     "offset_err_obs_before_m": 0.004230970240164757,
+     "offset_err_obs_after_m": 0.014709517541117538
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.0252099478698735,
+     "true_rel_offset_m": 0.6005030562154772,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7614,
+     "consistency_after_m": 1.1192471080512851,
+     "offset_err_after_m": 0.542164410867542,
+     "offset_err_obs_before_m": 0.28064594534731757,
+     "offset_err_obs_after_m": 0.09665885034947752
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.3486233542009092,
+     "true_rel_offset_m": 0.7200541578249755,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10920,
+     "consistency_after_m": 0.3550994663236118,
+     "offset_err_after_m": 0.38229603147832836,
+     "offset_err_obs_before_m": 0.7052213493630796,
+     "offset_err_obs_after_m": 0.35406304402056893
+    }
+   ],
+   "energy_wh": [
+    2.014090187206985,
+    2.27728450902723,
+    2.118482075762487,
+    2.2610047981121206
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 234.2,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.0034158838599488935
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.005426181324892607
+    ],
+    [
+     60.0,
+     0.11259326249152159
+    ],
+    [
+     90.0,
+     0.34094505991408547
+    ],
+    [
+     120.0,
+     0.3485191046800814
+    ],
+    [
+     150.0,
+     0.4304770517748135
+    ],
+    [
+     180.0,
+     0.4297987791092019
+    ],
+    [
+     210.0,
+     0.5349310422789961
+    ]
+   ],
+   "coverage_merged_aligned": 0.5395659054940086,
+   "coverage_merged_raw": 0.5395659054940086,
+   "coverage_onboard_union": 0.5583314492425955,
+   "alignment": [],
+   "energy_wh": [
+    4.0057299155594555
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 145.8,
+   "completed": true,
+   "min_sep_m": 4.0,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.003429355281207227,
+    0.03566529492455516
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 142,
+    "relay_queue_max": 20,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.027583088401537417
+    ],
+    [
+     60.0,
+     0.2785439746778205
+    ],
+    [
+     90.0,
+     0.5408094053809631
+    ],
+    [
+     120.0,
+     0.6028713542844223
+    ]
+   ],
+   "coverage_merged_aligned": 0.8200316527243952,
+   "coverage_merged_raw": 0.6293239882432738,
+   "coverage_onboard_union": 0.6606375763056749,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7305333230392005,
+     "true_rel_offset_m": 0.3538005492658735,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8798,
+     "consistency_after_m": 0.8395351192910646,
+     "offset_err_after_m": 0.34403928062246625,
+     "offset_err_obs_before_m": 0.11770781655970486,
+     "offset_err_obs_after_m": 0.0886016934084586
+    }
+   ],
+   "energy_wh": [
+    2.493226483975286,
+    2.4387282978617146
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 145.2,
+   "completed": true,
+   "min_sep_m": 3.9999999999999982,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    1,
+    35
+   ],
+   "out_of_range_frac": [
+    0.0034435261707989923,
+    0.03581267217630952,
+    0.016528925619835162
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 182,
+    "relay_queue_max": 20,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.005652272213429799
+    ],
+    [
+     60.0,
+     0.37542392041600725
+    ],
+    [
+     90.0,
+     0.5426181324892607
+    ],
+    [
+     120.0,
+     0.6006104453990504
+    ]
+   ],
+   "coverage_merged_aligned": 0.5300700881754465,
+   "coverage_merged_raw": 0.6010626271761248,
+   "coverage_onboard_union": 0.61835858014922,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.9673228440777821,
+     "true_rel_offset_m": 0.3500207719824783,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9863,
+     "consistency_after_m": 0.8585977556696295,
+     "offset_err_after_m": 0.431170143162649,
+     "offset_err_obs_before_m": 0.012008424374637098,
+     "offset_err_obs_after_m": 0.25261575332325387
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.076321269093228,
+     "true_rel_offset_m": 0.6074107116424569,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6286,
+     "consistency_after_m": 0.7122540597756399,
+     "offset_err_after_m": 0.5705960045004622,
+     "offset_err_obs_before_m": 0.2613996440697974,
+     "offset_err_obs_after_m": 0.17035591222100152
+    }
+   ],
+   "energy_wh": [
+    2.1267594324896595,
+    2.4822803715102166,
+    2.1656230743761467
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 133.3,
+   "completed": true,
+   "min_sep_m": 3.4639491943286043,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    67,
+    41,
+    92
+   ],
+   "out_of_range_frac": [
+    0.003750937734433701,
+    0.039009752438110494,
+    0.018004501125281767,
+    0.014253563390848064
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 108,
+    "relay_queue_max": 20,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.005539226769161203
+    ],
+    [
+     60.0,
+     0.4459642776396111
+    ],
+    [
+     90.0,
+     0.5843319014243726
+    ],
+    [
+     120.0,
+     0.6147411259326249
+    ]
+   ],
+   "coverage_merged_aligned": 0.6996382545783405,
+   "coverage_merged_raw": 0.6147411259326249,
+   "coverage_onboard_union": 0.6290978973547366,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2565682604951744,
+     "true_rel_offset_m": 0.4539038821837805,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9923,
+     "consistency_after_m": 1.268168656691779,
+     "offset_err_after_m": 0.45218018153220063,
+     "offset_err_obs_before_m": 0.07369977804617839,
+     "offset_err_obs_after_m": 0.05719813786370514
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.676607238708453,
+     "true_rel_offset_m": 0.5786826328119462,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7384,
+     "consistency_after_m": 0.6294967101059754,
+     "offset_err_after_m": 0.5976009375823221,
+     "offset_err_obs_before_m": 0.18212763596616904,
+     "offset_err_obs_after_m": 0.24788029431452163
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.4048313745491564,
+     "true_rel_offset_m": 0.6370413315829326,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5359,
+     "consistency_after_m": 0.48945117413964856,
+     "offset_err_after_m": 0.677128324067194,
+     "offset_err_obs_before_m": 0.04711487563089988,
+     "offset_err_obs_after_m": 0.2389289858007204
+    }
+   ],
+   "energy_wh": [
+    1.7502732126986067,
+    2.277081660841294,
+    2.221165910434216,
+    1.974358770578573
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 124.6,
+   "completed": true,
+   "min_sep_m": 3.9287961489870957,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.004012841091492868,
+    0.041733547351525825,
+    0.019261637239165765,
+    0.015248796147672897
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 97,
+    "relay_queue_max": 20,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07687090210264526
+    ],
+    [
+     60.0,
+     0.48439972869093373
+    ],
+    [
+     90.0,
+     0.5821840379832692
+    ],
+    [
+     120.0,
+     0.6009495817318562
+    ]
+   ],
+   "coverage_merged_aligned": 0.6549853040922451,
+   "coverage_merged_raw": 0.6009495817318562,
+   "coverage_onboard_union": 0.6211847162559349,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.1605680885203484,
+     "true_rel_offset_m": 0.43163631549509135,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7870,
+     "consistency_after_m": 1.163360719820043,
+     "offset_err_after_m": 0.4242344895948317,
+     "offset_err_obs_before_m": 0.08426614883160385,
+     "offset_err_obs_after_m": 0.02528622360891636
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.9990234696236195,
+     "true_rel_offset_m": 0.5656528495214451,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6858,
+     "consistency_after_m": 0.9990507241878009,
+     "offset_err_after_m": 0.5656613124607339,
+     "offset_err_obs_before_m": 0.17565723988811585,
+     "offset_err_obs_after_m": 0.1756851679996911
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.2961757799012075,
+     "true_rel_offset_m": 0.6456339606263645,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5341,
+     "consistency_after_m": 0.2952054447429441,
+     "offset_err_after_m": 0.6458684819606408,
+     "offset_err_obs_before_m": 0.053195820564524564,
+     "offset_err_obs_after_m": 0.0559692611395271
+    }
+   ],
+   "energy_wh": [
+    1.7502732126986067,
+    2.1296751578960307,
+    2.1296602975057164,
+    1.7418226594674728
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 133.3,
+   "completed": true,
+   "min_sep_m": 3.4639491943286043,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    67,
+    41,
+    92
+   ],
+   "out_of_range_frac": [
+    0.003750937734433701,
+    0.039009752438110494,
+    0.018004501125281767,
+    0.014253563390848064
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.005539226769161203
+    ],
+    [
+     60.0,
+     0.4459642776396111
+    ],
+    [
+     90.0,
+     0.5843319014243726
+    ],
+    [
+     120.0,
+     0.6147411259326249
+    ]
+   ],
+   "coverage_merged_aligned": 0.6996382545783405,
+   "coverage_merged_raw": 0.6147411259326249,
+   "coverage_onboard_union": 0.6290978973547366,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2565682604951744,
+     "true_rel_offset_m": 0.4539038821837805,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9923,
+     "consistency_after_m": 1.268168656691779,
+     "offset_err_after_m": 0.45218018153220063,
+     "offset_err_obs_before_m": 0.07369977804617839,
+     "offset_err_obs_after_m": 0.05719813786370514
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.676607238708453,
+     "true_rel_offset_m": 0.5786826328119462,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7384,
+     "consistency_after_m": 0.6294967101059754,
+     "offset_err_after_m": 0.5976009375823221,
+     "offset_err_obs_before_m": 0.18212763596616904,
+     "offset_err_obs_after_m": 0.24788029431452163
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.4048313745491564,
+     "true_rel_offset_m": 0.6370413315829326,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5359,
+     "consistency_after_m": 0.48945117413964856,
+     "offset_err_after_m": 0.677128324067194,
+     "offset_err_obs_before_m": 0.04711487563089988,
+     "offset_err_obs_after_m": 0.2389289858007204
+    }
+   ],
+   "energy_wh": [
+    1.7502732126986067,
+    2.277081660841294,
+    2.221165910434216,
+    1.974358770578573
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 214.6,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.9091332712022703
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.0
+    ],
+    [
+     120.0,
+     0.0
+    ],
+    [
+     150.0,
+     0.0
+    ],
+    [
+     180.0,
+     0.0
+    ],
+    [
+     210.0,
+     0.34658580413297396
+    ]
+   ],
+   "coverage_merged_aligned": 0.3423180592991914,
+   "coverage_merged_raw": 0.3423180592991914,
+   "coverage_onboard_union": 0.3468104222821204,
+   "alignment": [],
+   "energy_wh": [
+    3.6601697271884506
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 165.9,
+   "completed": true,
+   "min_sep_m": 3.999999999999999,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    14
+   ],
+   "out_of_range_frac": [
+    0.679324894514789,
+    0.8661844484629563
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 452,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 8,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.0
+    ],
+    [
+     120.0,
+     0.0
+    ],
+    [
+     150.0,
+     0.5244833782569631
+    ]
+   ],
+   "coverage_merged_aligned": 0.4081311769991015,
+   "coverage_merged_raw": 0.5244833782569631,
+   "coverage_onboard_union": 0.5244833782569631,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.646411022583447,
+     "true_rel_offset_m": 0.2664315138211896,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10860,
+     "consistency_after_m": 0.5680262801624552,
+     "offset_err_after_m": 0.29038233108856376,
+     "offset_err_obs_before_m": 0.07466028090985254,
+     "offset_err_obs_after_m": 0.13929785479188755
+    }
+   ],
+   "energy_wh": [
+    2.2513482988153117,
+    2.8291040916916868
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 144.8,
+   "completed": true,
+   "min_sep_m": 0.9993433859196039,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    88,
+    81
+   ],
+   "out_of_range_frac": [
+    0.5538674033149322,
+    0.8128453038674255,
+    0.7679558011049934
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 724,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 10,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0110062893081761
+    ],
+    [
+     60.0,
+     0.0110062893081761
+    ],
+    [
+     90.0,
+     0.0110062893081761
+    ],
+    [
+     120.0,
+     0.7506738544474394
+    ]
+   ],
+   "coverage_merged_aligned": 0.75696316262354,
+   "coverage_merged_raw": 0.7506738544474394,
+   "coverage_onboard_union": 0.7535938903863432,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.27388589984698586,
+     "true_rel_offset_m": 0.27475522347356895,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5954,
+     "consistency_after_m": 0.11221445881110628,
+     "offset_err_after_m": 0.42871982451559004,
+     "offset_err_obs_before_m": 0.06160774524255674,
+     "offset_err_obs_after_m": 0.3379451822993119
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.8964416733122111,
+     "true_rel_offset_m": 0.49869594507619613,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 7594,
+     "consistency_after_m": 0.8869432032024751,
+     "offset_err_after_m": 0.47829866125643167,
+     "offset_err_obs_before_m": 0.49716242346631806,
+     "offset_err_obs_after_m": 0.4767086875076886
+    }
+   ],
+   "energy_wh": [
+    1.6985738882995114,
+    2.391922682338931,
+    2.468286155495152
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 141.9,
+   "completed": true,
+   "min_sep_m": 1.2707308028321065,
+   "near_miss_episodes": 2,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    85,
+    161,
+    70
+   ],
+   "out_of_range_frac": [
+    0.4566596194503293,
+    0.6356589147286991,
+    0.7470049330514645,
+    0.6885130373502649
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 904,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 19,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.02403414195867026
+    ],
+    [
+     60.0,
+     0.02403414195867026
+    ],
+    [
+     90.0,
+     0.5628930817610063
+    ],
+    [
+     120.0,
+     0.62848158131177
+    ]
+   ],
+   "coverage_merged_aligned": 0.5705300988319856,
+   "coverage_merged_raw": 0.62848158131177,
+   "coverage_onboard_union": 0.6338724168912848,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.24240049398707197,
+     "true_rel_offset_m": 0.3380409335183595,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4639,
+     "consistency_after_m": 0.13220456754972043,
+     "offset_err_after_m": 0.3749098967898081,
+     "offset_err_obs_before_m": 0.14533071562897185,
+     "offset_err_obs_after_m": 0.21007373591612935
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.3118076251189588,
+     "true_rel_offset_m": 0.3601920446322489,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6334,
+     "consistency_after_m": 0.32750549894343156,
+     "offset_err_after_m": 0.27227071972896216,
+     "offset_err_obs_before_m": 0.2352142469842445,
+     "offset_err_obs_after_m": 0.026028815953536465
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.1054688109173874,
+     "true_rel_offset_m": 0.4928806073612956,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 9312,
+     "consistency_after_m": 1.051850795282979,
+     "offset_err_after_m": 0.3323200279345931,
+     "offset_err_obs_before_m": 0.3739788142522639,
+     "offset_err_obs_after_m": 0.09022166395692446
+    }
+   ],
+   "energy_wh": [
+    1.442702320920181,
+    1.9364693850933572,
+    2.418116590784967,
+    2.112055248810458
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 118.2,
+   "completed": true,
+   "min_sep_m": 1.0746403256723003,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.5482233502538185,
+    0.6928934010152428,
+    0.817258883248748,
+    0.7521150592216739
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 811,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 26,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.6671159029649596
+    ]
+   ],
+   "coverage_merged_aligned": 0.7713387241689128,
+   "coverage_merged_raw": 0.6671159029649596,
+   "coverage_onboard_union": 0.6727313566936208,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.38853120265347696,
+     "true_rel_offset_m": 0.37747807743487527,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 2926,
+     "consistency_after_m": 0.2560092718861047,
+     "offset_err_after_m": 0.3397778549414595,
+     "offset_err_obs_before_m": 0.16529294130104338,
+     "offset_err_obs_after_m": 0.020107704437786065
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.386741140075261,
+     "true_rel_offset_m": 0.26592278656242274,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6212,
+     "consistency_after_m": 1.3361161125507697,
+     "offset_err_after_m": 0.40282315744696695,
+     "offset_err_obs_before_m": 0.04956874098253795,
+     "offset_err_obs_after_m": 0.3085325129805192
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.9586009538574334,
+     "true_rel_offset_m": 0.43947823950951476,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 8576,
+     "consistency_after_m": 1.0784130277895063,
+     "offset_err_after_m": 0.5264141679113472,
+     "offset_err_obs_before_m": 0.31358408998225945,
+     "offset_err_obs_after_m": 0.42618407617480947
+    }
+   ],
+   "energy_wh": [
+    1.442702320920181,
+    1.7498184964540977,
+    2.0157652027883057,
+    1.9611325667947959
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 141.9,
+   "completed": true,
+   "min_sep_m": 1.2707308028321065,
+   "near_miss_episodes": 2,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    85,
+    161,
+    70
+   ],
+   "out_of_range_frac": [
+    0.4566596194503293,
+    0.6356589147286991,
+    0.7470049330514645,
+    0.6885130373502649
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.2592093441150045
+    ],
+    [
+     120.0,
+     0.559748427672956
+    ]
+   ],
+   "coverage_merged_aligned": 0.5705300988319856,
+   "coverage_merged_raw": 0.62848158131177,
+   "coverage_onboard_union": 0.6338724168912848,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.24240049398707197,
+     "true_rel_offset_m": 0.3380409335183595,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4639,
+     "consistency_after_m": 0.13220456754972043,
+     "offset_err_after_m": 0.3749098967898081,
+     "offset_err_obs_before_m": 0.14533071562897185,
+     "offset_err_obs_after_m": 0.21007373591612935
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.3118076251189588,
+     "true_rel_offset_m": 0.3601920446322489,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6334,
+     "consistency_after_m": 0.32750549894343156,
+     "offset_err_after_m": 0.27227071972896216,
+     "offset_err_obs_before_m": 0.2352142469842445,
+     "offset_err_obs_after_m": 0.026028815953536465
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.1054688109173874,
+     "true_rel_offset_m": 0.4928806073612956,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 9312,
+     "consistency_after_m": 1.051850795282979,
+     "offset_err_after_m": 0.3323200279345931,
+     "offset_err_obs_before_m": 0.3739788142522639,
+     "offset_err_obs_after_m": 0.09022166395692446
+    }
+   ],
+   "energy_wh": [
+    1.442702320920181,
+    1.9364693850933572,
+    2.418116590784967,
+    2.112055248810458
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 224.3,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.8827463218903587
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.0
+    ],
+    [
+     120.0,
+     0.0
+    ],
+    [
+     150.0,
+     0.0
+    ],
+    [
+     180.0,
+     0.0
+    ],
+    [
+     210.0,
+     0.0
+    ]
+   ],
+   "coverage_merged_aligned": 0.5338541666666666,
+   "coverage_merged_raw": 0.5338541666666666,
+   "coverage_onboard_union": 0.5634645061728395,
+   "alignment": [],
+   "energy_wh": [
+    3.836432617957184
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 165.7,
+   "completed": true,
+   "min_sep_m": 3.999999999999999,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    13
+   ],
+   "out_of_range_frac": [
+    0.8581774290887412,
+    0.7942063971032232
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 990,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 27,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.00048225308641975306
+    ],
+    [
+     60.0,
+     0.00048225308641975306
+    ],
+    [
+     90.0,
+     0.00048225308641975306
+    ],
+    [
+     120.0,
+     0.00048225308641975306
+    ],
+    [
+     150.0,
+     0.4251543209876543
+    ]
+   ],
+   "coverage_merged_aligned": 0.6071566358024691,
+   "coverage_merged_raw": 0.6849922839506173,
+   "coverage_onboard_union": 0.7056327160493827,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2814212322017302,
+     "true_rel_offset_m": 0.21657647037688532,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 12861,
+     "consistency_after_m": 1.1561829564005521,
+     "offset_err_after_m": 0.41973115872208844,
+     "offset_err_obs_before_m": 0.2053436148525716,
+     "offset_err_obs_after_m": 0.41424100494916144
+    }
+   ],
+   "energy_wh": [
+    2.8335450533696083,
+    2.785739953904974
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 162.9,
+   "completed": true,
+   "min_sep_m": 2.6680805591870866,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    72,
+    68
+   ],
+   "out_of_range_frac": [
+    0.6998158379374063,
+    0.8244321669736286,
+    0.6224677716390614
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1769,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 29,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.04658564814814815
+    ],
+    [
+     60.0,
+     0.04658564814814815
+    ],
+    [
+     90.0,
+     0.04658564814814815
+    ],
+    [
+     120.0,
+     0.04658564814814815
+    ],
+    [
+     150.0,
+     0.6398533950617284
+    ]
+   ],
+   "coverage_merged_aligned": 0.5230516975308642,
+   "coverage_merged_raw": 0.6398533950617284,
+   "coverage_onboard_union": 0.6664737654320988,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2062892397327736,
+     "true_rel_offset_m": 0.25467723434941164,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11795,
+     "consistency_after_m": 1.4711458222254976,
+     "offset_err_after_m": 0.16832732255955832,
+     "offset_err_obs_before_m": 0.2287328313847847,
+     "offset_err_obs_after_m": 0.13071928433792393
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.6992537926988205,
+     "true_rel_offset_m": 0.6224609707658579,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10680,
+     "consistency_after_m": 1.5981695090512438,
+     "offset_err_after_m": 0.6924191420297816,
+     "offset_err_obs_before_m": 0.04581460380123269,
+     "offset_err_obs_after_m": 0.31085580039152594
+    }
+   ],
+   "energy_wh": [
+    2.3404019891478662,
+    2.783861397702309,
+    2.4709163253597963
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 156.6,
+   "completed": true,
+   "min_sep_m": 1.136427171052292,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    60,
+    141,
+    44
+   ],
+   "out_of_range_frac": [
+    0.6660280970625995,
+    0.7471264367816313,
+    0.7401021711366758,
+    0.6219667943806059
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2831,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 95,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.03520447530864197
+    ],
+    [
+     60.0,
+     0.03520447530864197
+    ],
+    [
+     90.0,
+     0.03520447530864197
+    ],
+    [
+     120.0,
+     0.23244598765432098
+    ],
+    [
+     150.0,
+     0.5951003086419753
+    ]
+   ],
+   "coverage_merged_aligned": 0.49440586419753085,
+   "coverage_merged_raw": 0.5951003086419753,
+   "coverage_onboard_union": 0.6291473765432098,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.0119018005653808,
+     "true_rel_offset_m": 0.2676400518999041,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 12420,
+     "consistency_after_m": 0.8007699230633385,
+     "offset_err_after_m": 0.6731266827510544,
+     "offset_err_obs_before_m": 0.24535062369049634,
+     "offset_err_obs_after_m": 0.6647400430501966
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.4936274482262393,
+     "true_rel_offset_m": 0.6937048901420453,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11738,
+     "consistency_after_m": 1.5044678151093656,
+     "offset_err_after_m": 0.6980492212544996,
+     "offset_err_obs_before_m": 0.029361566211656323,
+     "offset_err_obs_after_m": 0.07510670734356256
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.6528583466798947,
+     "true_rel_offset_m": 0.7107582995663237,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3818,
+     "consistency_after_m": 0.590749283858935,
+     "offset_err_after_m": 0.6467256854294703,
+     "offset_err_obs_before_m": 0.302488090423856,
+     "offset_err_obs_after_m": 0.05860155774491202
+    }
+   ],
+   "energy_wh": [
+    2.1808374764266096,
+    2.4743583235650686,
+    2.67452660785554,
+    2.209142004638674
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 136.7,
+   "completed": true,
+   "min_sep_m": 1.9358037951921125,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.7622531089978248,
+    0.8127286027798305,
+    0.7798098024872181,
+    0.667885881492336
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 3273,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 91,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.001736111111111111
+    ],
+    [
+     60.0,
+     0.001736111111111111
+    ],
+    [
+     90.0,
+     0.001736111111111111
+    ],
+    [
+     120.0,
+     0.535108024691358
+    ]
+   ],
+   "coverage_merged_aligned": 0.34944058641975306,
+   "coverage_merged_raw": 0.5612461419753086,
+   "coverage_onboard_union": 0.6017554012345679,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.0534633210636213,
+     "true_rel_offset_m": 0.28003732034914264,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11152,
+     "consistency_after_m": 0.8537287734580122,
+     "offset_err_after_m": 0.7179634489061484,
+     "offset_err_obs_before_m": 0.26012448110667213,
+     "offset_err_obs_after_m": 0.7107393815473766
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.9079098515884958,
+     "true_rel_offset_m": 0.5798085697167992,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8348,
+     "consistency_after_m": 0.9665843529153741,
+     "offset_err_after_m": 0.6069893711893815,
+     "offset_err_obs_before_m": 0.04980668478105046,
+     "offset_err_obs_after_m": 0.1874430477206852
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.8797267832281821,
+     "true_rel_offset_m": 0.6649096587022185,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3696,
+     "consistency_after_m": 0.8803054383425505,
+     "offset_err_after_m": 0.659101561123776,
+     "offset_err_obs_before_m": 0.2767457674401929,
+     "offset_err_obs_after_m": 0.2624930475032616
+    }
+   ],
+   "energy_wh": [
+    2.1808374764266096,
+    2.337057312046287,
+    2.3370741657460865,
+    2.1056955540852615
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 156.6,
+   "completed": true,
+   "min_sep_m": 1.136427171052292,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    60,
+    141,
+    44
+   ],
+   "out_of_range_frac": [
+    0.6660280970625995,
+    0.7471264367816313,
+    0.7401021711366758,
+    0.6219667943806059
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.0
+    ],
+    [
+     120.0,
+     0.20244984567901234
+    ],
+    [
+     150.0,
+     0.5951003086419753
+    ]
+   ],
+   "coverage_merged_aligned": 0.49440586419753085,
+   "coverage_merged_raw": 0.5951003086419753,
+   "coverage_onboard_union": 0.6291473765432098,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.0119018005653808,
+     "true_rel_offset_m": 0.2676400518999041,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 12420,
+     "consistency_after_m": 0.8007699230633385,
+     "offset_err_after_m": 0.6731266827510544,
+     "offset_err_obs_before_m": 0.24535062369049634,
+     "offset_err_obs_after_m": 0.6647400430501966
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.4936274482262393,
+     "true_rel_offset_m": 0.6937048901420453,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11738,
+     "consistency_after_m": 1.5044678151093656,
+     "offset_err_after_m": 0.6980492212544996,
+     "offset_err_obs_before_m": 0.029361566211656323,
+     "offset_err_obs_after_m": 0.07510670734356256
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.6528583466798947,
+     "true_rel_offset_m": 0.7107582995663237,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3818,
+     "consistency_after_m": 0.590749283858935,
+     "offset_err_after_m": 0.6467256854294703,
+     "offset_err_obs_before_m": 0.302488090423856,
+     "offset_err_obs_after_m": 0.05860155774491202
+    }
+   ],
+   "energy_wh": [
+    2.1808374764266096,
+    2.4743583235650686,
+    2.67452660785554,
+    2.209142004638674
+   ],
+   "min_clear_m": 0.4999999999999982
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 365.0,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.6882191780821645
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.0
+    ],
+    [
+     90.0,
+     0.13379558294812532
+    ],
+    [
+     120.0,
+     0.1813045711350796
+    ],
+    [
+     150.0,
+     0.1813045711350796
+    ],
+    [
+     180.0,
+     0.3207498715973292
+    ],
+    [
+     210.0,
+     0.4238572162300976
+    ],
+    [
+     240.0,
+     0.4238572162300976
+    ],
+    [
+     270.0,
+     0.53954802259887
+    ],
+    [
+     300.0,
+     0.5391628145865434
+    ],
+    [
+     330.0,
+     0.5403184386235234
+    ],
+    [
+     360.0,
+     0.6453518233179251
+    ]
+   ],
+   "coverage_merged_aligned": 0.6453518233179251,
+   "coverage_merged_raw": 0.6453518233179251,
+   "coverage_onboard_union": 0.6470210580380071,
+   "alignment": [],
+   "energy_wh": [
+    6.22460893040196
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 229.4,
+   "completed": true,
+   "min_sep_m": 3.715521427725338,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    40
+   ],
+   "out_of_range_frac": [
+    0.8234524847428388,
+    0.4843068875327125
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 734,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 2,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.07639958911145352
+    ],
+    [
+     90.0,
+     0.2752953261427838
+    ],
+    [
+     120.0,
+     0.3487416538263996
+    ],
+    [
+     150.0,
+     0.5073189522342064
+    ],
+    [
+     180.0,
+     0.542116076014381
+    ],
+    [
+     210.0,
+     0.690677966101695
+    ]
+   ],
+   "coverage_merged_aligned": 0.6881099126861838,
+   "coverage_merged_raw": 0.690677966101695,
+   "coverage_onboard_union": 0.6986389316897792,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.48000468306208227,
+     "true_rel_offset_m": 0.6520526795971691,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9830,
+     "consistency_after_m": 0.47492504677963365,
+     "offset_err_after_m": 0.6546306764270525,
+     "offset_err_obs_before_m": 0.304792975077038,
+     "offset_err_obs_after_m": 0.31026816917123184
+    }
+   ],
+   "energy_wh": [
+    3.840519310013928,
+    3.9116556841631347
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 195.6,
+   "completed": true,
+   "min_sep_m": 2.575778404413646,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    25,
+    46
+   ],
+   "out_of_range_frac": [
+    0.7234151329243607,
+    0.6032719836401029,
+    0.30572597137015384
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1019,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 8,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.1877247046738572
+    ],
+    [
+     90.0,
+     0.2738828967642527
+    ],
+    [
+     120.0,
+     0.4487673343605547
+    ],
+    [
+     150.0,
+     0.5512326656394453
+    ],
+    [
+     180.0,
+     0.5507190549563431
+    ]
+   ],
+   "coverage_merged_aligned": 0.6497175141242938,
+   "coverage_merged_raw": 0.5507190549563431,
+   "coverage_onboard_union": 0.5539291217257319,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.43879264635024084,
+     "true_rel_offset_m": 0.7426984360293785,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 6831,
+     "consistency_after_m": 0.35348025586956827,
+     "offset_err_after_m": 0.8211861754218752,
+     "offset_err_obs_before_m": 0.1777880742905139,
+     "offset_err_obs_after_m": 0.3828837435651093
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.8715010851470191,
+     "true_rel_offset_m": 0.824236410737524,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 9794,
+     "consistency_after_m": 0.7165513184288412,
+     "offset_err_after_m": 0.5960417608809684,
+     "offset_err_obs_before_m": 0.5837755926201933,
+     "offset_err_obs_after_m": 0.14074369753506097
+    }
+   ],
+   "energy_wh": [
+    3.0423629834775188,
+    3.335690245295347,
+    2.929015048989826
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 166.2,
+   "completed": true,
+   "min_sep_m": 2.576599222969346,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    25,
+    0,
+    20
+   ],
+   "out_of_range_frac": [
+    0.695547533092681,
+    0.767148014440457,
+    0.3116726835138484,
+    0.3586040914560881
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1241,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 1,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.038906009244992296
+    ],
+    [
+     60.0,
+     0.3026450950179764
+    ],
+    [
+     90.0,
+     0.46712891628145864
+    ],
+    [
+     120.0,
+     0.6572932717000514
+    ],
+    [
+     150.0,
+     0.7012069851052902
+    ]
+   ],
+   "coverage_merged_aligned": 0.6377760657421674,
+   "coverage_merged_raw": 0.7012069851052902,
+   "coverage_onboard_union": 0.7041602465331279,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.2766550067947974,
+     "true_rel_offset_m": 0.7472013466350524,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5885,
+     "consistency_after_m": 0.20126969780875142,
+     "offset_err_after_m": 0.7194029101358168,
+     "offset_err_obs_before_m": 0.2221113192568414,
+     "offset_err_obs_after_m": 0.07947121327942626
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7486228267777781,
+     "true_rel_offset_m": 0.8798161061954104,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4944,
+     "consistency_after_m": 0.28726948653070705,
+     "offset_err_after_m": 1.057327403846428,
+     "offset_err_obs_before_m": 0.03829741272792054,
+     "offset_err_obs_after_m": 0.5891201082142467
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.736873205231592,
+     "true_rel_offset_m": 0.8753857651113357,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10546,
+     "consistency_after_m": 0.5040834435221828,
+     "offset_err_after_m": 1.1833351326037373,
+     "offset_err_obs_before_m": 0.19196037232077787,
+     "offset_err_obs_after_m": 0.828782159860961
+    }
+   ],
+   "energy_wh": [
+    2.6126050232946882,
+    2.8339342866093333,
+    2.6126494950652828,
+    2.4586616831656345
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 163.4,
+   "completed": true,
+   "min_sep_m": 1.0036585211487346,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.7074663402692996,
+    0.7796817625459235,
+    0.31701346389229856,
+    0.3647490820073551
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1198,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 5,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.06150487930148947
+    ],
+    [
+     60.0,
+     0.28929121725731893
+    ],
+    [
+     90.0,
+     0.45236260914227017
+    ],
+    [
+     120.0,
+     0.6651258346173601
+    ],
+    [
+     150.0,
+     0.7122496147919877
+    ]
+   ],
+   "coverage_merged_aligned": 0.6400873138161274,
+   "coverage_merged_raw": 0.7122496147919877,
+   "coverage_onboard_union": 0.7146892655367232,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.27643801640951304,
+     "true_rel_offset_m": 0.7413969170142484,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6126,
+     "consistency_after_m": 0.2508318770411427,
+     "offset_err_after_m": 0.7346093824547077,
+     "offset_err_obs_before_m": 0.20466493120265636,
+     "offset_err_obs_after_m": 0.19904848017752688
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7688510717997823,
+     "true_rel_offset_m": 0.8798161061954104,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4944,
+     "consistency_after_m": 0.2698449596885894,
+     "offset_err_after_m": 1.1035799612162227,
+     "offset_err_obs_before_m": 0.03514901971056877,
+     "offset_err_obs_after_m": 0.6630264642900807
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.6999587740087745,
+     "true_rel_offset_m": 0.8717721064261437,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10886,
+     "consistency_after_m": 0.4233274706613901,
+     "offset_err_after_m": 1.118693439650863,
+     "offset_err_obs_before_m": 0.20456916198351988,
+     "offset_err_obs_after_m": 0.7433136215355438
+    }
+   ],
+   "energy_wh": [
+    2.6126050232946882,
+    2.786514721522174,
+    2.6126494950652828,
+    2.4077450164989678
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 166.2,
+   "completed": true,
+   "min_sep_m": 2.576599222969346,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    25,
+    0,
+    20
+   ],
+   "out_of_range_frac": [
+    0.695547533092681,
+    0.767148014440457,
+    0.3116726835138484,
+    0.3586040914560881
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.038906009244992296
+    ],
+    [
+     60.0,
+     0.18900873138161273
+    ],
+    [
+     90.0,
+     0.2800462249614792
+    ],
+    [
+     120.0,
+     0.3263995891114535
+    ],
+    [
+     150.0,
+     0.7012069851052902
+    ]
+   ],
+   "coverage_merged_aligned": 0.6377760657421674,
+   "coverage_merged_raw": 0.7012069851052902,
+   "coverage_onboard_union": 0.7041602465331279,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.2766550067947974,
+     "true_rel_offset_m": 0.7472013466350524,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5885,
+     "consistency_after_m": 0.20126969780875142,
+     "offset_err_after_m": 0.7194029101358168,
+     "offset_err_obs_before_m": 0.2221113192568414,
+     "offset_err_obs_after_m": 0.07947121327942626
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7486228267777781,
+     "true_rel_offset_m": 0.8798161061954104,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4944,
+     "consistency_after_m": 0.28726948653070705,
+     "offset_err_after_m": 1.057327403846428,
+     "offset_err_obs_before_m": 0.03829741272792054,
+     "offset_err_obs_after_m": 0.5891201082142467
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.736873205231592,
+     "true_rel_offset_m": 0.8753857651113357,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10546,
+     "consistency_after_m": 0.5040834435221828,
+     "offset_err_after_m": 1.1833351326037373,
+     "offset_err_obs_before_m": 0.19196037232077787,
+     "offset_err_obs_after_m": 0.828782159860961
+    }
+   ],
+   "energy_wh": [
+    2.6126050232946882,
+    2.8339342866093333,
+    2.6126494950652828,
+    2.4586616831656345
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 278.5,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.6068222621185032
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.007868508480503585
+    ],
+    [
+     60.0,
+     0.04677391152299353
+    ],
+    [
+     90.0,
+     0.15859415981815003
+    ],
+    [
+     120.0,
+     0.14276971498513727
+    ],
+    [
+     150.0,
+     0.14276971498513727
+    ],
+    [
+     180.0,
+     0.14276971498513727
+    ],
+    [
+     210.0,
+     0.19356530862038818
+    ],
+    [
+     240.0,
+     0.26648015387305474
+    ],
+    [
+     270.0,
+     0.27566008043364226
+    ]
+   ],
+   "coverage_merged_aligned": 0.27566008043364226,
+   "coverage_merged_raw": 0.27566008043364226,
+   "coverage_onboard_union": 0.29314565483476135,
+   "alignment": [],
+   "energy_wh": [
+    4.764966561593073
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 176.9,
+   "completed": true,
+   "min_sep_m": 4.0,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    5
+   ],
+   "out_of_range_frac": [
+    0.5008479366874103,
+    0.5890333521763901
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1729,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 18,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.008830215072565133
+    ],
+    [
+     60.0,
+     0.23177128868683336
+    ],
+    [
+     90.0,
+     0.36448679839132714
+    ],
+    [
+     120.0,
+     0.3787375415282392
+    ],
+    [
+     150.0,
+     0.3787375415282392
+    ]
+   ],
+   "coverage_merged_aligned": 0.2617590487847526,
+   "coverage_merged_raw": 0.3787375415282392,
+   "coverage_onboard_union": 0.39858366847350934,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.9838818111366241,
+     "true_rel_offset_m": 0.7685609006255174,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9320,
+     "consistency_after_m": 0.6423104604187074,
+     "offset_err_after_m": 0.33706637062670186,
+     "offset_err_obs_before_m": 0.7378834627188545,
+     "offset_err_obs_after_m": 0.2592028754318615
+    }
+   ],
+   "energy_wh": [
+    2.896643681241949,
+    3.026266228217786
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 181.3,
+   "completed": true,
+   "min_sep_m": 2.050266546615688,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    54,
+    34
+   ],
+   "out_of_range_frac": [
+    0.48041919470492495,
+    0.5488141202427099,
+    0.5912851627137538
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1943,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 35,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.019758699073264555
+    ],
+    [
+     60.0,
+     0.3239202657807309
+    ],
+    [
+     90.0,
+     0.40767616716209126
+    ],
+    [
+     120.0,
+     0.42332575625109287
+    ],
+    [
+     150.0,
+     0.4173806609547124
+    ],
+    [
+     180.0,
+     0.40636474908200737
+    ]
+   ],
+   "coverage_merged_aligned": 0.3438538205980066,
+   "coverage_merged_raw": 0.40636474908200737,
+   "coverage_onboard_union": 0.4295331351634901,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.0441794362927128,
+     "true_rel_offset_m": 0.7734160354300661,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8812,
+     "consistency_after_m": 1.0560821707378416,
+     "offset_err_after_m": 0.7963805799082163,
+     "offset_err_obs_before_m": 0.7492985678803252,
+     "offset_err_obs_after_m": 0.7729924381050575
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.5737024076046171,
+     "true_rel_offset_m": 0.8494872041715869,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6558,
+     "consistency_after_m": 0.6724795565355892,
+     "offset_err_after_m": 1.2890874564453048,
+     "offset_err_obs_before_m": 0.6289726031985444,
+     "offset_err_obs_after_m": 1.1604069858313129
+    }
+   ],
+   "energy_wh": [
+    2.8289679022883463,
+    3.0802358107101013,
+    3.099820522543891
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 184.0,
+   "completed": true,
+   "min_sep_m": 2.156039112602592,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    100,
+    13,
+    20
+   ],
+   "out_of_range_frac": [
+    0.3445652173913159,
+    0.566304347826106,
+    0.5559782608695839,
+    0.4483695652174064
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2561,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 53,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.021507256513376465
+    ],
+    [
+     60.0,
+     0.4229760447630705
+    ],
+    [
+     90.0,
+     0.4635425773736667
+    ],
+    [
+     120.0,
+     0.472984787550271
+    ],
+    [
+     150.0,
+     0.4720230809582095
+    ],
+    [
+     180.0,
+     0.47211050883021505
+    ]
+   ],
+   "coverage_merged_aligned": 0.4208777758349362,
+   "coverage_merged_raw": 0.47211050883021505,
+   "coverage_onboard_union": 0.4864486798391327,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7088140754275286,
+     "true_rel_offset_m": 0.6769455964033287,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10054,
+     "consistency_after_m": 0.7019285884176232,
+     "offset_err_after_m": 0.6551407802666376,
+     "offset_err_obs_before_m": 0.6509201928325721,
+     "offset_err_obs_after_m": 0.6282034489809984
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.6777414961155466,
+     "true_rel_offset_m": 0.8112182376036804,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8871,
+     "consistency_after_m": 0.6918492381625202,
+     "offset_err_after_m": 1.1382651638663737,
+     "offset_err_obs_before_m": 0.500415207756544,
+     "offset_err_obs_after_m": 0.942672100510007
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.0285510611233963,
+     "true_rel_offset_m": 0.8484390670824467,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5130,
+     "consistency_after_m": 1.2490788249024423,
+     "offset_err_after_m": 0.6278313668569967,
+     "offset_err_obs_before_m": 0.7647040865095437,
+     "offset_err_obs_after_m": 0.5088769447302903
+    }
+   ],
+   "energy_wh": [
+    2.2324855174182203,
+    3.1449403531483147,
+    3.0267427169529957,
+    2.544319754556933
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 175.4,
+   "completed": true,
+   "min_sep_m": 2.1631163212805555,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.3614595210946525,
+    0.5416191562143847,
+    0.5763968072976241,
+    0.4618015963512122
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2361,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 69,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.022468963105438014
+    ],
+    [
+     60.0,
+     0.4064521769540129
+    ],
+    [
+     90.0,
+     0.44474558489246374
+    ],
+    [
+     120.0,
+     0.45112781954887216
+    ],
+    [
+     150.0,
+     0.45016611295681064
+    ]
+   ],
+   "coverage_merged_aligned": 0.4393250568281168,
+   "coverage_merged_raw": 0.45016611295681064,
+   "coverage_onboard_union": 0.46887567756600806,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5462688344354393,
+     "true_rel_offset_m": 0.6726939340804123,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8357,
+     "consistency_after_m": 0.5194960692625001,
+     "offset_err_after_m": 0.5620510867740249,
+     "offset_err_obs_before_m": 0.6240179611879435,
+     "offset_err_obs_after_m": 0.5026475298958646
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.5941897344921272,
+     "true_rel_offset_m": 0.8132335583683357,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9111,
+     "consistency_after_m": 0.5712246392521964,
+     "offset_err_after_m": 0.6725658323823711,
+     "offset_err_obs_before_m": 0.5169488518757749,
+     "offset_err_obs_after_m": 0.24041959911963956
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.8365222058874697,
+     "true_rel_offset_m": 0.8485012091916211,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4634,
+     "consistency_after_m": 0.7758454131155952,
+     "offset_err_after_m": 0.6829381413864372,
+     "offset_err_obs_before_m": 0.7650908856908076,
+     "offset_err_obs_after_m": 0.5750692622034251
+    }
+   ],
+   "energy_wh": [
+    2.2324855174182203,
+    2.9075141921471253,
+    2.9996693773051426,
+    2.500315420980463
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 184.0,
+   "completed": true,
+   "min_sep_m": 2.156039112602592,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    100,
+    13,
+    20
+   ],
+   "out_of_range_frac": [
+    0.3445652173913159,
+    0.566304347826106,
+    0.5559782608695839,
+    0.4483695652174064
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.008305647840531562
+    ],
+    [
+     60.0,
+     0.4009442210176604
+    ],
+    [
+     90.0,
+     0.4605700297254765
+    ],
+    [
+     120.0,
+     0.4655534184297954
+    ],
+    [
+     150.0,
+     0.4719356530862039
+    ],
+    [
+     180.0,
+     0.47211050883021505
+    ]
+   ],
+   "coverage_merged_aligned": 0.4208777758349362,
+   "coverage_merged_raw": 0.47211050883021505,
+   "coverage_onboard_union": 0.4864486798391327,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7088140754275286,
+     "true_rel_offset_m": 0.6769455964033287,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 10054,
+     "consistency_after_m": 0.7019285884176232,
+     "offset_err_after_m": 0.6551407802666376,
+     "offset_err_obs_before_m": 0.6509201928325721,
+     "offset_err_obs_after_m": 0.6282034489809984
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.6777414961155466,
+     "true_rel_offset_m": 0.8112182376036804,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8871,
+     "consistency_after_m": 0.6918492381625202,
+     "offset_err_after_m": 1.1382651638663737,
+     "offset_err_obs_before_m": 0.500415207756544,
+     "offset_err_obs_after_m": 0.942672100510007
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.0285510611233963,
+     "true_rel_offset_m": 0.8484390670824467,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5130,
+     "consistency_after_m": 1.2490788249024423,
+     "offset_err_after_m": 0.6278313668569967,
+     "offset_err_obs_before_m": 0.7647040865095437,
+     "offset_err_obs_after_m": 0.5088769447302903
+    }
+   ],
+   "energy_wh": [
+    2.2324855174182203,
+    3.1449403531483147,
+    3.0267427169529957,
+    2.544319754556933
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 232.6,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.015047291487532824
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.1143018018018018
+    ],
+    [
+     90.0,
+     0.21415165165165165
+    ],
+    [
+     120.0,
+     0.20758258258258258
+    ],
+    [
+     150.0,
+     0.24117867867867868
+    ],
+    [
+     180.0,
+     0.3143768768768769
+    ],
+    [
+     210.0,
+     0.3277027027027027
+    ]
+   ],
+   "coverage_merged_aligned": 0.36036036036036034,
+   "coverage_merged_raw": 0.36036036036036034,
+   "coverage_onboard_union": 0.3641141141141141,
+   "alignment": [],
+   "energy_wh": [
+    3.9670959341781398
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 155.2,
+   "completed": true,
+   "min_sep_m": 4.000000000000001,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.0006443298969072353,
+    0.02641752577319665
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 17,
+    "relay_queue_max": 5,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.11936936936936937
+    ],
+    [
+     90.0,
+     0.3258258258258258
+    ],
+    [
+     120.0,
+     0.3761261261261261
+    ],
+    [
+     150.0,
+     0.3935810810810811
+    ]
+   ],
+   "coverage_merged_aligned": 0.43712462462462465,
+   "coverage_merged_raw": 0.3935810810810811,
+   "coverage_onboard_union": 0.39714714714714716,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.092170733279064,
+     "true_rel_offset_m": 0.9405114892757294,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5693,
+     "consistency_after_m": 0.5893858431532559,
+     "offset_err_after_m": 0.48023591399043014,
+     "offset_err_obs_before_m": 0.8619454012390838,
+     "offset_err_obs_after_m": 0.30467468937149467
+    }
+   ],
+   "energy_wh": [
+    2.4865841920740896,
+    2.6468931636635933
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 152.9,
+   "completed": true,
+   "min_sep_m": 0.5709319266176442,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    7,
+    105
+   ],
+   "out_of_range_frac": [
+    0.0006540222367560686,
+    0.02681491170699881,
+    0.0810987573577525
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 70,
+    "relay_queue_max": 10,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.027965465465465467
+    ],
+    [
+     60.0,
+     0.18018018018018017
+    ],
+    [
+     90.0,
+     0.3303303303303303
+    ],
+    [
+     120.0,
+     0.36242492492492495
+    ],
+    [
+     150.0,
+     0.3616741741741742
+    ]
+   ],
+   "coverage_merged_aligned": 0.341966966966967,
+   "coverage_merged_raw": 0.3616741741741742,
+   "coverage_onboard_union": 0.3646771771771772,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5584509138790648,
+     "true_rel_offset_m": 0.9674126998107377,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 3531,
+     "consistency_after_m": 0.6909187615864363,
+     "offset_err_after_m": 1.0319963398751553,
+     "offset_err_obs_before_m": 0.9247449533726029,
+     "offset_err_obs_after_m": 0.991336532540738
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.0318258254505293,
+     "true_rel_offset_m": 1.4521500606588478,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7096,
+     "consistency_after_m": 0.8451972013989711,
+     "offset_err_after_m": 1.4072968538913928,
+     "offset_err_obs_before_m": 0.4271424254779241,
+     "offset_err_obs_after_m": 0.22047123169339086
+    }
+   ],
+   "energy_wh": [
+    1.9646324862376328,
+    1.966536970068159,
+    2.6062798324325276
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 148.7,
+   "completed": true,
+   "min_sep_m": 0.874572323839117,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    1,
+    87,
+    178
+   ],
+   "out_of_range_frac": [
+    0.0006724949562878467,
+    0.004707464694014927,
+    0.0504371217215885,
+    0.0033624747814392335
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 30,
+    "relay_queue_max": 5,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.08333333333333333
+    ],
+    [
+     60.0,
+     0.3325825825825826
+    ],
+    [
+     90.0,
+     0.5285285285285285
+    ],
+    [
+     120.0,
+     0.5853978978978979
+    ]
+   ],
+   "coverage_merged_aligned": 0.4986861861861862,
+   "coverage_merged_raw": 0.5853978978978979,
+   "coverage_onboard_union": 0.5882132132132132,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5677728418897756,
+     "true_rel_offset_m": 0.8618951049906483,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3404,
+     "consistency_after_m": 0.7306787592243777,
+     "offset_err_after_m": 0.9033270458518194,
+     "offset_err_obs_before_m": 0.12140754984175069,
+     "offset_err_obs_after_m": 0.2968491352397052
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.24672470976699368,
+     "true_rel_offset_m": 1.5534084652257019,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4418,
+     "consistency_after_m": 0.14910500936135967,
+     "offset_err_after_m": 1.675766074476035,
+     "offset_err_obs_before_m": 0.8658366024610944,
+     "offset_err_obs_after_m": 1.0693077659622705
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.8625615156547344,
+     "true_rel_offset_m": 1.171964650608789,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10030,
+     "consistency_after_m": 1.0397490868197465,
+     "offset_err_after_m": 1.3349400402079312,
+     "offset_err_obs_before_m": 0.8901915883453455,
+     "offset_err_obs_after_m": 1.0703444727665565
+    }
+   ],
+   "energy_wh": [
+    1.6679065320139286,
+    1.5672027806897926,
+    2.0744555745055875,
+    2.5337994142984352
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 122.8,
+   "completed": true,
+   "min_sep_m": 0.09298494675094693,
+   "near_miss_episodes": 4,
+   "collision_ticks": 44,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.0008143322475570212,
+    0.0057003257328991485,
+    0.05944625407166255,
+    0.004071661237785106
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 29,
+    "relay_queue_max": 6,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.12762762762762764
+    ],
+    [
+     60.0,
+     0.43074324324324326
+    ],
+    [
+     90.0,
+     0.6026651651651652
+    ],
+    [
+     120.0,
+     0.6030405405405406
+    ]
+   ],
+   "coverage_merged_aligned": 0.5289039039039038,
+   "coverage_merged_raw": 0.6030405405405406,
+   "coverage_onboard_union": 0.6036036036036037,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5695779122064681,
+     "true_rel_offset_m": 0.8624286935680896,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3301,
+     "consistency_after_m": 0.7293906325628989,
+     "offset_err_after_m": 0.9011783275034398,
+     "offset_err_obs_before_m": 0.1171041523777027,
+     "offset_err_obs_after_m": 0.2873389912916799
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.606958955767813,
+     "true_rel_offset_m": 1.5706958867335337,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3290,
+     "consistency_after_m": 0.6015664826485551,
+     "offset_err_after_m": 1.6991144471017516,
+     "offset_err_obs_before_m": 0.8472314419892163,
+     "offset_err_obs_after_m": 1.0656417330682626
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.4092323151135974,
+     "true_rel_offset_m": 1.1393800988972085,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 8142,
+     "consistency_after_m": 0.3476297243466612,
+     "offset_err_after_m": 1.2108311097160627,
+     "offset_err_obs_before_m": 0.8644487422949753,
+     "offset_err_obs_after_m": 0.9557533322155572
+    }
+   ],
+   "energy_wh": [
+    1.6679065320139286,
+    1.5655055584675703,
+    1.882822307605114,
+    2.0942410550397503
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 148.7,
+   "completed": true,
+   "min_sep_m": 0.874572323839117,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    1,
+    87,
+    178
+   ],
+   "out_of_range_frac": [
+    0.0006724949562878467,
+    0.004707464694014927,
+    0.0504371217215885,
+    0.0033624747814392335
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.08333333333333333
+    ],
+    [
+     60.0,
+     0.3325825825825826
+    ],
+    [
+     90.0,
+     0.5285285285285285
+    ],
+    [
+     120.0,
+     0.5853978978978979
+    ]
+   ],
+   "coverage_merged_aligned": 0.4986861861861862,
+   "coverage_merged_raw": 0.5853978978978979,
+   "coverage_onboard_union": 0.5882132132132132,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5677728418897756,
+     "true_rel_offset_m": 0.8618951049906483,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3404,
+     "consistency_after_m": 0.7306787592243777,
+     "offset_err_after_m": 0.9033270458518194,
+     "offset_err_obs_before_m": 0.12140754984175069,
+     "offset_err_obs_after_m": 0.2968491352397052
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.24672470976699368,
+     "true_rel_offset_m": 1.5534084652257019,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4418,
+     "consistency_after_m": 0.14910500936135967,
+     "offset_err_after_m": 1.675766074476035,
+     "offset_err_obs_before_m": 0.8658366024610944,
+     "offset_err_obs_after_m": 1.0693077659622705
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.8625615156547344,
+     "true_rel_offset_m": 1.171964650608789,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 10030,
+     "consistency_after_m": 1.0397490868197465,
+     "offset_err_after_m": 1.3349400402079312,
+     "offset_err_obs_before_m": 0.8901915883453455,
+     "offset_err_obs_after_m": 1.0703444727665565
+    }
+   ],
+   "energy_wh": [
+    1.6679065320139286,
+    1.5672027806897926,
+    2.0744555745055875,
+    2.5337994142984352
+   ],
+   "min_clear_m": 0.002841818362368187
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 239.3,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.07898035938153254
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.05443548387096774
+    ],
+    [
+     90.0,
+     0.09149385560675884
+    ],
+    [
+     120.0,
+     0.08918970814132104
+    ],
+    [
+     150.0,
+     0.11002304147465437
+    ],
+    [
+     180.0,
+     0.11319124423963134
+    ],
+    [
+     210.0,
+     0.12480798771121351
+    ]
+   ],
+   "coverage_merged_aligned": 0.1676267281105991,
+   "coverage_merged_raw": 0.1676267281105991,
+   "coverage_onboard_union": 0.18519585253456222,
+   "alignment": [],
+   "energy_wh": [
+    4.094996036316617
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 183.0,
+   "completed": true,
+   "min_sep_m": 2.7104160168484026,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    32
+   ],
+   "out_of_range_frac": [
+    0.10601092896175218,
+    0.032240437158471025
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 352,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.09859831029185868
+    ],
+    [
+     60.0,
+     0.21121351766513058
+    ],
+    [
+     90.0,
+     0.19902073732718895
+    ],
+    [
+     120.0,
+     0.22215821812596007
+    ],
+    [
+     150.0,
+     0.2910906298003072
+    ],
+    [
+     180.0,
+     0.41810675883256526
+    ]
+   ],
+   "coverage_merged_aligned": 0.2073732718894009,
+   "coverage_merged_raw": 0.41810675883256526,
+   "coverage_onboard_union": 0.4444124423963134,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.279894639696,
+     "true_rel_offset_m": 0.7144677596587397,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 18981,
+     "consistency_after_m": 1.2913182788566413,
+     "offset_err_after_m": 0.7456106702961788,
+     "offset_err_obs_before_m": 0.005843739699677265,
+     "offset_err_obs_after_m": 0.21626743788254763
+    }
+   ],
+   "energy_wh": [
+    3.0348742077627753,
+    3.130051957907916
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 156.7,
+   "completed": true,
+   "min_sep_m": 1.8691919479570163,
+   "near_miss_episodes": 4,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    37,
+    32
+   ],
+   "out_of_range_frac": [
+    0.11678366305041825,
+    0.07083599234205697,
+    0.04977664326739138
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 703,
+    "relay_queue_max": 39,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.10723886328725038
+    ],
+    [
+     60.0,
+     0.22916666666666666
+    ],
+    [
+     90.0,
+     0.19998079877112135
+    ],
+    [
+     120.0,
+     0.21505376344086022
+    ],
+    [
+     150.0,
+     0.2586405529953917
+    ]
+   ],
+   "coverage_merged_aligned": 0.19719662058371737,
+   "coverage_merged_raw": 0.2586405529953917,
+   "coverage_onboard_union": 0.2844662058371736,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.007709752204068,
+     "true_rel_offset_m": 0.9298247935273569,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 16743,
+     "consistency_after_m": 0.9584080778903447,
+     "offset_err_after_m": 0.9269261423981155,
+     "offset_err_obs_before_m": 0.11449924516455141,
+     "offset_err_obs_after_m": 0.08661408617647469
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7091282749367427,
+     "true_rel_offset_m": 1.3930119629839288,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8321,
+     "consistency_after_m": 0.6938060090247848,
+     "offset_err_after_m": 1.3199011112992998,
+     "offset_err_obs_before_m": 1.0090209671055386,
+     "offset_err_obs_after_m": 0.9043738361186968
+    }
+   ],
+   "energy_wh": [
+    2.5361753991721967,
+    2.610121947173103,
+    2.6790624607200444
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 169.5,
+   "completed": true,
+   "min_sep_m": 2.1857034560003084,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    138,
+    21,
+    77
+   ],
+   "out_of_range_frac": [
+    0.09557522123894106,
+    0.09439528023599118,
+    0.06725663716814372,
+    0.01828908554572329
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 745,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 1,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.1054147465437788
+    ],
+    [
+     60.0,
+     0.2660330261136713
+    ],
+    [
+     90.0,
+     0.25960061443932414
+    ],
+    [
+     120.0,
+     0.26036866359447003
+    ],
+    [
+     150.0,
+     0.29003456221198154
+    ]
+   ],
+   "coverage_merged_aligned": 0.1870199692780338,
+   "coverage_merged_raw": 0.32382872503840243,
+   "coverage_onboard_union": 0.34639016897081415,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7594017016309031,
+     "true_rel_offset_m": 0.9152326135138167,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 19558,
+     "consistency_after_m": 0.5918670739090911,
+     "offset_err_after_m": 0.8825303835088252,
+     "offset_err_obs_before_m": 0.24892758860267042,
+     "offset_err_obs_after_m": 0.0393519980918544
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.6285498245657816,
+     "true_rel_offset_m": 1.486870477435896,
+     "ok": false,
+     "n_obs": 0,
+     "overlap_pts": 9030,
+     "consistency_after_m": 0.6285498245657816,
+     "offset_err_after_m": 1.486870477435896
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.4501123657778432,
+     "true_rel_offset_m": 1.2718174139898222,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5243,
+     "consistency_after_m": 1.4348330775072016,
+     "offset_err_after_m": 1.378990348561522,
+     "offset_err_obs_before_m": 0.7701888451708743,
+     "offset_err_obs_after_m": 0.9501049541093911
+    }
+   ],
+   "energy_wh": [
+    2.1052163840921585,
+    2.8958008161842637,
+    2.6417314985000138,
+    2.375415399806082
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 152.3,
+   "completed": true,
+   "min_sep_m": 2.293816440685814,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.10636900853578768,
+    0.0938936309914669,
+    0.07485226526592467,
+    0.020354563361786534
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 766,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 7,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.12605606758832566
+    ],
+    [
+     60.0,
+     0.26526497695852536
+    ],
+    [
+     90.0,
+     0.27380952380952384
+    ],
+    [
+     120.0,
+     0.282642089093702
+    ],
+    [
+     150.0,
+     0.3087557603686636
+    ]
+   ],
+   "coverage_merged_aligned": 0.2171658986175115,
+   "coverage_merged_raw": 0.3087557603686636,
+   "coverage_onboard_union": 0.33064516129032256,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7140357128967327,
+     "true_rel_offset_m": 0.974794186385383,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 14987,
+     "consistency_after_m": 0.5329707558456394,
+     "offset_err_after_m": 0.9530165636983852,
+     "offset_err_obs_before_m": 0.2062183086031161,
+     "offset_err_obs_after_m": 0.025860598261735857
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.7534545058463209,
+     "true_rel_offset_m": 1.4948404079270985,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8688,
+     "consistency_after_m": 0.7331161955588494,
+     "offset_err_after_m": 1.4677262845176884,
+     "offset_err_obs_before_m": 1.2095596145850307,
+     "offset_err_obs_after_m": 1.175494104717715
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.798510712601384,
+     "true_rel_offset_m": 1.2477078937155845,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3363,
+     "consistency_after_m": 0.6763456206807449,
+     "offset_err_after_m": 1.0184041794043097,
+     "offset_err_obs_before_m": 0.7789242408874871,
+     "offset_err_obs_after_m": 0.29419072057831475
+    }
+   ],
+   "energy_wh": [
+    2.1052163840921585,
+    2.5584292310984282,
+    2.604509924286837,
+    2.188861454344061
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 169.5,
+   "completed": true,
+   "min_sep_m": 2.1857034560003084,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    138,
+    21,
+    77
+   ],
+   "out_of_range_frac": [
+    0.09557522123894106,
+    0.09439528023599118,
+    0.06725663716814372,
+    0.01828908554572329
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.1054147465437788
+    ],
+    [
+     60.0,
+     0.2653609831029186
+    ],
+    [
+     90.0,
+     0.26017665130568357
+    ],
+    [
+     120.0,
+     0.26036866359447003
+    ],
+    [
+     150.0,
+     0.29003456221198154
+    ]
+   ],
+   "coverage_merged_aligned": 0.1870199692780338,
+   "coverage_merged_raw": 0.32382872503840243,
+   "coverage_onboard_union": 0.34639016897081415,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7594017016309031,
+     "true_rel_offset_m": 0.9152326135138167,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 19558,
+     "consistency_after_m": 0.5918670739090911,
+     "offset_err_after_m": 0.8825303835088252,
+     "offset_err_obs_before_m": 0.24892758860267042,
+     "offset_err_obs_after_m": 0.0393519980918544
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.6285498245657816,
+     "true_rel_offset_m": 1.486870477435896,
+     "ok": false,
+     "n_obs": 0,
+     "overlap_pts": 9030,
+     "consistency_after_m": 0.6285498245657816,
+     "offset_err_after_m": 1.486870477435896
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 1.4501123657778432,
+     "true_rel_offset_m": 1.2718174139898222,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 5243,
+     "consistency_after_m": 1.4348330775072016,
+     "offset_err_after_m": 1.378990348561522,
+     "offset_err_obs_before_m": 0.7701888451708743,
+     "offset_err_obs_after_m": 0.9501049541093911
+    }
+   ],
+   "energy_wh": [
+    2.1052163840921585,
+    2.8958008161842637,
+    2.6417314985000138,
+    2.375415399806082
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 193.8,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.5397316821465615
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0
+    ],
+    [
+     60.0,
+     0.1776239907727797
+    ],
+    [
+     90.0,
+     0.1776239907727797
+    ],
+    [
+     120.0,
+     0.3719723183391003
+    ],
+    [
+     150.0,
+     0.4339677047289504
+    ],
+    [
+     180.0,
+     0.47750865051903113
+    ]
+   ],
+   "coverage_merged_aligned": 0.47750865051903113,
+   "coverage_merged_raw": 0.47750865051903113,
+   "coverage_onboard_union": 0.4803921568627451,
+   "alignment": [],
+   "energy_wh": [
+    3.3049845356781287
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 125.1,
+   "completed": true,
+   "min_sep_m": 2.3756240759006393,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    15
+   ],
+   "out_of_range_frac": [
+    0.411670663469234,
+    0.5115907274180772
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 279,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.014129181084198385
+    ],
+    [
+     60.0,
+     0.1905997693194925
+    ],
+    [
+     90.0,
+     0.27306805074971163
+    ],
+    [
+     120.0,
+     0.4426182237600923
+    ]
+   ],
+   "coverage_merged_aligned": 0.544405997693195,
+   "coverage_merged_raw": 0.4426182237600923,
+   "coverage_onboard_union": 0.4429065743944637,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.5918610190978504,
+     "true_rel_offset_m": 0.6912700605719176,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3459,
+     "consistency_after_m": 0.22120045490196794,
+     "offset_err_after_m": 0.9741527782310522,
+     "offset_err_obs_before_m": 0.16037906942349486,
+     "offset_err_obs_after_m": 0.694861951667957
+    }
+   ],
+   "energy_wh": [
+    2.0719380515441843,
+    2.1330973339786885
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 109.2,
+   "completed": true,
+   "min_sep_m": 2.244809648839737,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    6,
+    15
+   ],
+   "out_of_range_frac": [
+    0.4734432234432318,
+    0.11904761904762115,
+    0.5558608058608157
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 442,
+    "relay_queue_max": 36,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.07612456747404844
+    ],
+    [
+     60.0,
+     0.32497116493656286
+    ],
+    [
+     90.0,
+     0.43194925028835063
+    ]
+   ],
+   "coverage_merged_aligned": 0.4002306805074971,
+   "coverage_merged_raw": 0.43194925028835063,
+   "coverage_onboard_union": 0.432237600922722,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.49730670852748826,
+     "true_rel_offset_m": 0.8463118500861835,
+     "ok": false,
+     "n_obs": 0,
+     "overlap_pts": 2079,
+     "consistency_after_m": 0.49730670852748826,
+     "offset_err_after_m": 0.8463118500861835
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.6813462303896984,
+     "true_rel_offset_m": 1.2238405296996513,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 4486,
+     "consistency_after_m": 0.6619059353364525,
+     "offset_err_after_m": 1.0767911839984576,
+     "offset_err_obs_before_m": 0.01506643059225628,
+     "offset_err_obs_after_m": 0.1287954582434899
+    }
+   ],
+   "energy_wh": [
+    1.6933675941942936,
+    1.71377545629301,
+    1.8619309940137614
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 123.6,
+   "completed": true,
+   "min_sep_m": 0.8579153634628284,
+   "near_miss_episodes": 5,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    1,
+    15,
+    152
+   ],
+   "out_of_range_frac": [
+    0.41666666666667596,
+    0.10841423948220306,
+    0.2022653721682893,
+    0.6197411003236384
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 556,
+    "relay_queue_max": 15,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0008650519031141869
+    ],
+    [
+     60.0,
+     0.4411764705882353
+    ],
+    [
+     90.0,
+     0.5100922722029988
+    ],
+    [
+     120.0,
+     0.5100922722029988
+    ]
+   ],
+   "coverage_merged_aligned": 0.5147058823529411,
+   "coverage_merged_raw": 0.5100922722029988,
+   "coverage_onboard_union": 0.5129757785467128,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7450931886598768,
+     "true_rel_offset_m": 0.9203844712403927,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3890,
+     "consistency_after_m": 0.7352807214522473,
+     "offset_err_after_m": 0.8989368611134884,
+     "offset_err_obs_before_m": 0.3170393983256724,
+     "offset_err_obs_after_m": 0.24760063911961686
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.43019818156261097,
+     "true_rel_offset_m": 1.1547687837184328,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 1852,
+     "consistency_after_m": 0.5627704508745395,
+     "offset_err_after_m": 1.1695084328261138,
+     "offset_err_obs_before_m": 0.030127735978099503,
+     "offset_err_obs_after_m": 0.18006109637117163
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.27399986953792366,
+     "true_rel_offset_m": 0.4582778650951739,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 7920,
+     "consistency_after_m": 0.14217759342659197,
+     "offset_err_after_m": 0.6628198549172716,
+     "offset_err_obs_before_m": 0.45827662052977153,
+     "offset_err_obs_after_m": 0.6628178852830336
+    }
+   ],
+   "energy_wh": [
+    1.5500485820256633,
+    1.4699035763248263,
+    1.5753456355060604,
+    2.1058619307815145
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 101.7,
+   "completed": true,
+   "min_sep_m": 1.7968403995393507,
+   "near_miss_episodes": 1,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.5063913470993192,
+    0.13176007866273548,
+    0.24582104228122292,
+    0.6155358898721822
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 523,
+    "relay_queue_max": 15,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.05392156862745098
+    ],
+    [
+     60.0,
+     0.5141291810841984
+    ],
+    [
+     90.0,
+     0.5302768166089965
+    ]
+   ],
+   "coverage_merged_aligned": 0.552479815455594,
+   "coverage_merged_raw": 0.5302768166089965,
+   "coverage_onboard_union": 0.5325836216839677,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7671306901103929,
+     "true_rel_offset_m": 0.9208409139771945,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3860,
+     "consistency_after_m": 0.7622742227652788,
+     "offset_err_after_m": 0.898799685268535,
+     "offset_err_obs_before_m": 0.31455448317388746,
+     "offset_err_obs_after_m": 0.24252701026555767
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.3960955535340522,
+     "true_rel_offset_m": 1.1448701811925757,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 1782,
+     "consistency_after_m": 0.530478528095693,
+     "offset_err_after_m": 1.1629676758023075,
+     "offset_err_obs_before_m": 0.05812691260811914,
+     "offset_err_obs_after_m": 0.20870965410412842
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.5437916466102772,
+     "true_rel_offset_m": 0.49299486718904867,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 5468,
+     "consistency_after_m": 0.7374018120138692,
+     "offset_err_after_m": 0.6514349046880906,
+     "offset_err_obs_before_m": 0.45384851654756936,
+     "offset_err_obs_after_m": 0.6222218236317618
+    }
+   ],
+   "energy_wh": [
+    1.5500485820256633,
+    1.468206354102604,
+    1.544877259439117,
+    1.7341800964984226
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 123.6,
+   "completed": true,
+   "min_sep_m": 0.8579153634628284,
+   "near_miss_episodes": 5,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    1,
+    15,
+    152
+   ],
+   "out_of_range_frac": [
+    0.41666666666667596,
+    0.10841423948220306,
+    0.2022653721682893,
+    0.6197411003236384
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0008650519031141869
+    ],
+    [
+     60.0,
+     0.25922722029988465
+    ],
+    [
+     90.0,
+     0.393598615916955
+    ],
+    [
+     120.0,
+     0.5100922722029988
+    ]
+   ],
+   "coverage_merged_aligned": 0.5147058823529411,
+   "coverage_merged_raw": 0.5100922722029988,
+   "coverage_onboard_union": 0.5129757785467128,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 0.7450931886598768,
+     "true_rel_offset_m": 0.9203844712403927,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 3890,
+     "consistency_after_m": 0.7352807214522473,
+     "offset_err_after_m": 0.8989368611134884,
+     "offset_err_obs_before_m": 0.3170393983256724,
+     "offset_err_obs_after_m": 0.24760063911961686
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 0.43019818156261097,
+     "true_rel_offset_m": 1.1547687837184328,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 1852,
+     "consistency_after_m": 0.5627704508745395,
+     "offset_err_after_m": 1.1695084328261138,
+     "offset_err_obs_before_m": 0.030127735978099503,
+     "offset_err_obs_after_m": 0.18006109637117163
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.27399986953792366,
+     "true_rel_offset_m": 0.4582778650951739,
+     "ok": true,
+     "n_obs": 2,
+     "overlap_pts": 7920,
+     "consistency_after_m": 0.14217759342659197,
+     "offset_err_after_m": 0.6628198549172716,
+     "offset_err_obs_before_m": 0.45827662052977153,
+     "offset_err_obs_after_m": 0.6628178852830336
+    }
+   ],
+   "energy_wh": [
+    1.5500485820256633,
+    1.4699035763248263,
+    1.5753456355060604,
+    2.1058619307815145
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 1,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 229.7,
+   "completed": true,
+   "min_sep_m": Infinity,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0
+   ],
+   "out_of_range_frac": [
+    0.4283848498041087
+   ],
+   "delivered_points_frac": [
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0002955082742316785
+    ],
+    [
+     60.0,
+     0.15721040189125296
+    ],
+    [
+     90.0,
+     0.3110717100078802
+    ],
+    [
+     120.0,
+     0.4186367218282112
+    ],
+    [
+     150.0,
+     0.4186367218282112
+    ],
+    [
+     180.0,
+     0.4186367218282112
+    ],
+    [
+     210.0,
+     0.4186367218282112
+    ]
+   ],
+   "coverage_merged_aligned": 0.6218479117415288,
+   "coverage_merged_raw": 0.6218479117415288,
+   "coverage_onboard_union": 0.6342592592592593,
+   "alignment": [],
+   "energy_wh": [
+    3.9299323041788665
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 2,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 157.2,
+   "completed": true,
+   "min_sep_m": 2.159269718881668,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.10814249363868005,
+    0.6221374045801711
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 1364,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 1,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.0004925137903861308
+    ],
+    [
+     60.0,
+     0.18360914105594955
+    ],
+    [
+     90.0,
+     0.49674940898345155
+    ],
+    [
+     120.0,
+     0.6708037825059102
+    ],
+    [
+     150.0,
+     0.7736406619385343
+    ]
+   ],
+   "coverage_merged_aligned": 0.6854806934594169,
+   "coverage_merged_raw": 0.7736406619385343,
+   "coverage_onboard_union": 0.7932427107959023,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.470026319729505,
+     "true_rel_offset_m": 0.5142339945973559,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7322,
+     "consistency_after_m": 1.277424684119366,
+     "offset_err_after_m": 0.4079580091466204,
+     "offset_err_obs_before_m": 0.34307738272073074,
+     "offset_err_obs_after_m": 0.14126625375812624
+    }
+   ],
+   "energy_wh": [
+    2.502254758586608,
+    2.688274597897725
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 3,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 139.9,
+   "completed": true,
+   "min_sep_m": 2.164686673873525,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    11,
+    36
+   ],
+   "out_of_range_frac": [
+    0.003573981415296734,
+    0.3538241601143767,
+    0.6583273766976584
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2135,
+    "relay_queue_max": 37,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.04550827423167849
+    ],
+    [
+     60.0,
+     0.3659377462568952
+    ],
+    [
+     90.0,
+     0.7036052009456265
+    ],
+    [
+     120.0,
+     0.7578802206461781
+    ]
+   ],
+   "coverage_merged_aligned": 0.4868991331757289,
+   "coverage_merged_raw": 0.7697990543735225,
+   "coverage_onboard_union": 0.7865445232466509,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.36502106199768,
+     "true_rel_offset_m": 0.6767564614882297,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7289,
+     "consistency_after_m": 0.9291657438307384,
+     "offset_err_after_m": 0.40401015870213997,
+     "offset_err_obs_before_m": 0.5476431571843132,
+     "offset_err_obs_after_m": 0.08739452297658919
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.5055108632879401,
+     "true_rel_offset_m": 1.1382387599520618,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 11860,
+     "consistency_after_m": 1.377447829336713,
+     "offset_err_after_m": 1.2447220230079004,
+     "offset_err_obs_before_m": 0.02401387461031037,
+     "offset_err_obs_after_m": 0.495329523153526
+    }
+   ],
+   "energy_wh": [
+    2.0450261549595004,
+    2.3680907674779457,
+    2.3907535561868714
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": true,
+   "align": true,
+   "mission_s": 140.3,
+   "completed": true,
+   "min_sep_m": 2.29316898213851,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    15,
+    61,
+    84
+   ],
+   "out_of_range_frac": [
+    0.0014255167498218478,
+    0.1610833927298688,
+    0.49536707056309215,
+    0.5801853171774921
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2613,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 16,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.03418045705279748
+    ],
+    [
+     60.0,
+     0.3877068557919622
+    ],
+    [
+     90.0,
+     0.670311268715524
+    ],
+    [
+     120.0,
+     0.718183609141056
+    ]
+   ],
+   "coverage_merged_aligned": 0.5056146572104019,
+   "coverage_merged_raw": 0.7331560283687943,
+   "coverage_onboard_union": 0.7593577620173365,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2663431557537654,
+     "true_rel_offset_m": 0.7937934306288742,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7484,
+     "consistency_after_m": 0.9130750772699257,
+     "offset_err_after_m": 0.517628586731707,
+     "offset_err_obs_before_m": 0.6598072754513424,
+     "offset_err_obs_after_m": 0.2757842694746668
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.3872661128021937,
+     "true_rel_offset_m": 1.2319566098319732,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 12524,
+     "consistency_after_m": 1.3319047662366275,
+     "offset_err_after_m": 1.3127804696696275,
+     "offset_err_obs_before_m": 0.014989461761355698,
+     "offset_err_obs_after_m": 0.4571094174223492
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.4034450831829177,
+     "true_rel_offset_m": 0.5217975570941749,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8062,
+     "consistency_after_m": 0.4032559005928896,
+     "offset_err_after_m": 0.5219897556033504,
+     "offset_err_obs_before_m": 0.12315118983767805,
+     "offset_err_obs_after_m": 0.12395222786529585
+    }
+   ],
+   "energy_wh": [
+    1.7115165196755695,
+    2.1607359184486636,
+    2.380082693371503,
+    2.396127227962431
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": false,
+   "relay": true,
+   "align": true,
+   "mission_s": 132.0,
+   "completed": true,
+   "min_sep_m": 2.0517545973439315,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "out_of_range_frac": [
+    0.0015151515151515522,
+    0.16893939393939808,
+    0.5060606060606184,
+    0.6128787878788029
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 2573,
+    "relay_queue_max": 40,
+    "relay_full_refusals": 10,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.06471631205673758
+    ],
+    [
+     60.0,
+     0.41331757289204096
+    ],
+    [
+     90.0,
+     0.703408195429472
+    ],
+    [
+     120.0,
+     0.7228132387706856
+    ]
+   ],
+   "coverage_merged_aligned": 0.46168242710795904,
+   "coverage_merged_raw": 0.7263593380614657,
+   "coverage_onboard_union": 0.7476359338061466,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2689606683585755,
+     "true_rel_offset_m": 0.7977009483408413,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7155,
+     "consistency_after_m": 0.9357367530146474,
+     "offset_err_after_m": 0.5329797819234693,
+     "offset_err_obs_before_m": 0.6716161488785957,
+     "offset_err_obs_after_m": 0.3136512424654956
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.1786812397692106,
+     "true_rel_offset_m": 1.2750543769470615,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 9573,
+     "consistency_after_m": 1.190018011049804,
+     "offset_err_after_m": 1.3453372587643233,
+     "offset_err_obs_before_m": 0.000956281725535747,
+     "offset_err_obs_after_m": 0.4277362818873731
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.3107377726866801,
+     "true_rel_offset_m": 0.4552910229837297,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 6416,
+     "consistency_after_m": 0.3517123637892675,
+     "offset_err_after_m": 0.4561965241852532,
+     "offset_err_obs_before_m": 0.056508725560056546,
+     "offset_err_obs_after_m": 0.06528764228210945
+    }
+   ],
+   "energy_wh": [
+    1.7115165196755695,
+    2.1285851944560465,
+    2.2565087612325647,
+    2.189083745055651
+   ],
+   "min_clear_m": 0.5
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "n": 4,
+   "gps": "gps_standard",
+   "deconflict": true,
+   "relay": false,
+   "align": true,
+   "mission_s": 140.3,
+   "completed": true,
+   "min_sep_m": 2.29316898213851,
+   "near_miss_episodes": 0,
+   "collision_ticks": 0,
+   "hold_ticks": [
+    0,
+    15,
+    61,
+    84
+   ],
+   "out_of_range_frac": [
+    0.0014255167498218478,
+    0.1610833927298688,
+    0.49536707056309215,
+    0.5801853171774921
+   ],
+   "delivered_points_frac": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "relay_stats": {
+    "relayed_msgs": 0,
+    "relay_queue_max": 0,
+    "relay_full_refusals": 0,
+    "hops_hist": {}
+   },
+   "coverage_curve": [
+    [
+     30.0,
+     0.03418045705279748
+    ],
+    [
+     60.0,
+     0.28969661150512216
+    ],
+    [
+     90.0,
+     0.5540780141843972
+    ],
+    [
+     120.0,
+     0.718183609141056
+    ]
+   ],
+   "coverage_merged_aligned": 0.5056146572104019,
+   "coverage_merged_raw": 0.7331560283687943,
+   "coverage_onboard_union": 0.7593577620173365,
+   "alignment": [
+    {
+     "drone": 1,
+     "consistency_before_m": 1.2663431557537654,
+     "true_rel_offset_m": 0.7937934306288742,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 7484,
+     "consistency_after_m": 0.9130750772699257,
+     "offset_err_after_m": 0.517628586731707,
+     "offset_err_obs_before_m": 0.6598072754513424,
+     "offset_err_obs_after_m": 0.2757842694746668
+    },
+    {
+     "drone": 2,
+     "consistency_before_m": 1.3872661128021937,
+     "true_rel_offset_m": 1.2319566098319732,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 12524,
+     "consistency_after_m": 1.3319047662366275,
+     "offset_err_after_m": 1.3127804696696275,
+     "offset_err_obs_before_m": 0.014989461761355698,
+     "offset_err_obs_after_m": 0.4571094174223492
+    },
+    {
+     "drone": 3,
+     "consistency_before_m": 0.4034450831829177,
+     "true_rel_offset_m": 0.5217975570941749,
+     "ok": true,
+     "n_obs": 1,
+     "overlap_pts": 8062,
+     "consistency_after_m": 0.4032559005928896,
+     "offset_err_after_m": 0.5219897556033504,
+     "offset_err_obs_before_m": 0.12315118983767805,
+     "offset_err_obs_after_m": 0.12395222786529585
+    }
+   ],
+   "energy_wh": [
+    1.7115165196755695,
+    2.1607359184486636,
+    2.380082693371503,
+    2.396127227962431
+   ],
+   "min_clear_m": 0.5
+  }
+ ]
+}

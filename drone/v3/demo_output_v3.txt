@@ -1,0 +1,128 @@
+== Feature 6: offline safe return (demo scene, wind 6 m/s, loss at 60 % of the mission) ==
+v2: outcome=landed landing_err_m=146.431 success=False collision=False min_clear_m=2.492 pad_seen=False slam_fixes=0 return_time_s=24.3 energy_wh=0.532
+v3: outcome=landed landing_err_m=0.81 success=True collision=False min_clear_m=3.882 pad_seen=True slam_fixes=2 return_time_s=37.8 energy_wh=0.969
+== Feature 4: re-pass (demo scene, POI close pass, RTK and standard GPS) ==
+gps_rtk: coverage 1.0 -> 1.0, re-passes 0, extra 0.0 s / 0.0 Wh, skipped {'nofly': 0, 'interior': 0, 'clearance': 0, 'budget': 0}
+gps_standard: coverage 0.722 -> 0.545, re-passes 4, extra 75.9 s / 1.293 Wh, skipped {'nofly': 0, 'interior': 0, 'clearance': 0, 'budget': 0}
+== Feature 1: swarm (demo scene, perimeter task, N = 3, standard GPS) ==
+mission_s=162.1 coverage aligned=0.625 unaligned=0.632 near_miss=0 min_sep_m=3.985 delivered=[1.0, 1.0, 1.0]
+  align {'drone': 1, 'consistency_before_m': 0.623, 'true_rel_offset_m': 0.338, 'ok': True, 'n_obs': 2, 'overlap_pts': 5317, 'consistency_after_m': 0.882, 'offset_err_after_m': 0.451, 'offset_err_obs_before_m': 0.216, 'offset_err_obs_after_m': 0.367}
+  align {'drone': 2, 'consistency_before_m': 0.49, 'true_rel_offset_m': 0.247, 'ok': True, 'n_obs': 2, 'overlap_pts': 7221, 'consistency_after_m': 0.49, 'offset_err_after_m': 0.219, 'offset_err_obs_before_m': 0.243, 'offset_err_obs_after_m': 0.215}
+== Monte Carlo summaries (from the json files) ==
+-- safe_return / tuning (seed 20263006, runtime 47.7 s)
+   v2         success 13.7%  landing err median 67.762 p90 172.728 max 261.945  collisions 1.5%  land-in-place 18.5%  depleted 0.0%
+   v3_noslam  success 96.3%  landing err median 0.36 p90 1.738 max 231.705  collisions 0.0%  land-in-place 0.0%  depleted 0.0%
+   v3         success 97.0%  landing err median 0.374 p90 1.5 max 231.705  collisions 0.0%  land-in-place 0.0%  depleted 0.0%
+-- safe_return / heldout (seed 20264006, runtime 47.0 s)
+   v2         success 14.1%  landing err median 70.886 p90 162.644 max 319.8  collisions 3.0%  land-in-place 20.4%  depleted 0.0%
+   v3_noslam  success 96.3%  landing err median 0.397 p90 1.735 max 240.099  collisions 0.0%  land-in-place 0.0%  depleted 0.0%
+   v3         success 95.9%  landing err median 0.479 p90 1.854 max 265.214  collisions 0.0%  land-in-place 0.0%  depleted 0.0%
+-- repass / tuning (seed 20263004, runtime 242.3 s)
+   perimeter_orbit/gps_standard base 0.636  repass 0.73 (+0.0385/min, +0.0376/Wh)  repeat 0.777 (+0.0547/min)  no-fly violations 0
+   perimeter_orbit/gps_rtk      base 0.998  repass 0.998 (+0.0087/min, +0.0085/Wh)  repeat 1.0 (+0.0009/min)  no-fly violations 0
+   poi_close_pass/gps_standard  base 0.769  repass 0.804 (+0.0108/min, +0.0106/Wh)  repeat 0.734 (+0.0083/min)  no-fly violations 0
+   poi_close_pass/gps_rtk       base 1.0  repass 1.0 (+0.0/min, +0.0/Wh)  repeat 1.0 (+0.0007/min)  no-fly violations 0
+   lawnmower/gps_standard       base 0.512  repass 0.566 (+0.0398/min, +0.0389/Wh)  repeat 0.685 (+0.0631/min)  no-fly violations 0
+   lawnmower/gps_rtk            base 0.98  repass 0.983 (+0.0034/min, +0.0033/Wh)  repeat 1.0 (+0.0062/min)  no-fly violations 0
+-- repass / heldout (seed 20264004, runtime 223.7 s)
+   perimeter_orbit/gps_standard base 0.621  repass 0.667 (+0.0134/min, +0.0131/Wh)  repeat 0.692 (+0.0388/min)  no-fly violations 1
+   perimeter_orbit/gps_rtk      base 0.998  repass 0.998 (+0.0/min, +0.0/Wh)  repeat 1.0 (+0.0007/min)  no-fly violations 0
+   poi_close_pass/gps_standard  base 0.79  repass 0.828 (+0.0043/min, +0.0042/Wh)  repeat 0.776 (+0.0149/min)  no-fly violations 0
+   poi_close_pass/gps_rtk       base 1.0  repass 1.0 (+0.0/min, +0.0/Wh)  repeat 1.0 (+0.0/min)  no-fly violations 0
+   lawnmower/gps_standard       base 0.519  repass 0.594 (+0.0619/min, +0.0605/Wh)  repeat 0.794 (+0.0948/min)  no-fly violations 0
+   lawnmower/gps_rtk            base 0.979  repass 0.985 (+0.0047/min, +0.0046/Wh)  repeat 1.0 (+0.0066/min)  no-fly violations 0
+-- swarm / tuning (seed 20263001, runtime 380.0 s)
+   cloud coverage in flight, perimeter_orbit n4 relay on/off: 60s 0.387/0.296  90s 0.546/0.461  120s 0.643/0.573
+   cloud coverage in flight, lawnmower n4 relay on/off: 60s 0.327/0.278  90s 0.375/0.369  120s 0.418/0.414
+   perimeter_orbit/n1                 t 229.6 s  cov 0.504 (unaligned 0.504)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   perimeter_orbit/n2                 t 162.3 s  cov 0.616 (unaligned 0.59)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.272 -> 0.222
+   perimeter_orbit/n3                 t 148.2 s  cov 0.604 (unaligned 0.591)  near-miss 8  collision ticks 0  delivered 1.0  align obs err 0.427 -> 0.233
+   perimeter_orbit/n4                 t 137.75 s  cov 0.585 (unaligned 0.65)  near-miss 21  collision ticks 0  delivered 1.0  align obs err 0.258 -> 0.229
+   perimeter_orbit/n4_nodeconflict    t 118.6 s  cov 0.643 (unaligned 0.69)  near-miss 17  collision ticks 48  delivered 1.0  align obs err 0.231 -> 0.303
+   perimeter_orbit/n4_norelay         t 137.75 s  cov 0.585 (unaligned 0.65)  near-miss 21  collision ticks 0  delivered 1.0  align obs err 0.258 -> 0.229
+   lawnmower/n1                       t 231.95 s  cov 0.537 (unaligned 0.537)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   lawnmower/n2                       t 161.45 s  cov 0.646 (unaligned 0.593)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.274 -> 0.179
+   lawnmower/n3                       t 158.7 s  cov 0.505 (unaligned 0.504)  near-miss 4  collision ticks 0  delivered 1.0  align obs err 0.271 -> 0.241
+   lawnmower/n4                       t 148.85 s  cov 0.458 (unaligned 0.534)  near-miss 2  collision ticks 0  delivered 1.0  align obs err 0.249 -> 0.276
+   lawnmower/n4_nodeconflict          t 134.35 s  cov 0.451 (unaligned 0.506)  near-miss 6  collision ticks 0  delivered 1.0  align obs err 0.268 -> 0.219
+   lawnmower/n4_norelay               t 148.85 s  cov 0.458 (unaligned 0.534)  near-miss 2  collision ticks 0  delivered 1.0  align obs err 0.249 -> 0.276
+-- swarm / heldout (seed 20264001, runtime 809.0 s)
+   cloud coverage in flight, perimeter_orbit n4 relay on/off: 60s 0.413/0.335  90s 0.561/0.540  120s 0.634/0.634
+   cloud coverage in flight, lawnmower n4 relay on/off: 60s 0.173/0.117  90s 0.289/0.185  120s 0.305/0.276
+   perimeter_orbit/n1                 t 295.15 s  cov 0.604 (unaligned 0.604)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   perimeter_orbit/n2                 t 193.1 s  cov 0.668 (unaligned 0.661)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.16 -> 0.291
+   perimeter_orbit/n3                 t 173.6 s  cov 0.633 (unaligned 0.702)  near-miss 52  collision ticks 0  delivered 1.0  align obs err 0.312 -> 0.248
+   perimeter_orbit/n4                 t 141.6 s  cov 0.679 (unaligned 0.685)  near-miss 60  collision ticks 0  delivered 1.0  align obs err 0.351 -> 0.441
+   perimeter_orbit/n4_nodeconflict    t 134.25 s  cov 0.725 (unaligned 0.739)  near-miss 14  collision ticks 0  delivered 1.0  align obs err 0.309 -> 0.323
+   perimeter_orbit/n4_norelay         t 141.6 s  cov 0.679 (unaligned 0.685)  near-miss 60  collision ticks 0  delivered 1.0  align obs err 0.351 -> 0.441
+   lawnmower/n1                       t 234.1 s  cov 0.376 (unaligned 0.376)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   lawnmower/n2                       t 169.6 s  cov 0.533 (unaligned 0.592)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.293 -> 0.24
+   lawnmower/n3                       t 185.85 s  cov 0.504 (unaligned 0.528)  near-miss 6  collision ticks 0  delivered 1.0  align obs err 0.292 -> 0.24
+   lawnmower/n4                       t 236.8 s  cov 0.512 (unaligned 0.497)  near-miss 754  collision ticks 0  delivered 1.0  align obs err 0.43 -> 0.18
+   lawnmower/n4_nodeconflict          t 140.0 s  cov 0.489 (unaligned 0.494)  near-miss 9  collision ticks 0  delivered 1.0  align obs err 0.226 -> 0.169
+   lawnmower/n4_norelay               t 236.8 s  cov 0.512 (unaligned 0.497)  near-miss 754  collision ticks 0  delivered 1.0  align obs err 0.43 -> 0.18
+-- swarm / fresh (seed 20265001, runtime 587.3 s)
+   cloud coverage in flight, perimeter_orbit n4 relay on/off: 60s 0.596/0.503  90s 0.717/0.659  120s 0.717/0.689
+   cloud coverage in flight, lawnmower n4 relay on/off: 60s 0.210/0.177  90s 0.418/0.418  120s 0.563/0.563
+   perimeter_orbit/n1                 t 228.45 s  cov 0.562 (unaligned 0.562)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   perimeter_orbit/n2                 t 153.8 s  cov 0.782 (unaligned 0.712)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.171 -> 0.088
+   perimeter_orbit/n3                 t 133.0 s  cov 0.586 (unaligned 0.638)  near-miss 314  collision ticks 0  delivered 1.0  align obs err 0.277 -> 0.303
+   perimeter_orbit/n4                 t 115.7 s  cov 0.709 (unaligned 0.738)  near-miss 322  collision ticks 0  delivered 1.0  align obs err 0.289 -> 0.283
+   perimeter_orbit/n4_nodeconflict    t 112.45 s  cov 0.697 (unaligned 0.727)  near-miss 10  collision ticks 41  delivered 1.0  align obs err 0.313 -> 0.343
+   perimeter_orbit/n4_norelay         t 115.7 s  cov 0.709 (unaligned 0.738)  near-miss 322  collision ticks 0  delivered 1.0  align obs err 0.289 -> 0.283
+   lawnmower/n1                       t 193.45 s  cov 0.485 (unaligned 0.485)  near-miss 0  collision ticks 0  delivered 1.0  align obs err None -> None
+   lawnmower/n2                       t 147.6 s  cov 0.491 (unaligned 0.509)  near-miss 0  collision ticks 0  delivered 1.0  align obs err 0.223 -> 0.317
+   lawnmower/n3                       t 143.0 s  cov 0.472 (unaligned 0.611)  near-miss 1  collision ticks 0  delivered 1.0  align obs err 0.246 -> 0.266
+   lawnmower/n4                       t 164.9 s  cov 0.488 (unaligned 0.58)  near-miss 238  collision ticks 0  delivered 1.0  align obs err 0.241 -> 0.241
+   lawnmower/n4_nodeconflict          t 125.2 s  cov 0.473 (unaligned 0.573)  near-miss 14  collision ticks 0  delivered 1.0  align obs err 0.259 -> 0.182
+   lawnmower/n4_norelay               t 164.9 s  cov 0.488 (unaligned 0.58)  near-miss 238  collision ticks 0  delivered 1.0  align obs err 0.241 -> 0.241
+-- change / tuning (seed 20263005, runtime 143.2 s)
+   gps_standard/v2_noalign      precision 0.047  recall 0.14  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 0.167, '2.0': 0.364}  false alarms / no-change pair 16.12
+   gps_standard/v3_aligned      precision 0.035  recall 0.14  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 0.167, '2.0': 0.364}  false alarms / no-change pair 17.0
+   gps_standard/alignment       align err median 0.485 -> 0.578 m
+   gps_rtk/v2_noalign           precision 0.786  recall 0.256  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 0.8, '2.0': 1.0}  false alarms / no-change pair 0.5
+   gps_rtk/v3_aligned           precision 0.786  recall 0.256  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 0.8, '2.0': 1.0}  false alarms / no-change pair 0.5
+   gps_rtk/alignment            align err median 0.031 -> 0.021 m
+-- change / heldout (seed 20264005, runtime 295.1 s)
+   gps_standard/v2_noalign      precision 0.042  recall 0.143  recall by size {'0.3': 0.0, '0.5': 0.1, '1.0': 0.286, '2.0': 1.0}  false alarms / no-change pair 17.5
+   gps_standard/v3_aligned      precision 0.042  recall 0.167  recall by size {'0.3': 0.0, '0.5': 0.2, '1.0': 0.357, '2.0': 0.0}  false alarms / no-change pair 19.12
+   gps_standard/alignment       align err median 0.495 -> 0.471 m
+   gps_rtk/v2_noalign           precision 0.5  recall 0.182  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 1.0, '2.0': 1.0}  false alarms / no-change pair 0.25
+   gps_rtk/v3_aligned           precision 0.533  recall 0.182  recall by size {'0.3': 0.0, '0.5': 0.0, '1.0': 1.0, '2.0': 1.0}  false alarms / no-change pair 0.25
+   gps_rtk/alignment            align err median 0.029 -> 0.024 m
+-- lidar / tuning (seed 20263003, runtime 307.2 s)
+   perimeter_orbit/gps_standard/sonar_v2    cov 0.649  err median 0.291 p95 1.049  energy 2.653 Wh  endurance 43.76 min
+   perimeter_orbit/gps_standard/sonar_lidar_v3 cov 0.699  err median 0.314 p95 0.986  energy 4.704 Wh  endurance 24.735 min
+   perimeter_orbit/gps_rtk/sonar_v2         cov 0.999  err median 0.029 p95 0.095  energy 2.653 Wh  endurance 43.76 min
+   perimeter_orbit/gps_rtk/sonar_lidar_v3   cov 1.0  err median 0.027 p95 0.088  energy 4.704 Wh  endurance 24.735 min
+   lawnmower/gps_standard/sonar_v2          cov 0.609  err median 0.202 p95 0.764  energy 2.677 Wh  endurance 43.76 min
+   lawnmower/gps_standard/sonar_lidar_v3    cov 0.583  err median 0.196 p95 0.745  energy 4.737 Wh  endurance 24.735 min
+   lawnmower/gps_rtk/sonar_v2               cov 0.981  err median 0.033 p95 0.105  energy 2.677 Wh  endurance 43.76 min
+   lawnmower/gps_rtk/sonar_lidar_v3         cov 0.981  err median 0.033 p95 0.104  energy 4.737 Wh  endurance 24.735 min
+-- lidar / heldout (seed 20264003, runtime 207.8 s)
+   perimeter_orbit/gps_standard/sonar_v2    cov 0.64  err median 0.253 p95 0.787  energy 3.678 Wh  endurance 43.76 min
+   perimeter_orbit/gps_standard/sonar_lidar_v3 cov 0.744  err median 0.249 p95 0.772  energy 6.521 Wh  endurance 24.735 min
+   perimeter_orbit/gps_rtk/sonar_v2         cov 0.999  err median 0.026 p95 0.09  energy 3.678 Wh  endurance 43.76 min
+   perimeter_orbit/gps_rtk/sonar_lidar_v3   cov 1.0  err median 0.025 p95 0.084  energy 6.521 Wh  endurance 24.735 min
+   lawnmower/gps_standard/sonar_v2          cov 0.39  err median 0.415 p95 0.897  energy 3.123 Wh  endurance 43.76 min
+   lawnmower/gps_standard/sonar_lidar_v3    cov 0.377  err median 0.402 p95 0.907  energy 5.526 Wh  endurance 24.735 min
+   lawnmower/gps_rtk/sonar_v2               cov 0.984  err median 0.038 p95 0.113  energy 3.123 Wh  endurance 43.76 min
+   lawnmower/gps_rtk/sonar_lidar_v3         cov 0.986  err median 0.038 p95 0.111  energy 5.526 Wh  endurance 24.735 min
+-- thermal / tuning (seed 20263002, runtime 14.8 s)
+   gps_standard/5m    precision 0.744  recall {'vent': 0.82, 'person': 0.195, 'person_indoor': 0.0}  FP/mission 1.0 (hot-glass share 1.0)
+   gps_standard/10m   precision 0.618  recall {'vent': 0.705, 'person': 0.805, 'person_indoor': 0.0}  FP/mission 2.35 (hot-glass share 0.426)
+   gps_standard/20m   precision 0.506  recall {'vent': 0.738, 'person': 0.805, 'person_indoor': 0.0}  FP/mission 3.8 (hot-glass share 0.237)
+   gps_standard/40m   precision 0.293  recall {'vent': 0.23, 'person': 0.659, 'person_indoor': 0.0}  FP/mission 4.95 (hot-glass share 0.182)
+   gps_rtk/5m         precision 0.704  recall {'vent': 0.82, 'person': 0.171, 'person_indoor': 0.0}  FP/mission 1.2 (hot-glass share 0.917)
+   gps_rtk/10m        precision 0.651  recall {'vent': 0.803, 'person': 0.805, 'person_indoor': 0.0}  FP/mission 2.2 (hot-glass share 0.477)
+   gps_rtk/20m        precision 0.561  recall {'vent': 0.803, 'person': 0.829, 'person_indoor': 0.0}  FP/mission 3.25 (hot-glass share 0.292)
+   gps_rtk/40m        precision 0.384  recall {'vent': 0.41, 'person': 0.683, 'person_indoor': 0.0}  FP/mission 4.25 (hot-glass share 0.235)
+-- thermal / heldout (seed 20264002, runtime 27.5 s)
+   gps_standard/5m    precision 0.646  recall {'vent': 0.741, 'person': 0.205, 'person_indoor': 0.0}  FP/mission 1.4 (hot-glass share 0.821)
+   gps_standard/10m   precision 0.651  recall {'vent': 0.707, 'person': 0.718, 'person_indoor': 0.0}  FP/mission 1.85 (hot-glass share 0.622)
+   gps_standard/20m   precision 0.575  recall {'vent': 0.759, 'person': 0.744, 'person_indoor': 0.0}  FP/mission 2.7 (hot-glass share 0.407)
+   gps_standard/40m   precision 0.345  recall {'vent': 0.138, 'person': 0.538, 'person_indoor': 0.0}  FP/mission 2.75 (hot-glass share 0.382)
+   gps_rtk/5m         precision 0.713  recall {'vent': 0.845, 'person': 0.205, 'person_indoor': 0.0}  FP/mission 1.15 (hot-glass share 1.0)
+   gps_rtk/10m        precision 0.729  recall {'vent': 0.845, 'person': 0.744, 'person_indoor': 0.0}  FP/mission 1.45 (hot-glass share 0.759)
+   gps_rtk/20m        precision 0.618  recall {'vent': 0.879, 'person': 0.769, 'person_indoor': 0.0}  FP/mission 2.5 (hot-glass share 0.4)
+   gps_rtk/40m        precision 0.386  recall {'vent': 0.293, 'person': 0.564, 'person_indoor': 0.0}  FP/mission 3.1 (hot-glass share 0.339)

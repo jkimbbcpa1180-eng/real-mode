@@ -1,0 +1,214 @@
+=== python3 drone_core_v2.py: self-tests ===
+Self-tests passed.
+
+=== v1's 11 self-test assertions run literally against v2 ===
+PASS  1 c_sound 25C/60% in (345,350)
+PASS  2 zero-latency identity (tp > 0.4)  -- failed in v1 (trust clipped to 0.40); passes now
+PASS  3 positive latency monotone
+PASS  4 set_environment raises c
+PASS  5 attitude round trip
+PASS  6 multi-echo median
+PASS  7 IR bias converges
+N/A   8 voxel update moves position toward echo  -- INVERTED by design: update_voxel removed; v2 test asserts the pose does NOT move
+N/A   9 gate rejects 1e6 m voxel  -- REPLACED: no drone-distance gate; v2 test asserts a 1e6 m echo is rejected by the ranger envelope and a valid 12 m echo is kept
+N/A   10 power budget throttles motors  -- INVERTED by design: v2 test asserts motors granted 1.0, action LAND, battery not floored
+FAIL  11 pulse interval shrinks (base 0.05 s)  -- CHANGED: 0.05 s is below the 88 ms round trip at 15 m, so v2 floors it there; v2 test uses base 0.2 s (shrinks) and asserts the floor
+
+=== v2 demo (same inputs as the v1 demo; IR returns given bearings) ===
+{
+  "predictive_telemetry": {
+    "compensated_tau_s": 0.042,
+    "now_s": 24.542,
+    "extrapolated_pos": [
+      10.501,
+      5.034,
+      -2.508
+    ],
+    "extrapolated_vel": [
+      11.875,
+      0.804,
+      -0.197
+    ],
+    "pos_sigma_m": 0.0239,
+    "vel_sigma_mps": 0.057,
+    "kinematic_tp": 0.977,
+    "stale_telemetry_dropped": 0,
+    "landmark_updates": 0
+  },
+  "heading": {
+    "heading_source": "telemetry_attitude",
+    "mag_status": "disabled",
+    "mag_ok": false,
+    "yaw_enu_deg": 45.0,
+    "heading_sigma_deg": null,
+    "compass_heading_deg": 45.0
+  },
+  "spatial_cloud_3d": [
+    {
+      "voxel_pos_enu_m": [
+        11.505,
+        7.181,
+        -2.593
+      ],
+      "voxel_rel_now_m": [
+        1.003,
+        2.148,
+        -0.084
+      ],
+      "voxel_pos_body_m": [
+        2.625,
+        0.463,
+        -0.093
+      ],
+      "acoustic_range_m": 2.667,
+      "acoustic_range_raw_m": 2.727,
+      "range_sigma_m": 0.0253,
+      "lateral_sigma_from_heading_m": 0.0,
+      "single_echo_floor_sigma": false,
+      "acoustic_conf": 0.934,
+      "expected_two_way_absorption_db": 6.93,
+      "infrared_surface_raw_m": 2.4,
+      "infrared_surface_corrected_m": 2.4,
+      "ir_bias_estimate_m": 0.0,
+      "ir_conf": 0.821,
+      "acoustic_minus_ir_m": 0.267,
+      "acoustic_ir_consistent": false,
+      "voxel_conf": 0.56
+    },
+    {
+      "voxel_pos_enu_m": [
+        11.268,
+        5.341,
+        -2.499
+      ],
+      "voxel_rel_now_m": [
+        0.766,
+        0.307,
+        0.01
+      ],
+      "voxel_pos_body_m": [
+        1.146,
+        -0.663,
+        0.001
+      ],
+      "acoustic_range_m": 1.325,
+      "acoustic_range_raw_m": 1.372,
+      "range_sigma_m": 0.02,
+      "lateral_sigma_from_heading_m": 0.0,
+      "single_echo_floor_sigma": false,
+      "acoustic_conf": 0.887,
+      "expected_two_way_absorption_db": 3.44,
+      "infrared_surface_raw_m": 1.3,
+      "infrared_surface_corrected_m": 1.3,
+      "ir_bias_estimate_m": 0.0,
+      "ir_conf": 0.613,
+      "acoustic_minus_ir_m": 0.025,
+      "acoustic_ir_consistent": true,
+      "voxel_conf": 0.739
+    }
+  ],
+  "ranging_stats": {
+    "n_groups": 2,
+    "n_no_echo_or_rejected": 0,
+    "n_input_total": 6,
+    "n_kept_total": 5,
+    "n_ir_paired": 2,
+    "ir_bias_m": 0.0,
+    "pulse_interval_s": 0.088
+  },
+  "obstacle_map": {
+    "n_active": 2,
+    "note": "world points carry the pose sigma in addition to sensor sigma"
+  },
+  "flight_guidance": {
+    "closest_obstacle_m": 0.826,
+    "time_to_cpa_s": 0.066,
+    "miss_distance_at_cpa_m": 0.256,
+    "time_to_contact_s": 0.051,
+    "stopping_distance_m": 19.408,
+    "free_distance_m": -0.424,
+    "speed_limit_mps": 9.357,
+    "safe_velocity_mps": null,
+    "command_accel_mps2": [
+      -4.641,
+      -1.86,
+      -0.059
+    ],
+    "action": "COLLISION_LIKELY_MAX_BRAKE",
+    "mission_action": "NOMINAL",
+    "sonar_blind": false,
+    "heading_uncertain": false,
+    "heading_tp": null,
+    "map_tp": 0.649,
+    "power_tp": 1.0,
+    "system_tp": 0.883
+  },
+  "power_management": {
+    "granted_fractions": {
+      "avionics": 1.0,
+      "acoustic": 1.0,
+      "infrared": 0.5,
+      "motors_hover": 0.8
+    },
+    "shed_loads": [],
+    "flight_critical_scaled": false,
+    "energy_needed_wh": 0.00139,
+    "budget_basis": "sum(power*duty)*horizon",
+    "usable_above_reserve_wh": 38.25,
+    "endurance_to_reserve_s": 2781.8,
+    "soc": 1.0,
+    "mission_action": "NOMINAL",
+    "power_tp": 1.0
+  }
+}
+
+=== Same demo, v1 vs v2 (key fields) ===
+Scenario: 12 m/s, echoes at ~2.7 m and ~1.4 m, telemetry 42 ms old.
+field                        | v1                                       | v2
+action                       | TRACKING_NOMINAL                         | COLLISION_LIKELY_MAX_BRAKE
+closest_obstacle_m           | None                                     | 0.826
+time_to_cpa_s                | None                                     | 0.066
+command_accel_mps2           | [0.0, 0.0, 0.0]                          | [-4.641, -1.86, -0.059]
+points kept                  | 0                                        | 2
+kinematic_tp                 | 0.543                                    | 0.977
+system_tp                    | 0.621                                    | 0.883
+pos used by guidance         | [10.0, 5.0, -2.5]                        | [10.501, 5.034, -2.508]
+penetrated_barrier           | []                                       | field removed; acoustic_minus_ir_m reported
+motors_hover granted         | 0.8                                      | 0.8
+
+v1 gated out both echoes (drone-distance gate) and reported TRACKING_NOMINAL at 12 m/s with an
+obstacle ~1 m ahead of the extrapolated position. v2 keeps both, anchors them at the reception-time
+pose, measures from the latency-compensated position and commands maximum braking (the obstacle
+is already inside the stopping distance, so it also flags COLLISION_LIKELY).
+
+=== Heading: gyro (1 deg/s bias) + magnetometer + one known landmark, 20 s ===
+clean field                true yaw 30.0 deg (start error 8 deg) -> yaw 30.015 deg, sigma 1.0056 deg, mag accepted/rejected 400/0, landmark bearings accepted 100, gyro bias est 1.0002 deg/s, |B| 49.91 uT
+steel nearby (|B| +60%)    true yaw 30.0 deg (start error 8 deg) -> yaw 30.061 deg, sigma 0.1451 deg, mag accepted/rejected 0/400, landmark bearings accepted 100, gyro bias est 0.9933 deg/s, |B| 78.812 uT
+magnetic disturbance log (flight path only): [{"t": 19.95, "pos": [0.0, 0.0, 0.0], "field_dev_ut": 28.81, "dip_dev_deg": 0.14, "label": "possible wiring/steel nearby (field disturbance at drone position)"}]
+
+=== Live stream: 60 s at 20 Hz, link down from t=20 s to t=40 s ===
+built 302 msgs, sent 269 (70026 B, 1167 B/s avg), dropped non-critical states 0, dropped events 0, max on_tick 0.084 ms
+events delivered: 5 (reasons: ['act', 'act,safety', 'start']); sequence numbers unique: True (events are sent before queued states, so arrival order is not seq order; the receiver sorts by seq); still queued at end: {'events': 0, 'states': 33}
+one state message: {"body":{"act":"TRACKING_NOMINAL","blind":true,"hdg_unc":false,"kind":"state","mag_ok":false,"mis":"NOMINAL","near":null,"pos":[106.481,0.0,5.0],"pos_sig":0.05,"seq":269,"soc":1.0,"t":53.25,"v":1,"vel":[1.949,0.0,0.0],"yaw":0.0,"yaw_sig":null},"crc":1830583230}
+
+=== Recon: perimeter orbit (4 m standoff) + POI close pass (2 m), RTK-like GPS, main-seed scene 0 ===
+perimeter_orbit: 215.9 s, 39208 hits, 34865 points kept (occupied cells) -> recon_out/recon_perimeter_orbit.ply; coverage of target within 0.3 m: 1.000; point error median/p95 0.027/0.080 m; effective detail (median best lateral sigma of occupied cells) 0.101 m
+   uplink wifi_only           : occupied cells in cloud at mission end 0.000, points 0.000, deltas 7.9 kB/s, resyncs 0, failovers 0, link up {'wifi': 0.0}, hash match after reconcile True
+   uplink lte_only            : occupied cells in cloud at mission end 0.992, points 0.997, deltas 7.9 kB/s, resyncs 0, failovers 0, link up {'lte': 0.96}, hash match after reconcile True
+   uplink satellite_only      : occupied cells in cloud at mission end 0.992, points 0.997, deltas 7.9 kB/s, resyncs 0, failovers 0, link up {'satellite': 0.989}, hash match after reconcile True
+   uplink wifi+lte+satellite  : occupied cells in cloud at mission end 0.992, points 0.997, deltas 7.9 kB/s, resyncs 0, failovers 3, link up {'wifi': 0.0, 'lte': 0.912, 'satellite': 0.912}, hash match after reconcile True
+poi_close_pass: 97.3 s, 17220 hits, 15008 points kept (occupied cells) -> recon_out/recon_poi_close_pass.ply; coverage of target within 0.3 m: 1.000; point error median/p95 0.030/0.096 m; effective detail (median best lateral sigma of occupied cells) 0.055 m
+   uplink wifi_only           : occupied cells in cloud at mission end 0.000, points 0.000, deltas 5.0 kB/s, resyncs 0, failovers 0, link up {'wifi': 0.0}, hash match after reconcile True
+   uplink lte_only            : occupied cells in cloud at mission end 0.970, points 0.998, deltas 5.0 kB/s, resyncs 0, failovers 0, link up {'lte': 0.951}, hash match after reconcile True
+   uplink satellite_only      : occupied cells in cloud at mission end 0.970, points 0.998, deltas 5.0 kB/s, resyncs 0, failovers 0, link up {'satellite': 1.0}, hash match after reconcile True
+   uplink wifi+lte+satellite  : occupied cells in cloud at mission end 0.970, points 0.998, deltas 5.0 kB/s, resyncs 0, failovers 2, link up {'wifi': 0.0, 'lte': 0.879, 'satellite': 0.913}, hash match after reconcile True
+render: recon_out/recon_render.png - matplotlib render
+
+=== Sonar SLAM: perimeter orbit, ordinary GPS (0.5 m, tau 30 s), main-seed scene 0 ===
+before (no SLAM)        : coverage 0.622, point error median/p95 0.300/0.779 m, navigation error median 0.698 m -> recon_out/recon_slam_before.ply, recon_out/recon_slam_before.png
+after (SLAM, smoothed)  : coverage 0.886, point error median/p95 0.247/0.458 m, navigation error median 0.468 m -> recon_out/recon_slam_after.ply, recon_out/recon_slam_after.png
+SLAM: 216 keyframes, 190 registrations, 668 loop-closure constraints, observable dims per registration (0/1/2/3) [0, 160, 30, 0]; NEES mean online 3.87, smoothed 3.65 (3 = consistent; core filter alone 131.0); remaining common offset of the map (datum) 0.449 m, its 1-sigma per axis [0.236, 0.234, 0.242] m; with that offset removed (diagnostic, uses truth) coverage 0.976; keyframe step median/max 12.4/38.9 ms (worker, not the flight loop)
+
+=== Interior mapping is refused without explicit authorization ===
+refused: interior mapping requires mission_config['interior_authorized'] = True (owner's permission); refusing to plan
+with interior_authorized=True: 541 waypoints, all inside the room

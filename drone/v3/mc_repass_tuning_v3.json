@@ -1,0 +1,4933 @@
+{
+ "seed_set": "tuning",
+ "seed": 20263004,
+ "n_scenes": 12,
+ "max_extra_s": 300.0,
+ "summary": {
+  "perimeter_orbit/gps_standard": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 0.636,
+    "mean": 0.609,
+    "p90": 0.74,
+    "max": 0.796
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.73,
+     "mean": 0.732,
+     "p90": 0.857,
+     "max": 0.906
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.099,
+     "mean": 0.123,
+     "p90": 0.262,
+     "max": 0.266
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 2.85,
+     "mean": 3.182,
+     "p90": 5.044,
+     "max": 5.43
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 2.916,
+     "mean": 3.257,
+     "p90": 5.162,
+     "max": 5.557
+    },
+    "gain_per_min_pooled": 0.0385,
+    "gain_per_wh_pooled": 0.0376,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.001,
+     "mean": -0.004,
+     "p90": -0.0,
+     "max": 0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.742,
+     "mean": 0.754,
+     "p90": 1.014,
+     "max": 1.08
+    },
+    "soc_end_min": 0.254,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 12,
+     "median": 0.5,
+     "mean": 0.5,
+     "p90": 0.5,
+     "max": 0.5
+    },
+    "skipped": {
+     "nofly": 7,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 4
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 204.322,
+     "mean": 211.509,
+     "p90": 304.004,
+     "max": 314.038
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.777,
+     "mean": 0.777,
+     "p90": 0.927,
+     "max": 0.945
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.182,
+     "mean": 0.168,
+     "p90": 0.287,
+     "max": 0.332
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 3.163,
+     "mean": 3.077,
+     "p90": 4.172,
+     "max": 4.203
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 3.237,
+     "mean": 3.149,
+     "p90": 4.27,
+     "max": 4.302
+    },
+    "gain_per_min_pooled": 0.0547,
+    "gain_per_wh_pooled": 0.0535,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": -0.0,
+     "p90": -0.0,
+     "max": -0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.743,
+     "mean": 0.757,
+     "p90": 1.01,
+     "max": 1.045
+    },
+    "soc_end_min": 0.212
+   }
+  },
+  "perimeter_orbit/gps_rtk": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 0.998,
+    "mean": 0.997,
+    "p90": 0.999,
+    "max": 1.0
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.998,
+     "mean": 0.997,
+     "p90": 0.999,
+     "max": 1.0
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.002
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.019,
+     "p90": 0.0,
+     "max": 0.228
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.019,
+     "p90": 0.0,
+     "max": 0.234
+    },
+    "gain_per_min_pooled": 0.0087,
+    "gain_per_wh_pooled": 0.0085,
+    "detail_change_m": {
+     "n": 12,
+     "median": 0.0,
+     "mean": -0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.094,
+     "mean": 0.094,
+     "p90": 0.11,
+     "max": 0.112
+    },
+    "soc_end_min": 0.286,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 1,
+     "median": 0.75,
+     "mean": 0.75,
+     "p90": 0.75,
+     "max": 0.75
+    },
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 231.823,
+     "mean": 230.213,
+     "p90": 304.674,
+     "max": 319.984
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 1.0,
+     "mean": 1.0,
+     "p90": 1.0,
+     "max": 1.0
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.002,
+     "mean": 0.003,
+     "p90": 0.005,
+     "max": 0.007
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 3.163,
+     "mean": 3.077,
+     "p90": 4.172,
+     "max": 4.203
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 3.237,
+     "mean": 3.149,
+     "p90": 4.27,
+     "max": 4.302
+    },
+    "gain_per_min_pooled": 0.0009,
+    "gain_per_wh_pooled": 0.0008,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": -0.0,
+     "p90": -0.0,
+     "max": -0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.094,
+     "mean": 0.094,
+     "p90": 0.109,
+     "max": 0.111
+    },
+    "soc_end_min": 0.212
+   }
+  },
+  "poi_close_pass/gps_standard": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 0.769,
+    "mean": 0.741,
+    "p90": 0.819,
+    "max": 0.992
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.804,
+     "mean": 0.755,
+     "p90": 0.953,
+     "max": 0.971
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.037,
+     "mean": 0.014,
+     "p90": 0.141,
+     "max": 0.317
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 1.333,
+     "mean": 1.337,
+     "p90": 1.76,
+     "max": 1.845
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 1.363,
+     "mean": 1.367,
+     "p90": 1.8,
+     "max": 1.887
+    },
+    "gain_per_min_pooled": 0.0108,
+    "gain_per_wh_pooled": 0.0106,
+    "detail_change_m": {
+     "n": 12,
+     "median": 0.001,
+     "mean": 0.035,
+     "p90": 0.135,
+     "max": 0.159
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.64,
+     "mean": 0.678,
+     "p90": 1.017,
+     "max": 1.036
+    },
+    "soc_end_min": 0.327,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 12,
+     "median": 0.5,
+     "mean": 0.5,
+     "p90": 0.5,
+     "max": 0.5
+    },
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 88.814,
+     "mean": 112.702,
+     "p90": 145.009,
+     "max": 274.723
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.734,
+     "mean": 0.752,
+     "p90": 0.982,
+     "max": 0.998
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.009,
+     "mean": 0.011,
+     "p90": 0.213,
+     "max": 0.263
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 1.242,
+     "mean": 1.301,
+     "p90": 1.679,
+     "max": 1.713
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 1.268,
+     "mean": 1.328,
+     "p90": 1.714,
+     "max": 1.749
+    },
+    "gain_per_min_pooled": 0.0083,
+    "gain_per_wh_pooled": 0.0082,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.001,
+     "mean": -0.001,
+     "p90": -0.0,
+     "max": -0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.875,
+     "mean": 0.832,
+     "p90": 1.173,
+     "max": 1.373
+    },
+    "soc_end_min": 0.333
+   }
+  },
+  "poi_close_pass/gps_rtk": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 1.0,
+    "mean": 0.999,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 1.0,
+     "mean": 0.999,
+     "p90": 1.0,
+     "max": 1.0
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "gain_per_min_pooled": 0.0,
+    "gain_per_wh_pooled": 0.0,
+    "detail_change_m": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.084,
+     "mean": 0.086,
+     "p90": 0.101,
+     "max": 0.102
+    },
+    "soc_end_min": 0.352,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 0
+    },
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 67.014,
+     "mean": 74.744,
+     "p90": 103.132,
+     "max": 113.564
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 1.0,
+     "mean": 1.0,
+     "p90": 1.0,
+     "max": 1.0
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.001,
+     "p90": 0.004,
+     "max": 0.004
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 1.242,
+     "mean": 1.301,
+     "p90": 1.679,
+     "max": 1.713
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 1.268,
+     "mean": 1.328,
+     "p90": 1.714,
+     "max": 1.749
+    },
+    "gain_per_min_pooled": 0.0007,
+    "gain_per_wh_pooled": 0.0007,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": 0.0,
+     "p90": 0.002,
+     "max": 0.002
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.086,
+     "mean": 0.088,
+     "p90": 0.107,
+     "max": 0.111
+    },
+    "soc_end_min": 0.333
+   }
+  },
+  "lawnmower/gps_standard": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 0.512,
+    "mean": 0.504,
+    "p90": 0.736,
+    "max": 0.831
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.566,
+     "mean": 0.57,
+     "p90": 0.848,
+     "max": 0.923
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.042,
+     "mean": 0.066,
+     "p90": 0.17,
+     "max": 0.244
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 1.457,
+     "mean": 1.661,
+     "p90": 3.408,
+     "max": 4.588
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 1.49,
+     "mean": 1.7,
+     "p90": 3.487,
+     "max": 4.695
+    },
+    "gain_per_min_pooled": 0.0398,
+    "gain_per_wh_pooled": 0.0389,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": -0.005,
+     "p90": 0.0,
+     "max": 0.002
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.682,
+     "mean": 0.732,
+     "p90": 0.882,
+     "max": 1.195
+    },
+    "soc_end_min": 0.295,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 9,
+     "median": 4.904,
+     "mean": 4.328,
+     "p90": 5.037,
+     "max": 5.24
+    },
+    "skipped": {
+     "nofly": 6,
+     "interior": 20,
+     "clearance": 2,
+     "budget": 1
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 245.44,
+     "mean": 266.412,
+     "p90": 339.617,
+     "max": 373.472
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.685,
+     "mean": 0.697,
+     "p90": 0.935,
+     "max": 0.945
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.17,
+     "mean": 0.193,
+     "p90": 0.359,
+     "max": 0.458
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 2.942,
+     "mean": 3.066,
+     "p90": 3.727,
+     "max": 4.308
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 3.023,
+     "mean": 3.15,
+     "p90": 3.828,
+     "max": 4.428
+    },
+    "gain_per_min_pooled": 0.0631,
+    "gain_per_wh_pooled": 0.0614,
+    "detail_change_m": {
+     "n": 12,
+     "median": 0.0,
+     "mean": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.713,
+     "mean": 0.672,
+     "p90": 0.868,
+     "max": 0.897
+    },
+    "soc_end_min": 0.245
+   }
+  },
+  "lawnmower/gps_rtk": {
+   "n": 12,
+   "coverage_base": {
+    "n": 12,
+    "median": 0.98,
+    "mean": 0.981,
+    "p90": 0.989,
+    "max": 0.991
+   },
+   "repass": {
+    "coverage_after": {
+     "n": 12,
+     "median": 0.983,
+     "mean": 0.984,
+     "p90": 0.991,
+     "max": 0.993
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.003,
+     "mean": 0.003,
+     "p90": 0.006,
+     "max": 0.008
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 0.784,
+     "mean": 0.896,
+     "p90": 1.486,
+     "max": 2.382
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 0.802,
+     "mean": 0.916,
+     "p90": 1.519,
+     "max": 2.436
+    },
+    "gain_per_min_pooled": 0.0034,
+    "gain_per_wh_pooled": 0.0033,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": -0.0,
+     "p90": -0.0,
+     "max": 0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.103,
+     "mean": 0.102,
+     "p90": 0.112,
+     "max": 0.116
+    },
+    "soc_end_min": 0.276,
+    "nofly_violations": 0,
+    "min_clear_m": {
+     "n": 11,
+     "median": 2.851,
+     "mean": 2.742,
+     "p90": 3.03,
+     "max": 3.478
+    },
+    "skipped": {
+     "nofly": 1,
+     "interior": 29,
+     "clearance": 8,
+     "budget": 0
+    },
+    "plan_ms": {
+     "n": 12,
+     "median": 267.13,
+     "mean": 274.682,
+     "p90": 349.504,
+     "max": 374.387
+    }
+   },
+   "repeat": {
+    "coverage_after": {
+     "n": 12,
+     "median": 1.0,
+     "mean": 1.0,
+     "p90": 1.0,
+     "max": 1.0
+    },
+    "coverage_gain": {
+     "n": 12,
+     "median": 0.02,
+     "mean": 0.019,
+     "p90": 0.029,
+     "max": 0.03
+    },
+    "extra_min": {
+     "n": 12,
+     "median": 2.942,
+     "mean": 3.066,
+     "p90": 3.727,
+     "max": 4.308
+    },
+    "extra_wh": {
+     "n": 12,
+     "median": 3.023,
+     "mean": 3.15,
+     "p90": 3.828,
+     "max": 4.428
+    },
+    "gain_per_min_pooled": 0.0062,
+    "gain_per_wh_pooled": 0.006,
+    "detail_change_m": {
+     "n": 12,
+     "median": -0.0,
+     "mean": -0.0,
+     "p90": -0.0,
+     "max": -0.0
+    },
+    "acc_p95_after": {
+     "n": 12,
+     "median": 0.108,
+     "mean": 0.106,
+     "p90": 0.115,
+     "max": 0.117
+    },
+    "soc_end_min": 0.245
+   }
+  }
+ },
+ "runtime_s": 242.3,
+ "rows": [
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 0.5214285714285715,
+    "acc_median": 0.31983649478112675,
+    "acc_p95": 0.8195372257935118,
+    "effective_detail_m": 0.12202596291287518,
+    "n_filtered": 24091
+   },
+   "first_pass_s": 206.9,
+   "first_pass_wh": 3.5283571815749695,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.6365079365079365,
+     "acc_median": 0.3256547802753491,
+     "acc_p95": 0.7574923961221043,
+     "effective_detail_m": 0.12221563382841368,
+     "n_filtered": 27958
+    },
+    "extra_s": 81.3,
+    "extra_wh": 1.3866425107901716,
+    "gaps": 4,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 3
+    },
+    "gap_info": {
+     "n_points": 24091,
+     "structures": 1,
+     "samples": 1316,
+     "gap_samples": 846
+    },
+    "plan_ms": 255.27111299999206,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.26041631609057264
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7726190476190476,
+     "acc_median": 0.18442544600399202,
+     "acc_p95": 0.767428743178931,
+     "effective_detail_m": 0.12187133681321771,
+     "n_filtered": 32570
+    },
+    "extra_s": 209.6,
+    "extra_wh": 3.5746549881556198,
+    "soc_end": 0.2117938165935811
+   }
+  },
+  {
+   "id": 0,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9946428571428572,
+    "acc_median": 0.03108872565233778,
+    "acc_p95": 0.11116799722361888,
+    "effective_detail_m": 0.1010102869448784,
+    "n_filtered": 32453
+   },
+   "first_pass_s": 206.9,
+   "first_pass_wh": 3.5283571815749695,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9966269841269841,
+     "acc_median": 0.030879291256773023,
+     "acc_p95": 0.11082106609509326,
+     "effective_detail_m": 0.10097072751803725,
+     "n_filtered": 32919
+    },
+    "extra_s": 13.7,
+    "extra_wh": 0.23357588087529058,
+    "gaps": 1,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 32453,
+     "structures": 1,
+     "samples": 1176,
+     "gap_samples": 13
+    },
+    "plan_ms": 287.0813150000231,
+    "min_clear": 0.75,
+    "nofly_violations": 0,
+    "soc_end": 0.2860400189775629
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9996031746031746,
+     "acc_median": 0.030081960695153676,
+     "acc_p95": 0.10941104902211404,
+     "effective_detail_m": 0.10075717542175538,
+     "n_filtered": 68389
+    },
+    "extra_s": 209.6,
+    "extra_wh": 3.5746549881556198,
+    "soc_end": 0.2117938165935811
+   }
+  },
+  {
+   "id": 0,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 0.78125,
+    "acc_median": 0.26489420303381905,
+    "acc_p95": 0.8030871785040503,
+    "effective_detail_m": 0.08857687020330957,
+    "n_filtered": 5976
+   },
+   "first_pass_s": 47.7,
+   "first_pass_wh": 0.8115831323606062,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.8839285714285714,
+     "acc_median": 0.25386835015172515,
+     "acc_p95": 0.7151031905886017,
+     "effective_detail_m": 0.09553694275880235,
+     "n_filtered": 5735
+    },
+    "extra_s": 65.0,
+    "extra_wh": 1.1076130181942145,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 5976,
+     "structures": 1,
+     "samples": 84,
+     "gap_samples": 49
+    },
+    "plan_ms": 81.62908299999572,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.3269897281307854
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7366071428571429,
+     "acc_median": 0.2844641264718826,
+     "acc_p95": 0.6244819228602796,
+     "effective_detail_m": 0.08775239204787533,
+     "n_filtered": 8893
+    },
+    "extra_s": 48.7,
+    "extra_wh": 0.8287552825693407,
+    "soc_end": 0.3331865667002277
+   }
+  },
+  {
+   "id": 0,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.0338769811372952,
+    "acc_p95": 0.08349695824373222,
+    "effective_detail_m": 0.05535632783141016,
+    "n_filtered": 6767
+   },
+   "first_pass_s": 47.7,
+   "first_pass_wh": 0.8115831323606062,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.0338769811372952,
+     "acc_p95": 0.08349695824373222,
+     "effective_detail_m": 0.05535632783141016,
+     "n_filtered": 6767
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 6767,
+     "structures": 1,
+     "samples": 48,
+     "gap_samples": 0
+    },
+    "plan_ms": 46.737099999973,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.3516033507573193
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.031325221327197283,
+     "acc_p95": 0.08093192756107857,
+     "effective_detail_m": 0.0545428956980215,
+     "n_filtered": 14185
+    },
+    "extra_s": 48.7,
+    "extra_wh": 0.8287552825693407,
+    "soc_end": 0.3331865667002277
+   }
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 0.34869272586073,
+    "acc_median": 0.37036241569335715,
+    "acc_p95": 0.9147720554005664,
+    "effective_detail_m": 0.2392406946513276,
+    "n_filtered": 13715
+   },
+   "first_pass_s": 144.1,
+   "first_pass_wh": 2.469644136907871,
+   "min_clear_first": 5.474050725499785,
+   "repass": {
+    "metrics": {
+     "coverage": 0.2958840279575459,
+     "acc_median": 0.40292384874500264,
+     "acc_p95": 0.8835439728147354,
+     "effective_detail_m": 0.238906844276521,
+     "n_filtered": 17017
+    },
+    "extra_s": 52.6,
+    "extra_wh": 0.8969041838486929,
+    "gaps": 2,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 13715,
+     "structures": 1,
+     "samples": 1775,
+     "gap_samples": 1456
+    },
+    "plan_ms": 223.56311600003664,
+    "min_clear": 4.875776464454921,
+    "nofly_violations": 0,
+    "soc_end": 0.2948263465707578
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.535982397100699,
+     "acc_median": 0.3890813161742388,
+     "acc_p95": 0.7188385396643244,
+     "effective_detail_m": 0.2394044205200029,
+     "n_filtered": 31784
+    },
+    "extra_s": 153.0,
+    "extra_wh": 2.6221989123131633,
+    "soc_end": 0.2564864637160099
+   }
+  },
+  {
+   "id": 0,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.36963853147645287,
+   "nofly": false,
+   "base": {
+    "coverage": 0.970489257054103,
+    "acc_median": 0.03453419693068405,
+    "acc_p95": 0.1080860242524551,
+    "effective_detail_m": 0.22920154842905993,
+    "n_filtered": 20240
+   },
+   "first_pass_s": 144.1,
+   "first_pass_wh": 2.469644136907871,
+   "min_clear_first": 5.474050725499785,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9751488480455605,
+     "acc_median": 0.033855090302350455,
+     "acc_p95": 0.10464821296878599,
+     "effective_detail_m": 0.2289771811222897,
+     "n_filtered": 23827
+    },
+    "extra_s": 61.5,
+    "extra_wh": 1.0483641607604315,
+    "gaps": 5,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 20240,
+     "structures": 1,
+     "samples": 1789,
+     "gap_samples": 96
+    },
+    "plan_ms": 277.70117800002936,
+    "min_clear": 2.8862526985333674,
+    "nofly_violations": 0,
+    "soc_end": 0.29146056930605446
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.034555338972404925,
+     "acc_p95": 0.10973580478909106,
+     "effective_detail_m": 0.22900658173273283,
+     "n_filtered": 51601
+    },
+    "extra_s": 153.0,
+    "extra_wh": 2.6221989123131633,
+    "soc_end": 0.2564864637160099
+   }
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6240384615384615,
+    "acc_median": 0.2885151274946187,
+    "acc_p95": 1.0858039358980736,
+    "effective_detail_m": 0.12189468658450144,
+    "n_filtered": 18880
+   },
+   "first_pass_s": 186.7,
+   "first_pass_wh": 3.1840613173490357,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7125,
+     "acc_median": 0.29035432923455584,
+     "acc_p95": 0.7201451125738021,
+     "effective_detail_m": 0.1219002118973421,
+     "n_filtered": 27063
+    },
+    "extra_s": 147.8,
+    "extra_wh": 2.520802152474211,
+    "gaps": 5,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 2,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 18880,
+     "structures": 1,
+     "samples": 896,
+     "gap_samples": 553
+    },
+    "plan_ms": 183.1069380000372,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.31053193503327503
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8608173076923077,
+     "acc_median": 0.25385159874825014,
+     "acc_p95": 0.7184854837012657,
+     "effective_detail_m": 0.12169789345272426,
+     "n_filtered": 34103
+    },
+    "extra_s": 188.2,
+    "extra_wh": 3.2097733250587295,
+    "soc_end": 0.2952214645314052
+   }
+  },
+  {
+   "id": 1,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9992788461538461,
+    "acc_median": 0.02997353885513654,
+    "acc_p95": 0.09429660376113344,
+    "effective_detail_m": 0.10063293319536136,
+    "n_filtered": 30273
+   },
+   "first_pass_s": 186.7,
+   "first_pass_wh": 3.1840613173490357,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9992788461538461,
+     "acc_median": 0.02997353885513654,
+     "acc_p95": 0.09429660376113344,
+     "effective_detail_m": 0.10063293319536136,
+     "n_filtered": 30273
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 30273,
+     "structures": 1,
+     "samples": 918,
+     "gap_samples": 0
+    },
+    "plan_ms": 229.25261799997543,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.3665497606438044
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.02758879257466873,
+     "acc_p95": 0.08906639157660388,
+     "effective_detail_m": 0.10040173023099738,
+     "n_filtered": 62319
+    },
+    "extra_s": 188.2,
+    "extra_wh": 3.2097733250587295,
+    "soc_end": 0.2952214645314052
+   }
+  },
+  {
+   "id": 1,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.8201754385964912,
+    "acc_median": 0.20050793919987253,
+    "acc_p95": 0.5906675602279579,
+    "effective_detail_m": 0.08713903362124303,
+    "n_filtered": 6244
+   },
+   "first_pass_s": 68.1,
+   "first_pass_wh": 1.1585473000175524,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9605263157894737,
+     "acc_median": 0.14065938618178997,
+     "acc_p95": 0.38054334068924184,
+     "effective_detail_m": 0.24604421258710513,
+     "n_filtered": 7537
+    },
+    "extra_s": 83.3,
+    "extra_wh": 1.4195762657973747,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 6244,
+     "structures": 1,
+     "samples": 108,
+     "gap_samples": 66
+    },
+    "plan_ms": 87.17045099996312,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.38001504401121367
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9912280701754386,
+     "acc_median": 0.11842372990921905,
+     "acc_p95": 0.3459780256010552,
+     "effective_detail_m": 0.0868772280394535,
+     "n_filtered": 11736
+    },
+    "extra_s": 69.8,
+    "extra_wh": 1.1877123784385197,
+    "soc_end": 0.38516757484141045
+   }
+  },
+  {
+   "id": 1,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9956140350877193,
+    "acc_median": 0.026594369956868036,
+    "acc_p95": 0.07973727976519136,
+    "effective_detail_m": 0.05433203800816164,
+    "n_filtered": 7793
+   },
+   "first_pass_s": 68.1,
+   "first_pass_wh": 1.1585473000175524,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9956140350877193,
+     "acc_median": 0.026594369956868036,
+     "acc_p95": 0.07973727976519136,
+     "effective_detail_m": 0.05433203800816164,
+     "n_filtered": 7793
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 7793,
+     "structures": 1,
+     "samples": 36,
+     "gap_samples": 0
+    },
+    "plan_ms": 56.138318000023446,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.41156118325117486
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.025121513995363554,
+     "acc_p95": 0.07468677138369477,
+     "effective_detail_m": 0.054871889931703,
+     "n_filtered": 17002
+    },
+    "extra_s": 69.8,
+    "extra_wh": 1.1877123784385197,
+    "soc_end": 0.38516757484141045
+   }
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.8308569102381437,
+    "acc_median": 0.09785467829019989,
+    "acc_p95": 0.3966631011879813,
+    "effective_detail_m": 0.20654849597876176,
+    "n_filtered": 20676
+   },
+   "first_pass_s": 169.3,
+   "first_pass_wh": 2.900336603205644,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.8582332587014044,
+     "acc_median": 0.12928881810652904,
+     "acc_p95": 0.6749842933813771,
+     "effective_detail_m": 0.20058283378320932,
+     "n_filtered": 34938
+    },
+    "extra_s": 138.5,
+    "extra_wh": 2.3617812582393336,
+    "gaps": 5,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 2,
+     "interior": 2,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 20676,
+     "structures": 1,
+     "samples": 2263,
+     "gap_samples": 1208
+    },
+    "plan_ms": 237.86195299999235,
+    "min_clear": 5.239573166186723,
+    "nofly_violations": 0,
+    "soc_end": 0.32037072633054564
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8911052310197435,
+     "acc_median": 0.13146914199302717,
+     "acc_p95": 0.5754178800774336,
+     "effective_detail_m": 0.20652697362020614,
+     "n_filtered": 36864
+    },
+    "extra_s": 181.2,
+    "extra_wh": 3.104289920333321,
+    "soc_end": 0.3038705338395782
+   }
+  },
+  {
+   "id": 1,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.43730667880713875,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9739466720944433,
+    "acc_median": 0.027588602472501833,
+    "acc_p95": 0.09330983563548542,
+    "effective_detail_m": 0.19491771516058443,
+    "n_filtered": 25573
+   },
+   "first_pass_s": 169.3,
+   "first_pass_wh": 2.900336603205644,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.974862609403623,
+     "acc_median": 0.028805956693692902,
+     "acc_p95": 0.09130294244885358,
+     "effective_detail_m": 0.19454507381198893,
+     "n_filtered": 29412
+    },
+    "extra_s": 40.5,
+    "extra_wh": 0.6902458014871491,
+    "gaps": 7,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 1,
+     "interior": 2,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 25573,
+     "structures": 1,
+     "samples": 2276,
+     "gap_samples": 112
+    },
+    "plan_ms": 266.62666499998977,
+    "min_clear": 2.75,
+    "nofly_violations": 0,
+    "soc_end": 0.3575159587028078
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9993893751272135,
+     "acc_median": 0.03113203517016938,
+     "acc_p95": 0.10037398036050997,
+     "effective_detail_m": 0.19477557825789102,
+     "n_filtered": 63558
+    },
+    "extra_s": 181.2,
+    "extra_wh": 3.104289920333321,
+    "soc_end": 0.3038705338395782
+   }
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 0.7956730769230769,
+    "acc_median": 0.13500632896342957,
+    "acc_p95": 0.6788468195338272,
+    "effective_detail_m": 0.12191525144574829,
+    "n_filtered": 16595
+   },
+   "first_pass_s": 139.9,
+   "first_pass_wh": 2.386111603965224,
+   "min_clear_first": 1.1358233510312097,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9059495192307693,
+     "acc_median": 0.23522992503155038,
+     "acc_p95": 0.7259629540446205,
+     "effective_detail_m": 0.11637402075504913,
+     "n_filtered": 28267
+    },
+    "extra_s": 177.7,
+    "extra_wh": 3.0306444494795715,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 16595,
+     "structures": 1,
+     "samples": 756,
+     "gap_samples": 300
+    },
+    "plan_ms": 173.22784899999988,
+    "min_clear": 0.4999999999999998,
+    "nofly_violations": 0,
+    "soc_end": 0.44354624346066934
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9044471153846154,
+     "acc_median": 0.1216668732970767,
+     "acc_p95": 0.5078891199790415,
+     "effective_detail_m": 0.12171236669671019,
+     "n_filtered": 30689
+    },
+    "extra_s": 140.9,
+    "extra_wh": 2.403260344856002,
+    "soc_end": 0.45748811245231
+   }
+  },
+  {
+   "id": 2,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 0.99609375,
+    "acc_median": 0.022334991105320334,
+    "acc_p95": 0.070352279382561,
+    "effective_detail_m": 0.10057950802663543,
+    "n_filtered": 21934
+   },
+   "first_pass_s": 139.9,
+   "first_pass_wh": 2.386111603965224,
+   "min_clear_first": 1.1358233510312097,
+   "repass": {
+    "metrics": {
+     "coverage": 0.99609375,
+     "acc_median": 0.022334991105320334,
+     "acc_p95": 0.070352279382561,
+     "effective_detail_m": 0.10057950802663543,
+     "n_filtered": 21934
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 21934,
+     "structures": 1,
+     "samples": 714,
+     "gap_samples": 0
+    },
+    "plan_ms": 165.90439399999468,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.5108938978935815
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.022876837440884756,
+     "acc_p95": 0.07176914070854544,
+     "effective_detail_m": 0.10029836923373339,
+     "n_filtered": 43895
+    },
+    "extra_s": 140.9,
+    "extra_wh": 2.403260344856002,
+    "soc_end": 0.45748811245231
+   }
+  },
+  {
+   "id": 2,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 0.63,
+    "acc_median": 0.3836514374215571,
+    "acc_p95": 1.0137907998047062,
+    "effective_detail_m": 0.08861900500645488,
+    "n_filtered": 7710
+   },
+   "first_pass_s": 60.7,
+   "first_pass_wh": 1.0327708293279156,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.6166666666666667,
+     "acc_median": 0.20163947196838006,
+     "acc_p95": 0.5745557247175386,
+     "effective_detail_m": 0.22385866722188597,
+     "n_filtered": 6484
+    },
+    "extra_s": 83.5,
+    "extra_wh": 1.4231170202394485,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 7710,
+     "structures": 1,
+     "samples": 128,
+     "gap_samples": 61
+    },
+    "plan_ms": 86.45214399996348,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5093433146579736
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8466666666666667,
+     "acc_median": 0.24274301750661476,
+     "acc_p95": 0.6839368900862807,
+     "effective_detail_m": 0.08798443242472745,
+     "n_filtered": 10688
+    },
+    "extra_s": 62.0,
+    "extra_wh": 1.055051501325326,
+    "soc_end": 0.5175225484116212
+   }
+  },
+  {
+   "id": 2,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.034804118117200744,
+    "acc_p95": 0.09697690565418884,
+    "effective_detail_m": 0.0556637152362713,
+    "n_filtered": 8639
+   },
+   "first_pass_s": 60.7,
+   "first_pass_wh": 1.0327708293279156,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.034804118117200744,
+     "acc_p95": 0.09697690565418884,
+     "effective_detail_m": 0.0556637152362713,
+     "n_filtered": 8639
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 8639,
+     "structures": 1,
+     "samples": 56,
+     "gap_samples": 0
+    },
+    "plan_ms": 58.54625599999963,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.5409681373299787
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.026975952943152803,
+     "acc_p95": 0.07894148873706255,
+     "effective_detail_m": 0.056108359239866436,
+     "n_filtered": 17416
+    },
+    "extra_s": 62.0,
+    "extra_wh": 1.055051501325326,
+    "soc_end": 0.5175225484116212
+   }
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 0.5276482345103265,
+    "acc_median": 0.317000669312014,
+    "acc_p95": 0.604069765351403,
+    "effective_detail_m": 0.19086871916406328,
+    "n_filtered": 17595
+   },
+   "first_pass_s": 155.9,
+   "first_pass_wh": 2.670100885831489,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.6363535420830557,
+     "acc_median": 0.3010062170273162,
+     "acc_p95": 0.6471382298532558,
+     "effective_detail_m": 0.18162767639104174,
+     "n_filtered": 31075
+    },
+    "extra_s": 114.7,
+    "extra_wh": 1.9560677808946152,
+    "gaps": 2,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 17595,
+     "structures": 1,
+     "samples": 2161,
+     "gap_samples": 1541
+    },
+    "plan_ms": 328.9662639999733,
+    "min_clear": 4.98686415807774,
+    "nofly_violations": 0,
+    "soc_end": 0.4611148520544094
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7105263157894737,
+     "acc_median": 0.3131975478006175,
+     "acc_p95": 0.7518693165459654,
+     "effective_detail_m": 0.19085239530204168,
+     "n_filtered": 31434
+    },
+    "extra_s": 165.8,
+    "extra_wh": 2.8397799811432285,
+    "soc_end": 0.4414768031599754
+   }
+  },
+  {
+   "id": 2,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.5639186002039484,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9820119920053297,
+    "acc_median": 0.029118022756380313,
+    "acc_p95": 0.09025048716445383,
+    "effective_detail_m": 0.178209865633736,
+    "n_filtered": 23911
+   },
+   "first_pass_s": 155.9,
+   "first_pass_wh": 2.670100885831489,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9836775483011326,
+     "acc_median": 0.030428857093214745,
+     "acc_p95": 0.09449737625804681,
+     "effective_detail_m": 0.17810028218766646,
+     "n_filtered": 25307
+    },
+    "extra_s": 23.2,
+    "extra_wh": 0.3954760830825754,
+    "gaps": 6,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 4,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 23911,
+     "structures": 2,
+     "samples": 2116,
+     "gap_samples": 72
+    },
+    "plan_ms": 301.66239200002565,
+    "min_clear": 2.9122801345028777,
+    "nofly_violations": 0,
+    "soc_end": 0.49579466756136176
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9990006662225184,
+     "acc_median": 0.03011020840315881,
+     "acc_p95": 0.09448164333034928,
+     "effective_detail_m": 0.1782048163932505,
+     "n_filtered": 58102
+    },
+    "extra_s": 165.8,
+    "extra_wh": 2.8397799811432285,
+    "soc_end": 0.4414768031599754
+   }
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6565563725490197,
+    "acc_median": 0.1662033050175893,
+    "acc_p95": 0.6026541938600808,
+    "effective_detail_m": 0.12190117773501818,
+    "n_filtered": 15314
+   },
+   "first_pass_s": 132.7,
+   "first_pass_wh": 2.2632473803625577,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7043504901960784,
+     "acc_median": 0.24835144907482526,
+     "acc_p95": 0.5883047020871552,
+     "effective_detail_m": 0.10741104134763269,
+     "n_filtered": 26974
+    },
+    "extra_s": 145.7,
+    "extra_wh": 2.4847981472448732,
+    "gaps": 5,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 15314,
+     "structures": 1,
+     "samples": 784,
+     "gap_samples": 424
+    },
+    "plan_ms": 149.4361420000132,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.8644875225426258
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9451593137254902,
+     "acc_median": 0.23416058727102795,
+     "acc_p95": 0.5971965755084879,
+     "effective_detail_m": 0.12169442384112863,
+     "n_filtered": 27662
+    },
+    "extra_s": 133.8,
+    "extra_wh": 2.28212496790217,
+    "soc_end": 0.8689913709724446
+   }
+  },
+  {
+   "id": 3,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9996936274509803,
+    "acc_median": 0.02310036684356165,
+    "acc_p95": 0.07798910138763482,
+    "effective_detail_m": 0.10060442430824493,
+    "n_filtered": 21176
+   },
+   "first_pass_s": 132.7,
+   "first_pass_wh": 2.2632473803625577,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9996936274509803,
+     "acc_median": 0.02310036684356165,
+     "acc_p95": 0.07798910138763482,
+     "effective_detail_m": 0.10060442430824493,
+     "n_filtered": 21176
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 21176,
+     "structures": 1,
+     "samples": 752,
+     "gap_samples": 0
+    },
+    "plan_ms": 162.31379099997412,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.9197052591479945
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.024389365176622935,
+     "acc_p95": 0.08028448643542974,
+     "effective_detail_m": 0.10037918874427437,
+     "n_filtered": 42536
+    },
+    "extra_s": 133.8,
+    "extra_wh": 2.28212496790217,
+    "soc_end": 0.8689913709724446
+   }
+  },
+  {
+   "id": 3,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6428571428571429,
+    "acc_median": 0.2729556169648788,
+    "acc_p95": 0.6734269504736842,
+    "effective_detail_m": 0.08879554320946306,
+    "n_filtered": 12014
+   },
+   "first_pass_s": 93.5,
+   "first_pass_wh": 1.5906223976978036,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7559523809523809,
+     "acc_median": 0.2589686138856164,
+     "acc_p95": 0.7193601129064676,
+     "effective_detail_m": 0.08743243920296995,
+     "n_filtered": 12690
+    },
+    "extra_s": 110.7,
+    "extra_wh": 1.8868537748045837,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 12014,
+     "structures": 1,
+     "samples": 180,
+     "gap_samples": 114
+    },
+    "plan_ms": 274.7231150000289,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.8927223971004783
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6944444444444444,
+     "acc_median": 0.37666435648184926,
+     "acc_p95": 0.8929545401274004,
+     "effective_detail_m": 0.08808704489887287,
+     "n_filtered": 16961
+    },
+    "extra_s": 95.5,
+    "extra_wh": 1.624904697539553,
+    "soc_end": 0.8985434877063475
+   }
+  },
+  {
+   "id": 3,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.02629895977095109,
+    "acc_p95": 0.07822858852801808,
+    "effective_detail_m": 0.05673057691994491,
+    "n_filtered": 14768
+   },
+   "first_pass_s": 93.5,
+   "first_pass_wh": 1.5906223976978036,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.02629895977095109,
+     "acc_p95": 0.07822858852801808,
+     "effective_detail_m": 0.05673057691994491,
+     "n_filtered": 14768
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 14768,
+     "structures": 1,
+     "samples": 120,
+     "gap_samples": 0
+    },
+    "plan_ms": 113.56398400005219,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.9346524809849708
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.029999805539342117,
+     "acc_p95": 0.08774104146903576,
+     "effective_detail_m": 0.05631010960126053,
+     "n_filtered": 30484
+    },
+    "extra_s": 95.5,
+    "extra_wh": 1.624904697539553,
+    "soc_end": 0.8985434877063475
+   }
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6991150442477876,
+    "acc_median": 0.1684863284768241,
+    "acc_p95": 0.696283216042174,
+    "effective_detail_m": 0.21058588517689555,
+    "n_filtered": 14289
+   },
+   "first_pass_s": 151.9,
+   "first_pass_wh": 2.598848566144331,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7552851524090463,
+     "acc_median": 0.17306203225189698,
+     "acc_p95": 0.6517735454486653,
+     "effective_detail_m": 0.2016504971718587,
+     "n_filtered": 20174
+    },
+    "extra_s": 56.3,
+    "extra_wh": 0.960093830017815,
+    "gaps": 6,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 1,
+     "interior": 4,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 14289,
+     "structures": 2,
+     "samples": 1848,
+     "gap_samples": 1220
+    },
+    "plan_ms": 202.9981680000219,
+    "min_clear": 4.974790325842012,
+    "nofly_violations": 0,
+    "soc_end": 0.8909120365746938
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9453048180924287,
+     "acc_median": 0.17095589819731316,
+     "acc_p95": 0.4193477424163255,
+     "effective_detail_m": 0.21072252376207887,
+     "n_filtered": 38449
+    },
+    "extra_s": 169.0,
+    "extra_wh": 2.891924561677726,
+    "soc_end": 0.8479824647600763
+   }
+  },
+  {
+   "id": 3,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.9699996453782205,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9847590953785644,
+    "acc_median": 0.030152284847245525,
+    "acc_p95": 0.09623677412072354,
+    "effective_detail_m": 0.19942239706488676,
+    "n_filtered": 23310
+   },
+   "first_pass_s": 151.9,
+   "first_pass_wh": 2.598848566144331,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.98586529006883,
+     "acc_median": 0.029640830748971503,
+     "acc_p95": 0.09509435434670781,
+     "effective_detail_m": 0.19921729597762658,
+     "n_filtered": 25064
+    },
+    "extra_s": 46.9,
+    "extra_wh": 0.7995887534645525,
+    "gaps": 6,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 4,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 23310,
+     "structures": 2,
+     "samples": 1904,
+     "gap_samples": 69
+    },
+    "plan_ms": 267.63427599996703,
+    "min_clear": 2.4036705379266814,
+    "nofly_violations": 0,
+    "soc_end": 0.8944788160536474
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9996312684365781,
+     "acc_median": 0.02909537820383523,
+     "acc_p95": 0.09555229677421373,
+     "effective_detail_m": 0.19925445585407547,
+     "n_filtered": 57899
+    },
+    "extra_s": 169.0,
+    "extra_wh": 2.891924561677726,
+    "soc_end": 0.8479824647600763
+   }
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 0.7427392739273927,
+    "acc_median": 0.16890667576678542,
+    "acc_p95": 0.6235653219001798,
+    "effective_detail_m": 0.12186933704308843,
+    "n_filtered": 28429
+   },
+   "first_pass_s": 227.9,
+   "first_pass_wh": 3.8873317124482534,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.6788778877887789,
+     "acc_median": 0.2512859561477838,
+     "acc_p95": 0.7877324093598274,
+     "effective_detail_m": 0.11125284154822149,
+     "n_filtered": 47512
+    },
+    "extra_s": 304.4,
+    "extra_wh": 5.191933507258829,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 28429,
+     "structures": 1,
+     "samples": 1620,
+     "gap_samples": 1187
+    },
+    "plan_ms": 314.03778100002455,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.3798869565655376
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7325082508250825,
+     "acc_median": 0.20050627262735432,
+     "acc_p95": 0.8207224355231769,
+     "effective_detail_m": 0.12173371052127745,
+     "n_filtered": 44907
+    },
+    "extra_s": 230.6,
+    "extra_wh": 3.9336195358422565,
+    "soc_end": 0.40784948926369907
+   }
+  },
+  {
+   "id": 4,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 0.999009900990099,
+    "acc_median": 0.02267040326622194,
+    "acc_p95": 0.08108306692927941,
+    "effective_detail_m": 0.10056403359392334,
+    "n_filtered": 35023
+   },
+   "first_pass_s": 227.9,
+   "first_pass_wh": 3.8873317124482534,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.999009900990099,
+     "acc_median": 0.02267040326622194,
+     "acc_p95": 0.08108306692927941,
+     "effective_detail_m": 0.10056403359392334,
+     "n_filtered": 35023
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 35023,
+     "structures": 1,
+     "samples": 1400,
+     "gap_samples": 3
+    },
+    "plan_ms": 294.2758770000182,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.495263256726892
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9998349834983499,
+     "acc_median": 0.02584888062401136,
+     "acc_p95": 0.08919959095524556,
+     "effective_detail_m": 0.1003251006295338,
+     "n_filtered": 70148
+    },
+    "extra_s": 230.6,
+    "extra_wh": 3.9336195358422565,
+    "soc_end": 0.40784948926369907
+   }
+  },
+  {
+   "id": 4,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 0.7347826086956522,
+    "acc_median": 0.1746863144649926,
+    "acc_p95": 0.5850849159538385,
+    "effective_detail_m": 0.08794429934840402,
+    "n_filtered": 11396
+   },
+   "first_pass_s": 98.9,
+   "first_pass_wh": 1.6824241646327383,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.8760869565217392,
+     "acc_median": 0.16191997019540283,
+     "acc_p95": 0.548819049584296,
+     "effective_detail_m": 0.09155020578149414,
+     "n_filtered": 12416
+    },
+    "extra_s": 91.5,
+    "extra_wh": 1.559405047334859,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 11396,
+     "structures": 1,
+     "samples": 144,
+     "gap_samples": 97
+    },
+    "plan_ms": 128.75423599996338,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5096077567375941
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9978260869565218,
+     "acc_median": 0.15367454028359617,
+     "acc_p95": 0.41876713600940507,
+     "effective_detail_m": 0.08739084497323782,
+     "n_filtered": 21203
+    },
+    "extra_s": 101.2,
+    "extra_wh": 1.7218436257833187,
+    "soc_end": 0.5059980105498643
+   }
+  },
+  {
+   "id": 4,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.022832542162205538,
+    "acc_p95": 0.07198068739435147,
+    "effective_detail_m": 0.05550948826933956,
+    "n_filtered": 15104
+   },
+   "first_pass_s": 98.9,
+   "first_pass_wh": 1.6824241646327383,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.022832542162205538,
+     "acc_p95": 0.07198068739435147,
+     "effective_detail_m": 0.05550948826933956,
+     "n_filtered": 15104
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 15104,
+     "structures": 1,
+     "samples": 88,
+     "gap_samples": 0
+    },
+    "plan_ms": 98.01039300009506,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.544261202233944
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.022972515112926306,
+     "acc_p95": 0.06997682554302197,
+     "effective_detail_m": 0.05582271025128553,
+     "n_filtered": 30352
+    },
+    "extra_s": 101.2,
+    "extra_wh": 1.7218436257833187,
+    "soc_end": 0.5059980105498643
+   }
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 0.42552369919876437,
+    "acc_median": 0.22010337010630643,
+    "acc_p95": 0.9043535111992067,
+    "effective_detail_m": 0.23907196051508203,
+    "n_filtered": 16135
+   },
+   "first_pass_s": 189.4,
+   "first_pass_wh": 3.2423844227509844,
+   "min_clear_first": 5.515434509426301,
+   "repass": {
+    "metrics": {
+     "coverage": 0.5418476686938893,
+     "acc_median": 0.3662377489552906,
+     "acc_p95": 0.8425848160113688,
+     "effective_detail_m": 0.23078649624809716,
+     "n_filtered": 38963
+    },
+    "extra_s": 207.6,
+    "extra_wh": 3.5402744631818854,
+    "gaps": 3,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 16135,
+     "structures": 1,
+     "samples": 2422,
+     "gap_samples": 1964
+    },
+    "plan_ms": 373.4716669999898,
+    "min_clear": 4.925368024876359,
+    "nofly_violations": 0,
+    "soc_end": 0.4309226528716584
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.5017858866685974,
+     "acc_median": 0.37365946723170573,
+     "acc_p95": 0.8814434718635863,
+     "effective_detail_m": 0.23919787673187679,
+     "n_filtered": 36933
+    },
+    "extra_s": 207.6,
+    "extra_wh": 3.5543314206981775,
+    "soc_end": 0.43061027603796903
+   }
+  },
+  {
+   "id": 4,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.5816484058924545,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9771213437590501,
+    "acc_median": 0.03639055434211791,
+    "acc_p95": 0.1186066206016072,
+    "effective_detail_m": 0.22924268368748735,
+    "n_filtered": 27781
+   },
+   "first_pass_s": 189.4,
+   "first_pass_wh": 3.2423844227509844,
+   "min_clear_first": 5.515434509426301,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9807896515107636,
+     "acc_median": 0.03634973030871613,
+     "acc_p95": 0.1159252248684481,
+     "effective_detail_m": 0.22905087437064817,
+     "n_filtered": 30373
+    },
+    "extra_s": 64.1,
+    "extra_wh": 1.0927089267534558,
+    "gaps": 4,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 27781,
+     "structures": 2,
+     "samples": 2405,
+     "gap_samples": 109
+    },
+    "plan_ms": 300.2324920000774,
+    "min_clear": 2.5619200876839265,
+    "nofly_violations": 0,
+    "soc_end": 0.48531299812564915
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9998069311709624,
+     "acc_median": 0.035569092550325365,
+     "acc_p95": 0.1165681562543539,
+     "effective_detail_m": 0.22900353776172083,
+     "n_filtered": 69636
+    },
+    "extra_s": 207.6,
+    "extra_wh": 3.5543314206981775,
+    "soc_end": 0.43061027603796903
+   }
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.3168682795698925,
+    "acc_median": 0.45265312714735995,
+    "acc_p95": 1.2066106685975475,
+    "effective_detail_m": 0.12200627074817613,
+    "n_filtered": 13025
+   },
+   "first_pass_s": 130.9,
+   "first_pass_wh": 2.2323036830546577,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.3968413978494624,
+     "acc_median": 0.4346872073452963,
+     "acc_p95": 1.0799753921655226,
+     "effective_detail_m": 0.12168981497341624,
+     "n_filtered": 22760
+    },
+    "extra_s": 137.1,
+    "extra_wh": 2.3381575161483474,
+    "gaps": 4,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 13025,
+     "structures": 1,
+     "samples": 700,
+     "gap_samples": 441
+    },
+    "plan_ms": 134.9764150000965,
+    "min_clear": 0.4999999999999998,
+    "nofly_violations": 0,
+    "soc_end": 0.330388766145492
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.5897177419354839,
+     "acc_median": 0.4339835005543373,
+     "acc_p95": 1.0300999973142493,
+     "effective_detail_m": 0.12178634449066256,
+     "n_filtered": 23678
+    },
+    "extra_s": 131.9,
+    "extra_wh": 2.2494442658813774,
+    "soc_end": 0.3323601717069786
+   }
+  },
+  {
+   "id": 5,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9922715053763441,
+    "acc_median": 0.0376357602248909,
+    "acc_p95": 0.10426429756058243,
+    "effective_detail_m": 0.1007781862636542,
+    "n_filtered": 19813
+   },
+   "first_pass_s": 130.9,
+   "first_pass_wh": 2.2323036830546577,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9922715053763441,
+     "acc_median": 0.0376357602248909,
+     "acc_p95": 0.10426429756058243,
+     "effective_detail_m": 0.1007781862636542,
+     "n_filtered": 19813
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 19813,
+     "structures": 1,
+     "samples": 644,
+     "gap_samples": 2
+    },
+    "plan_ms": 226.97167199999058,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.3823478220599091
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9993279569892473,
+     "acc_median": 0.03385628670971297,
+     "acc_p95": 0.10054240891492984,
+     "effective_detail_m": 0.10047973269342286,
+     "n_filtered": 41762
+    },
+    "extra_s": 131.9,
+    "extra_wh": 2.2494442658813774,
+    "soc_end": 0.3323601717069786
+   }
+  },
+  {
+   "id": 5,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6541666666666667,
+    "acc_median": 0.23579804084482892,
+    "acc_p95": 0.9906594775326523,
+    "effective_detail_m": 0.0873653440489146,
+    "n_filtered": 7946
+   },
+   "first_pass_s": 79.5,
+   "first_pass_wh": 1.3524638894764551,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9708333333333333,
+     "acc_median": 0.1332093413350881,
+     "acc_p95": 1.033427682655088,
+     "effective_detail_m": 0.2173163416617545,
+     "n_filtered": 7145
+    },
+    "extra_s": 76.7,
+    "extra_wh": 1.307236364994669,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 7946,
+     "structures": 1,
+     "samples": 108,
+     "gap_samples": 61
+    },
+    "plan_ms": 95.51291100001436,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.37285012047286964
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8291666666666667,
+     "acc_median": 0.13589970533872275,
+     "acc_p95": 0.8928399214760252,
+     "effective_detail_m": 0.08717876959347913,
+     "n_filtered": 10843
+    },
+    "extra_s": 81.3,
+    "extra_wh": 1.3833440254904346,
+    "soc_end": 0.37115883912852204
+   }
+  },
+  {
+   "id": 5,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9958333333333333,
+    "acc_median": 0.031771947927041744,
+    "acc_p95": 0.10118344363713198,
+    "effective_detail_m": 0.054536762594397194,
+    "n_filtered": 9502
+   },
+   "first_pass_s": 79.5,
+   "first_pass_wh": 1.3524638894764551,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9958333333333333,
+     "acc_median": 0.031771947927041744,
+     "acc_p95": 0.10118344363713198,
+     "effective_detail_m": 0.054536762594397194,
+     "n_filtered": 9502
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 9502,
+     "structures": 1,
+     "samples": 54,
+     "gap_samples": 0
+    },
+    "plan_ms": 67.76550899996892,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.40189981747277026
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.031068147360413967,
+     "acc_p95": 0.10812364115401607,
+     "effective_detail_m": 0.056242390485673296,
+     "n_filtered": 20146
+    },
+    "extra_s": 81.3,
+    "extra_wh": 1.3833440254904346,
+    "soc_end": 0.37115883912852204
+   }
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.4960459321850287,
+    "acc_median": 0.3014160107834698,
+    "acc_p95": 0.8207246665658751,
+    "effective_detail_m": 0.2063251677641121,
+    "n_filtered": 15218
+   },
+   "first_pass_s": 155.9,
+   "first_pass_wh": 2.670100288631947,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.5017874553136171,
+     "acc_median": 0.3612064006275508,
+     "acc_p95": 0.7291948617211634,
+     "effective_detail_m": 0.17589323048644095,
+     "n_filtered": 27341
+    },
+    "extra_s": 103.5,
+    "extra_wh": 1.7647718685366498,
+    "gaps": 3,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 15218,
+     "structures": 2,
+     "samples": 2253,
+     "gap_samples": 1464
+    },
+    "plan_ms": 219.3728980000742,
+    "min_clear": 2.1963449469095275,
+    "nofly_violations": 0,
+    "soc_end": 0.3334018559684768
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.579785505362366,
+     "acc_median": 0.387912116104113,
+     "acc_p95": 0.7345999376234582,
+     "effective_detail_m": 0.20645311004993516,
+     "n_filtered": 29195
+    },
+    "extra_s": 166.0,
+    "extra_wh": 2.8432053885656763,
+    "soc_end": 0.3094366666345085
+   }
+  },
+  {
+   "id": 5,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.4319545705722627,
+   "nofly": true,
+   "base": {
+    "coverage": 0.975625609359766,
+    "acc_median": 0.033790418595143645,
+    "acc_p95": 0.10089649224251838,
+    "effective_detail_m": 0.19456250392369842,
+    "n_filtered": 22708
+   },
+   "first_pass_s": 155.9,
+   "first_pass_wh": 2.670100288631947,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9793088506120681,
+     "acc_median": 0.0300606578786482,
+     "acc_p95": 0.09545242021296359,
+     "effective_detail_m": 0.1941433684668003,
+     "n_filtered": 29058
+    },
+    "extra_s": 64.2,
+    "extra_wh": 1.0944234126457615,
+    "gaps": 7,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 2,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 22708,
+     "structures": 1,
+     "samples": 2213,
+     "gap_samples": 143
+    },
+    "plan_ms": 240.63128099999176,
+    "min_clear": 1.6143751480531363,
+    "nofly_violations": 0,
+    "soc_end": 0.34829848832160304
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9990250243743907,
+     "acc_median": 0.032021289897635974,
+     "acc_p95": 0.09811615063075016,
+     "effective_detail_m": 0.19434194140722005,
+     "n_filtered": 57398
+    },
+    "extra_s": 166.0,
+    "extra_wh": 2.8432053885656763,
+    "soc_end": 0.3094366666345085
+   }
+  },
+  {
+   "id": 6,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 0.457037037037037,
+    "acc_median": 0.3682746941633135,
+    "acc_p95": 1.0409496164549112,
+    "effective_detail_m": 0.12191874971327918,
+    "n_filtered": 23130
+   },
+   "first_pass_s": 189.4,
+   "first_pass_wh": 3.2307086622913865,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7227777777777777,
+     "acc_median": 0.2432461280731193,
+     "acc_p95": 1.035840192232929,
+     "effective_detail_m": 0.11933632713474714,
+     "n_filtered": 38316
+    },
+    "extra_s": 224.9,
+    "extra_wh": 3.83584813896451,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 23130,
+     "structures": 1,
+     "samples": 1298,
+     "gap_samples": 906
+    },
+    "plan_ms": 225.53731100003915,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.2541178886976387
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6612962962962963,
+     "acc_median": 0.31173002366653724,
+     "acc_p95": 1.0447123307800514,
+     "effective_detail_m": 0.12176413903890868,
+     "n_filtered": 35039
+    },
+    "extra_s": 191.4,
+    "extra_wh": 3.265010751078752,
+    "soc_end": 0.26680316398397597
+   }
+  },
+  {
+   "id": 6,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9961111111111111,
+    "acc_median": 0.027644235305553266,
+    "acc_p95": 0.09372222526929208,
+    "effective_detail_m": 0.10065939398945434,
+    "n_filtered": 26595
+   },
+   "first_pass_s": 189.4,
+   "first_pass_wh": 3.2307086622913865,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9961111111111111,
+     "acc_median": 0.027644235305553266,
+     "acc_p95": 0.09372222526929208,
+     "effective_detail_m": 0.10065939398945434,
+     "n_filtered": 26595
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 26595,
+     "structures": 1,
+     "samples": 1166,
+     "gap_samples": 7
+    },
+    "plan_ms": 234.39318900000217,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.33935895845238123
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.026819938608132254,
+     "acc_p95": 0.0968732819704791,
+     "effective_detail_m": 0.10037043474872578,
+     "n_filtered": 54290
+    },
+    "extra_s": 191.4,
+    "extra_wh": 3.265010751078752,
+    "soc_end": 0.26680316398397597
+   }
+  },
+  {
+   "id": 6,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9921875,
+    "acc_median": 0.17058787673970002,
+    "acc_p95": 0.4646867800195966,
+    "effective_detail_m": 0.08773850544718255,
+    "n_filtered": 11916
+   },
+   "first_pass_s": 94.1,
+   "first_pass_wh": 1.6010450773810125,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.875,
+     "acc_median": 0.18466282001761236,
+     "acc_p95": 0.540035705544116,
+     "effective_detail_m": 0.08429575078784557,
+     "n_filtered": 8490
+    },
+    "extra_s": 74.1,
+    "extra_wh": 1.2627380328482098,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 11916,
+     "structures": 1,
+     "samples": 132,
+     "gap_samples": 55
+    },
+    "plan_ms": 129.96074500006216,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.34751285960933553
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.71875,
+     "acc_median": 0.2520011491994477,
+     "acc_p95": 0.8949293283625382,
+     "effective_detail_m": 0.08706693747689137,
+     "n_filtered": 15992
+    },
+    "extra_s": 96.4,
+    "extra_wh": 1.6404652045092158,
+    "soc_end": 0.3391189224613267
+   }
+  },
+  {
+   "id": 6,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.02865972642842962,
+    "acc_p95": 0.07689274004829016,
+    "effective_detail_m": 0.05452543144932612,
+    "n_filtered": 13831
+   },
+   "first_pass_s": 94.1,
+   "first_pass_wh": 1.6010450773810125,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.02865972642842962,
+     "acc_p95": 0.07689274004829016,
+     "effective_detail_m": 0.05452543144932612,
+     "n_filtered": 13831
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 13831,
+     "structures": 1,
+     "samples": 88,
+     "gap_samples": 0
+    },
+    "plan_ms": 103.53253800008133,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.37557370478375085
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03086213594670717,
+     "acc_p95": 0.0823494566746551,
+     "effective_detail_m": 0.054185980546566585,
+     "n_filtered": 28002
+    },
+    "extra_s": 96.4,
+    "extra_wh": 1.6404652045092158,
+    "soc_end": 0.3391189224613267
+   }
+  },
+  {
+   "id": 6,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 0.2154834403937599,
+    "acc_median": 0.4303004824509653,
+    "acc_p95": 1.1949284630269377,
+    "effective_detail_m": 0.2246250879822695,
+    "n_filtered": 19099
+   },
+   "first_pass_s": 211.7,
+   "first_pass_wh": 3.623377873240677,
+   "min_clear_first": 6.000000000000001,
+   "repass": {
+    "metrics": {
+     "coverage": 0.2154834403937599,
+     "acc_median": 0.4303004824509653,
+     "acc_p95": 1.1949284630269377,
+     "effective_detail_m": 0.2246250879822695,
+     "n_filtered": 19099
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 3,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 0,
+     "budget": 1
+    },
+    "gap_info": {
+     "n_points": 19099,
+     "structures": 1,
+     "samples": 2900,
+     "gap_samples": 2537
+    },
+    "plan_ms": 337.475937000022,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.3306329759868395
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6733127554851088,
+     "acc_median": 0.3057991668055813,
+     "acc_p95": 0.7210855658568542,
+     "effective_detail_m": 0.22478782188332203,
+     "n_filtered": 38859
+    },
+    "extra_s": 225.4,
+    "extra_wh": 3.8581929890944084,
+    "soc_end": 0.24489535400699075
+   }
+  },
+  {
+   "id": 6,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.4111524842811118,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9752231584216234,
+    "acc_median": 0.0414203270105542,
+    "acc_p95": 0.11855960684857203,
+    "effective_detail_m": 0.21426979030707938,
+    "n_filtered": 31730
+   },
+   "first_pass_s": 211.7,
+   "first_pass_wh": 3.623377873240677,
+   "min_clear_first": 6.000000000000001,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9831484107783433,
+     "acc_median": 0.03599593668460832,
+     "acc_p95": 0.10684005209426106,
+     "effective_detail_m": 0.21366282355932675,
+     "n_filtered": 45572
+    },
+    "extra_s": 142.9,
+    "extra_wh": 2.4359985836554983,
+    "gaps": 11,
+    "chosen": 8,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 31730,
+     "structures": 1,
+     "samples": 2889,
+     "gap_samples": 137
+    },
+    "plan_ms": 354.8201500000232,
+    "min_clear": 3.4783213643849837,
+    "nofly_violations": 0,
+    "soc_end": 0.2764996741278459
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9995828814549095,
+     "acc_median": 0.036001235605795046,
+     "acc_p95": 0.11259666574578307,
+     "effective_detail_m": 0.21405818655519487,
+     "n_filtered": 77285
+    },
+    "extra_s": 225.4,
+    "extra_wh": 3.8581929890944084,
+    "soc_end": 0.24489535400699075
+   }
+  },
+  {
+   "id": 7,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6537356321839081,
+    "acc_median": 0.28922087311196387,
+    "acc_p95": 1.0228871919842346,
+    "effective_detail_m": 0.12178350799810386,
+    "n_filtered": 29834
+   },
+   "first_pass_s": 248.4,
+   "first_pass_wh": 4.23654397811734,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.8038793103448276,
+     "acc_median": 0.2718933557423764,
+     "acc_p95": 0.7682008358136008,
+     "effective_detail_m": 0.12119640724511792,
+     "n_filtered": 41931
+    },
+    "extra_s": 222.9,
+    "extra_wh": 3.8018781546997564,
+    "gaps": 4,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 29834,
+     "structures": 1,
+     "samples": 1472,
+     "gap_samples": 1089
+    },
+    "plan_ms": 271.7809370000168,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.38964464060608417
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7814295977011494,
+     "acc_median": 0.2781420326688524,
+     "acc_p95": 0.7962330045652775,
+     "effective_detail_m": 0.1216334712867121,
+     "n_filtered": 51485
+    },
+    "extra_s": 251.4,
+    "extra_wh": 4.287966164693551,
+    "soc_end": 0.37884268482842665
+   }
+  },
+  {
+   "id": 7,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9991020114942529,
+    "acc_median": 0.027237700009032473,
+    "acc_p95": 0.09137495401511266,
+    "effective_detail_m": 0.10056414058542568,
+    "n_filtered": 39885
+   },
+   "first_pass_s": 248.4,
+   "first_pass_wh": 4.23654397811734,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9991020114942529,
+     "acc_median": 0.027237700009032473,
+     "acc_p95": 0.09137495401511266,
+     "effective_detail_m": 0.10056414058542568,
+     "n_filtered": 39885
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 39885,
+     "structures": 1,
+     "samples": 1260,
+     "gap_samples": 1
+    },
+    "plan_ms": 319.9842109999054,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.47413082182165983
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.026437666081513544,
+     "acc_p95": 0.08887588244232093,
+     "effective_detail_m": 0.10035284044958936,
+     "n_filtered": 80880
+    },
+    "extra_s": 251.4,
+    "extra_wh": 4.287966164693551,
+    "soc_end": 0.37884268482842665
+   }
+  },
+  {
+   "id": 7,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 0.7763157894736842,
+    "acc_median": 0.17953520258659816,
+    "acc_p95": 0.5895775166786166,
+    "effective_detail_m": 0.08755318436890419,
+    "n_filtered": 6824
+   },
+   "first_pass_s": 69.3,
+   "first_pass_wh": 1.1790836710137067,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.47368421052631576,
+     "acc_median": 0.36159213815871716,
+     "acc_p95": 0.7047848598504034,
+     "effective_detail_m": 0.08510413334220139,
+     "n_filtered": 4796
+    },
+    "extra_s": 83.3,
+    "extra_wh": 1.4196800719587617,
+    "gaps": 5,
+    "chosen": 5,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 6824,
+     "structures": 1,
+     "samples": 108,
+     "gap_samples": 59
+    },
+    "plan_ms": 88.46643599997606,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5105259381582259
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6578947368421053,
+     "acc_median": 0.30665770539571985,
+     "acc_p95": 1.1933192204197245,
+     "effective_detail_m": 0.0871465940532821,
+     "n_filtered": 8431
+    },
+    "extra_s": 71.0,
+    "extra_wh": 1.208227952516454,
+    "soc_end": 0.5152248741458301
+   }
+  },
+  {
+   "id": 7,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.029689898244821933,
+    "acc_p95": 0.08363739682455265,
+    "effective_detail_m": 0.054278792660081315,
+    "n_filtered": 9379
+   },
+   "first_pass_s": 69.3,
+   "first_pass_wh": 1.1790836710137067,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.029689898244821933,
+     "acc_p95": 0.08363739682455265,
+     "effective_detail_m": 0.054278792660081315,
+     "n_filtered": 9379
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 9379,
+     "structures": 1,
+     "samples": 72,
+     "gap_samples": 0
+    },
+    "plan_ms": 66.2623440000516,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.5420743842017733
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.033566001294735415,
+     "acc_p95": 0.10019983039590784,
+     "effective_detail_m": 0.05423859704692044,
+     "n_filtered": 19295
+    },
+    "extra_s": 71.0,
+    "extra_wh": 1.208227952516454,
+    "soc_end": 0.5152248741458301
+   }
+  },
+  {
+   "id": 7,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 0.11318795430944964,
+    "acc_median": 0.577973597942302,
+    "acc_p95": 0.6981378280475464,
+    "effective_detail_m": 0.23919009465693614,
+    "n_filtered": 21314
+   },
+   "first_pass_s": 173.1,
+   "first_pass_wh": 2.9650941370666244,
+   "min_clear_first": 4.958095888262719,
+   "repass": {
+    "metrics": {
+     "coverage": 0.28925810545748243,
+     "acc_median": 0.5263508048541539,
+     "acc_p95": 0.6883428411200319,
+     "effective_detail_m": 0.23889638656089318,
+     "n_filtered": 28431
+    },
+    "extra_s": 71.3,
+    "extra_wh": 1.215681309069348,
+    "gaps": 3,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 21314,
+     "structures": 1,
+     "samples": 2032,
+     "gap_samples": 1836
+    },
+    "plan_ms": 253.01742900001045,
+    "min_clear": 4.274790101235062,
+    "nofly_violations": 0,
+    "soc_end": 0.4753701225323507
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.48298142379139264,
+     "acc_median": 0.4916138694254135,
+     "acc_p95": 0.7066636669772349,
+     "effective_detail_m": 0.2394284328622152,
+     "n_filtered": 35758
+    },
+    "extra_s": 183.1,
+    "extra_wh": 3.1365082937999995,
+    "soc_end": 0.43268507842719917
+   }
+  },
+  {
+   "id": 7,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.5682762435576548,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9911157263182185,
+    "acc_median": 0.03725687280129364,
+    "acc_p95": 0.11087344079989972,
+    "effective_detail_m": 0.22920375985455163,
+    "n_filtered": 26064
+   },
+   "first_pass_s": 173.1,
+   "first_pass_wh": 2.9650941370666244,
+   "min_clear_first": 4.958095888262719,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9911157263182185,
+     "acc_median": 0.03725687280129364,
+     "acc_p95": 0.11087344079989972,
+     "effective_detail_m": 0.22920375985455163,
+     "n_filtered": 26064
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 3,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 26064,
+     "structures": 1,
+     "samples": 2034,
+     "gap_samples": 38
+    },
+    "plan_ms": 255.3007129999969,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.5023852627339056
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9998846198223146,
+     "acc_median": 0.03619513716168221,
+     "acc_p95": 0.11115456903472878,
+     "effective_detail_m": 0.2289956366177617,
+     "n_filtered": 63243
+    },
+    "extra_s": 183.1,
+    "extra_wh": 3.1365082937999995,
+    "soc_end": 0.43268507842719917
+   }
+  },
+  {
+   "id": 8,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 0.5782508630609896,
+    "acc_median": 0.3375131184725686,
+    "acc_p95": 0.9614617021909185,
+    "effective_detail_m": 0.12188241612514228,
+    "n_filtered": 27520
+   },
+   "first_pass_s": 237.6,
+   "first_pass_wh": 4.051961914845803,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.826620636747219,
+     "acc_median": 0.2341333568924968,
+     "acc_p95": 0.8148250641663388,
+     "effective_detail_m": 0.12077335616296347,
+     "n_filtered": 43445
+    },
+    "extra_s": 325.8,
+    "extra_wh": 5.556785162079835,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 27520,
+     "structures": 1,
+     "samples": 1472,
+     "gap_samples": 1136
+    },
+    "plan_ms": 259.08908600001723,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5270559174633535
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6323360184119677,
+     "acc_median": 0.3581730322543546,
+     "acc_p95": 0.8250944019508855,
+     "effective_detail_m": 0.12174035029152624,
+     "n_filtered": 40451
+    },
+    "extra_s": 240.7,
+    "extra_wh": 4.105116170267381,
+    "soc_end": 0.5593152283925409
+   }
+  },
+  {
+   "id": 8,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9990410433448408,
+    "acc_median": 0.034474943776717115,
+    "acc_p95": 0.09983330800444778,
+    "effective_detail_m": 0.10062332612879457,
+    "n_filtered": 35386
+   },
+   "first_pass_s": 237.6,
+   "first_pass_wh": 4.051961914845803,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9990410433448408,
+     "acc_median": 0.034474943776717115,
+     "acc_p95": 0.09983330800444778,
+     "effective_detail_m": 0.10062332612879457,
+     "n_filtered": 35386
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 35386,
+     "structures": 1,
+     "samples": 1248,
+     "gap_samples": 1
+    },
+    "plan_ms": 279.52391500002705,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.6505400321762899
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03338169169695737,
+     "acc_p95": 0.10176088751314132,
+     "effective_detail_m": 0.10038934721640509,
+     "n_filtered": 73350
+    },
+    "extra_s": 240.7,
+    "extra_wh": 4.105116170267381,
+    "soc_end": 0.5593152283925409
+   }
+  },
+  {
+   "id": 8,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 0.5098684210526315,
+    "acc_median": 0.38290338519291967,
+    "acc_p95": 0.932326958448315,
+    "effective_detail_m": 0.08795111415373356,
+    "n_filtered": 7788
+   },
+   "first_pass_s": 70.5,
+   "first_pass_wh": 1.1995517263469289,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.42105263157894735,
+     "acc_median": 0.49723828464042213,
+     "acc_p95": 1.0358106146038588,
+     "effective_detail_m": 0.09084932587488503,
+     "n_filtered": 8743
+    },
+    "extra_s": 75.9,
+    "extra_wh": 1.2935933222844747,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 7788,
+     "structures": 1,
+     "samples": 112,
+     "gap_samples": 61
+    },
+    "plan_ms": 89.1615319999346,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.6851804069810509
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.2993421052631579,
+     "acc_median": 0.5918872625266262,
+     "acc_p95": 1.3730412671571954,
+     "effective_detail_m": 0.08715256714881545,
+     "n_filtered": 12658
+    },
+    "extra_s": 72.2,
+    "extra_wh": 1.2286950812637367,
+    "soc_end": 0.6866225901148437
+   }
+  },
+  {
+   "id": 8,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.038834877030088366,
+    "acc_p95": 0.10198960296917023,
+    "effective_detail_m": 0.05417142998198969,
+    "n_filtered": 10386
+   },
+   "first_pass_s": 70.5,
+   "first_pass_wh": 1.1995517263469289,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.038834877030088366,
+     "acc_p95": 0.10198960296917023,
+     "effective_detail_m": 0.05417142998198969,
+     "n_filtered": 10386
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 10386,
+     "structures": 1,
+     "samples": 72,
+     "gap_samples": 0
+    },
+    "plan_ms": 65.26239599998007,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.7139269252540511
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.044145139784909304,
+     "acc_p95": 0.11134439997516378,
+     "effective_detail_m": 0.055869136402567056,
+     "n_filtered": 21733
+    },
+    "extra_s": 72.2,
+    "extra_wh": 1.2286950812637367,
+    "soc_end": 0.6866225901148437
+   }
+  },
+  {
+   "id": 8,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 0.6789560894780448,
+    "acc_median": 0.25795589309431843,
+    "acc_p95": 0.4636125736879405,
+    "effective_detail_m": 0.23928938496432745,
+    "n_filtered": 19054
+   },
+   "first_pass_s": 159.1,
+   "first_pass_wh": 2.7247149887970656,
+   "min_clear_first": 4.670842024406914,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9225352112676056,
+     "acc_median": 0.2509670025184034,
+     "acc_p95": 0.4748626365686907,
+     "effective_detail_m": 0.24096231069277113,
+     "n_filtered": 43614
+    },
+    "extra_s": 176.3,
+    "extra_wh": 3.006475169414417,
+    "gaps": 4,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 3,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 19054,
+     "structures": 1,
+     "samples": 1795,
+     "gap_samples": 1299
+    },
+    "plan_ms": 280.6728809999868,
+    "min_clear": 4.9043567826973575,
+    "nofly_violations": 0,
+    "soc_end": 0.613223848990359
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.940071803369235,
+     "acc_median": 0.2399859118792369,
+     "acc_p95": 0.4677092549429444,
+     "effective_detail_m": 0.23927769735437848,
+     "n_filtered": 44888
+    },
+    "extra_s": 171.8,
+    "extra_wh": 2.942408350430918,
+    "soc_end": 0.6146475560788774
+   }
+  },
+  {
+   "id": 8,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.7405836302839695,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9885390776028722,
+    "acc_median": 0.030434600908890275,
+    "acc_p95": 0.10572734382737323,
+    "effective_detail_m": 0.22915218968094214,
+    "n_filtered": 23694
+   },
+   "first_pass_s": 159.1,
+   "first_pass_wh": 2.7247149887970656,
+   "min_clear_first": 4.670842024406914,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9899199116266225,
+     "acc_median": 0.03015442631938292,
+     "acc_p95": 0.10431766403908892,
+     "effective_detail_m": 0.22906136951462736,
+     "n_filtered": 24845
+    },
+    "extra_s": 21.5,
+    "extra_wh": 0.3665628696162435,
+    "gaps": 3,
+    "chosen": 1,
+    "skipped": {
+     "nofly": 0,
+     "interior": 2,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 23694,
+     "structures": 1,
+     "samples": 1727,
+     "gap_samples": 52
+    },
+    "plan_ms": 207.41009300002133,
+    "min_clear": 2.8506024864365815,
+    "nofly_violations": 0,
+    "soc_end": 0.6718885667636787
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9998619165976249,
+     "acc_median": 0.031571012782045216,
+     "acc_p95": 0.10681450735541166,
+     "effective_detail_m": 0.22902497928468082,
+     "n_filtered": 57993
+    },
+    "extra_s": 171.8,
+    "extra_wh": 2.942408350430918,
+    "soc_end": 0.6146475560788774
+   }
+  },
+  {
+   "id": 9,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 0.716183574879227,
+    "acc_median": 0.2382550267794788,
+    "acc_p95": 0.47730749326158906,
+    "effective_detail_m": 0.12206471727903648,
+    "n_filtered": 12854
+   },
+   "first_pass_s": 109.5,
+   "first_pass_wh": 1.8672085654881045,
+   "min_clear_first": 0.7876751679419833,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7938808373590982,
+     "acc_median": 0.24045463023774216,
+     "acc_p95": 0.5350785871307394,
+     "effective_detail_m": 0.12132069850465865,
+     "n_filtered": 16484
+    },
+    "extra_s": 72.5,
+    "extra_wh": 1.2363705408314623,
+    "gaps": 5,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 12854,
+     "structures": 1,
+     "samples": 576,
+     "gap_samples": 191
+    },
+    "plan_ms": 112.56574700007604,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5811627739905934
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.710950080515298,
+     "acc_median": 0.25834517196446116,
+     "acc_p95": 0.6695897722413836,
+     "effective_detail_m": 0.12177962267458854,
+     "n_filtered": 21760
+    },
+    "extra_s": 110.7,
+    "extra_wh": 1.8877840197923978,
+    "soc_end": 0.5666869189025688
+   }
+  },
+  {
+   "id": 9,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9971819645732689,
+    "acc_median": 0.02637825538090821,
+    "acc_p95": 0.10508227849767955,
+    "effective_detail_m": 0.10099766528470253,
+    "n_filtered": 15260
+   },
+   "first_pass_s": 109.5,
+   "first_pass_wh": 1.8672085654881045,
+   "min_clear_first": 0.7876751679419833,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9971819645732689,
+     "acc_median": 0.02637825538090821,
+     "acc_p95": 0.10508227849767955,
+     "effective_detail_m": 0.10099766528470253,
+     "n_filtered": 15260
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 15260,
+     "structures": 1,
+     "samples": 544,
+     "gap_samples": 3
+    },
+    "plan_ms": 111.00913199993556,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.6086376748979762
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.02903206609589226,
+     "acc_p95": 0.11065267681406474,
+     "effective_detail_m": 0.10058053044201037,
+     "n_filtered": 32007
+    },
+    "extra_s": 110.7,
+    "extra_wh": 1.8877840197923978,
+    "soc_end": 0.5666869189025688
+   }
+  },
+  {
+   "id": 9,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 0.7647058823529411,
+    "acc_median": 0.2633363229949047,
+    "acc_p95": 0.851513512909179,
+    "effective_detail_m": 0.0880260609920417,
+    "n_filtered": 6620
+   },
+   "first_pass_s": 57.7,
+   "first_pass_wh": 0.9816151592860435,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.8529411764705882,
+     "acc_median": 0.3134192350279532,
+     "acc_p95": 0.8648961130390046,
+     "effective_detail_m": 0.08735021628433587,
+     "n_filtered": 6824
+    },
+    "extra_s": 61.2,
+    "extra_wh": 1.0430220207760832,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 6620,
+     "structures": 1,
+     "samples": 96,
+     "gap_samples": 42
+    },
+    "plan_ms": 64.38135899998088,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.6051392612407821
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.7316176470588235,
+     "acc_median": 0.25845147017985237,
+     "acc_p95": 0.8130274786881365,
+     "effective_detail_m": 0.08723193743532894,
+     "n_filtered": 8287
+    },
+    "extra_s": 59.1,
+    "extra_wh": 1.0056155281569472,
+    "soc_end": 0.605970516632331
+   }
+  },
+  {
+   "id": 9,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.03532561488237018,
+    "acc_p95": 0.09107127565268971,
+    "effective_detail_m": 0.054752972267003826,
+    "n_filtered": 6900
+   },
+   "first_pass_s": 57.7,
+   "first_pass_wh": 0.9816151592860435,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03532561488237018,
+     "acc_p95": 0.09107127565268971,
+     "effective_detail_m": 0.054752972267003826,
+     "n_filtered": 6900
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 6900,
+     "structures": 1,
+     "samples": 56,
+     "gap_samples": 0
+    },
+    "plan_ms": 48.108706000107304,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.6283175283691528
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03552935298108033,
+     "acc_p95": 0.0901333347293507,
+     "effective_detail_m": 0.05411921194266183,
+     "n_filtered": 13991
+    },
+    "extra_s": 59.1,
+    "extra_wh": 1.0056155281569472,
+    "soc_end": 0.605970516632331
+   }
+  },
+  {
+   "id": 9,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 0.5896442914515204,
+    "acc_median": 0.23020608897200034,
+    "acc_p95": 0.6516600158358503,
+    "effective_detail_m": 0.19770238426462539,
+    "n_filtered": 16278
+   },
+   "first_pass_s": 127.6,
+   "first_pass_wh": 2.1848913056023314,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.5896442914515204,
+     "acc_median": 0.23020608897200034,
+     "acc_p95": 0.6516600158358503,
+     "effective_detail_m": 0.19770238426462539,
+     "n_filtered": 16278
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 4,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 1,
+     "interior": 3,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 16278,
+     "structures": 1,
+     "samples": 1657,
+     "gap_samples": 1489
+    },
+    "plan_ms": 169.73190099997737,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.6015780584509777
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6976477337923122,
+     "acc_median": 0.3026745565160214,
+     "acc_p95": 0.614774488430825,
+     "effective_detail_m": 0.1976626693652577,
+     "n_filtered": 24510
+    },
+    "extra_s": 142.3,
+    "extra_wh": 2.4368329967601614,
+    "soc_end": 0.5474262140784926
+   }
+  },
+  {
+   "id": 9,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.6501311985755089,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9892426850258176,
+    "acc_median": 0.031496200985190015,
+    "acc_p95": 0.09590351546714579,
+    "effective_detail_m": 0.18534756689266824,
+    "n_filtered": 19125
+   },
+   "first_pass_s": 127.6,
+   "first_pass_wh": 2.1848913056023314,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9926850258175559,
+     "acc_median": 0.030343456218284715,
+     "acc_p95": 0.09253260309397326,
+     "effective_detail_m": 0.18496633821469663,
+     "n_filtered": 23401
+    },
+    "extra_s": 47.2,
+    "extra_wh": 0.8047458723669347,
+    "gaps": 4,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 19125,
+     "structures": 1,
+     "samples": 1630,
+     "gap_samples": 59
+    },
+    "plan_ms": 183.1600629999457,
+    "min_clear": 2.9289539060905985,
+    "nofly_violations": 0,
+    "soc_end": 0.5836948168428155
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03066809295322548,
+     "acc_p95": 0.0956623118206651,
+     "effective_detail_m": 0.18498477236657587,
+     "n_filtered": 48540
+    },
+    "extra_s": 142.3,
+    "extra_wh": 2.4368329967601614,
+    "soc_end": 0.5474262140784926
+   }
+  },
+  {
+   "id": 10,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 0.5973135964912281,
+    "acc_median": 0.3300200795223276,
+    "acc_p95": 0.8233832004056769,
+    "effective_detail_m": 0.12192005501896981,
+    "n_filtered": 29345
+   },
+   "first_pass_s": 249.3,
+   "first_pass_wh": 4.251831357496119,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.860608552631579,
+     "acc_median": 0.15871859401895172,
+     "acc_p95": 0.6576530623187977,
+     "effective_detail_m": 0.12128321261520146,
+     "n_filtered": 50575
+    },
+    "extra_s": 286.9,
+    "extra_wh": 4.893366667499915,
+    "gaps": 4,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 1
+    },
+    "gap_info": {
+     "n_points": 29345,
+     "structures": 1,
+     "samples": 1708,
+     "gap_samples": 1094
+    },
+    "plan_ms": 307.58419299991147,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.4329206777457996
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9295504385964912,
+     "acc_median": 0.18543965266682916,
+     "acc_p95": 0.6877523101378542,
+     "effective_detail_m": 0.12175926347558358,
+     "n_filtered": 53950
+    },
+    "extra_s": 252.2,
+    "extra_wh": 4.301553246678729,
+    "soc_end": 0.4460720870973811
+   }
+  },
+  {
+   "id": 10,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9994517543859649,
+    "acc_median": 0.030652041979924327,
+    "acc_p95": 0.11205573595842984,
+    "effective_detail_m": 0.1007057702534389,
+    "n_filtered": 34800
+   },
+   "first_pass_s": 249.3,
+   "first_pass_wh": 4.251831357496119,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9994517543859649,
+     "acc_median": 0.030652041979924327,
+     "acc_p95": 0.11205573595842984,
+     "effective_detail_m": 0.1007057702534389,
+     "n_filtered": 34800
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 34800,
+     "structures": 1,
+     "samples": 1710,
+     "gap_samples": 2
+    },
+    "plan_ms": 305.8292810000012,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.5416621592458402
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.02537646444556607,
+     "acc_p95": 0.10200009114601667,
+     "effective_detail_m": 0.10045820863518792,
+     "n_filtered": 73717
+    },
+    "extra_s": 252.2,
+    "extra_wh": 4.301553246678729,
+    "soc_end": 0.4460720870973811
+   }
+  },
+  {
+   "id": 10,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 0.8088235294117647,
+    "acc_median": 0.20375536958146867,
+    "acc_p95": 0.4987963899963761,
+    "effective_detail_m": 0.08838705603740914,
+    "n_filtered": 8779
+   },
+   "first_pass_s": 75.3,
+   "first_pass_wh": 1.2811930905423543,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.6647058823529411,
+     "acc_median": 0.22837273829052282,
+     "acc_p95": 0.5300384298275874,
+     "effective_detail_m": 0.0860713413933757,
+     "n_filtered": 6819
+    },
+    "extra_s": 50.4,
+    "extra_wh": 0.8589790804276614,
+    "gaps": 3,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 8779,
+     "structures": 1,
+     "samples": 112,
+     "gap_samples": 30
+    },
+    "plan_ms": 79.53198400002748,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.5885879189464402
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.6147058823529412,
+     "acc_median": 0.312773098501955,
+     "acc_p95": 0.9899015847594757,
+     "effective_detail_m": 0.0878273471503721,
+     "n_filtered": 13977
+    },
+    "extra_s": 76.8,
+    "extra_wh": 1.3069022911802672,
+    "soc_end": 0.5786340698185939
+   }
+  },
+  {
+   "id": 10,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 1.0,
+    "acc_median": 0.026358932494394693,
+    "acc_p95": 0.0755564788815824,
+    "effective_detail_m": 0.056019622771099245,
+    "n_filtered": 11912
+   },
+   "first_pass_s": 75.3,
+   "first_pass_wh": 1.2811930905423543,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.026358932494394693,
+     "acc_p95": 0.0755564788815824,
+     "effective_detail_m": 0.056019622771099245,
+     "n_filtered": 11912
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 11912,
+     "structures": 1,
+     "samples": 64,
+     "gap_samples": 0
+    },
+    "plan_ms": 73.47833799997261,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.6076763429559559
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.030374215468450316,
+     "acc_p95": 0.09105878532923946,
+     "effective_detail_m": 0.05529554755071268,
+     "n_filtered": 24255
+    },
+    "extra_s": 76.8,
+    "extra_wh": 1.3069022911802672,
+    "soc_end": 0.5786340698185939
+   }
+  },
+  {
+   "id": 10,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 0.37749622419869105,
+    "acc_median": 0.34230690142153986,
+    "acc_p95": 0.7571047450029705,
+    "effective_detail_m": 0.23884327066978475,
+    "n_filtered": 19018
+   },
+   "first_pass_s": 239.1,
+   "first_pass_wh": 4.095159612754155,
+   "min_clear_first": 5.088044459761404,
+   "repass": {
+    "metrics": {
+     "coverage": 0.48900822285618395,
+     "acc_median": 0.38686518817377014,
+     "acc_p95": 0.872643770738425,
+     "effective_detail_m": 0.23884327066978475,
+     "n_filtered": 47854
+    },
+    "extra_s": 275.3,
+    "extra_wh": 4.694611081758587,
+    "gaps": 4,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 19018,
+     "structures": 3,
+     "samples": 2881,
+     "gap_samples": 2515
+    },
+    "plan_ms": 339.8547150000013,
+    "min_clear": 2.5723900042932955,
+    "nofly_violations": 0,
+    "soc_end": 0.44081906286766187
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.5355764389998322,
+     "acc_median": 0.37808317667887525,
+     "acc_p95": 0.8973404471202705,
+     "effective_detail_m": 0.23912024741986787,
+     "n_filtered": 47864
+    },
+    "extra_s": 258.5,
+    "extra_wh": 4.427669338035764,
+    "soc_end": 0.4467511016170655
+   }
+  },
+  {
+   "id": 10,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.6361473005235854,
+   "nofly": false,
+   "base": {
+    "coverage": 0.9888404094646753,
+    "acc_median": 0.03368073759767842,
+    "acc_p95": 0.11328808305314322,
+    "effective_detail_m": 0.22917346459544782,
+    "n_filtered": 36042
+   },
+   "first_pass_s": 239.1,
+   "first_pass_wh": 4.095159612754155,
+   "min_clear_first": 5.088044459761404,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9912737036415505,
+     "acc_median": 0.03315288219970158,
+     "acc_p95": 0.11212057742512743,
+     "effective_detail_m": 0.22906968133168662,
+     "n_filtered": 37824
+    },
+    "extra_s": 40.9,
+    "extra_wh": 0.6972692774716416,
+    "gaps": 8,
+    "chosen": 2,
+    "skipped": {
+     "nofly": 0,
+     "interior": 6,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 36042,
+     "structures": 2,
+     "samples": 2886,
+     "gap_samples": 78
+    },
+    "plan_ms": 374.3869560000803,
+    "min_clear": 3.0295445206222595,
+    "nofly_violations": 0,
+    "soc_end": 0.5296488807407409
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.03519167891150765,
+     "acc_p95": 0.11483277973444928,
+     "effective_detail_m": 0.22900055540240885,
+     "n_filtered": 86161
+    },
+    "extra_s": 258.5,
+    "extra_wh": 4.427669338035764,
+    "soc_end": 0.4467511016170655
+   }
+  },
+  {
+   "id": 11,
+   "template": "perimeter_orbit",
+   "gps": "gps_standard",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.6488486842105263,
+    "acc_median": 0.2100099740444623,
+    "acc_p95": 0.5916010976559588,
+    "effective_detail_m": 0.12184936714227083,
+    "n_filtered": 16213
+   },
+   "first_pass_s": 132.9,
+   "first_pass_wh": 2.2666227704275888,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7362938596491229,
+     "acc_median": 0.24887835006124082,
+     "acc_p95": 0.5819796178236265,
+     "effective_detail_m": 0.11470763682117813,
+     "n_filtered": 25677
+    },
+    "extra_s": 164.3,
+    "extra_wh": 2.8021432349648694,
+    "gaps": 4,
+    "chosen": 3,
+    "skipped": {
+     "nofly": 1,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 16213,
+     "structures": 1,
+     "samples": 918,
+     "gap_samples": 482
+    },
+    "plan_ms": 151.49081699996714,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.4117717891460523
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8083881578947368,
+     "acc_median": 0.2038611321990027,
+     "acc_p95": 0.6220621314334268,
+     "effective_detail_m": 0.12170348322759486,
+     "n_filtered": 28637
+    },
+    "extra_s": 134.2,
+    "extra_wh": 2.2889139259634823,
+    "soc_end": 0.42317688490164873
+   }
+  },
+  {
+   "id": 11,
+   "template": "perimeter_orbit",
+   "gps": "gps_rtk",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9950657894736842,
+    "acc_median": 0.024143757559363266,
+    "acc_p95": 0.08834857340415637,
+    "effective_detail_m": 0.1007601946813214,
+    "n_filtered": 18103
+   },
+   "first_pass_s": 132.9,
+   "first_pass_wh": 2.2666227704275888,
+   "min_clear_first": 1.2502577388071434,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9950657894736842,
+     "acc_median": 0.024143757559363266,
+     "acc_p95": 0.08834857340415637,
+     "effective_detail_m": 0.1007601946813214,
+     "n_filtered": 18103
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 18103,
+     "structures": 1,
+     "samples": 846,
+     "gap_samples": 5
+    },
+    "plan_ms": 146.02215100001104,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.4740416388119652
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.025119218411686184,
+     "acc_p95": 0.09171280628265395,
+     "effective_detail_m": 0.10048951718748883,
+     "n_filtered": 39995
+    },
+    "extra_s": 134.2,
+    "extra_wh": 2.2889139259634823,
+    "soc_end": 0.42317688490164873
+   }
+  },
+  {
+   "id": 11,
+   "template": "poi_close_pass",
+   "gps": "gps_standard",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.7729166666666667,
+    "acc_median": 0.24065694832975026,
+    "acc_p95": 0.9485284462409576,
+    "effective_detail_m": 0.0881257077698511,
+    "n_filtered": 12157
+   },
+   "first_pass_s": 100.5,
+   "first_pass_wh": 1.7096692054869203,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7104166666666667,
+     "acc_median": 0.20441909159142077,
+     "acc_p95": 0.4929019552420746,
+     "effective_detail_m": 0.08208495594546636,
+     "n_filtered": 8711
+    },
+    "extra_s": 107.2,
+    "extra_wh": 1.826900009810203,
+    "gaps": 4,
+    "chosen": 4,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 12157,
+     "structures": 1,
+     "samples": 154,
+     "gap_samples": 85
+    },
+    "plan_ms": 146.68121200008954,
+    "min_clear": 0.5,
+    "nofly_violations": 0,
+    "soc_end": 0.44582060670374896
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9,
+     "acc_median": 0.24553317007641784,
+     "acc_p95": 0.8578049185120284,
+     "effective_detail_m": 0.08749727363188714,
+     "n_filtered": 17206
+    },
+    "extra_s": 102.8,
+    "extra_wh": 1.7490938466720323,
+    "soc_end": 0.44754963255128605
+   }
+  },
+  {
+   "id": 11,
+   "template": "poi_close_pass",
+   "gps": "gps_rtk",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.9979166666666667,
+    "acc_median": 0.029361923789870126,
+    "acc_p95": 0.08553803991467761,
+    "effective_detail_m": 0.05565649631656053,
+    "n_filtered": 15490
+   },
+   "first_pass_s": 100.5,
+   "first_pass_wh": 1.7096692054869203,
+   "min_clear_first": 0.8751288694035717,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9979166666666667,
+     "acc_median": 0.029361923789870126,
+     "acc_p95": 0.08553803991467761,
+     "effective_detail_m": 0.05565649631656053,
+     "n_filtered": 15490
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 0,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 0,
+     "interior": 0,
+     "clearance": 0,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 15490,
+     "structures": 1,
+     "samples": 88,
+     "gap_samples": 0
+    },
+    "plan_ms": 99.52511699998468,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.48641838469955445
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 1.0,
+     "acc_median": 0.028643238218222677,
+     "acc_p95": 0.08492526696287593,
+     "effective_detail_m": 0.05523503681790649,
+     "n_filtered": 32408
+    },
+    "extra_s": 102.8,
+    "extra_wh": 1.7490938466720323,
+    "soc_end": 0.44754963255128605
+   }
+  },
+  {
+   "id": 11,
+   "template": "lawnmower",
+   "gps": "gps_standard",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.7397469904101204,
+    "acc_median": 0.1329960503033849,
+    "acc_p95": 0.46992473716450284,
+    "effective_detail_m": 0.22073654002896004,
+    "n_filtered": 18167
+   },
+   "first_pass_s": 169.7,
+   "first_pass_wh": 2.9074360443087954,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.7397469904101204,
+     "acc_median": 0.1329960503033849,
+     "acc_p95": 0.46992473716450284,
+     "effective_detail_m": 0.22073654002896004,
+     "n_filtered": 18167
+    },
+    "extra_s": 0.0,
+    "extra_wh": 0.0,
+    "gaps": 3,
+    "chosen": 0,
+    "skipped": {
+     "nofly": 1,
+     "interior": 1,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 18167,
+     "structures": 1,
+     "samples": 2326,
+     "gap_samples": 1711
+    },
+    "plan_ms": 229.9564800000553,
+    "min_clear": null,
+    "nofly_violations": 0,
+    "soc_end": 0.4598013438367937
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.8687002652519894,
+     "acc_median": 0.13545032004683044,
+     "acc_p95": 0.5772616906790018,
+     "effective_detail_m": 0.22093878871500788,
+     "n_filtered": 35105
+    },
+    "extra_s": 183.5,
+    "extra_wh": 3.1439819358666456,
+    "soc_end": 0.38993507859526527
+   }
+  },
+  {
+   "id": 11,
+   "template": "lawnmower",
+   "gps": "gps_rtk",
+   "soc0": 0.524411033710373,
+   "nofly": true,
+   "base": {
+    "coverage": 0.970924301163028,
+    "acc_median": 0.030696846403145628,
+    "acc_p95": 0.10735043125826982,
+    "effective_detail_m": 0.21006036363803288,
+    "n_filtered": 24986
+   },
+   "first_pass_s": 169.7,
+   "first_pass_wh": 2.9074360443087954,
+   "min_clear_first": 6.0,
+   "repass": {
+    "metrics": {
+     "coverage": 0.9765354009385839,
+     "acc_median": 0.031252312787025005,
+     "acc_p95": 0.10170249708013664,
+     "effective_detail_m": 0.20949699536838634,
+     "n_filtered": 31484
+    },
+    "extra_s": 91.9,
+    "extra_wh": 1.5666006150720246,
+    "gaps": 7,
+    "chosen": 5,
+    "skipped": {
+     "nofly": 0,
+     "interior": 1,
+     "clearance": 1,
+     "budget": 0
+    },
+    "gap_info": {
+     "n_points": 24986,
+     "structures": 2,
+     "samples": 2312,
+     "gap_samples": 148
+    },
+    "plan_ms": 266.6145749999487,
+    "min_clear": 2.75,
+    "nofly_violations": 0,
+    "soc_end": 0.42498799683517696
+   },
+   "repeat": {
+    "metrics": {
+     "coverage": 0.9998979800040808,
+     "acc_median": 0.03307984536955377,
+     "acc_p95": 0.11234932098426853,
+     "effective_detail_m": 0.209863931073613,
+     "n_filtered": 62324
+    },
+    "extra_s": 183.5,
+    "extra_wh": 3.1439819358666456,
+    "soc_end": 0.38993507859526527
+   }
+  }
+ ]
+}

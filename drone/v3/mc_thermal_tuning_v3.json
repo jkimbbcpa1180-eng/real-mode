@@ -1,0 +1,5689 @@
+{
+ "seed_set": "tuning",
+ "seed": 20263002,
+ "summary": {
+  "gps_standard/5m": {
+   "precision": 0.744,
+   "recall_by_kind": {
+    "vent": 0.82,
+    "person": 0.195,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 1.0,
+   "fp_near_hot_glass_share": 1.0
+  },
+  "gps_standard/10m": {
+   "precision": 0.618,
+   "recall_by_kind": {
+    "vent": 0.705,
+    "person": 0.805,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 2.35,
+   "fp_near_hot_glass_share": 0.426
+  },
+  "gps_standard/20m": {
+   "precision": 0.506,
+   "recall_by_kind": {
+    "vent": 0.738,
+    "person": 0.805,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 3.8,
+   "fp_near_hot_glass_share": 0.237
+  },
+  "gps_standard/40m": {
+   "precision": 0.293,
+   "recall_by_kind": {
+    "vent": 0.23,
+    "person": 0.659,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 4.95,
+   "fp_near_hot_glass_share": 0.182
+  },
+  "gps_rtk/5m": {
+   "precision": 0.704,
+   "recall_by_kind": {
+    "vent": 0.82,
+    "person": 0.171,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 1.2,
+   "fp_near_hot_glass_share": 0.917
+  },
+  "gps_rtk/10m": {
+   "precision": 0.651,
+   "recall_by_kind": {
+    "vent": 0.803,
+    "person": 0.805,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 2.2,
+   "fp_near_hot_glass_share": 0.477
+  },
+  "gps_rtk/20m": {
+   "precision": 0.561,
+   "recall_by_kind": {
+    "vent": 0.803,
+    "person": 0.829,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 3.25,
+   "fp_near_hot_glass_share": 0.292
+  },
+  "gps_rtk/40m": {
+   "precision": 0.384,
+   "recall_by_kind": {
+    "vent": 0.41,
+    "person": 0.683,
+    "person_indoor": 0.0
+   },
+   "fp_per_mission": 4.25,
+   "fp_near_hot_glass_share": 0.235
+  }
+ },
+ "runtime_s": 14.8,
+ "rows": [
+  {
+   "id": 0,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 2,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 3,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 3,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 4,
+   "n_det": 9,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 6,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 9,
+   "n_det": 14,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 0,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 16,
+   "n_det": 21,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 0,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 13,
+   "n_det": 18,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 1,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 2,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 2,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 2,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 1,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 4,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 2,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 2,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 6,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 7,
+   "n_det": 13,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 3,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 2,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 4,
+   "n_det": 9,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 3,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 3,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 2,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 3,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 3,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 3,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 0,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 3,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 3,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 3,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 0,
+   "fp": 2,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 4,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 5,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 4,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 3,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 7,
+   "fp": 1,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 1,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 7,
+   "fp": 1,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 5,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 1,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 1,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 2,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 6,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 7,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 2,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 3,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 6,
+   "n_det": 12,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 7,
+   "n_det": 13,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 14,
+   "n_det": 20,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 8,
+   "n_det": 14,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 11,
+   "n_det": 17,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 7,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 12,
+   "n_det": 18,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 2,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 2,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 5,
+   "n_det": 9,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 4,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 12,
+   "n_det": 16,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 9,
+   "n_det": 13,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 8,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 8,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 7,
+   "n_det": 10,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 9,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 1,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 1,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 2,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 6,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 8,
+   "n_det": 14,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 4,
+   "n_det": 10,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 11,
+   "n_det": 14,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 9,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 11,
+   "n_det": 15,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 10,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 2,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 2,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 3,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 3,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 2,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 10,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 11,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 0,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 0,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 6,
+   "fp": 0,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 6,
+   "fp": 0,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 0,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 11,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 11,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 0,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 0,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 0,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 12,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 0,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 0,
+   "fp": 0,
+   "n_det": 0,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 13,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 0,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 0,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 8,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 4,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 10,
+   "n_det": 12,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 6,
+   "n_det": 10,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 10,
+   "n_det": 13,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 14,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 7,
+   "n_det": 11,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 15,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 15,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 0,
+   "fp": 1,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 6,
+   "n_det": 10,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 4,
+   "n_det": 8,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 8,
+   "n_det": 13,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 11,
+   "n_det": 16,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 22,
+   "n_det": 25,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 16,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 16,
+   "n_det": 20,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 17,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 0,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 0,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 4,
+   "fp": 0,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 17,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 0,
+   "n_det": 1,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 18,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 18,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 2,
+   "n_det": 5,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 18,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 18,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 2,
+   "n_det": 7,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 2
+  },
+  {
+   "id": 18,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 18,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 5,
+   "fp": 1,
+   "n_det": 6,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 18,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 2,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 0
+  },
+  {
+   "id": 18,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     false
+    ],
+    [
+     "person",
+     true
+    ],
+    [
+     "person_indoor",
+     false
+    ],
+    [
+     "person_indoor",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 5.0,
+   "gps": "gps_standard",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 5.0,
+   "gps": "gps_rtk",
+   "tp": 2,
+   "fp": 1,
+   "n_det": 3,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     false
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 10.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 10.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 20.0,
+   "gps": "gps_standard",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 20.0,
+   "gps": "gps_rtk",
+   "tp": 3,
+   "fp": 1,
+   "n_det": 4,
+   "hits": [
+    [
+     "vent",
+     true
+    ],
+    [
+     "vent",
+     true
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 40.0,
+   "gps": "gps_standard",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  },
+  {
+   "id": 19,
+   "standoff_m": 40.0,
+   "gps": "gps_rtk",
+   "tp": 1,
+   "fp": 1,
+   "n_det": 2,
+   "hits": [
+    [
+     "vent",
+     false
+    ],
+    [
+     "vent",
+     false
+    ],
+    [
+     "person",
+     true
+    ]
+   ],
+   "fp_near_hot_glass": 1
+  }
+ ]
+}

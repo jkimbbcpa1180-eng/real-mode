@@ -1,0 +1,4359 @@
+{
+ "sets": {
+  "tuning": 20261009,
+  "fresh": 20262009
+ },
+ "n_per_set": 12,
+ "extra": null,
+ "slam_settings": {
+  "BBOX_MARGIN_M": 2.0,
+  "CONSIST_CHI2": 16.27,
+  "ICP_GATE_M": [
+   1.5,
+   0.5
+  ],
+  "ICP_ITERS": 10,
+  "ICP_MIN_MATCHES": 15,
+  "ICP_PLANE_GATE_M": 0.35,
+  "MAX_REF_PTS": 6000,
+  "MAX_SCAN_PTS": 250,
+  "NORMAL_AGREE_COS": 0.9063077870366499,
+  "NORMAL_HISTORY_KF": 3,
+  "NORMAL_K": 12,
+  "NORMAL_MAX_R_M": 1.5,
+  "NORMAL_MIN_PTS": 6,
+  "OBS_MAX_SIGMA_M": 0.1,
+  "OBS_REL": 0.05,
+  "PLANAR_MAX_RATIO": 0.1,
+  "PLANAR_MAX_THICK_M": 0.08,
+  "PLANAR_MIN_LINE_RATIO": 0.1,
+  "SIGMA_PLANE_M": 0.03,
+  "SLAM_GPS_SIGMA_M": 0.5,
+  "SLAM_GPS_TAU_S": 30.0,
+  "SLAM_KF_DT_S": 1.0,
+  "SLAM_N_EFF": 15.0
+ },
+ "results": {
+  "tuning|lawnmower|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 165.45,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.558,
+     "p5": 0.28,
+     "min": 0.251,
+     "max": 0.922
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.25,
+    "point_err_p95_m": 0.645,
+    "frac_points_within_tol": 0.609,
+    "effective_detail_m": 0.237,
+    "nav_err_median_m": 0.713,
+    "core_nees_mean_median": 118.504,
+    "core_nees_le_7_81_median": 0.008
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.941,
+     "p5": 0.469,
+     "min": 0.15,
+     "max": 0.979
+    },
+    "frac_missions_ge_90": 0.667,
+    "point_err_median_m": 0.114,
+    "point_err_p95_m": 0.2,
+    "frac_points_within_tol": 0.985,
+    "effective_detail_m": 0.441,
+    "nav_err_median_m": 0.603,
+    "nav_err_p95_median_m": 1.028,
+    "nees_mean": 2.475,
+    "nees_le_7_81": 0.984
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.842,
+     "p5": 0.237,
+     "min": 0.032,
+     "max": 0.982
+    },
+    "frac_missions_ge_90": 0.5,
+    "point_err_median_m": 0.106,
+    "point_err_p95_m": 0.318,
+    "frac_points_within_tol": 0.88,
+    "effective_detail_m": 0.261,
+    "nav_err_median_m": 0.639,
+    "nees_mean": 2.538,
+    "nees_le_7_81": 0.985
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.968,
+     "p5": 0.935,
+     "min": 0.93,
+     "max": 0.983
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.034,
+    "point_err_p95_m": 0.104,
+    "frac_points_within_tol": 0.999,
+    "effective_detail_m": 0.441
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.399,
+     "p5": 0.156,
+     "min": 0.094,
+     "max": 0.932
+    },
+    "sigma_xyz_median_m": [
+     0.272,
+     0.272,
+     0.259
+    ],
+    "nees_mean": 2.887,
+    "core_mission_mean_err_m": {
+     "median": 0.358,
+     "p5": 0.175,
+     "min": 0.145,
+     "max": 0.927
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 1996,
+    "registrations_total": 1984,
+    "loop_factors_total": 18436,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1982,
+     2,
+     0
+    ],
+    "step_ms_median": 17.681,
+    "step_ms_p95_max": 33.1,
+    "step_ms_max": 62.3,
+    "online_map_integration_ms_max": 282.4,
+    "end_smooth_and_rebuild_s_median": 10.642,
+    "end_smooth_and_rebuild_s_max": 13.46
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.62,
+     "after": 0.839,
+     "after_datum_removed": 0.961,
+     "datum_err_xyz": [
+      0.215,
+      0.388,
+      0.246
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.477,
+     "after": 0.894,
+     "after_datum_removed": 0.93,
+     "datum_err_xyz": [
+      0.327,
+      -0.027,
+      -0.226
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.775,
+     "after": 0.979,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      -0.249,
+      -0.125,
+      -0.034
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.484,
+     "after": 0.976,
+     "after_datum_removed": 0.979,
+     "datum_err_xyz": [
+      -0.069,
+      -0.009,
+      0.064
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.436,
+     "after": 0.926,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      -0.89,
+      0.266,
+      -0.072
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.559,
+     "after": 0.93,
+     "after_datum_removed": 0.939,
+     "datum_err_xyz": [
+      -0.144,
+      0.058,
+      0.151
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.251,
+     "after": 0.15,
+     "after_datum_removed": 0.983,
+     "datum_err_xyz": [
+      0.183,
+      -0.008,
+      0.356
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.303,
+     "after": 0.955,
+     "after_datum_removed": 0.967,
+     "datum_err_xyz": [
+      -0.217,
+      0.623,
+      -0.064
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.922,
+     "after": 0.952,
+     "after_datum_removed": 0.958,
+     "datum_err_xyz": [
+      -0.125,
+      -0.167,
+      -0.034
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.609,
+     "after": 0.962,
+     "after_datum_removed": 0.967,
+     "datum_err_xyz": [
+      0.383,
+      0.169,
+      0.013
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.669,
+     "after": 0.956,
+     "after_datum_removed": 0.969,
+     "datum_err_xyz": [
+      -0.081,
+      -0.089,
+      -0.167
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.557,
+     "after": 0.729,
+     "after_datum_removed": 0.968,
+     "datum_err_xyz": [
+      0.494,
+      0.09,
+      0.276
+     ]
+    }
+   ]
+  },
+  "tuning|perimeter_orbit|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 224.9,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.605,
+     "p5": 0.457,
+     "min": 0.456,
+     "max": 0.827
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.303,
+    "point_err_p95_m": 0.79,
+    "frac_points_within_tol": 0.496,
+    "effective_detail_m": 0.122,
+    "nav_err_median_m": 0.725,
+    "core_nees_mean_median": 130.818,
+    "core_nees_le_7_81_median": 0.007
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.737,
+     "p5": 0.48,
+     "min": 0.473,
+     "max": 0.976
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.213,
+    "point_err_p95_m": 0.487,
+    "frac_points_within_tol": 0.73,
+    "effective_detail_m": 0.333,
+    "nav_err_median_m": 0.568,
+    "nav_err_p95_median_m": 1.02,
+    "nees_mean": 3.588,
+    "nees_le_7_81": 0.911
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.63,
+     "p5": 0.422,
+     "min": 0.343,
+     "max": 0.939
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.285,
+    "point_err_p95_m": 0.697,
+    "frac_points_within_tol": 0.534,
+    "effective_detail_m": 0.16,
+    "nav_err_median_m": 0.644,
+    "nees_mean": 3.02,
+    "nees_le_7_81": 0.948
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.933,
+     "p5": 0.734,
+     "min": 0.688,
+     "max": 0.99
+    },
+    "frac_missions_ge_90": 0.583,
+    "point_err_median_m": 0.098,
+    "point_err_p95_m": 0.35,
+    "frac_points_within_tol": 0.921,
+    "effective_detail_m": 0.333
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.38,
+     "p5": 0.147,
+     "min": 0.1,
+     "max": 0.51
+    },
+    "sigma_xyz_median_m": [
+     0.233,
+     0.231,
+     0.238
+    ],
+    "nees_mean": 2.482,
+    "core_mission_mean_err_m": {
+     "median": 0.39,
+     "p5": 0.165,
+     "min": 0.084,
+     "max": 0.521
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2574,
+    "registrations_total": 2274,
+    "loop_factors_total": 7915,
+    "rejected_few_matches_total": 288,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1961,
+     312,
+     1
+    ],
+    "step_ms_median": 12.714,
+    "step_ms_p95_max": 29.4,
+    "step_ms_max": 47.0,
+    "online_map_integration_ms_max": 89.8,
+    "end_smooth_and_rebuild_s_median": 9.597,
+    "end_smooth_and_rebuild_s_max": 13.29
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.622,
+     "after": 0.886,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      -0.262,
+      -0.196,
+      0.307
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.702,
+     "after": 0.976,
+     "after_datum_removed": 0.99,
+     "datum_err_xyz": [
+      -0.039,
+      -0.011,
+      -0.391
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.719,
+     "after": 0.892,
+     "after_datum_removed": 0.94,
+     "datum_err_xyz": [
+      0.138,
+      -0.147,
+      0.332
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.58,
+     "after": 0.782,
+     "after_datum_removed": 0.926,
+     "datum_err_xyz": [
+      0.308,
+      0.177,
+      -0.101
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.71,
+     "after": 0.692,
+     "after_datum_removed": 0.979,
+     "datum_err_xyz": [
+      0.36,
+      0.069,
+      0.031
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.622,
+     "after": 0.485,
+     "after_datum_removed": 0.892,
+     "datum_err_xyz": [
+      0.266,
+      0.331,
+      0.169
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.588,
+     "after": 0.948,
+     "after_datum_removed": 0.946,
+     "datum_err_xyz": [
+      0.001,
+      0.007,
+      -0.1
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.456,
+     "after": 0.606,
+     "after_datum_removed": 0.771,
+     "datum_err_xyz": [
+      0.18,
+      0.024,
+      0.033
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.827,
+     "after": 0.888,
+     "after_datum_removed": 0.948,
+     "datum_err_xyz": [
+      0.091,
+      -0.137,
+      -0.438
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.579,
+     "after": 0.641,
+     "after_datum_removed": 0.828,
+     "datum_err_xyz": [
+      0.271,
+      -0.069,
+      0.152
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.503,
+     "after": 0.539,
+     "after_datum_removed": 0.688,
+     "datum_err_xyz": [
+      0.372,
+      -0.019,
+      0.012
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.457,
+     "after": 0.473,
+     "after_datum_removed": 0.798,
+     "datum_err_xyz": [
+      0.069,
+      -0.391,
+      -0.321
+     ]
+    }
+   ]
+  },
+  "tuning|poi_close_pass|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 79.2,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.722,
+     "p5": 0.374,
+     "min": 0.37,
+     "max": 0.887
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.274,
+    "point_err_p95_m": 0.779,
+    "frac_points_within_tol": 0.538,
+    "effective_detail_m": 0.088,
+    "nav_err_median_m": 0.664,
+    "core_nees_mean_median": 120.238,
+    "core_nees_le_7_81_median": 0.017
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.795,
+     "p5": 0.46,
+     "min": 0.32,
+     "max": 0.965
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.26,
+    "point_err_p95_m": 0.596,
+    "frac_points_within_tol": 0.592,
+    "effective_detail_m": 0.269,
+    "nav_err_median_m": 0.602,
+    "nav_err_p95_median_m": 1.097,
+    "nees_mean": 3.981,
+    "nees_le_7_81": 0.869
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.764,
+     "p5": 0.441,
+     "min": 0.315,
+     "max": 0.974
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.235,
+    "point_err_p95_m": 0.618,
+    "frac_points_within_tol": 0.597,
+    "effective_detail_m": 0.132,
+    "nav_err_median_m": 0.604,
+    "nees_mean": 3.306,
+    "nees_le_7_81": 0.899
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.977,
+     "p5": 0.78,
+     "min": 0.725,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 0.75,
+    "point_err_median_m": 0.089,
+    "point_err_p95_m": 0.324,
+    "frac_points_within_tol": 0.93,
+    "effective_detail_m": 0.269
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.465,
+     "p5": 0.292,
+     "min": 0.277,
+     "max": 1.221
+    },
+    "sigma_xyz_median_m": [
+     0.338,
+     0.336,
+     0.345
+    ],
+    "nees_mean": 3.867,
+    "core_mission_mean_err_m": {
+     "median": 0.472,
+     "p5": 0.279,
+     "min": 0.269,
+     "max": 1.175
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 946,
+    "registrations_total": 506,
+    "loop_factors_total": 1624,
+    "rejected_few_matches_total": 428,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     355,
+     149,
+     2
+    ],
+    "step_ms_median": 6.292,
+    "step_ms_p95_max": 11.1,
+    "step_ms_max": 14.0,
+    "online_map_integration_ms_max": 62.7,
+    "end_smooth_and_rebuild_s_median": 2.718,
+    "end_smooth_and_rebuild_s_max": 3.72
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.711,
+     "after": 0.843,
+     "after_datum_removed": 0.893,
+     "datum_err_xyz": [
+      0.171,
+      0.371,
+      0.061
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.887,
+     "after": 0.887,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.092,
+      0.37,
+      -0.216
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.884,
+     "after": 0.94,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.246,
+      -0.108,
+      0.141
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.37,
+     "after": 0.32,
+     "after_datum_removed": 0.902,
+     "datum_err_xyz": [
+      0.891,
+      -0.674,
+      -0.493
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.879,
+     "after": 0.965,
+     "after_datum_removed": 0.993,
+     "datum_err_xyz": [
+      0.058,
+      0.267,
+      0.047
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.377,
+     "after": 0.575,
+     "after_datum_removed": 0.982,
+     "datum_err_xyz": [
+      0.389,
+      0.583,
+      -0.755
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.641,
+     "after": 0.737,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.514,
+      -0.178,
+      -0.071
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.732,
+     "after": 0.765,
+     "after_datum_removed": 0.824,
+     "datum_err_xyz": [
+      -0.148,
+      0.037,
+      0.35
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.5,
+     "after": 0.659,
+     "after_datum_removed": 0.725,
+     "datum_err_xyz": [
+      -0.204,
+      0.431,
+      0.124
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.705,
+     "after": 0.651,
+     "after_datum_removed": 0.96,
+     "datum_err_xyz": [
+      -0.257,
+      0.466,
+      -0.661
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.821,
+     "after": 0.887,
+     "after_datum_removed": 0.988,
+     "datum_err_xyz": [
+      -0.363,
+      0.032,
+      -0.014
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.732,
+     "after": 0.825,
+     "after_datum_removed": 0.971,
+     "datum_err_xyz": [
+      -0.239,
+      -0.261,
+      0.852
+     ]
+    }
+   ]
+  },
+  "tuning|lawnmower|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 165.45,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.976,
+     "p5": 0.959,
+     "min": 0.953,
+     "max": 0.993
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.032,
+    "point_err_p95_m": 0.108,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.229,
+    "nav_err_median_m": 0.05,
+    "core_nees_mean_median": 15.745,
+    "core_nees_le_7_81_median": 0.372
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.976,
+     "p5": 0.963,
+     "min": 0.959,
+     "max": 0.994
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.031,
+    "point_err_p95_m": 0.106,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.23,
+    "nav_err_median_m": 0.048,
+    "nav_err_p95_median_m": 0.103,
+    "nees_mean": 4.331,
+    "nees_le_7_81": 0.863
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.982,
+     "p5": 0.958,
+     "min": 0.957,
+     "max": 0.995
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.033,
+    "point_err_p95_m": 0.107,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.229,
+    "nav_err_median_m": 0.051,
+    "nees_mean": 4.528,
+    "nees_le_7_81": 0.85
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.976,
+     "p5": 0.964,
+     "min": 0.959,
+     "max": 0.994
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.03,
+    "point_err_p95_m": 0.103,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.23
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.023,
+     "p5": 0.01,
+     "min": 0.007,
+     "max": 0.054
+    },
+    "sigma_xyz_median_m": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "nees_mean": 2.669,
+    "core_mission_mean_err_m": {
+     "median": 0.021,
+     "p5": 0.011,
+     "min": 0.01,
+     "max": 0.054
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 1996,
+    "registrations_total": 1984,
+    "loop_factors_total": 18523,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1982,
+     2,
+     0
+    ],
+    "step_ms_median": 16.112,
+    "step_ms_p95_max": 25.1,
+    "step_ms_max": 37.8,
+    "online_map_integration_ms_max": 226.9,
+    "end_smooth_and_rebuild_s_median": 7.728,
+    "end_smooth_and_rebuild_s_max": 9.64
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.975,
+     "after": 0.971,
+     "after_datum_removed": 0.971,
+     "datum_err_xyz": [
+      0.013,
+      0.022,
+      0.013
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.964,
+     "after": 0.967,
+     "after_datum_removed": 0.967,
+     "datum_err_xyz": [
+      0.02,
+      -0.003,
+      -0.014
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.993,
+     "after": 0.994,
+     "after_datum_removed": 0.994,
+     "datum_err_xyz": [
+      -0.015,
+      -0.008,
+      -0.003
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.971,
+     "after": 0.976,
+     "after_datum_removed": 0.975,
+     "datum_err_xyz": [
+      -0.004,
+      -0.001,
+      0.006
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.974,
+     "after": 0.976,
+     "after_datum_removed": 0.973,
+     "datum_err_xyz": [
+      -0.052,
+      0.014,
+      -0.006
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.953,
+     "after": 0.959,
+     "after_datum_removed": 0.959,
+     "datum_err_xyz": [
+      -0.006,
+      0.005,
+      0.009
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.978,
+     "after": 0.976,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      0.01,
+      -0.001,
+      0.019
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.991,
+     "after": 0.984,
+     "after_datum_removed": 0.984,
+     "datum_err_xyz": [
+      -0.012,
+      0.036,
+      -0.002
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.974,
+     "after": 0.974,
+     "after_datum_removed": 0.973,
+     "datum_err_xyz": [
+      -0.009,
+      -0.012,
+      0.0
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.989,
+     "after": 0.987,
+     "after_datum_removed": 0.987,
+     "datum_err_xyz": [
+      0.022,
+      0.01,
+      0.001
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.98,
+     "after": 0.983,
+     "after_datum_removed": 0.983,
+     "datum_err_xyz": [
+      -0.004,
+      -0.005,
+      -0.01
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.983,
+     "after": 0.983,
+     "after_datum_removed": 0.982,
+     "datum_err_xyz": [
+      0.03,
+      0.004,
+      0.016
+     ]
+    }
+   ]
+  },
+  "tuning|perimeter_orbit|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 224.9,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.999,
+     "p5": 0.995,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.029,
+    "point_err_p95_m": 0.093,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101,
+    "nav_err_median_m": 0.051,
+    "core_nees_mean_median": 14.89,
+    "core_nees_le_7_81_median": 0.333
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.999,
+     "p5": 0.995,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.022,
+    "point_err_p95_m": 0.084,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101,
+    "nav_err_median_m": 0.041,
+    "nav_err_p95_median_m": 0.075,
+    "nees_mean": 3.622,
+    "nees_le_7_81": 0.906
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.999,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.024,
+    "point_err_p95_m": 0.088,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.1,
+    "nav_err_median_m": 0.046,
+    "nees_mean": 3.692,
+    "nees_le_7_81": 0.891
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.999,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.02,
+    "point_err_p95_m": 0.079,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.022,
+     "p5": 0.008,
+     "min": 0.006,
+     "max": 0.03
+    },
+    "sigma_xyz_median_m": [
+     0.014,
+     0.014,
+     0.014
+    ],
+    "nees_mean": 2.377,
+    "core_mission_mean_err_m": {
+     "median": 0.023,
+     "p5": 0.009,
+     "min": 0.004,
+     "max": 0.031
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2574,
+    "registrations_total": 2456,
+    "loop_factors_total": 11436,
+    "rejected_few_matches_total": 106,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1974,
+     481,
+     1
+    ],
+    "step_ms_median": 13.645,
+    "step_ms_p95_max": 27.9,
+    "step_ms_max": 49.8,
+    "online_map_integration_ms_max": 67.4,
+    "end_smooth_and_rebuild_s_median": 7.249,
+    "end_smooth_and_rebuild_s_max": 8.77
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.013,
+      -0.013,
+      0.019
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.998,
+     "datum_err_xyz": [
+      0.001,
+      0.001,
+      -0.021
+     ]
+    },
+    {
+     "id": 2,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.009,
+      -0.006,
+      0.02
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.998,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.021,
+      0.013,
+      -0.006
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.994,
+     "after": 0.994,
+     "after_datum_removed": 0.995,
+     "datum_err_xyz": [
+      0.021,
+      0.005,
+      0.005
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.997,
+     "after": 0.997,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.012,
+      0.021,
+      0.012
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.004,
+      0.0,
+      -0.003
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.997,
+     "after": 0.996,
+     "after_datum_removed": 0.996,
+     "datum_err_xyz": [
+      0.011,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.995,
+     "after": 0.996,
+     "after_datum_removed": 0.996,
+     "datum_err_xyz": [
+      0.006,
+      -0.008,
+      -0.027
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.016,
+      -0.003,
+      0.008
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.996,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.021,
+      -0.002,
+      0.002
+     ]
+    },
+    {
+     "id": 11,
+     "before": 1.0,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.004,
+      -0.023,
+      -0.02
+     ]
+    }
+   ]
+  },
+  "tuning|poi_close_pass|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 79.2,
+   "before_no_slam": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.999,
+     "min": 0.998,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.03,
+    "point_err_p95_m": 0.085,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.056,
+    "nav_err_median_m": 0.053,
+    "core_nees_mean_median": 16.84,
+    "core_nees_le_7_81_median": 0.308
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.997,
+     "min": 0.996,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.026,
+    "point_err_p95_m": 0.077,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.055,
+    "nav_err_median_m": 0.048,
+    "nav_err_p95_median_m": 0.085,
+    "nees_mean": 4.575,
+    "nees_le_7_81": 0.836
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.999,
+     "min": 0.998,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.027,
+    "point_err_p95_m": 0.077,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.054,
+    "nav_err_median_m": 0.048,
+    "nees_mean": 4.122,
+    "nees_le_7_81": 0.87
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.998,
+     "min": 0.996,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.023,
+    "point_err_p95_m": 0.068,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.055
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.027,
+     "p5": 0.017,
+     "min": 0.017,
+     "max": 0.071
+    },
+    "sigma_xyz_median_m": [
+     0.02,
+     0.02,
+     0.021
+    ],
+    "nees_mean": 3.92,
+    "core_mission_mean_err_m": {
+     "median": 0.03,
+     "p5": 0.016,
+     "min": 0.015,
+     "max": 0.071
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 946,
+    "registrations_total": 877,
+    "loop_factors_total": 4043,
+    "rejected_few_matches_total": 56,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 1,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     476,
+     398,
+     4
+    ],
+    "step_ms_median": 7.388,
+    "step_ms_p95_max": 14.0,
+    "step_ms_max": 16.2,
+    "online_map_integration_ms_max": 71.6,
+    "end_smooth_and_rebuild_s_median": 2.19,
+    "end_smooth_and_rebuild_s_max": 3.3
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 1.0,
+     "after": 0.998,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.008,
+      0.022,
+      0.006
+     ]
+    },
+    {
+     "id": 1,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.007,
+      0.023,
+      -0.012
+     ]
+    },
+    {
+     "id": 2,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.013,
+      -0.001,
+      0.012
+     ]
+    },
+    {
+     "id": 3,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.053,
+      -0.036,
+      -0.03
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.998,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.011,
+      0.011,
+      0.006
+     ]
+    },
+    {
+     "id": 5,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.027,
+      0.032,
+      -0.045
+     ]
+    },
+    {
+     "id": 6,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.035,
+      -0.011,
+      -0.002
+     ]
+    },
+    {
+     "id": 7,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.013,
+      -0.01,
+      0.021
+     ]
+    },
+    {
+     "id": 8,
+     "before": 1.0,
+     "after": 0.996,
+     "after_datum_removed": 0.996,
+     "datum_err_xyz": [
+      -0.01,
+      0.026,
+      0.001
+     ]
+    },
+    {
+     "id": 9,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.013,
+      0.034,
+      -0.041
+     ]
+    },
+    {
+     "id": 10,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.017,
+      0.004,
+      -0.001
+     ]
+    },
+    {
+     "id": 11,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.014,
+      -0.022,
+      0.054
+     ]
+    }
+   ]
+  },
+  "tuning|lawnmower|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 165.45,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.601,
+     "p5": 0.249,
+     "min": 0.199,
+     "max": 0.969
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.243,
+    "point_err_p95_m": 0.585,
+    "frac_points_within_tol": 0.61,
+    "effective_detail_m": 0.239,
+    "nav_err_median_m": 0.621,
+    "core_nees_mean_median": 118.699,
+    "core_nees_le_7_81_median": 0.006
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.932,
+     "p5": 0.001,
+     "min": 0.0,
+     "max": 0.983
+    },
+    "frac_missions_ge_90": 0.667,
+    "point_err_median_m": 0.157,
+    "point_err_p95_m": 0.233,
+    "frac_points_within_tol": 0.979,
+    "effective_detail_m": 0.444,
+    "nav_err_median_m": 0.576,
+    "nav_err_p95_median_m": 1.02,
+    "nees_mean": 3.456,
+    "nees_le_7_81": 0.937
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.829,
+     "p5": 0.021,
+     "min": 0.0,
+     "max": 0.985
+    },
+    "frac_missions_ge_90": 0.5,
+    "point_err_median_m": 0.158,
+    "point_err_p95_m": 0.371,
+    "frac_points_within_tol": 0.805,
+    "effective_detail_m": 0.261,
+    "nav_err_median_m": 0.583,
+    "nees_mean": 3.336,
+    "nees_le_7_81": 0.879
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.974,
+     "p5": 0.953,
+     "min": 0.946,
+     "max": 0.989
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.033,
+    "point_err_p95_m": 0.107,
+    "frac_points_within_tol": 0.999,
+    "effective_detail_m": 0.444
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.563,
+     "p5": 0.198,
+     "min": 0.026,
+     "max": 1.301
+    },
+    "sigma_xyz_median_m": [
+     0.272,
+     0.272,
+     0.259
+    ],
+    "nees_mean": 6.422,
+    "core_mission_mean_err_m": {
+     "median": 0.539,
+     "p5": 0.21,
+     "min": 0.054,
+     "max": 1.286
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 1996,
+    "registrations_total": 1984,
+    "loop_factors_total": 18489,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1982,
+     2,
+     0
+    ],
+    "step_ms_median": 16.875,
+    "step_ms_p95_max": 28.5,
+    "step_ms_max": 41.3,
+    "online_map_integration_ms_max": 249.5,
+    "end_smooth_and_rebuild_s_median": 10.802,
+    "end_smooth_and_rebuild_s_max": 13.09
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.291,
+     "after": 0.0,
+     "after_datum_removed": 0.968,
+     "datum_err_xyz": [
+      0.235,
+      0.627,
+      0.517
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.445,
+     "after": 0.367,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      0.482,
+      0.069,
+      -0.319
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.969,
+     "after": 0.983,
+     "after_datum_removed": 0.989,
+     "datum_err_xyz": [
+      -0.31,
+      -0.122,
+      -0.053
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.702,
+     "after": 0.963,
+     "after_datum_removed": 0.964,
+     "datum_err_xyz": [
+      0.025,
+      0.006,
+      -0.005
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.546,
+     "after": 0.906,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      -1.231,
+      0.398,
+      -0.137
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.663,
+     "after": 0.934,
+     "after_datum_removed": 0.946,
+     "datum_err_xyz": [
+      -0.273,
+      -0.116,
+      0.179
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.38,
+     "after": 0.002,
+     "after_datum_removed": 0.959,
+     "datum_err_xyz": [
+      0.253,
+      -0.065,
+      0.477
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.199,
+     "after": 0.931,
+     "after_datum_removed": 0.973,
+     "datum_err_xyz": [
+      -0.302,
+      1.052,
+      0.002
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.95,
+     "after": 0.97,
+     "after_datum_removed": 0.98,
+     "datum_err_xyz": [
+      -0.258,
+      -0.216,
+      -0.074
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.657,
+     "after": 0.95,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      0.708,
+      0.078,
+      0.059
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.71,
+     "after": 0.94,
+     "after_datum_removed": 0.97,
+     "datum_err_xyz": [
+      -0.367,
+      -0.089,
+      -0.196
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.337,
+     "after": 0.088,
+     "after_datum_removed": 0.989,
+     "datum_err_xyz": [
+      0.525,
+      0.135,
+      0.362
+     ]
+    }
+   ]
+  },
+  "tuning|perimeter_orbit|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 224.9,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.599,
+     "p5": 0.371,
+     "min": 0.359,
+     "max": 0.85
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.304,
+    "point_err_p95_m": 0.745,
+    "frac_points_within_tol": 0.494,
+    "effective_detail_m": 0.122,
+    "nav_err_median_m": 0.744,
+    "core_nees_mean_median": 128.11,
+    "core_nees_le_7_81_median": 0.008
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.592,
+     "p5": 0.239,
+     "min": 0.222,
+     "max": 0.981
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.262,
+    "point_err_p95_m": 0.524,
+    "frac_points_within_tol": 0.538,
+    "effective_detail_m": 0.319,
+    "nav_err_median_m": 0.598,
+    "nav_err_p95_median_m": 0.984,
+    "nees_mean": 4.599,
+    "nees_le_7_81": 0.853
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.636,
+     "p5": 0.334,
+     "min": 0.314,
+     "max": 0.96
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.253,
+    "point_err_p95_m": 0.638,
+    "frac_points_within_tol": 0.548,
+    "effective_detail_m": 0.16,
+    "nav_err_median_m": 0.656,
+    "nees_mean": 3.382,
+    "nees_le_7_81": 0.936
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.956,
+     "p5": 0.703,
+     "min": 0.542,
+     "max": 0.998
+    },
+    "frac_missions_ge_90": 0.833,
+    "point_err_median_m": 0.059,
+    "point_err_p95_m": 0.199,
+    "frac_points_within_tol": 0.973,
+    "effective_detail_m": 0.319
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.549,
+     "p5": 0.339,
+     "min": 0.255,
+     "max": 0.742
+    },
+    "sigma_xyz_median_m": [
+     0.233,
+     0.231,
+     0.237
+    ],
+    "nees_mean": 5.286,
+    "core_mission_mean_err_m": {
+     "median": 0.548,
+     "p5": 0.303,
+     "min": 0.258,
+     "max": 0.78
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2574,
+    "registrations_total": 2344,
+    "loop_factors_total": 9698,
+    "rejected_few_matches_total": 218,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1973,
+     371,
+     0
+    ],
+    "step_ms_median": 13.323,
+    "step_ms_p95_max": 28.8,
+    "step_ms_max": 40.9,
+    "online_map_integration_ms_max": 77.5,
+    "end_smooth_and_rebuild_s_median": 9.318,
+    "end_smooth_and_rebuild_s_max": 12.52
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.472,
+     "after": 0.536,
+     "after_datum_removed": 0.998,
+     "datum_err_xyz": [
+      -0.385,
+      -0.226,
+      0.303
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.688,
+     "after": 0.591,
+     "after_datum_removed": 0.917,
+     "datum_err_xyz": [
+      -0.222,
+      -0.013,
+      -0.614
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.723,
+     "after": 0.981,
+     "after_datum_removed": 0.99,
+     "datum_err_xyz": [
+      0.208,
+      -0.106,
+      0.47
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.601,
+     "after": 0.593,
+     "after_datum_removed": 0.944,
+     "datum_err_xyz": [
+      0.509,
+      0.243,
+      -0.089
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.381,
+     "after": 0.451,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      0.535,
+      0.153,
+      -0.033
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.525,
+     "after": 0.252,
+     "after_datum_removed": 0.994,
+     "datum_err_xyz": [
+      0.354,
+      0.456,
+      0.203
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.655,
+     "after": 0.888,
+     "after_datum_removed": 0.931,
+     "datum_err_xyz": [
+      0.097,
+      0.059,
+      -0.229
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.597,
+     "after": 0.669,
+     "after_datum_removed": 0.836,
+     "datum_err_xyz": [
+      0.299,
+      0.004,
+      0.291
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.85,
+     "after": 0.874,
+     "after_datum_removed": 0.921,
+     "datum_err_xyz": [
+      0.1,
+      -0.098,
+      -0.416
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.681,
+     "after": 0.846,
+     "after_datum_removed": 0.989,
+     "datum_err_xyz": [
+      0.282,
+      -0.116,
+      0.269
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.395,
+     "after": 0.222,
+     "after_datum_removed": 0.542,
+     "datum_err_xyz": [
+      0.652,
+      0.134,
+      0.09
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.359,
+     "after": 0.392,
+     "after_datum_removed": 0.967,
+     "datum_err_xyz": [
+      0.107,
+      -0.628,
+      -0.381
+     ]
+    }
+   ]
+  },
+  "tuning|poi_close_pass|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 79.2,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.679,
+     "p5": 0.287,
+     "min": 0.23,
+     "max": 0.917
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.275,
+    "point_err_p95_m": 0.67,
+    "frac_points_within_tol": 0.532,
+    "effective_detail_m": 0.088,
+    "nav_err_median_m": 0.705,
+    "core_nees_mean_median": 105.73,
+    "core_nees_le_7_81_median": 0.009
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.702,
+     "p5": 0.321,
+     "min": 0.21,
+     "max": 0.97
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.291,
+    "point_err_p95_m": 0.53,
+    "frac_points_within_tol": 0.518,
+    "effective_detail_m": 0.23,
+    "nav_err_median_m": 0.65,
+    "nav_err_p95_median_m": 0.871,
+    "nees_mean": 4.862,
+    "nees_le_7_81": 0.833
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.629,
+     "p5": 0.329,
+     "min": 0.223,
+     "max": 0.993
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.266,
+    "point_err_p95_m": 0.553,
+    "frac_points_within_tol": 0.553,
+    "effective_detail_m": 0.131,
+    "nav_err_median_m": 0.68,
+    "nees_mean": 3.913,
+    "nees_le_7_81": 0.889
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.992,
+     "p5": 0.85,
+     "min": 0.848,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 0.833,
+    "point_err_median_m": 0.04,
+    "point_err_p95_m": 0.142,
+    "frac_points_within_tol": 0.999,
+    "effective_detail_m": 0.23
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.617,
+     "p5": 0.294,
+     "min": 0.272,
+     "max": 1.48
+    },
+    "sigma_xyz_median_m": [
+     0.336,
+     0.335,
+     0.342
+    ],
+    "nees_mean": 5.314,
+    "core_mission_mean_err_m": {
+     "median": 0.623,
+     "p5": 0.342,
+     "min": 0.291,
+     "max": 1.479
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 946,
+    "registrations_total": 583,
+    "loop_factors_total": 2208,
+    "rejected_few_matches_total": 351,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     378,
+     203,
+     2
+    ],
+    "step_ms_median": 6.429,
+    "step_ms_p95_max": 11.6,
+    "step_ms_max": 13.9,
+    "online_map_integration_ms_max": 67.8,
+    "end_smooth_and_rebuild_s_median": 2.572,
+    "end_smooth_and_rebuild_s_max": 3.72
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.613,
+     "after": 0.783,
+     "after_datum_removed": 0.987,
+     "datum_err_xyz": [
+      -0.107,
+      0.439,
+      0.074
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.728,
+     "after": 0.622,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.062,
+      0.489,
+      -0.238
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.789,
+     "after": 0.842,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.274,
+      -0.333,
+      0.197
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.23,
+     "after": 0.21,
+     "after_datum_removed": 0.848,
+     "datum_err_xyz": [
+      1.078,
+      -0.942,
+      -0.378
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.803,
+     "after": 0.908,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.169,
+      0.364,
+      0.078
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.333,
+     "after": 0.412,
+     "after_datum_removed": 0.939,
+     "datum_err_xyz": [
+      0.106,
+      0.814,
+      -0.798
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.569,
+     "after": 0.549,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.681,
+      -0.054,
+      -0.074
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.917,
+     "after": 0.878,
+     "after_datum_removed": 0.946,
+     "datum_err_xyz": [
+      -0.072,
+      0.002,
+      0.263
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.464,
+     "after": 0.514,
+     "after_datum_removed": 0.851,
+     "datum_err_xyz": [
+      -0.274,
+      0.454,
+      0.826
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.631,
+     "after": 0.588,
+     "after_datum_removed": 0.952,
+     "datum_err_xyz": [
+      -0.239,
+      0.501,
+      -0.605
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.814,
+     "after": 0.97,
+     "after_datum_removed": 0.997,
+     "datum_err_xyz": [
+      -0.304,
+      -0.048,
+      -0.047
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.839,
+     "after": 0.854,
+     "after_datum_removed": 0.996,
+     "datum_err_xyz": [
+      -0.153,
+      -0.12,
+      0.848
+     ]
+    }
+   ]
+  },
+  "fresh|lawnmower|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 184.35,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.436,
+     "p5": 0.272,
+     "min": 0.202,
+     "max": 0.78
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.331,
+    "point_err_p95_m": 0.683,
+    "frac_points_within_tol": 0.44,
+    "effective_detail_m": 0.23,
+    "nav_err_median_m": 0.795,
+    "core_nees_mean_median": 160.368,
+    "core_nees_le_7_81_median": 0.003
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.936,
+     "p5": 0.105,
+     "min": 0.002,
+     "max": 0.969
+    },
+    "frac_missions_ge_90": 0.667,
+    "point_err_median_m": 0.17,
+    "point_err_p95_m": 0.248,
+    "frac_points_within_tol": 0.989,
+    "effective_detail_m": 0.44,
+    "nav_err_median_m": 0.671,
+    "nav_err_p95_median_m": 1.353,
+    "nees_mean": 3.63,
+    "nees_le_7_81": 0.911
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.742,
+     "p5": 0.069,
+     "min": 0.033,
+     "max": 0.973
+    },
+    "frac_missions_ge_90": 0.25,
+    "point_err_median_m": 0.196,
+    "point_err_p95_m": 0.444,
+    "frac_points_within_tol": 0.747,
+    "effective_detail_m": 0.253,
+    "nav_err_median_m": 0.663,
+    "nees_mean": 3.462,
+    "nees_le_7_81": 0.915
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.972,
+     "p5": 0.944,
+     "min": 0.94,
+     "max": 0.984
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.032,
+    "point_err_p95_m": 0.098,
+    "frac_points_within_tol": 0.999,
+    "effective_detail_m": 0.44
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.465,
+     "p5": 0.239,
+     "min": 0.221,
+     "max": 0.954
+    },
+    "sigma_xyz_median_m": [
+     0.26,
+     0.26,
+     0.247
+    ],
+    "nees_mean": 4.162,
+    "core_mission_mean_err_m": {
+     "median": 0.484,
+     "p5": 0.21,
+     "min": 0.187,
+     "max": 0.982
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2189,
+    "registrations_total": 2177,
+    "loop_factors_total": 19575,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     2177,
+     0,
+     0
+    ],
+    "step_ms_median": 16.329,
+    "step_ms_p95_max": 31.9,
+    "step_ms_max": 37.8,
+    "online_map_integration_ms_max": 287.4,
+    "end_smooth_and_rebuild_s_median": 11.367,
+    "end_smooth_and_rebuild_s_max": 15.62
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.351,
+     "after": 0.631,
+     "after_datum_removed": 0.954,
+     "datum_err_xyz": [
+      0.118,
+      0.505,
+      0.284
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.33,
+     "after": 0.189,
+     "after_datum_removed": 0.972,
+     "datum_err_xyz": [
+      0.638,
+      0.621,
+      0.342
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.427,
+     "after": 0.963,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      -0.508,
+      0.557,
+      0.159
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.445,
+     "after": 0.934,
+     "after_datum_removed": 0.965,
+     "datum_err_xyz": [
+      -0.019,
+      -0.326,
+      0.21
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.78,
+     "after": 0.916,
+     "after_datum_removed": 0.946,
+     "datum_err_xyz": [
+      -0.263,
+      -0.321,
+      0.176
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.777,
+     "after": 0.969,
+     "after_datum_removed": 0.979,
+     "datum_err_xyz": [
+      0.005,
+      0.186,
+      -0.12
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.41,
+     "after": 0.341,
+     "after_datum_removed": 0.984,
+     "datum_err_xyz": [
+      -0.112,
+      0.197,
+      -0.335
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.477,
+     "after": 0.965,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      0.395,
+      -0.116,
+      -0.068
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.724,
+     "after": 0.966,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      0.082,
+      -0.17,
+      0.17
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.394,
+     "after": 0.938,
+     "after_datum_removed": 0.954,
+     "datum_err_xyz": [
+      -0.53,
+      0.233,
+      -0.1
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.202,
+     "after": 0.002,
+     "after_datum_removed": 0.94,
+     "datum_err_xyz": [
+      -0.052,
+      -0.055,
+      -0.475
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.587,
+     "after": 0.963,
+     "after_datum_removed": 0.972,
+     "datum_err_xyz": [
+      -0.457,
+      -0.247,
+      -0.01
+     ]
+    }
+   ]
+  },
+  "fresh|perimeter_orbit|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 203.8,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.621,
+     "p5": 0.37,
+     "min": 0.251,
+     "max": 0.788
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.282,
+    "point_err_p95_m": 0.765,
+    "frac_points_within_tol": 0.543,
+    "effective_detail_m": 0.122,
+    "nav_err_median_m": 0.671,
+    "core_nees_mean_median": 104.833,
+    "core_nees_le_7_81_median": 0.027
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.66,
+     "p5": 0.417,
+     "min": 0.391,
+     "max": 0.996
+    },
+    "frac_missions_ge_90": 0.333,
+    "point_err_median_m": 0.248,
+    "point_err_p95_m": 0.667,
+    "frac_points_within_tol": 0.636,
+    "effective_detail_m": 0.318,
+    "nav_err_median_m": 0.562,
+    "nav_err_p95_median_m": 1.055,
+    "nees_mean": 4.054,
+    "nees_le_7_81": 0.844
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.686,
+     "p5": 0.337,
+     "min": 0.321,
+     "max": 0.899
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.239,
+    "point_err_p95_m": 0.669,
+    "frac_points_within_tol": 0.63,
+    "effective_detail_m": 0.16,
+    "nav_err_median_m": 0.61,
+    "nees_mean": 3.097,
+    "nees_le_7_81": 0.912
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.831,
+     "p5": 0.391,
+     "min": 0.301,
+     "max": 0.997
+    },
+    "frac_missions_ge_90": 0.333,
+    "point_err_median_m": 0.07,
+    "point_err_p95_m": 0.484,
+    "frac_points_within_tol": 0.9,
+    "effective_detail_m": 0.318
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.336,
+     "p5": 0.161,
+     "min": 0.154,
+     "max": 0.604
+    },
+    "sigma_xyz_median_m": [
+     0.242,
+     0.241,
+     0.248
+    ],
+    "nees_mean": 2.535,
+    "core_mission_mean_err_m": {
+     "median": 0.365,
+     "p5": 0.184,
+     "min": 0.173,
+     "max": 0.746
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2331,
+    "registrations_total": 2088,
+    "loop_factors_total": 7954,
+    "rejected_few_matches_total": 231,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1790,
+     297,
+     1
+    ],
+    "step_ms_median": 12.183,
+    "step_ms_p95_max": 32.6,
+    "step_ms_max": 41.0,
+    "online_map_integration_ms_max": 64.0,
+    "end_smooth_and_rebuild_s_median": 8.309,
+    "end_smooth_and_rebuild_s_max": 12.94
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.466,
+     "after": 0.391,
+     "after_datum_removed": 0.464,
+     "datum_err_xyz": [
+      0.397,
+      0.423,
+      0.082
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.603,
+     "after": 0.727,
+     "after_datum_removed": 0.774,
+     "datum_err_xyz": [
+      -0.101,
+      -0.2,
+      -0.339
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.663,
+     "after": 0.913,
+     "after_datum_removed": 0.955,
+     "datum_err_xyz": [
+      -0.169,
+      -0.198,
+      0.084
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.602,
+     "after": 0.439,
+     "after_datum_removed": 0.301,
+     "datum_err_xyz": [
+      0.097,
+      -0.063,
+      -0.121
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.788,
+     "after": 0.908,
+     "after_datum_removed": 0.937,
+     "datum_err_xyz": [
+      -0.018,
+      -0.091,
+      0.256
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.469,
+     "after": 0.556,
+     "after_datum_removed": 0.892,
+     "datum_err_xyz": [
+      -0.314,
+      -0.327,
+      0.156
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.748,
+     "after": 0.924,
+     "after_datum_removed": 0.969,
+     "datum_err_xyz": [
+      0.129,
+      0.056,
+      0.201
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.684,
+     "after": 0.996,
+     "after_datum_removed": 0.997,
+     "datum_err_xyz": [
+      -0.133,
+      -0.066,
+      0.04
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.699,
+     "after": 0.676,
+     "after_datum_removed": 0.822,
+     "datum_err_xyz": [
+      -0.101,
+      0.349,
+      0.163
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.639,
+     "after": 0.637,
+     "after_datum_removed": 0.839,
+     "datum_err_xyz": [
+      0.143,
+      -0.214,
+      0.023
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.526,
+     "after": 0.643,
+     "after_datum_removed": 0.805,
+     "datum_err_xyz": [
+      0.399,
+      0.141,
+      -0.424
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.251,
+     "after": 0.503,
+     "after_datum_removed": 0.686,
+     "datum_err_xyz": [
+      0.258,
+      -0.271,
+      0.474
+     ]
+    }
+   ]
+  },
+  "fresh|poi_close_pass|gps_standard": {
+   "missions": 12,
+   "mission_s_median": 59.7,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.724,
+     "p5": 0.546,
+     "min": 0.525,
+     "max": 0.872
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.226,
+    "point_err_p95_m": 0.652,
+    "frac_points_within_tol": 0.628,
+    "effective_detail_m": 0.088,
+    "nav_err_median_m": 0.685,
+    "core_nees_mean_median": 98.216,
+    "core_nees_le_7_81_median": 0.008
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.805,
+     "p5": 0.599,
+     "min": 0.587,
+     "max": 0.984
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.196,
+    "point_err_p95_m": 0.623,
+    "frac_points_within_tol": 0.654,
+    "effective_detail_m": 0.263,
+    "nav_err_median_m": 0.611,
+    "nav_err_p95_median_m": 0.916,
+    "nees_mean": 2.552,
+    "nees_le_7_81": 0.979
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.742,
+     "p5": 0.589,
+     "min": 0.579,
+     "max": 0.976
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.193,
+    "point_err_p95_m": 0.612,
+    "frac_points_within_tol": 0.666,
+    "effective_detail_m": 0.133,
+    "nav_err_median_m": 0.605,
+    "nees_mean": 2.206,
+    "nees_le_7_81": 0.996
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.975,
+     "p5": 0.882,
+     "min": 0.841,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 0.917,
+    "point_err_median_m": 0.111,
+    "point_err_p95_m": 0.39,
+    "frac_points_within_tol": 0.861,
+    "effective_detail_m": 0.263
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.498,
+     "p5": 0.412,
+     "min": 0.409,
+     "max": 0.881
+    },
+    "sigma_xyz_median_m": [
+     0.362,
+     0.358,
+     0.374
+    ],
+    "nees_mean": 2.343,
+    "core_mission_mean_err_m": {
+     "median": 0.513,
+     "p5": 0.385,
+     "min": 0.378,
+     "max": 0.889
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 796,
+    "registrations_total": 359,
+    "loop_factors_total": 930,
+    "rejected_few_matches_total": 425,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     258,
+     100,
+     1
+    ],
+    "step_ms_median": 5.065,
+    "step_ms_p95_max": 11.0,
+    "step_ms_max": 14.0,
+    "online_map_integration_ms_max": 77.7,
+    "end_smooth_and_rebuild_s_median": 1.972,
+    "end_smooth_and_rebuild_s_max": 3.92
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.562,
+     "after": 0.587,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.089,
+      -0.515,
+      0.256
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.872,
+     "after": 0.917,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.111,
+      -0.328,
+      -0.217
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.667,
+     "after": 0.788,
+     "after_datum_removed": 0.987,
+     "datum_err_xyz": [
+      0.409,
+      0.263,
+      -0.141
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.669,
+     "after": 0.809,
+     "after_datum_removed": 0.841,
+     "datum_err_xyz": [
+      -0.165,
+      0.013,
+      0.393
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.797,
+     "after": 0.832,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.301,
+      0.132,
+      -0.589
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.731,
+     "after": 0.801,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      0.075,
+      0.512,
+      0.341
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.78,
+     "after": 0.984,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      0.045,
+      -0.064,
+      0.445
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.819,
+     "after": 0.843,
+     "after_datum_removed": 0.971,
+     "datum_err_xyz": [
+      0.432,
+      -0.135,
+      -0.087
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.58,
+     "after": 0.705,
+     "after_datum_removed": 0.917,
+     "datum_err_xyz": [
+      -0.132,
+      0.468,
+      -0.192
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.717,
+     "after": 0.839,
+     "after_datum_removed": 0.939,
+     "datum_err_xyz": [
+      0.422,
+      0.15,
+      -0.201
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.756,
+     "after": 0.737,
+     "after_datum_removed": 0.923,
+     "datum_err_xyz": [
+      -0.048,
+      0.366,
+      0.19
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.525,
+     "after": 0.608,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.749,
+      -0.139,
+      -0.441
+     ]
+    }
+   ]
+  },
+  "fresh|lawnmower|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 184.35,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.98,
+     "p5": 0.966,
+     "min": 0.965,
+     "max": 0.995
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.033,
+    "point_err_p95_m": 0.106,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.219,
+    "nav_err_median_m": 0.055,
+    "core_nees_mean_median": 19.65,
+    "core_nees_le_7_81_median": 0.29
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.98,
+     "p5": 0.968,
+     "min": 0.962,
+     "max": 0.995
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.032,
+    "point_err_p95_m": 0.104,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.22,
+    "nav_err_median_m": 0.052,
+    "nav_err_p95_median_m": 0.106,
+    "nees_mean": 5.273,
+    "nees_le_7_81": 0.787
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.983,
+     "p5": 0.972,
+     "min": 0.971,
+     "max": 0.997
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.034,
+    "point_err_p95_m": 0.105,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.219,
+    "nav_err_median_m": 0.056,
+    "nees_mean": 5.357,
+    "nees_le_7_81": 0.788
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.98,
+     "p5": 0.967,
+     "min": 0.961,
+     "max": 0.995
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.029,
+    "point_err_p95_m": 0.096,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.22
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.027,
+     "p5": 0.015,
+     "min": 0.013,
+     "max": 0.059
+    },
+    "sigma_xyz_median_m": [
+     0.016,
+     0.016,
+     0.015
+    ],
+    "nees_mean": 4.112,
+    "core_mission_mean_err_m": {
+     "median": 0.029,
+     "p5": 0.013,
+     "min": 0.011,
+     "max": 0.06
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2189,
+    "registrations_total": 2177,
+    "loop_factors_total": 19507,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     2177,
+     0,
+     0
+    ],
+    "step_ms_median": 15.604,
+    "step_ms_p95_max": 28.3,
+    "step_ms_max": 35.8,
+    "online_map_integration_ms_max": 259.0,
+    "end_smooth_and_rebuild_s_median": 8.225,
+    "end_smooth_and_rebuild_s_max": 11.07
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.987,
+     "after": 0.986,
+     "after_datum_removed": 0.985,
+     "datum_err_xyz": [
+      0.005,
+      0.028,
+      0.016
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.976,
+     "after": 0.977,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      0.04,
+      0.038,
+      0.02
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.983,
+     "after": 0.983,
+     "after_datum_removed": 0.985,
+     "datum_err_xyz": [
+      -0.03,
+      0.033,
+      0.012
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.995,
+     "after": 0.994,
+     "after_datum_removed": 0.994,
+     "datum_err_xyz": [
+      -0.001,
+      -0.019,
+      0.012
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.968,
+     "after": 0.973,
+     "after_datum_removed": 0.973,
+     "datum_err_xyz": [
+      -0.016,
+      -0.018,
+      0.011
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.976,
+     "after": 0.977,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      0.001,
+      0.011,
+      -0.007
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.993,
+     "after": 0.992,
+     "after_datum_removed": 0.992,
+     "datum_err_xyz": [
+      -0.009,
+      0.011,
+      -0.022
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.994,
+     "after": 0.995,
+     "after_datum_removed": 0.995,
+     "datum_err_xyz": [
+      0.023,
+      -0.007,
+      -0.002
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.978,
+     "after": 0.98,
+     "after_datum_removed": 0.981,
+     "datum_err_xyz": [
+      0.006,
+      -0.012,
+      0.011
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.965,
+     "after": 0.962,
+     "after_datum_removed": 0.961,
+     "datum_err_xyz": [
+      -0.031,
+      0.013,
+      -0.005
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.978,
+     "after": 0.978,
+     "after_datum_removed": 0.977,
+     "datum_err_xyz": [
+      -0.001,
+      -0.004,
+      -0.028
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.981,
+     "after": 0.98,
+     "after_datum_removed": 0.979,
+     "datum_err_xyz": [
+      -0.029,
+      -0.015,
+      -0.001
+     ]
+    }
+   ]
+  },
+  "fresh|perimeter_orbit|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 203.8,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.998,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 0.999
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.028,
+    "point_err_p95_m": 0.101,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101,
+    "nav_err_median_m": 0.047,
+    "core_nees_mean_median": 12.617,
+    "core_nees_le_7_81_median": 0.411
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.998,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.022,
+    "point_err_p95_m": 0.09,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101,
+    "nav_err_median_m": 0.039,
+    "nav_err_p95_median_m": 0.073,
+    "nees_mean": 3.289,
+    "nees_le_7_81": 0.924
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.998,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 0.999
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.025,
+    "point_err_p95_m": 0.096,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.1,
+    "nav_err_median_m": 0.046,
+    "nees_mean": 3.388,
+    "nees_le_7_81": 0.919
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.998,
+     "p5": 0.995,
+     "min": 0.995,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.02,
+    "point_err_p95_m": 0.085,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.101
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.017,
+     "p5": 0.009,
+     "min": 0.007,
+     "max": 0.039
+    },
+    "sigma_xyz_median_m": [
+     0.015,
+     0.014,
+     0.015
+    ],
+    "nees_mean": 2.475,
+    "core_mission_mean_err_m": {
+     "median": 0.022,
+     "p5": 0.011,
+     "min": 0.011,
+     "max": 0.043
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2331,
+    "registrations_total": 2228,
+    "loop_factors_total": 9876,
+    "rejected_few_matches_total": 91,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1810,
+     418,
+     0
+    ],
+    "step_ms_median": 12.709,
+    "step_ms_p95_max": 30.7,
+    "step_ms_max": 52.4,
+    "online_map_integration_ms_max": 67.4,
+    "end_smooth_and_rebuild_s_median": 6.237,
+    "end_smooth_and_rebuild_s_max": 9.33
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.999,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.023,
+      0.025,
+      0.006
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.997,
+     "after": 0.996,
+     "after_datum_removed": 0.995,
+     "datum_err_xyz": [
+      -0.007,
+      -0.022,
+      -0.021
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      -0.009,
+      -0.012,
+      0.002
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.998,
+     "after": 0.997,
+     "after_datum_removed": 0.997,
+     "datum_err_xyz": [
+      0.006,
+      -0.003,
+      -0.007
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.995,
+     "after": 0.995,
+     "after_datum_removed": 0.996,
+     "datum_err_xyz": [
+      -0.002,
+      -0.009,
+      0.013
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.995,
+     "after": 0.995,
+     "after_datum_removed": 0.995,
+     "datum_err_xyz": [
+      -0.014,
+      -0.019,
+      0.006
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.998,
+     "after": 0.998,
+     "after_datum_removed": 0.998,
+     "datum_err_xyz": [
+      0.009,
+      0.004,
+      0.013
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      -0.006,
+      -0.003,
+      0.002
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.999,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      -0.001,
+      0.012,
+      0.011
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.998,
+     "after": 0.999,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      0.006,
+      -0.011,
+      0.006
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.997,
+     "after": 0.998,
+     "after_datum_removed": 0.998,
+     "datum_err_xyz": [
+      0.027,
+      0.008,
+      -0.027
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.997,
+     "after": 0.998,
+     "after_datum_removed": 0.998,
+     "datum_err_xyz": [
+      0.017,
+      -0.015,
+      0.027
+     ]
+    }
+   ]
+  },
+  "fresh|poi_close_pass|gps_rtk": {
+   "missions": 12,
+   "mission_s_median": 59.7,
+   "before_no_slam": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.994,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.029,
+    "point_err_p95_m": 0.087,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.054,
+    "nav_err_median_m": 0.052,
+    "core_nees_mean_median": 15.008,
+    "core_nees_le_7_81_median": 0.339
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.997,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.025,
+    "point_err_p95_m": 0.075,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.054,
+    "nav_err_median_m": 0.045,
+    "nav_err_p95_median_m": 0.077,
+    "nees_mean": 3.485,
+    "nees_le_7_81": 0.934
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.994,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.026,
+    "point_err_p95_m": 0.079,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.053,
+    "nav_err_median_m": 0.047,
+    "nees_mean": 3.129,
+    "nees_le_7_81": 0.954
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.997,
+     "min": 0.994,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.022,
+    "point_err_p95_m": 0.067,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.054
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.028,
+     "p5": 0.021,
+     "min": 0.018,
+     "max": 0.057
+    },
+    "sigma_xyz_median_m": [
+     0.022,
+     0.022,
+     0.023
+    ],
+    "nees_mean": 2.526,
+    "core_mission_mean_err_m": {
+     "median": 0.03,
+     "p5": 0.02,
+     "min": 0.017,
+     "max": 0.055
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 796,
+    "registrations_total": 712,
+    "loop_factors_total": 3065,
+    "rejected_few_matches_total": 72,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     357,
+     347,
+     8
+    ],
+    "step_ms_median": 6.431,
+    "step_ms_p95_max": 11.8,
+    "step_ms_max": 15.9,
+    "online_map_integration_ms_max": 50.1,
+    "end_smooth_and_rebuild_s_median": 1.523,
+    "end_smooth_and_rebuild_s_max": 2.99
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.002,
+      -0.037,
+      0.019
+     ]
+    },
+    {
+     "id": 1,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.005,
+      -0.021,
+      -0.015
+     ]
+    },
+    {
+     "id": 2,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.016,
+      0.019,
+      -0.01
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.994,
+     "after": 0.994,
+     "after_datum_removed": 0.994,
+     "datum_err_xyz": [
+      -0.001,
+      0.005,
+      0.018
+     ]
+    },
+    {
+     "id": 4,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.016,
+      -0.001,
+      -0.035
+     ]
+    },
+    {
+     "id": 5,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.002,
+      0.036,
+      0.023
+     ]
+    },
+    {
+     "id": 6,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.006,
+      -0.0,
+      0.027
+     ]
+    },
+    {
+     "id": 7,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.026,
+      -0.002,
+      -0.002
+     ]
+    },
+    {
+     "id": 8,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.001,
+      0.026,
+      -0.011
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.994,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.032,
+      0.01,
+      -0.013
+     ]
+    },
+    {
+     "id": 10,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.005,
+      0.02,
+      0.011
+     ]
+    },
+    {
+     "id": 11,
+     "before": 1.0,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.053,
+      -0.006,
+      -0.022
+     ]
+    }
+   ]
+  },
+  "fresh|lawnmower|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 184.35,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.529,
+     "p5": 0.052,
+     "min": 0.046,
+     "max": 0.887
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.228,
+    "point_err_p95_m": 0.67,
+    "frac_points_within_tol": 0.573,
+    "effective_detail_m": 0.23,
+    "nav_err_median_m": 0.857,
+    "core_nees_mean_median": 167.478,
+    "core_nees_le_7_81_median": 0.002
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.829,
+     "p5": 0.0,
+     "min": 0.0,
+     "max": 0.974
+    },
+    "frac_missions_ge_90": 0.5,
+    "point_err_median_m": 0.224,
+    "point_err_p95_m": 0.316,
+    "frac_points_within_tol": 0.878,
+    "effective_detail_m": 0.442,
+    "nav_err_median_m": 0.828,
+    "nav_err_p95_median_m": 1.271,
+    "nees_mean": 4.952,
+    "nees_le_7_81": 0.807
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.623,
+     "p5": 0.001,
+     "min": 0.0,
+     "max": 0.978
+    },
+    "frac_missions_ge_90": 0.25,
+    "point_err_median_m": 0.262,
+    "point_err_p95_m": 0.441,
+    "frac_points_within_tol": 0.618,
+    "effective_detail_m": 0.253,
+    "nav_err_median_m": 0.844,
+    "nees_mean": 4.331,
+    "nees_le_7_81": 0.866
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.973,
+     "p5": 0.936,
+     "min": 0.935,
+     "max": 0.992
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.033,
+    "point_err_p95_m": 0.099,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.442
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.688,
+     "p5": 0.228,
+     "min": 0.187,
+     "max": 1.13
+    },
+    "sigma_xyz_median_m": [
+     0.26,
+     0.26,
+     0.247
+    ],
+    "nees_mean": 8.267,
+    "core_mission_mean_err_m": {
+     "median": 0.692,
+     "p5": 0.206,
+     "min": 0.15,
+     "max": 1.118
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2189,
+    "registrations_total": 2177,
+    "loop_factors_total": 19650,
+    "rejected_few_matches_total": 0,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     2177,
+     0,
+     0
+    ],
+    "step_ms_median": 15.798,
+    "step_ms_p95_max": 30.8,
+    "step_ms_max": 45.1,
+    "online_map_integration_ms_max": 227.1,
+    "end_smooth_and_rebuild_s_median": 10.84,
+    "end_smooth_and_rebuild_s_max": 15.27
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.371,
+     "after": 0.008,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      0.34,
+      0.984,
+      0.439
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.046,
+     "after": 0.0,
+     "after_datum_removed": 0.95,
+     "datum_err_xyz": [
+      0.742,
+      0.573,
+      0.52
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.567,
+     "after": 0.919,
+     "after_datum_removed": 0.976,
+     "datum_err_xyz": [
+      -0.858,
+      0.67,
+      0.195
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.245,
+     "after": 0.03,
+     "after_datum_removed": 0.984,
+     "datum_err_xyz": [
+      -0.048,
+      -0.488,
+      0.407
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.637,
+     "after": 0.754,
+     "after_datum_removed": 0.935,
+     "datum_err_xyz": [
+      -0.201,
+      -0.63,
+      0.252
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.852,
+     "after": 0.965,
+     "after_datum_removed": 0.971,
+     "datum_err_xyz": [
+      -0.027,
+      0.143,
+      -0.118
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.467,
+     "after": 0.057,
+     "after_datum_removed": 0.992,
+     "datum_err_xyz": [
+      0.015,
+      0.281,
+      -0.396
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.667,
+     "after": 0.973,
+     "after_datum_removed": 0.986,
+     "datum_err_xyz": [
+      0.424,
+      0.012,
+      -0.161
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.887,
+     "after": 0.974,
+     "after_datum_removed": 0.983,
+     "datum_err_xyz": [
+      0.159,
+      -0.139,
+      0.154
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.492,
+     "after": 0.905,
+     "after_datum_removed": 0.937,
+     "datum_err_xyz": [
+      -0.817,
+      0.413,
+      -0.02
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.057,
+     "after": 0.0,
+     "after_datum_removed": 0.97,
+     "datum_err_xyz": [
+      -0.37,
+      -0.027,
+      -0.625
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.817,
+     "after": 0.959,
+     "after_datum_removed": 0.973,
+     "datum_err_xyz": [
+      -0.58,
+      -0.334,
+      0.004
+     ]
+    }
+   ]
+  },
+  "fresh|perimeter_orbit|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 203.8,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.614,
+     "p5": 0.242,
+     "min": 0.221,
+     "max": 0.757
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.29,
+    "point_err_p95_m": 0.838,
+    "frac_points_within_tol": 0.517,
+    "effective_detail_m": 0.122,
+    "nav_err_median_m": 0.675,
+    "core_nees_mean_median": 104.722,
+    "core_nees_le_7_81_median": 0.004
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.641,
+     "p5": 0.063,
+     "min": 0.061,
+     "max": 0.956
+    },
+    "frac_missions_ge_90": 0.083,
+    "point_err_median_m": 0.24,
+    "point_err_p95_m": 0.532,
+    "frac_points_within_tol": 0.634,
+    "effective_detail_m": 0.301,
+    "nav_err_median_m": 0.622,
+    "nav_err_p95_median_m": 1.016,
+    "nees_mean": 5.017,
+    "nees_le_7_81": 0.825
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.625,
+     "p5": 0.241,
+     "min": 0.169,
+     "max": 0.851
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.266,
+    "point_err_p95_m": 0.577,
+    "frac_points_within_tol": 0.552,
+    "effective_detail_m": 0.16,
+    "nav_err_median_m": 0.751,
+    "nees_mean": 3.715,
+    "nees_le_7_81": 0.897
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 0.965,
+     "p5": 0.67,
+     "min": 0.517,
+     "max": 0.999
+    },
+    "frac_missions_ge_90": 0.75,
+    "point_err_median_m": 0.042,
+    "point_err_p95_m": 0.119,
+    "frac_points_within_tol": 1.0,
+    "effective_detail_m": 0.301
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.489,
+     "p5": 0.237,
+     "min": 0.137,
+     "max": 1.057
+    },
+    "sigma_xyz_median_m": [
+     0.241,
+     0.239,
+     0.247
+    ],
+    "nees_mean": 5.654,
+    "core_mission_mean_err_m": {
+     "median": 0.504,
+     "p5": 0.267,
+     "min": 0.162,
+     "max": 1.171
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 2331,
+    "registrations_total": 2149,
+    "loop_factors_total": 9640,
+    "rejected_few_matches_total": 170,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     1789,
+     360,
+     0
+    ],
+    "step_ms_median": 11.909,
+    "step_ms_p95_max": 32.0,
+    "step_ms_max": 39.7,
+    "online_map_integration_ms_max": 66.1,
+    "end_smooth_and_rebuild_s_median": 8.096,
+    "end_smooth_and_rebuild_s_max": 12.3
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.259,
+     "after": 0.23,
+     "after_datum_removed": 0.895,
+     "datum_err_xyz": [
+      0.503,
+      0.67,
+      0.051
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.585,
+     "after": 0.556,
+     "after_datum_removed": 0.999,
+     "datum_err_xyz": [
+      -0.053,
+      -0.565,
+      -0.574
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.671,
+     "after": 0.77,
+     "after_datum_removed": 0.905,
+     "datum_err_xyz": [
+      -0.251,
+      -0.261,
+      0.305
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.642,
+     "after": 0.679,
+     "after_datum_removed": 0.517,
+     "datum_err_xyz": [
+      0.116,
+      0.059,
+      -0.043
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.757,
+     "after": 0.602,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      -0.015,
+      -0.431,
+      0.262
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.426,
+     "after": 0.064,
+     "after_datum_removed": 0.972,
+     "datum_err_xyz": [
+      -0.449,
+      -0.489,
+      0.228
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.664,
+     "after": 0.956,
+     "after_datum_removed": 0.989,
+     "datum_err_xyz": [
+      0.224,
+      0.091,
+      0.377
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.658,
+     "after": 0.88,
+     "after_datum_removed": 0.997,
+     "datum_err_xyz": [
+      -0.265,
+      -0.177,
+      0.02
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.755,
+     "after": 0.831,
+     "after_datum_removed": 0.98,
+     "datum_err_xyz": [
+      -0.133,
+      0.247,
+      0.213
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.509,
+     "after": 0.753,
+     "after_datum_removed": 0.959,
+     "datum_err_xyz": [
+      0.197,
+      -0.297,
+      0.049
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.492,
+     "after": 0.397,
+     "after_datum_removed": 0.795,
+     "datum_err_xyz": [
+      0.514,
+      0.16,
+      -0.424
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.221,
+     "after": 0.061,
+     "after_datum_removed": 0.938,
+     "datum_err_xyz": [
+      0.547,
+      -0.402,
+      0.811
+     ]
+    }
+   ]
+  },
+  "fresh|poi_close_pass|gps_tau90": {
+   "missions": 12,
+   "mission_s_median": 59.7,
+   "before_no_slam": {
+    "coverage": {
+     "median": 0.696,
+     "p5": 0.483,
+     "min": 0.471,
+     "max": 0.892
+    },
+    "frac_missions_ge_90": 0.0,
+    "point_err_median_m": 0.234,
+    "point_err_p95_m": 0.678,
+    "frac_points_within_tol": 0.612,
+    "effective_detail_m": 0.088,
+    "nav_err_median_m": 0.686,
+    "core_nees_mean_median": 94.076,
+    "core_nees_le_7_81_median": 0.009
+   },
+   "after_slam_smoothed": {
+    "coverage": {
+     "median": 0.708,
+     "p5": 0.54,
+     "min": 0.538,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 0.333,
+    "point_err_median_m": 0.249,
+    "point_err_p95_m": 0.568,
+    "frac_points_within_tol": 0.59,
+    "effective_detail_m": 0.236,
+    "nav_err_median_m": 0.636,
+    "nav_err_p95_median_m": 0.833,
+    "nees_mean": 2.78,
+    "nees_le_7_81": 0.997
+   },
+   "after_slam_online": {
+    "coverage": {
+     "median": 0.694,
+     "p5": 0.447,
+     "min": 0.434,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 0.167,
+    "point_err_median_m": 0.241,
+    "point_err_p95_m": 0.647,
+    "frac_points_within_tol": 0.618,
+    "effective_detail_m": 0.132,
+    "nav_err_median_m": 0.637,
+    "nees_mean": 2.593,
+    "nees_le_7_81": 1.0
+   },
+   "diagnostic_datum_removed_using_truth": {
+    "coverage": {
+     "median": 1.0,
+     "p5": 0.952,
+     "min": 0.925,
+     "max": 1.0
+    },
+    "frac_missions_ge_90": 1.0,
+    "point_err_median_m": 0.062,
+    "point_err_p95_m": 0.232,
+    "frac_points_within_tol": 0.996,
+    "effective_detail_m": 0.236
+   },
+   "datum": {
+    "err_m": {
+     "median": 0.624,
+     "p5": 0.339,
+     "min": 0.304,
+     "max": 0.982
+    },
+    "sigma_xyz_median_m": [
+     0.359,
+     0.358,
+     0.371
+    ],
+    "nees_mean": 3.405,
+    "core_mission_mean_err_m": {
+     "median": 0.617,
+     "p5": 0.343,
+     "min": 0.333,
+     "max": 1.018
+    }
+   },
+   "slam_stats": {
+    "keyframes_total": 796,
+    "registrations_total": 422,
+    "loop_factors_total": 1415,
+    "rejected_few_matches_total": 362,
+    "rejected_degenerate_total": 0,
+    "rejected_inconsistent_total": 0,
+    "observable_dims_hist_0_1_2_3": [
+     0,
+     284,
+     135,
+     3
+    ],
+    "step_ms_median": 5.278,
+    "step_ms_p95_max": 10.9,
+    "step_ms_max": 15.1,
+    "online_map_integration_ms_max": 61.3,
+    "end_smooth_and_rebuild_s_median": 1.92,
+    "end_smooth_and_rebuild_s_max": 3.45
+   },
+   "per_mission": [
+    {
+     "id": 0,
+     "before": 0.471,
+     "after": 0.538,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.248,
+      -0.539,
+      0.162
+     ]
+    },
+    {
+     "id": 1,
+     "before": 0.892,
+     "after": 1.0,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.111,
+      -0.188,
+      -0.212
+     ]
+    },
+    {
+     "id": 2,
+     "before": 0.846,
+     "after": 0.962,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.257,
+      0.16,
+      -0.22
+     ]
+    },
+    {
+     "id": 3,
+     "before": 0.7,
+     "after": 0.766,
+     "after_datum_removed": 0.925,
+     "datum_err_xyz": [
+      -0.286,
+      -0.068,
+      0.629
+     ]
+    },
+    {
+     "id": 4,
+     "before": 0.691,
+     "after": 0.543,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.426,
+      0.335,
+      -0.813
+     ]
+    },
+    {
+     "id": 5,
+     "before": 0.764,
+     "after": 0.792,
+     "after_datum_removed": 0.991,
+     "datum_err_xyz": [
+      0.127,
+      0.484,
+      0.36
+     ]
+    },
+    {
+     "id": 6,
+     "before": 0.814,
+     "after": 0.991,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.132,
+      -0.056,
+      0.414
+     ]
+    },
+    {
+     "id": 7,
+     "before": 0.691,
+     "after": 0.564,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      0.584,
+      -0.104,
+      -0.22
+     ]
+    },
+    {
+     "id": 8,
+     "before": 0.493,
+     "after": 0.542,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.312,
+      0.618,
+      -0.362
+     ]
+    },
+    {
+     "id": 9,
+     "before": 0.589,
+     "after": 0.611,
+     "after_datum_removed": 0.978,
+     "datum_err_xyz": [
+      0.595,
+      0.124,
+      -0.192
+     ]
+    },
+    {
+     "id": 10,
+     "before": 0.865,
+     "after": 0.917,
+     "after_datum_removed": 0.974,
+     "datum_err_xyz": [
+      0.099,
+      0.278,
+      0.219
+     ]
+    },
+    {
+     "id": 11,
+     "before": 0.554,
+     "after": 0.65,
+     "after_datum_removed": 1.0,
+     "datum_err_xyz": [
+      -0.563,
+      -0.109,
+      -0.797
+     ]
+    }
+   ]
+  }
+ },
+ "runtime_s": 791.6
+}
