@@ -1,0 +1,40 @@
+v4.1 vs v4.2 at the demo inputs (780 W/m2, 50 kV, 59.78 Hz, 44 rpm, demo sounding)
+v4.1: dT 14.36 K  head 392.26 Pa  v 25.24 m/s  Q 11417.15 m3/s  P_el 1.269 MW  ESP w 0.2784 m/s  eff 20.0954 %
+
+Steps from v4.1 to v4.2 (each row adds one change; eta_t 0.44 until the last two rows):
+coupled draft, exit loss only (K=1), neutral, eta 0.44     dT  22.14 K  head   549.9 Pa  v  16.37 m/s  Q     7404 m3/s  P_el  1.154 MW (ceiling 1.269)
++ friction f=0.010 over L=H/sin30 + ESP K=0.5, neutral     dT  28.27 K  head   688.5 Pa  v  12.82 m/s  Q     5798 m3/s  P_el  1.131 MW (ceiling 1.269)
++ demo sounding (stable layers), eta 0.44 [sensitivity]    dT  29.17 K  head   646.7 Pa  v  12.42 m/s  Q     5619 m3/s  P_el  1.030 MW (ceiling 1.269)
+v4.2 default: + eta_t 0.80 (ducted pressure-staged)        dT  29.17 K  head   646.7 Pa  v  12.42 m/s  Q     5619 m3/s  P_el  1.872 MW (ceiling 2.307)
+v4.2, neutral atmosphere (for the stable-layer penalty)    dT  28.27 K  head   688.5 Pa  v  12.82 m/s  Q     5798 m3/s  P_el  2.057 MW (ceiling 2.307)
+sensitivity: collector heat loss U=5 W/m2K                 dT  26.66 K  head   590.9 Pa  v  11.87 m/s  Q     5371 m3/s  P_el  1.635 MW (ceiling 2.016)
+Note: the hand check (constant density, head = rho g H dT / T) gives ~7,640 m3/s for the first row;
+the integrated head (air thins ~7 % over 650 m, virtual temperature) gives ~3 % less flow.
+
+Power invariance to the velocity guess (v4.2 default):
+  v_guess   1.0 -> P_el 1.872132 MW
+  v_guess  10.0 -> P_el 1.872132 MW
+  v_guess  60.0 -> P_el 1.872132 MW
+
+Full v4.2 benchmark:
+==============================================================================
+MOUNTAIN ECO-KINETIC ENGINE v4.2.0 — STANDALONE BENCHMARK
+==============================================================================
+[*] Inversion: 210.0m to 380.0m (+1.35°C/100m) | pierces: True
+[*] dT = 29.17 K | buoyant head = 646.67 Pa | turbine dp = 452.67 Pa | v = 12.42 m/s
+[*] Volumetric flow: 5619.3 m³/s (neutral atmosphere: 5798.1)
+[*] Shaft / electrical: 2.035 / 1.872 MW (stable-layer penalty 8.97 %)
+[*] ESP: w theory 0.24595 m/s, effective 0.06149 m/s | SCA 1.637 s/m
+[*] ESP capture: 9.577 % (theory 33.148 %) | corona 0.138 MW | dp 47.5 Pa
+[*] Air treated 0.4855 km³/day | PM2.5 removed 1.63 kg/day (at 35.0 µg/m³ example) | vented above inversion 0.4855 km³/day
+[*] Stress: 23.22 MPa (centrifugal 2.229) | SF = 25.84 [CLEARED]
+[*] Grid: df = -0.22 Hz | droop 0.458 MW | synthetic 0.446 MW
+[+] Export 2.638 MW (requested 2.638) | BESS 0.458 MW, SoC 0.496
+[*] Scale: thermal 202.9 MW x chimney limit 2.207 % -> net 1.734 MW (0.5777 % of sunlight); PV on same land ~60.0 MW
+[*] Daily (example profile): 12.53 MWh vs PV 460.0 MWh
+[=] Status: DEGRADED {'structural': 'CLEARED', 'positive_net_power': True, 'flow_established': True, 'conduit_pierces_inversion': True, 'grid_request_met': True, 'esp_sca_in_industrial_range': False}
+==============================================================================
+
+Sensitivity: turbine efficiency 0.44 (v4.1 value), otherwise v4.2 default:
+  electrical 1.03 MW, net 0.892 MW, daily 6.15 MWh
+Sensitivity: ESP with the theoretical migration velocity (derate 1.0): capture 33.148 %, PM2.5 5.63 kg/day

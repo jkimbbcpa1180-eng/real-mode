@@ -1,0 +1,18 @@
+==============================================================================
+MOUNTAIN ECO-KINETIC ENGINE v4.1 — STANDALONE BENCHMARK
+==============================================================================
+[*] Inversion: 210.0m to 380.0m (+1.35°C/100m)
+[*] Pierces inversion: True
+[*] dT = 14.36 K | dP = 392.26 Pa | v = 25.24 m/s
+[*] Volumetric flow: 11417.15 m³/s
+[*] Shaft power:     1.379 MW
+[*] Electrical:      1.269 MW
+[*] ESP drift velocity: 0.2784 m/s
+[*] ESP capture eff:    20.0954%
+[*] Clean air discharge: 0.198229 km³/day
+[*] Stress: 29.32 MPa | SF = 20.46 [CLEARED]
+[*] Grid freq: 59.78 Hz | df = -0.22 Hz
+[*] PFR droop: 0.458 MW
+[*] Synthetic inertia: 0.446 MW
+[+] Net export: 2.173 MW | BESS buffer: -0.904 MW
+==============================================================================
