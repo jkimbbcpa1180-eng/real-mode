@@ -1,0 +1,1287 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: CC0-1.0
+# This file is dedicated to the public domain under Creative Commons CC0 1.0.
+"""
+PROJECT DEEPGEM & STAR DRONE MODULE - v7.4 (honest rebuild of v7.3.1)
+
+Unified multi-physics energy model with an assistive tactical-drone
+classifier. This is a corrected, honestly-labeled version of v7.3.1.
+It is a desk model and a teaching artifact, NOT production hardware and
+NOT a flight controller: only the decision-brain's power budget is
+modeled, never the far larger flight/propulsion power.
+
+MODULES
+-------
+  1. Methane pyrolysis + SOFC/SOFC-GT electricity (NIST Shomate for CH4/H2,
+     NIST-JANAF table interpolation for graphite). Ground-plant model;
+     it does not power the drone.
+  2. Diamond betavoltaic baseload core (nickel source density, purity knob,
+     measured Ni-63 attenuation, half-space emission geometry, 13.1 eV
+     pair-creation energy, diode I0 matched to a published prototype).
+  3. Hybrid chassis skin (solar + perched micro-wind) feeding a supercapacitor
+     with ESR loss, leakage, DC-DC conversion loss, and a real Schmitt
+     hysteresis guard. Burst sized to the actual 42-MAC inference workload.
+  4. STAR assistive classifier with a documented, LEARNABLE label rule,
+     online SGD, held-out evaluation, post-hoc temperature scaling fitted on
+     a validation split (with ECE), and a reflex threshold relative to 1/K.
+
+RADIOISOTOPE SAFETY / LICENSING NOTE
+------------------------------------
+The betavoltaic uses Ni-63, a regulated radioactive material. Ni-63 betas
+are too weak to pierce the dead outer layer of skin, so an intact sealed
+source is not an external hazard; the real risk is internal (inhalation /
+ingestion / open wound) if the source is breached, e.g. in a crash or fire.
+The activities explored here (see README) are many orders of magnitude above
+exempt quantities (US 10 CFR 30.71 Schedule B: 10 uCi for Ni-63; IAEA GSR
+Part 3 general exemption 1e8 Bq) and would require a specific license,
+security, and accountancy in essentially any jurisdiction. Flying such a
+source adds crash-dispersal risk. Nothing here is a recommendation to build
+one. Local rules (e.g. a national regulator) are not modeled.
+
+Standard library only. Python 3.9+.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import random
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict, List, Optional, Sequence, Tuple
+
+
+VERSION = "7.4"
+
+
+# ===========================================================================
+# PHYSICAL CONSTANTS
+# ===========================================================================
+
+M_C = 12.0111
+M_H = 1.00794
+M_CH4 = M_C + 4.0 * M_H
+M_H2 = 2.0 * M_H
+
+LHV_CH4 = 50.009        # MJ/kg (pure CH4 at 298.15 K)
+LHV_H2 = 119.96         # MJ/kg (pure H2 at 298.15 K)
+
+ELEMENTARY_CHARGE = 1.602176634e-19
+JOULES_PER_EV = ELEMENTARY_CHARGE
+AVOGADRO = 6.02214076e23
+SECONDS_PER_YEAR = 31557600.0        # Julian standard year (365.25 d)
+
+# Diamond semiconductor properties.
+DIAMOND_BANDGAP_EV = 5.47
+DIAMOND_DENSITY_G_CM3 = 3.515
+# v7.3.1 used the Klein formula 2.8*Eg+0.5 = 15.816 eV/pair. Measured mean
+# electron-hole pair-creation energy in diamond is 12.8-13.9 eV (13.1 eV for
+# alphas on scCVD diamond, pssa.201600195). We use the measured value.
+DIAMOND_EHP_ENERGY_EV = 13.1
+
+AIR_DENSITY_SEA_LEVEL = 1.225         # kg/m^3
+
+# Nickel metal density (source substrate), 20 C.
+NICKEL_DENSITY_G_CM3 = 8.908
+
+# Beta mass-attenuation coefficients, cm^2/g, in the SOURCE material.
+# Ni-63: measured linear mu in nickel ~13184 cm^-1 (Schweitzer 1952, via
+# Belghachi arXiv:1903.09098 Table 1); /8.908 g/cm3 = 1480 cm^2/g.
+# v7.3.1 used 25 cm^2/g for Ni-63, which inflates escaping power ~7x.
+# C-14: no clean measured value to hand; the Gleason 0.017*Emax^-1.43 formula
+# (extrapolated below its 0.15-3.5 MeV fit range) gives ~812 cm^2/g for its
+# 0.156 MeV endpoint. Flagged ASSUMED.
+BETA_MU_RHO_CM2_PER_G: Dict[str, float] = {
+    "C-14": 812.0,
+    "Ni-63": 1480.0,
+}
+
+ISOTOPE_DATABASE = {
+    # Ni-63: ENSDF (J. Chen, NDS 196, 2024): T1/2 100.8(15) y, Q 66.977 keV,
+    # mean beta 17.439 keV. Earlier evaluation 101.2 y. C-14: NNDC 5700 y,
+    # Q 156.475 keV, mean 49.47 keV. Kept at v7.3.1 values (all within 0.4%).
+    "C-14": {"half_life_yr": 5700.0, "q_val_ev": 156476.0,
+             "avg_beta_ev": 49470.0, "molar_mass": 14.003241},
+    "Ni-63": {"half_life_yr": 101.2, "q_val_ev": 66980.0,
+              "avg_beta_ev": 17420.0, "molar_mass": 62.929669},
+}
+
+# NIST Chemistry WebBook Shomate coefficients (Chase 1998).
+# Format (A, B, C, D, E, F, H) -> H(T)-H(298.15) in kJ/mol with t = T/1000.
+# CH4: 298-1300 K set. H2: 298-1000 K set and 1000-2500 K set (selected by T).
+SHOMATE_COEFFS_CH4 = (-0.703029, 108.4773, -42.52157, 5.862788,
+                      0.678565, -76.84376, -74.8731)
+SHOMATE_COEFFS_H2_LOW = (33.066178, -11.363417, 11.432816, -2.772874,
+                         -0.158558, -9.980797, 0.0)
+SHOMATE_COEFFS_H2_HIGH = (18.563083, 12.257357, -2.859786, 0.268238,
+                          1.977990, -1.147438, 0.0)
+
+# Graphite has no Shomate fit on the NIST WebBook. We interpolate H(T)-H(298.15)
+# directly from the NIST-JANAF graphite table (C, reference state), kJ/mol.
+# H(298.15)=0 by definition. v7.3.1 used an untraceable "graphite Shomate" set:
+# on its own it gives H(298.15) = -7.05 kJ/mol; used as a delta from 298 K (as
+# v7.3.1 did) it gives 13.52 vs JANAF 17.92 kJ/mol at 1273 K (-24.6%).
+JANAF_GRAPHITE_H_MINUS_H298: Tuple[Tuple[float, float], ...] = (
+    (298.15, 0.0), (300.0, 0.016), (350.0, 0.487), (400.0, 1.039),
+    (450.0, 1.667), (500.0, 2.365), (600.0, 3.943), (700.0, 5.716),
+    (800.0, 7.637), (900.0, 9.672), (1000.0, 11.795), (1100.0, 13.989),
+    (1200.0, 16.240), (1300.0, 18.539), (1400.0, 20.879), (1500.0, 23.253),
+)
+
+
+TACTICAL_OPTIONS: Tuple[str, ...] = (
+    "hold_position",
+    "advance_direct",
+    "advance_flank_left",
+    "advance_flank_right",
+    "retreat_cover",
+    "retreat_rejoin_swarm",
+    "observe_and_report",
+)
+N_OPTIONS = len(TACTICAL_OPTIONS)
+N_FEATURES_DRONE = 6
+N_FEATURES_SERVER = 10
+
+TACTICAL_DT_S = 30.0      # intended real decision cadence; used by the
+                          # beta-only night-survival check. (The simulation loop
+                          # itself makes one decision per DIURNAL_DT_S step.)
+DIURNAL_DT_S = 360.0      # energy-integration step (240 steps = 1 solar day)
+STEPS_PER_DAY = 240
+
+# 15% of ground-truth labels are replaced by a uniform random option. The best
+# possible accuracy for a model that has perfectly learned the rule is therefore
+# (1 - p) + p/K.
+LABEL_NOISE = 0.15
+
+# Index of energy_reserve within the 6 drone features. It is a power reading,
+# so the label rule gives it zero weight.
+ENERGY_RESERVE_INDEX = 3
+
+
+# ===========================================================================
+# MATH HELPERS
+# ===========================================================================
+
+def _clamp(v: float, low: float = 0.0, high: float = 1.0) -> float:
+    if not isinstance(v, (int, float)) or isinstance(v, bool) or not math.isfinite(v):
+        return (low + high) / 2.0
+    return max(low, min(high, float(v)))
+
+
+def _logits_softmax(logits: Sequence[float], temperature: float = 1.0) -> List[float]:
+    t = max(1e-3, temperature)
+    scaled = [z / t for z in logits]
+    max_z = max(scaled)
+    exps = [math.exp(z - max_z) for z in scaled]
+    total = sum(exps)
+    return [e / max(1e-12, total) for e in exps]
+
+
+def _stable_softmax(logits: Sequence[float], temperature: float = 1.0) -> List[float]:
+    return _logits_softmax(logits, temperature)
+
+
+def _shomate_enthalpy(coeffs: Tuple[float, ...], temp_k: float) -> float:
+    """H(T) - H(298.15) in kJ/mol from a NIST Shomate coefficient set."""
+    t = temp_k / 1000.0
+    a, b, c, d, e, f, h = coeffs
+    return (a * t + (b * (t ** 2)) / 2.0 + (c * (t ** 3)) / 3.0
+            + (d * (t ** 4)) / 4.0 - (e / t) + f - h)
+
+
+def _h2_sensible_kj_mol(t_high: float, t_low: float) -> float:
+    """H2 sensible enthalpy change, picking the Shomate set by temperature."""
+    def h(T: float) -> float:
+        coeffs = SHOMATE_COEFFS_H2_LOW if T <= 1000.0 else SHOMATE_COEFFS_H2_HIGH
+        return _shomate_enthalpy(coeffs, T)
+    return h(t_high) - h(t_low)
+
+
+def _ch4_sensible_kj_mol(t_high: float, t_low: float) -> float:
+    return (_shomate_enthalpy(SHOMATE_COEFFS_CH4, t_high)
+            - _shomate_enthalpy(SHOMATE_COEFFS_CH4, t_low))
+
+
+def graphite_h_minus_h298_kj_mol(temp_k: float) -> float:
+    """H(T)-H(298.15) for graphite, kJ/mol, linearly interpolated from JANAF."""
+    tbl = JANAF_GRAPHITE_H_MINUS_H298
+    if temp_k <= tbl[0][0]:
+        return tbl[0][1]
+    if temp_k >= tbl[-1][0]:
+        # linear extrapolation off the last segment
+        (t0, h0), (t1, h1) = tbl[-2], tbl[-1]
+        return h1 + (h1 - h0) * (temp_k - t1) / (t1 - t0)
+    for (t0, h0), (t1, h1) in zip(tbl, tbl[1:]):
+        if t0 <= temp_k <= t1:
+            return h0 + (h1 - h0) * (temp_k - t0) / (t1 - t0)
+    return tbl[-1][1]
+
+
+def _graphite_sensible_kj_mol(t_high: float, t_low: float) -> float:
+    return graphite_h_minus_h298_kj_mol(t_high) - graphite_h_minus_h298_kj_mol(t_low)
+
+
+# ===========================================================================
+# MODULE 1: METHANE PYROLYSIS + SOFC(-GT)
+# ===========================================================================
+
+@dataclass
+class PyrolysisReport:
+    methane_input_kg: float
+    reactor_temp_kelvin: float
+    total_h2_produced_kg: float
+    solid_carbon_recovered_kg: float
+    dh_reaction_298k_mj: float
+    dh_reaction_at_t_mj: float
+    sensible_preheat_feed_mj: float
+    sensible_products_mj: float
+    heat_recuperated_mj: float
+    net_process_heat_mj: float
+    parasitic_h2_combusted_kg: float
+    net_export_h2_kg: float
+    sofc_eff_assumed: float
+    sofc_gt_electricity_kwh: float
+    thermal_efficiency_pct: float
+    electrical_efficiency_pct: float
+
+
+def run_pyrolysis_stage(
+    methane_kg: float = 1.0,
+    temp_k: float = 1273.15,
+    hx_effectiveness: float = 0.85,
+    combustor_eff: float = 0.95,
+    sofc_eff: float = 0.60,          # ASSUMED; realistic SOFC-GT hybrid, LHV basis
+    t_inlet_k: float = 298.15,
+    conversion: float = 1.0,         # fraction of CH4 decomposed (<=~0.982 eq. @1273K)
+) -> PyrolysisReport:
+    if methane_kg <= 0:
+        raise ValueError("methane_kg must be positive")
+    if temp_k <= t_inlet_k:
+        raise ValueError("reactor temp must exceed inlet temp")
+    if not 0.0 < conversion <= 1.0:
+        raise ValueError("conversion must be in (0, 1]")
+    for name, v in (("hx_effectiveness", hx_effectiveness),
+                    ("combustor_eff", combustor_eff),
+                    ("sofc_eff", sofc_eff)):
+        if not 0.0 <= v <= 1.0:
+            raise ValueError(f"{name} must be in [0, 1]")
+
+    mol_ch4_fed = (methane_kg * 1000.0) / M_CH4
+    mol_ch4 = mol_ch4_fed * conversion           # actually decomposed
+    mol_h2_total = 2.0 * mol_ch4
+    mass_h2_total_kg = (mol_h2_total * M_H2) / 1000.0
+    mass_c_total_kg = (mol_ch4 * M_C) / 1000.0
+
+    dh_rxn_298k_mj = (mol_ch4 * 74.873) / 1000.0
+
+    # Sensible heats inlet->T.
+    dh_feed_kj_mol = _ch4_sensible_kj_mol(temp_k, t_inlet_k)
+    dh_h2_kj_mol = _h2_sensible_kj_mol(temp_k, t_inlet_k)
+    dh_c_kj_mol = _graphite_sensible_kj_mol(temp_k, t_inlet_k)
+
+    q_feed_mj = (mol_ch4 * dh_feed_kj_mol) / 1000.0
+    q_prod_mj = ((mol_h2_total * dh_h2_kj_mol) + (mol_ch4 * dh_c_kj_mol)) / 1000.0
+
+    # Reaction enthalpy evaluated at reactor T (reported, for reference).
+    dh_rxn_at_t_mj = dh_rxn_298k_mj + (q_prod_mj - q_feed_mj)
+
+    # Recuperator recovers heat from the hot product stream to preheat the feed,
+    # limited by the feed's sensible demand.
+    q_recup_mj = min(q_feed_mj, q_prod_mj) * hx_effectiveness
+
+    # First-law reactor heat: Q = dH_rxn(298) + sensible(products) - recuperated.
+    # (v7.3.1 used sensible(feed) in place of sensible(products).)
+    net_heat_req_mj = max(0.0, dh_rxn_298k_mj + q_prod_mj - q_recup_mj)
+    h2_burned_kg = min(mass_h2_total_kg,
+                       net_heat_req_mj / max(1e-12, LHV_H2 * combustor_eff))
+    net_h2_kg = max(0.0, mass_h2_total_kg - h2_burned_kg)
+
+    sofc_kwh = ((net_h2_kg * LHV_H2) / 3.6) * sofc_eff
+    input_energy_mj = methane_kg * LHV_CH4
+
+    return PyrolysisReport(
+        methane_input_kg=round(methane_kg, 6),
+        reactor_temp_kelvin=round(temp_k, 2),
+        total_h2_produced_kg=round(mass_h2_total_kg, 6),
+        solid_carbon_recovered_kg=round(mass_c_total_kg, 6),
+        dh_reaction_298k_mj=round(dh_rxn_298k_mj, 4),
+        dh_reaction_at_t_mj=round(dh_rxn_at_t_mj, 4),
+        sensible_preheat_feed_mj=round(q_feed_mj, 4),
+        sensible_products_mj=round(q_prod_mj, 4),
+        heat_recuperated_mj=round(q_recup_mj, 4),
+        net_process_heat_mj=round(net_heat_req_mj, 4),
+        parasitic_h2_combusted_kg=round(h2_burned_kg, 6),
+        net_export_h2_kg=round(net_h2_kg, 6),
+        sofc_eff_assumed=round(sofc_eff, 4),
+        sofc_gt_electricity_kwh=round(sofc_kwh, 6),
+        thermal_efficiency_pct=round(
+            100.0 * (net_h2_kg * LHV_H2) / max(1e-12, input_energy_mj), 4),
+        electrical_efficiency_pct=round(
+            100.0 * (sofc_kwh * 3.6) / max(1e-12, input_energy_mj), 4),
+    )
+
+
+# ===========================================================================
+# MODULE 2: DIAMOND BETAVOLTAIC BASELOAD CORE
+# ===========================================================================
+
+# Published saturated escaping beta power for PURE Ni-63, per emitting face
+# (Monte Carlo, Belghachi et al. arXiv:1903.09098). Used as a cross-check only.
+PUBLISHED_NI63_SATURATION_UW_CM2 = 3.28
+
+
+def diode_voc(i_sc_a: float, area_cm2: float, i0_per_cm2_a: float,
+              ideality_factor: float = 1.2, v_thermal: float = 0.02585) -> float:
+    """Ideal-diode open-circuit voltage, capped at the diamond bandgap."""
+    i_0_a = i0_per_cm2_a * area_cm2
+    return min(DIAMOND_BANDGAP_EV,
+               ideality_factor * v_thermal
+               * math.log(max(1.0, (i_sc_a / i_0_a) + 1.0)))
+
+
+def ni63_saturated_escaping_uw_cm2(purity: float = 1.0) -> float:
+    """This model's escaping power per face for a very thick (saturated) source.
+
+    Thick limit of p_rad*eta_self*0.5/area = 0.5 * (A_s * E_mean) / (mu/rho).
+    Compare against PUBLISHED_NI63_SATURATION_UW_CM2 for purity=1.
+    """
+    spec = ISOTOPE_DATABASE["Ni-63"]
+    lam = math.log(2.0) / (spec["half_life_yr"] * SECONDS_PER_YEAR)
+    a_s = lam * purity / spec["molar_mass"] * AVOGADRO          # Bq per g metal
+    w_per_g = a_s * spec["avg_beta_ev"] * JOULES_PER_EV
+    return 0.5 * w_per_g / BETA_MU_RHO_CM2_PER_G["Ni-63"] * 1e6
+
+@dataclass
+class BetavoltaicReport:
+    isotope: str
+    mass_mg: float
+    isotope_purity: float
+    specific_activity_ci_g: float
+    surface_area_cm2: float
+    source_thickness_um: float
+    activity_bq: float
+    radiological_power_uw: float
+    self_absorption_factor: float
+    escaping_power_uw_per_cm2: float
+    open_circuit_voltage_v: float
+    short_circuit_current_ua: float
+    electrical_power_uw: float
+    cell_efficiency_pct: float
+    transduction_efficiency_pct: float
+    carbon_loop_fraction: float
+    carbon_kg_available: float
+    carbon_loop_note: str
+
+
+def run_betavoltaic_stage(
+    isotope: str = "Ni-63",
+    mass_mg: float = 25.0,
+    base_footprint_cm2: float = 1.0,
+    aspect_ratio: float = 5.0,
+    ideality_factor: float = 1.2,
+    collection_yield: float = 0.90,       # Bormashov 2018 report >90% charge collection
+    source_density_g_cm3: float = NICKEL_DENSITY_G_CM3,
+    isotope_purity: float = 0.18,         # ASSUMED; ~10 Ci/g, matches commercial ">10 Ci/g"
+    i0_per_cm2_a: float = 2.7e-20,        # ASSUMED; tuned so a prototype-like cell gives ~1.02 V
+    emission_faces: int = 1,              # source radiates into 1 converter face
+    carbon_loop_fraction: float = 0.0,
+    carbon_available_kg: float = 0.0,
+) -> BetavoltaicReport:
+    if isotope not in ISOTOPE_DATABASE:
+        raise ValueError(f"unsupported isotope: {isotope}")
+    if mass_mg <= 0:
+        raise ValueError("mass_mg must be positive")
+    if base_footprint_cm2 <= 0 or aspect_ratio <= 0:
+        raise ValueError("geometry must be positive")
+    if not 0.0 < isotope_purity <= 1.0:
+        raise ValueError("isotope_purity must be in (0, 1]")
+    if not 0.0 <= carbon_loop_fraction <= 1.0:
+        raise ValueError("carbon_loop_fraction must be in [0, 1]")
+    if ideality_factor <= 0 or collection_yield <= 0:
+        raise ValueError("ideality_factor and collection_yield must be positive")
+    if emission_faces not in (1, 2):
+        raise ValueError("emission_faces must be 1 or 2")
+
+    spec = ISOTOPE_DATABASE[isotope]
+    mass_g = mass_mg * 1e-3
+    effective_area_cm2 = base_footprint_cm2 * aspect_ratio
+
+    # Only the radioactive fraction of the source metal contributes activity.
+    active_moles = (mass_g * isotope_purity) / spec["molar_mass"]
+    decay_const = math.log(2.0) / (spec["half_life_yr"] * SECONDS_PER_YEAR)
+    activity_bq = decay_const * active_moles * AVOGADRO
+    specific_activity_ci_g = (activity_bq / mass_g) / 3.7e10
+
+    avg_e_j = spec["avg_beta_ev"] * JOULES_PER_EV
+    p_rad_w = activity_bq * avg_e_j
+
+    # Thickness from the real (nickel) source density. Note that self-absorption
+    # depends only on areal density (mass/area), so density cancels in mu*t; it
+    # only affects the reported physical thickness.
+    thickness_cm = mass_g / (source_density_g_cm3 * effective_area_cm2)
+    thickness_um = thickness_cm * 1e4
+    areal_density_g_cm2 = mass_g / effective_area_cm2
+
+    mu_rho = BETA_MU_RHO_CM2_PER_G[isotope]
+    mu_t = max(1e-9, mu_rho * areal_density_g_cm2)
+    eta_self = (1.0 - math.exp(-mu_t)) / mu_t
+
+    # Half-space emission: of the betas that escape the slab, a fraction
+    # (emission_faces/2) head toward a converter face.
+    geometry_factor = emission_faces / 2.0
+    p_escaping_w = p_rad_w * eta_self * geometry_factor
+    escaping_uw_per_cm2 = (p_escaping_w * 1e6) / effective_area_cm2
+
+    ehp_rate = p_escaping_w / (DIAMOND_EHP_ENERGY_EV * JOULES_PER_EV)
+    i_sc_a = ELEMENTARY_CHARGE * ehp_rate * collection_yield
+
+    v_oc = diode_voc(i_sc_a, effective_area_cm2, i0_per_cm2_a, ideality_factor)
+    v_thermal = 0.02585  # 300 K
+
+    v_norm = v_oc / (ideality_factor * v_thermal)
+    ff = ((v_norm - math.log(v_norm + 0.72)) / (v_norm + 1.0)
+          if v_norm > 1.0 else 0.25)
+    p_elec_w = i_sc_a * v_oc * ff
+
+    carbon_note = (
+        "no-op: fossil-derived CH4 carbon contains essentially no C-14, so "
+        "routing pyrolysis carbon into a C-14 source yields ~0 added activity; "
+        "fraction is tracked for bookkeeping only and feeds no power."
+    )
+
+    return BetavoltaicReport(
+        isotope=isotope,
+        mass_mg=round(mass_mg, 6),
+        isotope_purity=round(isotope_purity, 4),
+        specific_activity_ci_g=round(specific_activity_ci_g, 4),
+        surface_area_cm2=round(effective_area_cm2, 4),
+        source_thickness_um=round(thickness_um, 4),
+        activity_bq=activity_bq,
+        radiological_power_uw=round(p_rad_w * 1e6, 6),
+        self_absorption_factor=round(eta_self, 6),
+        escaping_power_uw_per_cm2=round(escaping_uw_per_cm2, 6),
+        open_circuit_voltage_v=round(v_oc, 4),
+        short_circuit_current_ua=round(i_sc_a * 1e6, 6),
+        electrical_power_uw=round(p_elec_w * 1e6, 6),
+        cell_efficiency_pct=round(
+            (p_elec_w / max(1e-12, p_escaping_w)) * 100.0, 4),
+        transduction_efficiency_pct=round(
+            (p_elec_w / max(1e-12, p_rad_w)) * 100.0, 4),
+        carbon_loop_fraction=round(carbon_loop_fraction, 4),
+        carbon_kg_available=round(max(0.0, carbon_available_kg), 8),
+        carbon_loop_note=carbon_note,
+    )
+
+
+# ===========================================================================
+# MODULE 3: CHASSIS HARVEST & SCHMITT-GUARDED SUPERCAP BUFFER
+# ===========================================================================
+
+# Storage presets: (esr_ohms, leakage_w, peak_current_a). "coin_47mF" is a real
+# 47 mF part (Abracon ADCV-S05R5SA473W: ESR <=120 ohm, peak 14 mA, leakage
+# <=3 uA after 72 h at 5.5 V). "typical" is a mid small-supercap guess (ASSUMED).
+# "ideal_low_esr" reproduces v7.3.1's optimistic values for comparison.
+STORAGE_PRESETS: Dict[str, Tuple[float, float, Optional[float]]] = {
+    "ideal_low_esr": (0.05, 1.2e-7, None),
+    "typical": (5.0, 3.0e-6, None),
+    "coin_47mF": (120.0, 3.0e-6 * 3.3, 0.014),
+}
+
+
+@dataclass
+class HybridChassisSkin:
+    solar_area_m2: float = 0.08
+    solar_efficiency: float = 0.24
+    turbine_rotor_area_m2: float = 0.012
+    turbine_cp: float = 0.32
+    generator_eff: float = 0.85
+    wind_cut_in_m_s: float = 2.0
+
+    def compute_solar_power_w(self, irradiance_w_m2: float) -> float:
+        return max(0.0, self.solar_area_m2 * irradiance_w_m2 * self.solar_efficiency)
+
+    def compute_perched_wind_power_w(self, wind_speed_m_s: float,
+                                      is_perched: bool) -> float:
+        if not is_perched or wind_speed_m_s < self.wind_cut_in_m_s:
+            return 0.0
+        p_aero = (0.5 * AIR_DENSITY_SEA_LEVEL
+                  * self.turbine_rotor_area_m2
+                  * (wind_speed_m_s ** 3) * self.turbine_cp)
+        return p_aero * self.generator_eff
+
+
+@dataclass
+class DeepGemPowerState:
+    v_cap: float = 3.3
+    capacitance_f: float = 0.05
+    v_high: float = 3.3
+    v_low: float = 2.0
+    v_rearm: float = 2.65            # Schmitt re-arm threshold (must exceed v_low)
+    esr_ohms: float = 5.0            # realistic small supercap ESR (ohms)
+    dcdc_efficiency: float = 0.85    # harvest -> cap conversion efficiency
+    trickle_betavoltaic_uw: float = 0.45
+    quiescent_leakage_w: float = 3.0e-6   # realistic coin-supercap leakage (~3 uA @ ~1 V)
+    peak_current_a: Optional[float] = None  # None = no rated limit checked
+    skin: HybridChassisSkin = field(default_factory=HybridChassisSkin)
+    tactical_inference_enabled: bool = True
+    safety_transitions: int = 0
+
+    def __post_init__(self):
+        if not (0.0 <= self.v_low < self.v_rearm < self.v_high):
+            raise ValueError("require 0 <= v_low < v_rearm < v_high")
+        if not 0.0 < self.dcdc_efficiency <= 1.0:
+            raise ValueError("dcdc_efficiency must be in (0, 1]")
+
+    def energy_available_j(self) -> float:
+        return 0.5 * self.capacitance_f * max(
+            0.0, (self.v_cap ** 2 - self.v_low ** 2))
+
+    def burst_feasible(self, power_w: float,
+                       duration_s: float) -> Tuple[bool, str]:
+        """Can one burst EVER run, even from a full cap? (independent of state)"""
+        v_nom = max(self.v_low, (self.v_high + self.v_low) / 2.0)
+        i_burst = power_w / v_nom
+        drain = power_w * duration_s + (i_burst ** 2) * self.esr_ohms * duration_s
+        usable = 0.5 * self.capacitance_f * (self.v_high ** 2 - self.v_low ** 2)
+        if self.peak_current_a is not None and i_burst > self.peak_current_a:
+            return False, (f"burst current {i_burst:.4f} A exceeds rated peak "
+                           f"{self.peak_current_a:.4f} A")
+        if drain > usable:
+            return False, (f"burst needs {drain:.4f} J but full cap holds only "
+                           f"{usable:.4f} J usable")
+        return True, "ok"
+
+    def _update_schmitt(self) -> None:
+        was_enabled = self.tactical_inference_enabled
+        if self.v_cap <= self.v_low:
+            self.tactical_inference_enabled = False
+        elif self.v_cap >= self.v_rearm:
+            self.tactical_inference_enabled = True
+        if self.tactical_inference_enabled != was_enabled:
+            self.safety_transitions += 1
+
+    def recharge_step(
+        self,
+        delta_time_s: float,
+        irradiance_w_m2: float = 0.0,
+        wind_speed_m_s: float = 0.0,
+        is_perched: bool = False,
+    ) -> Dict[str, float]:
+        p_beta_w = self.trickle_betavoltaic_uw * 1e-6
+        p_solar_w = self.skin.compute_solar_power_w(irradiance_w_m2)
+        p_wind_w = self.skin.compute_perched_wind_power_w(wind_speed_m_s, is_perched)
+
+        p_harvest = p_beta_w + p_solar_w + p_wind_w
+        p_into_cap = p_harvest * self.dcdc_efficiency      # DC-DC conversion loss
+        p_net = p_into_cap - self.quiescent_leakage_w
+
+        e_current = 0.5 * self.capacitance_f * (self.v_cap ** 2)
+        e_max = 0.5 * self.capacitance_f * (self.v_high ** 2)
+        e_target = e_current + p_net * delta_time_s
+        clipped_j = max(0.0, e_target - e_max)     # cap full: energy not stored
+        e_next = max(0.0, min(e_max, e_target))
+        self.v_cap = math.sqrt(max(0.0, 2.0 * e_next / self.capacitance_f))
+
+        self._update_schmitt()
+
+        return {
+            "p_beta_w": p_beta_w,
+            "p_solar_w": p_solar_w,
+            "p_wind_w": p_wind_w,
+            "p_harvest_w": p_harvest,
+            "p_into_cap_w": p_into_cap,
+            "p_net_w": p_net,
+            "clipped_j": clipped_j,
+        }
+
+    def attempt_burst_execution(self, power_w: float,
+                                 duration_s: float) -> Tuple[bool, float]:
+        if not self.tactical_inference_enabled:
+            return False, 0.0
+        v_nom = max(self.v_low, (self.v_cap + self.v_low) / 2.0)
+        i_burst = power_w / v_nom
+        joule_loss_j = (i_burst ** 2) * self.esr_ohms * duration_s
+        total_drain_j = (power_w * duration_s) + joule_loss_j
+
+        if self.energy_available_j() < total_drain_j or self.v_cap <= self.v_low:
+            # Not enough energy for a burst: trip to safe mode. Inference stays
+            # off until recharge lifts v_cap back to v_rearm (true hysteresis).
+            if self.tactical_inference_enabled:
+                self.tactical_inference_enabled = False
+                self.safety_transitions += 1
+            return False, 0.0
+
+        e_remaining = (0.5 * self.capacitance_f * (self.v_cap ** 2)
+                       - total_drain_j)
+        self.v_cap = math.sqrt(max(0.0, 2.0 * e_remaining / self.capacitance_f))
+        self._update_schmitt()
+        return True, joule_loss_j
+
+
+# ===========================================================================
+# MODULE 4: STAR ASSISTIVE CLASSIFIER, LEARNABLE LABELS, CALIBRATION
+# ===========================================================================
+
+def _make_label_weights(seed: int = 20240607) -> List[List[float]]:
+    """Fixed weight matrix (K x N_FEATURES_DRONE) defining the LEARNABLE rule.
+
+    The ground-truth action is argmax over options of w . (features - 0.5). It
+    depends only on drone-visible features, so a drone linear model can learn it
+    and the server (same features + 4 irrelevant context features) can too.
+    """
+    rng = random.Random(seed)
+    w = [[rng.gauss(0.0, 1.5) for _ in range(N_FEATURES_DRONE)]
+         for _ in range(N_OPTIONS)]
+    for row in w:
+        row[ENERGY_RESERVE_INDEX] = 0.0   # power reading, not a tactical input
+    return w
+
+
+LABEL_WEIGHTS: List[List[float]] = _make_label_weights()
+
+
+def label_from_features(drone_features: Sequence[float]) -> int:
+    """Deterministic learnable label from the 6 drone-visible features."""
+    scores = [sum(w * (x - 0.5) for w, x in zip(row, drone_features))
+              for row in LABEL_WEIGHTS]
+    return max(range(N_OPTIONS), key=lambda i: scores[i])
+
+
+def bayes_ceiling_accuracy() -> float:
+    """Best achievable accuracy given LABEL_NOISE (rule is perfectly learnable)."""
+    return (1.0 - LABEL_NOISE) + LABEL_NOISE / N_OPTIONS
+
+
+@dataclass
+class STALinearClassifier:
+    weights: List[List[float]]
+    bias: List[float]
+    option_names: Tuple[str, ...]
+    learning_rate: float = 0.05
+    l2_reg: float = 0.0005
+    temperature: float = 1.0
+    grad_clip: float = 5.0
+    n_updates: int = 0
+
+    @classmethod
+    def initialize(cls, n_options: int, n_features: int,
+                   option_names: Tuple[str, ...],
+                   seed: int = 0,
+                   learning_rate: float = 0.05,
+                   temperature: float = 1.0) -> "STALinearClassifier":
+        rng = random.Random(seed)
+        weights = [[rng.gauss(0.0, 0.05) for _ in range(n_features)]
+                   for _ in range(n_options)]
+        bias = [0.0] * n_options
+        return cls(weights=weights, bias=bias, option_names=option_names,
+                   learning_rate=learning_rate, temperature=temperature)
+
+    def logits(self, features: Sequence[float]) -> List[float]:
+        return [self.bias[i] + sum(w * x for w, x in zip(row, features))
+                for i, row in enumerate(self.weights)]
+
+    def forward(self, features: Sequence[float],
+                temperature: Optional[float] = None) -> List[float]:
+        t = self.temperature if temperature is None else temperature
+        return _logits_softmax(self.logits(features), t)
+
+    def train_step(self, features: Sequence[float],
+                   outcome_index: int) -> float:
+        # Train at temperature 1 (temperature is a post-hoc calibration knob).
+        probs = _logits_softmax(self.logits(features), 1.0)
+        loss = -math.log(max(1e-12, probs[outcome_index]))
+        for i in range(len(self.weights)):
+            err = probs[i] - (1.0 if i == outcome_index else 0.0)
+            err_clipped = _clamp(err, -self.grad_clip, self.grad_clip)
+            for j in range(len(self.weights[i])):
+                grad = err * features[j] + self.l2_reg * self.weights[i][j]
+                grad_clipped = _clamp(grad, -self.grad_clip, self.grad_clip)
+                self.weights[i][j] -= self.learning_rate * grad_clipped
+            self.bias[i] -= self.learning_rate * err_clipped
+        self.n_updates += 1
+        return loss
+
+
+def reflex_threshold(n_options: int = N_OPTIONS, margin: float = 1.5) -> float:
+    """Reflex fires when top prob is below margin/K (i.e. barely above chance)."""
+    return margin / n_options
+
+
+def fit_temperature(logits_list: Sequence[Sequence[float]],
+                    labels: Sequence[int],
+                    grid: Optional[Sequence[float]] = None) -> float:
+    """Post-hoc temperature scaling: pick T>0 minimizing NLL on a held-out set."""
+    if not logits_list:
+        return 1.0
+    if grid is None:
+        grid = [0.2 + 0.02 * i for i in range(241)]  # 0.20 .. 5.00
+    best_t, best_nll = 1.0, float("inf")
+    for t in grid:
+        nll = 0.0
+        for lg, y in zip(logits_list, labels):
+            p = _logits_softmax(lg, t)
+            nll -= math.log(max(1e-12, p[y]))
+        nll /= len(labels)
+        if nll < best_nll:
+            best_nll, best_t = nll, t
+    return best_t
+
+
+def expected_calibration_error(probs_list: Sequence[Sequence[float]],
+                               labels: Sequence[int],
+                               n_bins: int = 15) -> float:
+    if not probs_list:
+        return 0.0
+    bins_conf = [0.0] * n_bins
+    bins_acc = [0.0] * n_bins
+    bins_cnt = [0] * n_bins
+    for probs, y in zip(probs_list, labels):
+        pred = max(range(len(probs)), key=lambda i: probs[i])
+        conf = probs[pred]
+        b = min(n_bins - 1, int(conf * n_bins))
+        bins_conf[b] += conf
+        bins_acc[b] += 1.0 if pred == y else 0.0
+        bins_cnt[b] += 1
+    n = len(labels)
+    ece = 0.0
+    for b in range(n_bins):
+        if bins_cnt[b] == 0:
+            continue
+        acc = bins_acc[b] / bins_cnt[b]
+        conf = bins_conf[b] / bins_cnt[b]
+        ece += (bins_cnt[b] / n) * abs(acc - conf)
+    return ece
+
+
+@dataclass
+class STARCalibrationTracker:
+    option_names: Tuple[str, ...]
+    predictions: List[List[float]] = field(default_factory=list)
+    outcomes: List[int] = field(default_factory=list)
+
+    def add(self, probs: Sequence[float], outcome_idx: int) -> None:
+        self.predictions.append(list(probs))
+        self.outcomes.append(outcome_idx)
+
+    def compute_brier(self) -> Optional[float]:
+        if not self.predictions:
+            return None
+        total = 0.0
+        for probs, y in zip(self.predictions, self.outcomes):
+            total += sum((p - (1.0 if i == y else 0.0)) ** 2
+                         for i, p in enumerate(probs))
+        return total / len(self.predictions)
+
+    def compute_accuracy(self) -> Optional[float]:
+        if not self.predictions:
+            return None
+        correct = sum(
+            1 for probs, y in zip(self.predictions, self.outcomes)
+            if max(range(len(probs)), key=lambda i: probs[i]) == y
+        )
+        return correct / len(self.predictions)
+
+
+@dataclass
+class RegimeTrackers:
+    day_airborne: STARCalibrationTracker
+    day_perched: STARCalibrationTracker
+    night_airborne: STARCalibrationTracker
+    night_perched: STARCalibrationTracker
+
+    @classmethod
+    def initialize(cls, options: Tuple[str, ...]) -> "RegimeTrackers":
+        return cls(
+            day_airborne=STARCalibrationTracker(options),
+            day_perched=STARCalibrationTracker(options),
+            night_airborne=STARCalibrationTracker(options),
+            night_perched=STARCalibrationTracker(options),
+        )
+
+    def select(self, is_day: bool, is_perched: bool) -> STARCalibrationTracker:
+        if is_day and not is_perched:
+            return self.day_airborne
+        if is_day and is_perched:
+            return self.day_perched
+        if not is_day and not is_perched:
+            return self.night_airborne
+        return self.night_perched
+
+    def summary(self) -> Dict[str, Any]:
+        def _summ(t: STARCalibrationTracker) -> Dict[str, Any]:
+            brier = t.compute_brier()
+            accuracy = t.compute_accuracy()
+            return {
+                "n": len(t.predictions),
+                "brier": round(brier, 6) if brier is not None else None,
+                "accuracy": round(accuracy, 4) if accuracy is not None else None,
+            }
+        return {
+            "day_airborne": _summ(self.day_airborne),
+            "day_perched": _summ(self.day_perched),
+            "night_airborne": _summ(self.night_airborne),
+            "night_perched": _summ(self.night_perched),
+        }
+
+
+def _sample_drone_features(rng: random.Random, energy_reserve: float) -> List[float]:
+    return [
+        rng.random(),           # relative_threat
+        rng.random(),           # swarm_cohesion
+        rng.random(),           # target_visibility
+        energy_reserve,         # energy_reserve (from the cap)
+        rng.random(),           # link_quality
+        rng.random(),           # mission_urgency
+    ]
+
+
+def evaluate_held_out(drone_clf: STALinearClassifier,
+                      server_clf: STALinearClassifier,
+                      n: int, seed: int,
+                      energy_reserve_pool: Optional[Sequence[float]] = None,
+                      ) -> Dict[str, Any]:
+    """Freeze the trained models and score on fresh, never-trained samples.
+
+    energy_reserve is resampled from the values seen in training so the held-out
+    inputs come from the same distribution the model was trained on.
+    """
+    rng = random.Random(seed)
+    pool = list(energy_reserve_pool) if energy_reserve_pool else [1.0]
+    d_tr = STARCalibrationTracker(TACTICAL_OPTIONS)
+    s_tr = STARCalibrationTracker(TACTICAL_OPTIONS)
+    d_logits: List[List[float]] = []
+    s_logits: List[List[float]] = []
+    labels: List[int] = []
+    for _ in range(n):
+        df = _sample_drone_features(rng, rng.choice(pool))
+        y = label_from_features(df)
+        if rng.random() < LABEL_NOISE:
+            y = rng.randrange(N_OPTIONS)
+        sf = df + [rng.random() for _ in range(4)]
+        d_tr.add(drone_clf.forward(df), y)
+        s_tr.add(server_clf.forward(sf), y)
+        d_logits.append(drone_clf.logits(df))
+        s_logits.append(server_clf.logits(sf))
+        labels.append(y)
+    # Split held-out set: first half calibrates temperature, second half tests.
+    half = n // 2
+    d_t = fit_temperature(d_logits[:half], labels[:half])
+    s_t = fit_temperature(s_logits[:half], labels[:half])
+    d_probs_t1 = [_logits_softmax(lg, 1.0) for lg in d_logits[half:]]
+    d_probs_tT = [_logits_softmax(lg, d_t) for lg in d_logits[half:]]
+    s_probs_t1 = [_logits_softmax(lg, 1.0) for lg in s_logits[half:]]
+    s_probs_tT = [_logits_softmax(lg, s_t) for lg in s_logits[half:]]
+    test_labels = labels[half:]
+    return {
+        "n": n,
+        "bayes_ceiling": round(bayes_ceiling_accuracy(), 4),
+        "drone_accuracy": round(d_tr.compute_accuracy(), 4),
+        "drone_brier": round(d_tr.compute_brier(), 6),
+        "server_accuracy": round(s_tr.compute_accuracy(), 4),
+        "server_brier": round(s_tr.compute_brier(), 6),
+        "drone_fitted_temperature": round(d_t, 3),
+        "server_fitted_temperature": round(s_t, 3),
+        "drone_ece_T1": round(expected_calibration_error(d_probs_t1, test_labels), 4),
+        "drone_ece_fitted": round(expected_calibration_error(d_probs_tT, test_labels), 4),
+        "server_ece_T1": round(expected_calibration_error(s_probs_t1, test_labels), 4),
+        "server_ece_fitted": round(expected_calibration_error(s_probs_tT, test_labels), 4),
+    }
+
+
+def sofc_sweep(effs: Sequence[float] = (0.45, 0.50, 0.55, 0.60, 0.65),
+               **kw: Any) -> List[Tuple[float, float]]:
+    """Electrical efficiency (% of CH4 LHV) vs ASSUMED SOFC efficiency."""
+    return [(e, run_pyrolysis_stage(sofc_eff=e, **kw).electrical_efficiency_pct)
+            for e in effs]
+
+
+# ===========================================================================
+# PIPELINE INTEGRATOR
+# ===========================================================================
+
+def run_hybrid_system_simulation(
+    methane_kg: float = 1.0,
+    isotope: str = "Ni-63",
+    isotope_mg: float = 25.0,
+    carbon_loop_fraction: float = 0.0,
+    n_steps: int = 2400,
+    seed: int = 101,
+    inference_power_w: float = 0.012,     # ~12 mW active MCU during inference
+    inference_duration_s: float = 0.0005, # ~0.5 ms for 42 MACs + softmax
+    held_out_n: int = 8000,
+) -> Dict[str, Any]:
+    rng = random.Random(seed)
+
+    pyro_stage = run_pyrolysis_stage(methane_kg=methane_kg)
+    beta_stage = run_betavoltaic_stage(
+        isotope=isotope,
+        mass_mg=isotope_mg,
+        carbon_loop_fraction=carbon_loop_fraction,
+        carbon_available_kg=pyro_stage.solid_carbon_recovered_kg,
+    )
+
+    power_harness = DeepGemPowerState(
+        v_cap=3.3,
+        trickle_betavoltaic_uw=beta_stage.electrical_power_uw,
+    )
+
+    drone_classifier = STALinearClassifier.initialize(
+        N_OPTIONS, N_FEATURES_DRONE, TACTICAL_OPTIONS,
+        seed=1, learning_rate=0.05, temperature=1.0)
+    server_classifier = STALinearClassifier.initialize(
+        N_OPTIONS, N_FEATURES_SERVER, TACTICAL_OPTIONS,
+        seed=2, learning_rate=0.03, temperature=1.0)
+
+    overall_drone = STARCalibrationTracker(TACTICAL_OPTIONS)
+    overall_server = STARCalibrationTracker(TACTICAL_OPTIONS)
+    regime_drone = RegimeTrackers.initialize(TACTICAL_OPTIONS)
+    regime_server = RegimeTrackers.initialize(TACTICAL_OPTIONS)
+
+    reflex_thr = reflex_threshold()
+    feasible, feas_reason = power_harness.burst_feasible(
+        inference_power_w, inference_duration_s)
+
+    # Beta-only night survival: can the betavoltaic alone (after DC-DC) cover
+    # the brain's average draw at TACTICAL_DT_S cadence plus cap leakage?
+    brain_avg_w = (inference_power_w * inference_duration_s) / TACTICAL_DT_S
+    beta_usable_w = beta_stage.electrical_power_uw * 1e-6 * power_harness.dcdc_efficiency
+    beta_need_w = brain_avg_w + power_harness.quiescent_leakage_w
+
+    brownouts = 0
+    reflex_count = 0
+    agreement_count = 0
+    link_drops = 0
+    safety_halts = 0
+    cumulative_joule_losses = 0.0
+    cumulative_solar_j = 0.0
+    cumulative_wind_j = 0.0
+    cumulative_beta_j = 0.0
+    cumulative_dcdc_loss_j = 0.0
+    cumulative_clipped_j = 0.0
+    cumulative_into_cap_j = 0.0
+    energy_reserve_seen: List[float] = []
+    solar_peak_w = 0.0
+    beta_peak_w = 0.0
+
+    for step in range(n_steps):
+        is_perched = (rng.random() < 0.40)
+
+        day_fraction = (step % STEPS_PER_DAY) / STEPS_PER_DAY
+        hour_angle = day_fraction * 2.0 * math.pi
+        sin_hour = math.sin(hour_angle)
+        irradiance = max(0.0, sin_hour) * 850.0
+        is_day = sin_hour > 0.0
+        wind_speed = rng.uniform(1.0, 7.5)
+
+        breakdown = power_harness.recharge_step(
+            delta_time_s=DIURNAL_DT_S,
+            irradiance_w_m2=irradiance,
+            wind_speed_m_s=wind_speed,
+            is_perched=is_perched,
+        )
+
+        cumulative_solar_j += breakdown["p_solar_w"] * DIURNAL_DT_S
+        cumulative_wind_j += breakdown["p_wind_w"] * DIURNAL_DT_S
+        cumulative_beta_j += breakdown["p_beta_w"] * DIURNAL_DT_S
+        cumulative_dcdc_loss_j += (
+            (breakdown["p_harvest_w"] - breakdown["p_into_cap_w"]) * DIURNAL_DT_S)
+        cumulative_clipped_j += breakdown["clipped_j"]
+        cumulative_into_cap_j += breakdown["p_into_cap_w"] * DIURNAL_DT_S
+        solar_peak_w = max(solar_peak_w, breakdown["p_solar_w"])
+        beta_peak_w = max(beta_peak_w, breakdown["p_beta_w"])
+
+        if not power_harness.tactical_inference_enabled:
+            safety_halts += 1
+            continue
+
+        energy_reserve = power_harness.v_cap / power_harness.v_high
+        energy_reserve_seen.append(energy_reserve)
+        drone_features = _sample_drone_features(rng, energy_reserve)
+        context_features = [rng.random() for _ in range(4)]
+        server_features = drone_features + context_features
+
+        burst_ok, j_loss = power_harness.attempt_burst_execution(
+            power_w=inference_power_w, duration_s=inference_duration_s)
+        cumulative_joule_losses += j_loss
+        if not burst_ok:
+            brownouts += 1
+            continue
+
+        drone_probs = drone_classifier.forward(drone_features)
+        top_drone_idx = max(range(N_OPTIONS), key=lambda i: drone_probs[i])
+        if drone_probs[top_drone_idx] < reflex_thr:
+            reflex_count += 1
+
+        link_available = (drone_features[4] > 0.30)  # link_quality
+        if link_available:
+            server_probs = server_classifier.forward(server_features)
+            top_server_idx = max(range(N_OPTIONS), key=lambda i: server_probs[i])
+            if top_drone_idx == top_server_idx:
+                agreement_count += 1
+        else:
+            link_drops += 1
+            server_probs = None
+
+        # Ground truth from the documented learnable rule over shared features.
+        outcome_idx = label_from_features(drone_features)
+        if rng.random() < LABEL_NOISE:
+            outcome_idx = rng.randrange(N_OPTIONS)
+
+        overall_drone.add(drone_probs, outcome_idx)
+        regime_drone.select(is_day, is_perched).add(drone_probs, outcome_idx)
+        drone_classifier.train_step(drone_features, outcome_idx)
+
+        if server_probs is not None:
+            overall_server.add(server_probs, outcome_idx)
+            regime_server.select(is_day, is_perched).add(server_probs, outcome_idx)
+            server_classifier.train_step(server_features, outcome_idx)
+
+    executed_cycles = max(1, n_steps - brownouts - safety_halts)
+    connected_cycles = max(0, executed_cycles - link_drops)
+    valid_agreement_rate = (round(agreement_count / connected_cycles, 4)
+                            if connected_cycles > 0 else 0.0)
+
+    total_harvest_j = cumulative_solar_j + cumulative_wind_j + cumulative_beta_j
+    beta_fraction_pct = (100.0 * cumulative_beta_j / total_harvest_j
+                         if total_harvest_j > 0 else 0.0)
+    ratio = (solar_peak_w / max(1e-12, beta_peak_w)
+             if beta_peak_w > 0 else float("inf"))
+
+    held_out = evaluate_held_out(drone_classifier, server_classifier,
+                                 n=held_out_n, seed=seed + 7777,
+                                 energy_reserve_pool=energy_reserve_seen)
+
+    return {
+        "version": VERSION,
+        "pyrolysis_macro_module": asdict(pyro_stage),
+        "deepgem_betavoltaic_module": asdict(beta_stage),
+        "energy_harvesting_totals": {
+            "cumulative_solar_joules": round(cumulative_solar_j, 2),
+            "cumulative_wind_joules": round(cumulative_wind_j, 2),
+            "cumulative_betavoltaic_joules": round(cumulative_beta_j, 6),
+            "cumulative_dcdc_loss_joules": round(cumulative_dcdc_loss_j, 4),
+            "cumulative_clipped_joules": round(cumulative_clipped_j, 2),
+            "stored_fraction_of_harvest_pct": round(
+                100.0 * max(0.0, cumulative_into_cap_j - cumulative_clipped_j)
+                / total_harvest_j if total_harvest_j > 0 else 0.0, 8),
+            "cumulative_esr_losses_joules": round(cumulative_joule_losses, 9),
+            "final_storage_voltage_v": round(power_harness.v_cap, 3),
+            "safety_transitions": power_harness.safety_transitions,
+            "peak_solar_w": round(solar_peak_w, 3),
+            "peak_betavoltaic_w": round(beta_peak_w, 12),
+            "solar_to_beta_ratio": round(ratio, 2) if math.isfinite(ratio) else "inf",
+            "beta_fraction_of_total_pct": round(beta_fraction_pct, 10),
+        },
+        "star_drone_tactical_module": {
+            "total_steps_simulated": n_steps,
+            "executed_cycles": executed_cycles,
+            "connected_cycles": connected_cycles,
+            "brownout_events": brownouts,
+            "brownout_rate": round(brownouts / n_steps, 4),
+            "safety_halts": safety_halts,
+            "safety_halt_rate": round(safety_halts / n_steps, 4),
+            "reflex_threshold": round(reflex_thr, 4),
+            "reflex_fallback_rate": round(reflex_count / executed_cycles, 4),
+            "link_drop_rate": round(link_drops / executed_cycles, 4),
+            "server_agreement_rate": valid_agreement_rate,
+            "inference_burst_uj": round(
+                (inference_power_w * inference_duration_s) * 1e6, 4),
+            "burst_feasible": feasible,
+            "burst_feasibility_note": feas_reason,
+            "brain_avg_power_uw_at_tactical_dt": round(brain_avg_w * 1e6, 6),
+            "beta_usable_uw": round(beta_usable_w * 1e6, 6),
+            "beta_alone_sustains_brain": beta_usable_w >= beta_need_w,
+            "beta_shortfall_factor": round(beta_need_w / max(1e-18, beta_usable_w), 2),
+            "drone_prequential_brier": round(overall_drone.compute_brier() or 0.0, 6),
+            "drone_prequential_accuracy": round(overall_drone.compute_accuracy() or 0.0, 4),
+            "server_prequential_brier": round(overall_server.compute_brier() or 0.0, 6),
+            "server_prequential_accuracy": round(overall_server.compute_accuracy() or 0.0, 4),
+        },
+        "held_out_evaluation": held_out,
+        "per_regime_drone": regime_drone.summary(),
+        "per_regime_server": regime_server.summary(),
+    }
+
+
+def burst_sweep(bursts: Sequence[Tuple[float, float]] = (
+        (0.012, 0.0005), (0.1, 0.005), (1.1, 0.004), (1.1, 0.040), (2.0, 0.040)),
+        n_steps: int = 2400, seed: int = 101) -> List[Dict[str, Any]]:
+    """Brownout / safety-halt / Schmitt transitions vs inference burst size."""
+    rows = []
+    for pw, dur in bursts:
+        r = run_hybrid_system_simulation(n_steps=n_steps, seed=seed,
+                                         inference_power_w=pw,
+                                         inference_duration_s=dur,
+                                         held_out_n=200)
+        s = r["star_drone_tactical_module"]
+        h = r["energy_harvesting_totals"]
+        rows.append({
+            "burst_uj": round(pw * dur * 1e6, 3),
+            "power_w": pw, "duration_s": dur,
+            "feasible": s["burst_feasible"],
+            "brownout_rate": s["brownout_rate"],
+            "safety_halt_rate": s["safety_halt_rate"],
+            "safety_transitions": h["safety_transitions"],
+        })
+    return rows
+
+
+def multi_seed_evaluation(seeds: Sequence[int] = (101, 102, 103, 104, 105),
+                          n_steps: int = 2400,
+                          held_out_n: int = 8000) -> Dict[str, Any]:
+    """Held-out accuracy/ECE across seeds (each seed: new data and new model)."""
+    per = []
+    for sd in seeds:
+        ho = run_hybrid_system_simulation(n_steps=n_steps, seed=sd,
+                                          held_out_n=held_out_n)["held_out_evaluation"]
+        per.append(ho)
+
+    def stats(key: str) -> Dict[str, float]:
+        vals = [h[key] for h in per]
+        mean = sum(vals) / len(vals)
+        sd_ = (math.sqrt(sum((v - mean) ** 2 for v in vals) / (len(vals) - 1))
+               if len(vals) > 1 else 0.0)
+        return {"mean": round(mean, 4), "sd": round(sd_, 4),
+                "min": round(min(vals), 4), "max": round(max(vals), 4)}
+
+    return {
+        "seeds": list(seeds), "n_steps": n_steps, "held_out_n": held_out_n,
+        "bayes_ceiling": round(bayes_ceiling_accuracy(), 4),
+        "chance": round(1.0 / N_OPTIONS, 4),
+        "drone_accuracy": stats("drone_accuracy"),
+        "server_accuracy": stats("server_accuracy"),
+        "drone_ece_T1": stats("drone_ece_T1"),
+        "drone_ece_fitted": stats("drone_ece_fitted"),
+        "server_ece_T1": stats("server_ece_T1"),
+        "server_ece_fitted": stats("server_ece_fitted"),
+    }
+
+
+# ===========================================================================
+# CLI DISPATCHER
+# ===========================================================================
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description=f"DeepGem & STAR Hybrid Engine v{VERSION} (honest rebuild)")
+    parser.add_argument("--methane-kg", type=float, default=1.0)
+    parser.add_argument("--isotope", choices=list(ISOTOPE_DATABASE.keys()),
+                        default="Ni-63")
+    parser.add_argument("--isotope-mg", type=float, default=25.0)
+    parser.add_argument("--carbon-loop", type=float, default=0.0)
+    parser.add_argument("--steps", type=int, default=2400)
+    parser.add_argument("--seed", type=int, default=101)
+    parser.add_argument("--burst-mw", type=float, default=12.0,
+                        help="inference burst power in mW (default 12)")
+    parser.add_argument("--burst-ms", type=float, default=0.5,
+                        help="inference burst duration in ms (default 0.5)")
+    parser.add_argument("--json", action="store_true")
+    args = parser.parse_args()
+
+    results = run_hybrid_system_simulation(
+        methane_kg=args.methane_kg,
+        isotope=args.isotope,
+        isotope_mg=args.isotope_mg,
+        carbon_loop_fraction=args.carbon_loop,
+        n_steps=args.steps,
+        seed=args.seed,
+        inference_power_w=args.burst_mw * 1e-3,
+        inference_duration_s=args.burst_ms * 1e-3,
+    )
+
+    if args.json:
+        print(json.dumps(results, indent=2, default=str))
+        return 0
+
+    print("=" * 82)
+    print(f"DEEPGEM x STAR DRONE - v{results['version']} (honest rebuild)")
+    print("=" * 82)
+
+    p = results["pyrolysis_macro_module"]
+    print("\n[MODULE 1: Methane Pyrolysis + SOFC(-GT)]  (ground plant; does not power the drone)")
+    print(f"  Feedstock:              {p['methane_input_kg']} kg CH4 @ {p['reactor_temp_kelvin']} K")
+    print(f"  H2 Produced:            {p['total_h2_produced_kg']} kg")
+    print(f"  Solid Carbon:           {p['solid_carbon_recovered_kg']} kg")
+    print(f"  dH_rxn (298K / at T):   {p['dh_reaction_298k_mj']} / {p['dh_reaction_at_t_mj']} MJ")
+    print(f"  Net Process Heat:       {p['net_process_heat_mj']} MJ")
+    print(f"  H2 Burned for Heat:     {p['parasitic_h2_combusted_kg']} kg")
+    print(f"  Net H2 Export:          {p['net_export_h2_kg']} kg")
+    print(f"  SOFC eff (ASSUMED):     {p['sofc_eff_assumed']}")
+    print(f"  SOFC-GT Electricity:    {p['sofc_gt_electricity_kwh']} kWh")
+    print(f"  Thermal / Electrical:   {p['thermal_efficiency_pct']}% / {p['electrical_efficiency_pct']}%")
+
+    b = results["deepgem_betavoltaic_module"]
+    print(f"\n[MODULE 2: Diamond Betavoltaic Baseload ({b['isotope']})]")
+    print(f"  Mass / Purity:          {b['mass_mg']} mg Ni / {b['isotope_purity']} Ni-63 "
+          f"({b['specific_activity_ci_g']} Ci/g)")
+    print(f"  Source Thickness/Area:  {b['source_thickness_um']} um / {b['surface_area_cm2']} cm2")
+    print(f"  Self-Absorption:        {b['self_absorption_factor']}")
+    print(f"  Escaping Beta Power:    {b['escaping_power_uw_per_cm2']} uW/cm2 "
+          f"(published Ni-63 saturation ~3.3 uW/cm2/face)")
+    print(f"  Voc / Isc:              {b['open_circuit_voltage_v']} V / {b['short_circuit_current_ua']} uA")
+    print(f"  Continuous Output:      {b['electrical_power_uw']} uW "
+          f"(cell eff {b['cell_efficiency_pct']}%)")
+    print(f"  Carbon Loop:            {b['carbon_loop_note']}")
+
+    h = results["energy_harvesting_totals"]
+    print("\n[MODULE 3: Hybrid Chassis + Schmitt Buffer]")
+    print(f"  Solar / Wind / Beta:    {h['cumulative_solar_joules']} / "
+          f"{h['cumulative_wind_joules']} / {h['cumulative_betavoltaic_joules']} J")
+    print(f"  Beta fraction of total: {h['beta_fraction_of_total_pct']}%")
+    print(f"  Clipped (cap full):     {h['cumulative_clipped_joules']} J "
+          f"(only {h['stored_fraction_of_harvest_pct']}% of harvest was storable)")
+    print(f"  DC-DC loss / ESR loss:  {h['cumulative_dcdc_loss_joules']} / "
+          f"{h['cumulative_esr_losses_joules']} J")
+    print(f"  Final Storage Voltage:  {h['final_storage_voltage_v']} V")
+    print(f"  Safety Transitions:     {h['safety_transitions']}")
+    print(f"  Peak Solar / Beta:      {h['peak_solar_w']} W / {h['peak_betavoltaic_w']} W")
+
+    s = results["star_drone_tactical_module"]
+    print("\n[MODULE 4: STAR Drone Tactical Inference]  (decision brain only; flight power not modeled)")
+    print(f"  Steps:                  {s['total_steps_simulated']} "
+          f"({s['total_steps_simulated']/STEPS_PER_DAY:.2f} solar days)")
+    print(f"  Inference Burst:        {s['inference_burst_uj']} uJ "
+          f"(42 MACs + softmax)  feasible={s['burst_feasible']}")
+    if not s["burst_feasible"]:
+        print(f"    -> {s['burst_feasibility_note']}")
+    print(f"  Beta-only night check:  brain {s['brain_avg_power_uw_at_tactical_dt']} uW "
+          f"@ {TACTICAL_DT_S:.0f}s + leakage vs beta {s['beta_usable_uw']} uW -> "
+          f"sustains={s['beta_alone_sustains_brain']} "
+          f"(need {s['beta_shortfall_factor']}x)")
+    print(f"  Executed / Connected:   {s['executed_cycles']} / {s['connected_cycles']}")
+    print(f"  Brownouts:              {s['brownout_events']} ({s['brownout_rate']*100:.2f}%)")
+    print(f"  Safety Halts:           {s['safety_halts']} ({s['safety_halt_rate']*100:.2f}%)")
+    print(f"  Reflex (thr {s['reflex_threshold']}):    {s['reflex_fallback_rate']*100:.2f}%")
+    print(f"  Link Drops:             {s['link_drop_rate']*100:.2f}%")
+    print(f"  Server Agreement:       {s['server_agreement_rate']*100:.2f}%")
+    print("-" * 82)
+    print(f"  Prequential  drone acc = {s['drone_prequential_accuracy']*100:.2f}% | "
+          f"server acc = {s['server_prequential_accuracy']*100:.2f}%")
+
+    ho = results["held_out_evaluation"]
+    print("\n[HELD-OUT EVALUATION]  (frozen models on fresh samples)")
+    print(f"  Bayes ceiling:          {ho['bayes_ceiling']*100:.2f}% "
+          f"(= 1 - noise + noise/K, noise={LABEL_NOISE})")
+    print(f"  Drone acc / Brier:      {ho['drone_accuracy']*100:.2f}% / {ho['drone_brier']:.6f}")
+    print(f"  Server acc / Brier:     {ho['server_accuracy']*100:.2f}% / {ho['server_brier']:.6f}")
+    print(f"  Drone temp (fit):       {ho['drone_fitted_temperature']}  "
+          f"ECE {ho['drone_ece_T1']} -> {ho['drone_ece_fitted']}")
+    print(f"  Server temp (fit):      {ho['server_fitted_temperature']}  "
+          f"ECE {ho['server_ece_T1']} -> {ho['server_ece_fitted']}")
+
+    print("\n[PER-REGIME DRONE]")
+    for regime, m in results["per_regime_drone"].items():
+        if m["n"] > 0:
+            print(f"  {regime:18s}: n={m['n']:5d}  "
+                  f"brier={m['brier']:.6f}  acc={m['accuracy']*100:.2f}%")
+    print("\n[PER-REGIME SERVER]")
+    for regime, m in results["per_regime_server"].items():
+        if m["n"] > 0:
+            print(f"  {regime:18s}: n={m['n']:5d}  "
+                  f"brier={m['brier']:.6f}  acc={m['accuracy']*100:.2f}%")
+    print("=" * 82)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

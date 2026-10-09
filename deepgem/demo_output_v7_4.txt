@@ -1,0 +1,169 @@
+
+==================================================================================
+1. DEFAULT CLI RUN: python3 deepgem_star_v7_4.py
+==================================================================================
+==================================================================================
+DEEPGEM x STAR DRONE - v7.4 (honest rebuild)
+==================================================================================
+
+[MODULE 1: Methane Pyrolysis + SOFC(-GT)]  (ground plant; does not power the drone)
+  Feedstock:              1.0 kg CH4 @ 1273.15 K
+  H2 Produced:            0.251312 kg
+  Solid Carbon:           0.748688 kg
+  dH_rxn (298K / at T):   4.6671 / 5.724 MJ
+  Net Process Heat:       6.2767 MJ
+  H2 Burned for Heat:     0.055077 kg
+  Net H2 Export:          0.196235 kg
+  SOFC eff (ASSUMED):     0.6
+  SOFC-GT Electricity:    3.923386 kWh
+  Thermal / Electrical:   47.0722% / 28.2433%
+
+[MODULE 2: Diamond Betavoltaic Baseload (Ni-63)]
+  Mass / Purity:          25.0 mg Ni / 0.18 Ni-63 (10.1043 Ci/g)
+  Source Thickness/Area:  5.6129 um / 5.0 cm2
+  Self-Absorption:        0.135053
+  Escaping Beta Power:    0.352298 uW/cm2 (published Ni-63 saturation ~3.3 uW/cm2/face)
+  Voc / Isc:              0.8537 V / 0.121018 uA
+  Continuous Output:      0.087592 uW (cell eff 4.9726%)
+  Carbon Loop:            no-op: fossil-derived CH4 carbon contains essentially no C-14, so routing pyrolysis carbon into a C-14 source yields ~0 added activity; fraction is tracked for bookkeeping only and feeds no power.
+
+[MODULE 3: Hybrid Chassis + Schmitt Buffer]
+  Solar / Wind / Beta:    4488065.83 / 86661.61 / 0.075679 J
+  Beta fraction of total: 1.6543e-06%
+  Clipped (cap full):     3888515.78 J (only 5.698e-05% of harvest was storable)
+  DC-DC loss / ESR loss:  686209.1265 / 0.000123324 J
+  Final Storage Voltage:  3.3 V
+  Safety Transitions:     0
+  Peak Solar / Beta:      16.32 W / 8.7592e-08 W
+
+[MODULE 4: STAR Drone Tactical Inference]  (decision brain only; flight power not modeled)
+  Steps:                  2400 (10.00 solar days)
+  Inference Burst:        6.0 uJ (42 MACs + softmax)  feasible=True
+  Beta-only night check:  brain 0.2 uW @ 30s + leakage vs beta 0.074453 uW -> sustains=False (need 42.98x)
+  Executed / Connected:   2400 / 1696
+  Brownouts:              0 (0.00%)
+  Safety Halts:           0 (0.00%)
+  Reflex (thr 0.2143):    5.33%
+  Link Drops:             29.33%
+  Server Agreement:       84.55%
+----------------------------------------------------------------------------------
+  Prequential  drone acc = 55.87% | server acc = 53.01%
+
+[HELD-OUT EVALUATION]  (frozen models on fresh samples)
+  Bayes ceiling:          87.14% (= 1 - noise + noise/K, noise=0.15)
+  Drone acc / Brier:      67.37% / 0.544521
+  Server acc / Brier:     52.21% / 0.653809
+  Drone temp (fit):       0.56  ECE 0.2386 -> 0.0726
+  Server temp (fit):      0.78  ECE 0.118 -> 0.068
+
+[PER-REGIME DRONE]
+  day_airborne      : n=  710  brier=0.655521  acc=54.37%
+  day_perched       : n=  490  brier=0.638651  acc=56.73%
+  night_airborne    : n=  716  brier=0.632885  acc=57.40%
+  night_perched     : n=  484  brier=0.647807  acc=54.96%
+
+[PER-REGIME SERVER]
+  day_airborne      : n=  508  brier=0.702291  acc=48.62%
+  day_perched       : n=  338  brier=0.668822  acc=56.80%
+  night_airborne    : n=  512  brier=0.675871  acc=53.71%
+  night_perched     : n=  338  brier=0.678061  acc=54.73%
+==================================================================================
+
+==================================================================================
+2. MODULE 1: electrical efficiency vs ASSUMED SOFC efficiency (HX 0.85)
+==================================================================================
+  SOFC eff 0.45 -> electrical 21.1825% of CH4 LHV
+  SOFC eff 0.50 -> electrical 23.5361% of CH4 LHV
+  SOFC eff 0.55 -> electrical 25.8897% of CH4 LHV
+  SOFC eff 0.60 -> electrical 28.2433% of CH4 LHV
+  SOFC eff 0.65 -> electrical 30.5969% of CH4 LHV
+
+==================================================================================
+3. MODULE 2: cross-checks and source activity
+==================================================================================
+  Saturated escaping power, pure Ni-63, this model: 1.9584 uW/cm2/face
+  Published Monte Carlo saturation:                 3.28 uW/cm2/face
+  Ratio model/published: 0.597 (conservative: spectral hardening of escaping betas not modeled)
+  Prototype-matched Voc (Isc 1.27 uA, 0.25 cm2): 1.0196 V (published 1.02 V)
+  Default source: 25 mg nickel at purity 0.18 -> 9.346 GBq = 252.6 mCi
+    = 25,261x the US exempt quantity (10 uCi, 10 CFR 30.71)
+    = 93.5x the IAEA general exemption level (1e8 Bq)
+    -> even this tiny default source is a licensed radioactive source.
+  purity 0.18: 10.10 Ci/g, P_elec 0.087592 uW, Voc 0.8537 V, cell eff 4.9726%
+  purity 0.50: 28.07 Ci/g, P_elec 0.253552 uW, Voc 0.8854 V, cell eff 5.1819%
+  purity 1.00: 56.14 Ci/g, P_elec 0.521018 uW, Voc 0.9069 V, cell eff 5.3241%
+
+==================================================================================
+4. MODULE 3: inference burst sweep (2400 steps, seed 101)
+==================================================================================
+  burst_uJ   power_W  dur_s   feasible  brownout  halt_rate  schmitt_transitions
+        6.0    0.012  0.0005  True      0.0000    0.0000     0
+      500.0    0.100  0.0050  True      0.0000    0.0000     0
+     4400.0    1.100  0.0040  True      0.0000    0.0000     0
+    44000.0    1.100  0.0400  True      0.0762    0.1333     365
+    80000.0    2.000  0.0400  False     1.0000    0.0000     4799
+  Notes: 6 uJ is the right-sized 42-MAC brain (default). 44,000 uJ is v7.3.1's
+  1.1 W x 40 ms; there the Schmitt guard engages. 80,000 uJ cannot fit in a full
+  cap (needs ~0.19 J incl. ESR vs 0.17 J usable) and is flagged infeasible.
+
+==================================================================================
+4b. Storage presets: is a burst feasible at all?
+==================================================================================
+  ideal_low_esr  burst      6.0 uJ -> feasible=True  (ok)
+  ideal_low_esr  burst  44000.0 uJ -> feasible=True  (ok)
+  typical        burst      6.0 uJ -> feasible=True  (ok)
+  typical        burst  44000.0 uJ -> feasible=True  (ok)
+  coin_47mF      burst      6.0 uJ -> feasible=True  (ok)
+  coin_47mF      burst  44000.0 uJ -> feasible=False  (burst current 0.4151 A exceeds rated peak 0.0140 A)
+
+==================================================================================
+5. MODULE 4: held-out evaluation across 5 seeds (2400 training steps each)
+==================================================================================
+  chance 0.1429  |  Bayes ceiling 0.8714
+  drone_accuracy     mean 0.6793  sd 0.0072  [0.6695, 0.6853]
+  server_accuracy    mean 0.5421  sd 0.0426  [0.5102, 0.6154]
+  drone_ece_T1       mean 0.2492  sd 0.0148  [0.2386, 0.2751]
+  drone_ece_fitted   mean 0.0875  sd 0.0110  [0.0726, 0.1000]
+  server_ece_T1      mean 0.1677  sd 0.0515  [0.1180, 0.2539]
+  server_ece_fitted  mean 0.0866  sd 0.0378  [0.0615, 0.1534]
+
+==================================================================================
+5b. Held-out accuracy vs training length (seed 101): gap to ceiling is data-limited
+==================================================================================
+  n_steps   2400: drone 0.6737  server 0.5221  (ceiling 0.8714)
+  n_steps   9600: drone 0.7205  server 0.6676  (ceiling 0.8714)
+  n_steps  24000: drone 0.7799  server 0.7086  (ceiling 0.8714)
+
+==================================================================================
+6. v7.3.1 vs v7.4 (default runs, seed 101, 2400 steps)
+==================================================================================
+  Metric                                         | v7.3.1                    | v7.4
+  -----------------------------------------------+---------------------------+-------------------------------
+  Graphite H(1273)-H(298), kJ/mol (JANAF 17.922) | 13.521                    | 17.922
+  Net process heat, MJ/kg CH4                    | 5.2198 (feed-based)       | 6.2767
+  dH_rxn at T, MJ (JANAF 91.809 kJ/mol)          | not computed              | 5.724
+  SOFC efficiency                                | 0.65 (unlabeled)          | 0.6 (ASSUMED, swept)
+  Electrical efficiency, %                       | 32.0429                   | 28.2433
+  Ni-63 mu/rho, cm2/g (measured 1480)            | 25.0                      | 1480.0
+  Source thickness, um                           | 14.2248 (diamond density) | 5.6129 (nickel)
+  Self-absorption factor                         | 0.940025                  | 0.135053
+  Ni-63 purity / Ci per g                        | 1.0 implicit / 56.1351    | 0.18 / 10.1043
+  Pair energy, eV                                | 15.816 (Klein)            | 13.1 (measured)
+  Voc, V                                         | 0.6486                    | 0.8537
+  Betavoltaic output, uW                         | 3.18373                   | 0.087592
+  Beta fraction of harvest, %                    | 6.015e-05                 | 1.6543e-06
+  Harvest actually storable, %                   | not reported              | 5.698e-05
+  Inference burst, uJ                            | 44000 (1.1 W x 40 ms)     | 6.0 (42 MACs)
+  ESR ohm / leakage W                            | 0.05 / 1.2e-7             | 5.0 / 3.0e-6 (+DC-DC 0.85)
+  Brownouts                                      | 296 (12.33%)              | 0 (0.00%)
+  Schmitt transitions (default)                  | 0 (unreachable)           | 0 (reachable; 365 at 44 mJ)
+  Reflex threshold / rate                        | 0.35 fixed / 100.00%      | 0.2143 (1.5/K) / 5.33%
+  Label rule                                     | int(7S)%7 hash            | argmax W.(x-0.5), learnable
+  Drone acc (prequential)                        | 13.74%                    | 55.87%
+  Server acc (prequential)                       | 14.32%                    | 53.01%
+  Drone acc (held-out)                           | not measured              | 67.37%
+  Server acc (held-out)                          | not measured              | 52.21%
+  Bayes ceiling                                  | ~14.3% (hash)             | 87.14%
+  Drone Brier (prequential)                      | 0.865806                  | 0.643768
+  Temperature                                    | nudged to top-prob 0.45   | fit on held-out NLL: 0.56
+  Drone ECE before -> after                      | not measured              | 0.2386 -> 0.0726
