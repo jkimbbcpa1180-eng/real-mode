@@ -430,9 +430,9 @@ class TestPatch(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             dst = os.path.join(d, "out.py")
             src7 = os.path.join(HERE, "publish", "substrate_v7.py")
-        if not os.path.exists(src7):  # repo layout: v7 sits next to v8
-            src7 = os.path.join(HERE, "substrate_v7.py")
-        shutil.copy(src7, dst)
+            if not os.path.exists(src7):  # repo layout: v7 sits next to v8
+                src7 = os.path.join(HERE, "substrate_v7.py")
+            shutil.copy(src7, dst)
             subprocess.run(["patch", "-s", dst, patch], check=True)
             with open(dst, "rb") as f1, open(os.path.join(HERE, "substrate_v8.py"), "rb") as f2:
                 self.assertEqual(f1.read(), f2.read())
