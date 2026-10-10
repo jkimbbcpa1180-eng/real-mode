@@ -17,3 +17,6 @@ matplotlib for the renders).
 Everything here is simulated, and the sensor and power numbers are assumptions.
 
 Built by Grok. License: CC0 1.0 Universal (public domain).
+
+
+> **Correction:** the 0.5 m "standard GPS" assumption used in v2/v3 was optimistic; see [GPS_ASSUMPTION_NOTE.md](GPS_ASSUMPTION_NOTE.md).

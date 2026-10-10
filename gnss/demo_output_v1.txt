@@ -1,0 +1,23 @@
+==============================================================================
+DRONE STATE-ESTIMATION ERROR BUDGET
+Gyeonggi-do, South Korea (example mid-latitude site)
+==============================================================================
+
+QUIET  (F10.7=100, Ap=4,  no flare)
+-----------------------------------
+Traceback (most recent call last):
+  File "gnss_imu_budget.py", line 479, in <module>
+    main()
+    ~~~~^^
+  File "gnss_imu_budget.py", line 424, in main
+    table = marginal_value_table(sw, environment="suburban", outage_s=2.0)
+  File "gnss_imu_budget.py", line 377, in marginal_value_table
+    b = compute_budget(sw, sc, environment=environment, outage_s=outage_s)
+  File "gnss_imu_budget.py", line 327, in compute_budget
+    fused_h = gnss_imu_fusion_sigma(pos.horizontal_m, imu, outage_s)
+  File "gnss_imu_budget.py", line 301, in gnss_imu_fusion_sigma
+    imu_drift = imu_position_drift_m(imu, outage_s)
+  File "gnss_imu_budget.py", line 284, in imu_position_drift_m
+    bias = imu.accel_bias_mps2 * time_s**2 / 2.0
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Field' object has no attribute 'accel_bias_mps2'

@@ -1,0 +1,589 @@
+# SPDX-License-Identifier: CC0-1.0
+"""
+Drone State-Estimation Error Budget, v2 (fixes by Grok)
+=======================================================
+
+Decomposes the horizontal/vertical position error of a small multirotor into
+per-source contributions and computes the reduction achieved by each class
+of space asset:
+
+  - GPS L1 C/A                  (baseline)
+  - GPS L1 + L5 dual-frequency  (ionosphere cancellation)
+  - SBAS GEO corrections        (WAAS/EGNOS/MSAS; Korea falls under MSAS)
+  - PPP / SSR corrections       (precise orbit + clock + phase bias), converged or not
+  - Space-weather-aware weighting (F10.7, Ap, GOES X-ray)
+
+What v2 changes vs v1:
+  1. compute_budget(imu=None): v1 used dataclasses.field() as a plain function
+     default, so `imu` was a Field object and the demo crashed.
+  2. SBAS is modelled once, as a corrected-residual budget in the spirit of
+     RTCA DO-229 (sigma_i^2 = sigma_flt^2 + sigma_UIRE^2 + sigma_air^2 +
+     sigma_tropo^2): the SBAS fast/long-term correction residual replaces the
+     broadcast orbit + clock, the grid-iono residual replaces Klobuchar. v1
+     added an extra "sbas_geo" term on top of the already-reduced terms, so
+     SBAS could look worse than L1 alone.
+  3. Each source is split into a slowly varying part (Gauss-Markov, correlation
+     time tau per source: orbit/clock, iono, tropo, PPP ambiguity, part of
+     multipath) and fast noise (receiver, the rest of multipath). The slow
+     parts are combined into one Gauss-Markov process with the variance-
+     weighted tau (same area under the autocorrelation), which is what the
+     drone v2/v3 GPS model needs (bias sigma + tau, plus white noise).
+  4. IMU drift: the noise density is already per sqrt(Hz), so the
+     sqrt(sample_rate) factor is gone: sigma_p = n t^1.5 / sqrt(3). The
+     gyro-tilt terms (g * theta) are added; they are an UNAIDED bound (a real
+     attitude filter levels with gravity), switchable.
+  5. Horizontal sigma: pr_sigma * HDOP is the horizontal RMS RADIAL error
+     (DRMS). The per-axis sigma is DRMS / sqrt(2); CEP50 = 1.1774 * per-axis
+     sigma (circular case) = 0.8326 * DRMS. v1 applied 1.177 to DRMS (~41 %
+     too large). Vertical 0.674 * sigma (1-D median absolute error) is kept.
+  6. The v1 "iono DOP inflation" (HDOP * (1 + 0.4 a)) is removed: DOP is pure
+     geometry. Instead the iono zenith residual is mapped to the slant with
+     the Klobuchar obliquity factor F = 1 + 16 (0.53 - E)^3 (E in semicircles).
+  7. Receiver noise: v1's formula reduced to a constant at its defaults. v2
+     uses the standard DLL thermal-noise expression (coherent early-late,
+     e.g. Kaplan & Hegarty, Understanding GPS), so it depends on C/N0,
+     loop bandwidth and correlator spacing.
+  8. Dual-frequency (iono-free) code combination amplifies code noise and
+     multipath: sqrt(c1^2 + (c5 r)^2) with c1 = f1^2/(f1^2-f5^2) = 2.26,
+     c5 = 1.26, r = L5/L1 code-noise ratio (ASSUMED 0.5).
+
+All numbers are ORDER-OF-MAGNITUDE ASSUMPTIONS unless a reference is given.
+References that were checked:
+  - Montenbruck et al. 2015, GPS Solutions 19:321 (GPS broadcast SISRE ~0.7 m
+    RMS global average, 2013/14); Montenbruck et al. 2018, Adv. Space Res.
+    (~0.6 m for 2017). v1's broadcast orbit 2.0 m + clock 1.5 m (2.5 m) is
+    therefore conservative; kept as the default, see `broadcast_scale`.
+  - PPP convergence (float, GPS-only): ~20-40 min to 10 cm horizontal in
+    recent studies (e.g. Remote Sensing 16(8):1434, 2024); multi-GNSS and
+    ambiguity fixing shorten it to ~5-20 min.
+  - RTCA DO-229 (SBAS MOPS) for the structure of the SBAS budget; the numeric
+    SBAS residuals here are assumptions, not DO-229 values.
+  - IGS final orbits ~2-3 cm (IGS products); the PPP values here are
+    real-time-like assumptions.
+  - Klobuchar 1987 / IS-GPS-200 obliquity factor.
+Not re-verified: ICAO Annex 10, NRLMSISE-00 (listed in v1; not used here).
+
+Run:
+    python gnss_budget_v2.py
+
+License: CC0 1.0 Universal (public domain).
+"""
+
+from __future__ import annotations
+import json
+import math
+from dataclasses import dataclass, asdict
+from typing import Dict, List, Optional, Tuple
+
+import numpy as np
+
+__version__ = "2.0.0"
+
+C_LIGHT = 299792458.0
+F_L1, F_L5 = 1575.42e6, 1176.45e6
+G0 = 9.80665
+
+
+# ===========================================================================
+# 1. Space-asset models
+# ===========================================================================
+@dataclass
+class SpaceWeather:
+    f107: float = 150.0          # sfu
+    ap: float = 4.0              # 0-400
+    xray_wm2: float = 1e-9       # GOES 0.1-0.8 nm
+
+    @property
+    def iono_activity(self) -> float:
+        """0..1 scalar for ionospheric disturbance (ASSUMED blend, unchanged from v1)."""
+        base = np.clip((self.f107 - 70.0) / 180.0, 0.0, 1.0)
+        geomag = np.clip(self.ap / 100.0, 0.0, 1.0)
+        flare = np.clip(math.log10(1.0 + self.xray_wm2 / 1e-6) / 3.0, 0.0, 1.0)
+        return float(np.clip(0.5 * base + 0.3 * geomag + 0.2 * flare, 0.0, 1.0))
+
+
+QUIET = SpaceWeather(f107=100, ap=4, xray_wm2=1e-9)
+ACTIVE = SpaceWeather(f107=180, ap=30, xray_wm2=5e-5)
+STORM = SpaceWeather(f107=250, ap=120, xray_wm2=2e-4)
+
+
+@dataclass
+class GNSSConfig:
+    """Which corrections are available on the drone."""
+    l5_available: bool = False       # dual-frequency
+    sbas_available: bool = True      # MSAS over Korea
+    ppp_available: bool = False      # requires a corrections link
+    ppp_converged: bool = True       # float PPP needs tens of minutes (see docstring)
+    n_sats: int = 10                 # tracked satellites (informational)
+    hdop: float = 1.2                # horizontal dilution
+    vdop: float = 1.8                # vertical dilution
+    sbas_geo_elevation_deg: float = 45.0   # kept for API compatibility; not an error term in v2
+    sbas_geo_azimuth_deg: float = 220.0
+    broadcast_scale: float = 1.0     # scales v1's broadcast orbit/clock (0.24 ~ measured 0.6 m SISRE)
+    cn0_dbhz: float = 45.0
+
+
+# ===========================================================================
+# 2. Per-source error models (1-sigma, metres, pseudorange domain)
+# ===========================================================================
+# Correlation times (s), ASSUMED order of magnitude.
+TAU_ORBIT_CLOCK_S = 900.0        # broadcast orbit/clock residual seen through a changing geometry
+TAU_SBAS_S = 120.0               # SBAS fast/long-term correction residual
+TAU_PPP_S = 600.0                # real-time PPP orbit/clock residual
+TAU_IONO_QUIET_S = 900.0         # Klobuchar / grid residual, quiet
+TAU_IONO_STORM_S = 120.0         # storm-time gradients / TIDs
+TAU_TROPO_S = 1800.0
+TAU_MULTIPATH_S = 30.0           # slow part of multipath for a moving drone
+TAU_PPP_AMBIGUITY_S = 900.0      # float-ambiguity error decays over tens of minutes
+MULTIPATH_SLOW_FRACTION = 0.5    # variance share of multipath that is slow (ASSUMED)
+L5_CODE_NOISE_RATIO = 0.5        # L5 vs L1 code noise / multipath (10.23 vs 1.023 Mcps; ASSUMED)
+
+
+class ErrorSources:
+    """
+    All outputs are 1-sigma in metres for the *pseudorange* domain unless
+    labelled otherwise. Multiply by DOP to get position error.
+    """
+
+    # --- ionosphere -------------------------------------------------------
+    @staticmethod
+    def iono_delay_zenith_m(sw: SpaceWeather) -> float:
+        """Single-frequency L1 zenith ionospheric delay (ASSUMED envelope: quiet ~2 m, storm ~20 m)."""
+        return 1.5 + 8.0 * sw.iono_activity + 12.0 * sw.iono_activity**2
+
+    @staticmethod
+    def iono_obliquity(elevation_deg: float) -> float:
+        """Klobuchar (IS-GPS-200) slant factor F = 1 + 16 (0.53 - E)^3, E in semicircles."""
+        e = elevation_deg / 180.0
+        return 1.0 + 16.0 * (0.53 - e) ** 3
+
+    @staticmethod
+    def iono_residual_l1(sw: SpaceWeather) -> float:
+        """Broadcast Klobuchar model leaves ~30-50% of the delay (zenith)."""
+        return 0.4 * ErrorSources.iono_delay_zenith_m(sw)
+
+    @staticmethod
+    def iono_residual_sbas(sw: SpaceWeather) -> float:
+        """SBAS grid-iono residual (UIRE-like), ASSUMED half the Klobuchar residual (as v1)."""
+        return 0.5 * ErrorSources.iono_residual_l1(sw)
+
+    @staticmethod
+    def iono_residual_l5(sw: SpaceWeather) -> float:
+        """Dual-frequency removes the first-order delay; residual ~2 cm quiet, ~15 cm storm (ASSUMED)."""
+        return 0.02 + 0.15 * sw.iono_activity
+
+    @staticmethod
+    def iono_tau_s(sw: SpaceWeather) -> float:
+        a = sw.iono_activity
+        return TAU_IONO_QUIET_S + (TAU_IONO_STORM_S - TAU_IONO_QUIET_S) * a
+
+    # --- troposphere ------------------------------------------------------
+    @staticmethod
+    def tropo_zenith_m(altitude_m: float = 0.0) -> float:
+        """Zenith wet+dry delay ~2.3 m at sea level, thin with altitude."""
+        return 2.3 * math.exp(-altitude_m / 8000.0)
+
+    @staticmethod
+    def tropo_residual_after_model_m(elevation_deg: float = 90.0, ppp: bool = False) -> float:
+        """Saastamoinen + mapping function leaves ~4 cm zenith; PPP estimates the wet delay (~2 cm, ASSUMED)."""
+        obliquity = 1.0 / max(math.sin(math.radians(elevation_deg)), 0.1)
+        return (0.02 if ppp else 0.04) * obliquity
+
+    # --- satellite clock & orbit -----------------------------------------
+    @staticmethod
+    def broadcast_clock_m() -> float:
+        return 1.5          # v1 value; conservative vs measured SISRE (see docstring)
+
+    @staticmethod
+    def broadcast_orbit_m() -> float:
+        return 2.0          # v1 value; conservative vs measured SISRE
+
+    @staticmethod
+    def sbas_corrected_clock_m() -> float:
+        return 0.4
+
+    @staticmethod
+    def sbas_corrected_orbit_m() -> float:
+        return 0.3
+
+    @staticmethod
+    def ppp_corrected_clock_m() -> float:
+        return 0.05
+
+    @staticmethod
+    def ppp_corrected_orbit_m() -> float:
+        return 0.03
+
+    @staticmethod
+    def ppp_ambiguity_m(converged: bool) -> float:
+        """Float-ambiguity error, pseudorange-equivalent (ASSUMED): ~0.4 m in the first
+        ~5-15 min (horizontal ~0.5 m), ~3 cm once converged."""
+        return 0.03 if converged else 0.40
+
+    # --- multipath & receiver noise --------------------------------------
+    @staticmethod
+    def multipath_m(environment: str = "open") -> float:
+        env = {
+            "open": 0.3,
+            "suburban": 0.8,
+            "urban": 2.0,
+            "urban_canyon": 4.5,
+        }
+        return env.get(environment, 0.8)
+
+    @staticmethod
+    def receiver_noise_m(cn0_dbhz: float = 45.0, loop_bw_hz: float = 1.0, spacing_chips: float = 0.1,
+                         t_coh_s: float = 0.02, chip_m: float = C_LIGHT / 1.023e6) -> float:
+        """DLL thermal noise, coherent early-late (textbook form, e.g. Kaplan & Hegarty):
+        sigma = chip * sqrt(B_L d / (2 C/N0) * (1 + 2 / (T C/N0))). Defaults: L1 C/A,
+        1 Hz loop, 0.1-chip narrow correlator -> ~0.37 m at 45 dB-Hz (ASSUMED receiver)."""
+        cn0 = 10.0 ** (cn0_dbhz / 10.0)
+        return chip_m * math.sqrt(loop_bw_hz * spacing_chips / (2.0 * cn0) * (1.0 + 2.0 / (t_coh_s * cn0)))
+
+    @staticmethod
+    def iono_free_noise_factor(l5_ratio: float = L5_CODE_NOISE_RATIO) -> float:
+        g = F_L1 ** 2 - F_L5 ** 2
+        return math.sqrt((F_L1 ** 2 / g) ** 2 + (F_L5 ** 2 / g * l5_ratio) ** 2)
+
+    # --- SBAS GEO link (v1 API, no longer an error term) -----------------
+    @staticmethod
+    def sbas_geo_range_error_m(elevation_deg: float, range_sigma_m: float = 0.5) -> float:
+        """Kept for API compatibility only. The SBAS correction residual is now in the
+        sbas clock/orbit/iono terms (DO-229-style), so this is NOT added to the budget."""
+        obliq = 1.0 / max(math.sin(math.radians(elevation_deg)), 0.2)
+        return range_sigma_m * obliq
+
+
+# ===========================================================================
+# 3. Pseudorange error budget: slow (Gauss-Markov) + fast parts
+# ===========================================================================
+@dataclass
+class Component:
+    name: str
+    slow_m: float      # Gauss-Markov 1-sigma
+    tau_s: float
+    fast_m: float      # white 1-sigma
+
+
+def pseudorange_components(
+    sw: SpaceWeather,
+    cfg: GNSSConfig,
+    environment: str = "suburban",
+    sat_elevation_deg: float = 45.0,
+) -> List[Component]:
+    E = ErrorSources
+    comps: List[Component] = []
+    obl = E.iono_obliquity(sat_elevation_deg)
+    tau_i = E.iono_tau_s(sw)
+
+    # Ionosphere (one model per configuration, never stacked)
+    if cfg.l5_available:
+        comps.append(Component("iono", E.iono_residual_l5(sw), tau_i, 0.0))
+    elif cfg.sbas_available:
+        comps.append(Component("iono", E.iono_residual_sbas(sw) * obl, tau_i, 0.0))
+    else:
+        comps.append(Component("iono", E.iono_residual_l1(sw) * obl, tau_i, 0.0))
+
+    comps.append(Component("tropo", E.tropo_residual_after_model_m(sat_elevation_deg, ppp=cfg.ppp_available),
+                           TAU_TROPO_S, 0.0))
+
+    # Clock + orbit: PPP > SBAS > broadcast (one of them)
+    if cfg.ppp_available:
+        comps.append(Component("clock", E.ppp_corrected_clock_m(), TAU_PPP_S, 0.0))
+        comps.append(Component("orbit", E.ppp_corrected_orbit_m(), TAU_PPP_S, 0.0))
+        comps.append(Component("ppp_ambiguity", E.ppp_ambiguity_m(cfg.ppp_converged), TAU_PPP_AMBIGUITY_S, 0.0))
+    elif cfg.sbas_available:
+        comps.append(Component("clock", E.sbas_corrected_clock_m(), TAU_SBAS_S, 0.0))
+        comps.append(Component("orbit", E.sbas_corrected_orbit_m(), TAU_SBAS_S, 0.0))
+    else:
+        comps.append(Component("clock", E.broadcast_clock_m() * cfg.broadcast_scale, TAU_ORBIT_CLOCK_S, 0.0))
+        comps.append(Component("orbit", E.broadcast_orbit_m() * cfg.broadcast_scale, TAU_ORBIT_CLOCK_S, 0.0))
+
+    # Local errors. Converged PPP runs on carrier phase (cm-level noise/multipath, ASSUMED).
+    if cfg.ppp_available and cfg.ppp_converged:
+        mp, rx = 0.02, 0.01
+    else:
+        mp, rx = E.multipath_m(environment), E.receiver_noise_m(cfg.cn0_dbhz)
+        if cfg.l5_available:
+            k = E.iono_free_noise_factor()
+            mp, rx = mp * k, rx * k
+    fs = MULTIPATH_SLOW_FRACTION
+    comps.append(Component("multipath", mp * math.sqrt(fs), TAU_MULTIPATH_S, mp * math.sqrt(1.0 - fs)))
+    comps.append(Component("receiver", 0.0, 0.0, rx))
+    return comps
+
+
+def pseudorange_sigma_m(
+    sw: SpaceWeather,
+    cfg: GNSSConfig,
+    environment: str = "suburban",
+    sat_elevation_deg: float = 45.0,
+) -> Tuple[float, Dict[str, float]]:
+    """Total per-satellite pseudorange 1-sigma (m) and the per-term breakdown (v1 API)."""
+    comps = pseudorange_components(sw, cfg, environment, sat_elevation_deg)
+    terms = {c.name: math.hypot(c.slow_m, c.fast_m) for c in comps}
+    var = sum(v * v for v in terms.values())
+    return math.sqrt(var), {k: round(v, 4) for k, v in terms.items()}
+
+
+def split_slow_fast(comps: List[Component]) -> Dict[str, float]:
+    """Slow sigma, variance-weighted tau (matches the area under the autocorrelation:
+    sum sigma_i^2 tau_i = sigma^2 tau), fast sigma; all pseudorange domain."""
+    vs = sum(c.slow_m ** 2 for c in comps)
+    vf = sum(c.fast_m ** 2 for c in comps)
+    tau = sum(c.slow_m ** 2 * c.tau_s for c in comps) / vs if vs > 0 else 0.0
+    return {"slow_m": math.sqrt(vs), "tau_s": tau, "fast_m": math.sqrt(vf), "total_m": math.sqrt(vs + vf)}
+
+
+# ===========================================================================
+# 4. Position covariance from pseudorange + DOP
+# ===========================================================================
+@dataclass
+class PositionError:
+    horizontal_m: float            # DRMS = pr * HDOP (radial RMS)
+    vertical_m: float              # 1-D sigma = pr * VDOP
+    horizontal_cep50_m: float
+    vertical_cep50_m: float
+    terms_h_m: Dict[str, float]
+    terms_v_m: Dict[str, float]
+    horizontal_per_axis_m: float = 0.0
+
+
+def position_error_from_pseudorange(
+    pr_sigma_m: float,
+    cfg: GNSSConfig,
+    terms: Dict[str, float],
+    sw: Optional[SpaceWeather] = None,
+) -> PositionError:
+    """DOP scaling. HDOP * sigma is the horizontal radial RMS (DRMS); per-axis is DRMS/sqrt(2).
+    No space-weather DOP inflation in v2 (DOP is geometry; iono is in the range terms)."""
+    h_drms = pr_sigma_m * cfg.hdop
+    h_axis = h_drms / math.sqrt(2.0)
+    v_sigma = pr_sigma_m * cfg.vdop
+    return PositionError(
+        horizontal_m=round(h_drms, 3),
+        vertical_m=round(v_sigma, 3),
+        horizontal_cep50_m=round(1.1774 * h_axis, 3),       # circular Rayleigh median
+        vertical_cep50_m=round(0.6745 * v_sigma, 3),        # 1-D median absolute error
+        terms_h_m={k: round(v * cfg.hdop, 4) for k, v in terms.items()},
+        terms_v_m={k: round(v * cfg.vdop, 4) for k, v in terms.items()},
+        horizontal_per_axis_m=round(h_axis, 3),
+    )
+
+
+# ===========================================================================
+# 5. IMU error model + complementary filter
+# ===========================================================================
+@dataclass
+class IMUConfig:
+    accel_bias_mps2: float = 0.02       # residual after calibration
+    accel_noise_mps2_per_sqrt_hz: float = 0.05   # ASSUMED, vibration-inflated (bench MEMS ~0.002)
+    gyro_bias_dps: float = 0.05
+    gyro_noise_dps_per_sqrt_hz: float = 0.02
+    sample_rate_hz: float = 200.0       # informational: densities are already per sqrt(Hz)
+
+
+def imu_position_drift_m(
+    imu: IMUConfig,
+    time_s: float,
+    integration_order: int = 2,
+    include_tilt: bool = True,
+) -> float:
+    """
+    1-sigma per-axis horizontal position drift of a pure IMU integration over `time_s`.
+      accel bias        b t^2 / 2
+      accel noise       n t^1.5 / sqrt(3)          (velocity random walk n, m/s/sqrt(s))
+      gyro bias tilt    g b_g t^3 / 6              (UNAIDED: no gravity levelling)
+      gyro noise tilt   g ARW t^2.5 / sqrt(20)
+    """
+    t = float(time_s)
+    terms = [imu.accel_bias_mps2 * t ** 2 / 2.0,
+             imu.accel_noise_mps2_per_sqrt_hz * t ** 1.5 / math.sqrt(3.0)]
+    if include_tilt:
+        terms.append(G0 * math.radians(imu.gyro_bias_dps) * t ** 3 / 6.0)
+        terms.append(G0 * math.radians(imu.gyro_noise_dps_per_sqrt_hz) * t ** 2.5 / math.sqrt(20.0))
+    return math.sqrt(sum(x * x for x in terms))
+
+
+def gnss_imu_fusion_sigma(
+    gnss_sigma_m: float,
+    imu: IMUConfig,
+    outage_s: float,
+    process_noise_mps2: float = 0.5,
+) -> float:
+    """
+    GNSS sigma at the start of an outage, grown by IMU drift plus the v1 process-noise
+    term (0.5 q t^2 / sqrt(3), kept as an ASSUMED manoeuvre allowance).
+    """
+    imu_drift = imu_position_drift_m(imu, outage_s)
+    rw = process_noise_mps2 * 0.5 * outage_s**2 / math.sqrt(3.0)
+    return math.sqrt(gnss_sigma_m**2 + imu_drift**2 + rw**2)
+
+
+# ===========================================================================
+# 6. Top-level budget
+# ===========================================================================
+@dataclass
+class BudgetScenario:
+    name: str
+    cfg: GNSSConfig
+
+
+def compute_budget(
+    sw: SpaceWeather,
+    scenario: BudgetScenario,
+    environment: str = "suburban",
+    sat_elevation_deg: float = 45.0,
+    outage_s: float = 0.0,
+    imu: Optional[IMUConfig] = None,
+) -> Dict:
+    imu = imu if imu is not None else IMUConfig()
+    cfg = scenario.cfg
+    comps = pseudorange_components(sw, cfg, environment, sat_elevation_deg)
+    pr_sigma, terms = pseudorange_sigma_m(sw, cfg, environment, sat_elevation_deg)
+    pos = position_error_from_pseudorange(pr_sigma, cfg, terms, sw)
+    sp = split_slow_fast(comps)
+    k_h = cfg.hdop / math.sqrt(2.0)
+    fused_axis = gnss_imu_fusion_sigma(pos.horizontal_per_axis_m, imu, outage_s)
+    fused_v = gnss_imu_fusion_sigma(pos.vertical_m, imu, outage_s)
+    return {
+        "scenario": scenario.name,
+        "space_weather": asdict(sw),
+        "iono_activity": round(sw.iono_activity, 3),
+        "pseudorange_sigma_m": round(pr_sigma, 3),
+        "terms_pr_m": terms,
+        "position_gnss_only": asdict(pos),
+        "position_fused": {
+            "horizontal_m": round(math.sqrt(2.0) * fused_axis, 3),      # DRMS
+            "horizontal_per_axis_m": round(fused_axis, 3),
+            "vertical_m": round(fused_v, 3),
+            "horizontal_cep50_m": round(1.1774 * fused_axis, 3),
+            "vertical_cep50_m": round(0.6745 * fused_v, 3),
+            "outage_s": outage_s,
+        },
+        "drone_gps_model": drone_gps_model(sw, cfg, environment, sat_elevation_deg),
+        "split_pr_m": {k: round(v, 4) for k, v in sp.items()},
+        "per_axis_h_bias_m": round(sp["slow_m"] * k_h, 4),
+    }
+
+
+def drone_gps_model(sw: SpaceWeather, cfg: GNSSConfig, environment: str = "suburban",
+                    sat_elevation_deg: float = 45.0) -> Dict[str, float]:
+    """Map the budget onto the drone v2/v3 GPS model: per-axis Gauss-Markov bias
+    (sigma, tau) + white noise, horizontal (pr * HDOP / sqrt 2) and vertical (pr * VDOP).
+    v2 'standard GPS' was bias 0.5 m, tau 30 s, no white noise, isotropic."""
+    sp = split_slow_fast(pseudorange_components(sw, cfg, environment, sat_elevation_deg))
+    kh, kv = cfg.hdop / math.sqrt(2.0), cfg.vdop
+    return {"bias_h_m": round(sp["slow_m"] * kh, 4), "bias_v_m": round(sp["slow_m"] * kv, 4),
+            "tau_s": round(sp["tau_s"], 1),
+            "white_h_m": round(sp["fast_m"] * kh, 4), "white_v_m": round(sp["fast_m"] * kv, 4)}
+
+
+# ===========================================================================
+# 7. Space-asset marginal value (the actual gain)
+# ===========================================================================
+SCENARIOS: List[BudgetScenario] = [
+    BudgetScenario("L1 only (bare)", GNSSConfig(l5_available=False, sbas_available=False, ppp_available=False)),
+    BudgetScenario("L1 + SBAS (MSAS)", GNSSConfig(l5_available=False, sbas_available=True, ppp_available=False)),
+    BudgetScenario("L1 + L5 dual-freq", GNSSConfig(l5_available=True, sbas_available=False, ppp_available=False)),
+    BudgetScenario("L1 + L5 + SBAS", GNSSConfig(l5_available=True, sbas_available=True, ppp_available=False)),
+    BudgetScenario("L1 + L5 + PPP (converged)", GNSSConfig(l5_available=True, sbas_available=False, ppp_available=True)),
+    BudgetScenario("L1 + L5 + PPP (not converged)", GNSSConfig(l5_available=True, sbas_available=False,
+                                                               ppp_available=True, ppp_converged=False)),
+]
+
+
+def marginal_value_table(
+    sw: SpaceWeather,
+    environment: str = "suburban",
+    outage_s: float = 2.0,
+) -> Dict:
+    """
+    Start from a bare single-frequency GPS fix and progressively add each
+    space asset. Report the incremental reduction in fused horizontal error.
+    """
+    rows = []
+    baseline_h = None
+    for sc in SCENARIOS:
+        b = compute_budget(sw, sc, environment=environment, outage_s=outage_s)
+        h = b["position_fused"]["horizontal_m"]
+        if baseline_h is None:
+            baseline_h = h
+        g = b["drone_gps_model"]
+        rows.append({
+            "scenario": sc.name,
+            "pr_sigma_m": b["pseudorange_sigma_m"],
+            "gnss_h_m": b["position_gnss_only"]["horizontal_m"],
+            "fused_h_m": h,
+            "fused_v_m": b["position_fused"]["vertical_m"],
+            "h_cep50_m": b["position_fused"]["horizontal_cep50_m"],
+            "h_reduction_pct": round(100.0 * (baseline_h - h) / baseline_h, 2),
+            "bias_h_m": g["bias_h_m"], "tau_s": g["tau_s"], "white_h_m": g["white_h_m"],
+        })
+    return {"environment": environment, "outage_s": outage_s, "iono_activity": round(sw.iono_activity, 3),
+            "rows": rows}
+
+
+# ===========================================================================
+# 8. Demo
+# ===========================================================================
+def _print_table(rows: List[Dict], headers: List[str]) -> None:
+    widths = [max(len(str(r[h])) for r in rows + [{h: h}]) for h in headers]
+    fmt = "  ".join(f"{{:<{w}}}" for w in widths)
+    print(fmt.format(*headers))
+    print("-" * (sum(widths) + 2 * (len(headers) - 1)))
+    for r in rows:
+        print(fmt.format(*[str(r[h]) for h in headers]))
+
+
+def main() -> None:
+    print("=" * 78)
+    print(f"DRONE STATE-ESTIMATION ERROR BUDGET v{__version__}  (order-of-magnitude assumptions)")
+    print("Gyeonggi-do, South Korea (example mid-latitude site)")
+    print("horizontal = DRMS (radial RMS); bias/white = per-axis drone GPS model; tau = GM time")
+    print("=" * 78)
+    for label, sw in [("QUIET  (F10.7=100, Ap=4,  no flare)", QUIET),
+                      ("ACTIVE (F10.7=180, Ap=30, M5 flare)", ACTIVE),
+                      ("STORM  (F10.7=250, Ap=120, X2 flare)", STORM)]:
+        print(f"\n{label}")
+        print("-" * len(label))
+        table = marginal_value_table(sw, environment="suburban", outage_s=2.0)
+        _print_table(table["rows"], ["scenario", "pr_sigma_m", "gnss_h_m", "fused_h_m", "fused_v_m",
+                                     "h_cep50_m", "h_reduction_pct", "bias_h_m", "tau_s", "white_h_m"])
+
+    print("\n" + "=" * 78)
+    print("ENVIRONMENT SENSITIVITY  (STORM weather, L1+L5+PPP converged)")
+    print("=" * 78)
+    sc = SCENARIOS[4]
+    rows = []
+    for env in ["open", "suburban", "urban", "urban_canyon"]:
+        b = compute_budget(STORM, sc, environment=env, outage_s=2.0)
+        rows.append({"environment": env, "pr_sigma_m": b["pseudorange_sigma_m"],
+                     "gnss_h_m": b["position_gnss_only"]["horizontal_m"],
+                     "fused_h_m": b["position_fused"]["horizontal_m"], "fused_v_m": b["position_fused"]["vertical_m"]})
+    _print_table(rows, ["environment", "pr_sigma_m", "gnss_h_m", "fused_h_m", "fused_v_m"])
+
+    print("\n" + "=" * 78)
+    print("GNSS OUTAGE SENSITIVITY  (STORM, suburban, L1+L5+PPP converged; IMU drift per axis)")
+    print("=" * 78)
+    rows = []
+    for outage in [0.0, 1.0, 5.0, 15.0, 30.0]:
+        b = compute_budget(STORM, sc, environment="suburban", outage_s=outage)
+        rows.append({"outage_s": outage, "fused_h_m": b["position_fused"]["horizontal_m"],
+                     "fused_v_m": b["position_fused"]["vertical_m"],
+                     "h_cep50_m": b["position_fused"]["horizontal_cep50_m"],
+                     "imu_only_m": round(imu_position_drift_m(IMUConfig(), outage), 3)})
+    _print_table(rows, ["outage_s", "fused_h_m", "fused_v_m", "h_cep50_m", "imu_only_m"])
+
+    print("\n" + "=" * 78)
+    print("SENSITIVITY: broadcast orbit+clock at measured GPS SISRE (~0.6 m, scale 0.24), QUIET")
+    print("=" * 78)
+    for name, cfg in [("L1 only (SISRE 0.6 m)", GNSSConfig(sbas_available=False, broadcast_scale=0.24)),
+                      ("L1 + L5 (SISRE 0.6 m)", GNSSConfig(l5_available=True, sbas_available=False,
+                                                           broadcast_scale=0.24))]:
+        b = compute_budget(QUIET, BudgetScenario(name, cfg), outage_s=2.0)
+        print(f"  {name:<24} fused_h={b['position_fused']['horizontal_m']:.3f} m  model={json.dumps(b['drone_gps_model'])}")
+
+
+if __name__ == "__main__":
+    main()
