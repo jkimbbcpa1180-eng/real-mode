@@ -1,0 +1,86 @@
+========================================================================================
+SUBSTRATE v8 — FULL STACK DEMO   (Credit: humanity)
+========================================================================================
+
+[0] PERSONHOOD: genesis quorum 3, then 2 distinct sponsors each; 6 persons
+  duplicate vouch ['p0','p0']: FAILED (need 2 distinct sponsors, have 1)
+
+[1] MINTING (ledger clock, mutual neighbors, provenance quality)
+  [+] POD-000: minted 142.56 TC (provenance 0.867, quorum 2/3)
+  [+] POD-001: minted 142.56 TC (provenance 0.867, quorum 2/3)
+  [+] POD-002: minted 142.56 TC (provenance 0.867, quorum 2/3)
+  [+] POD-003: minted 142.56 TC (provenance 0.867, quorum 2/3)
+  [+] POD-004: minted 142.56 TC (provenance 0.867, quorum 2/3)
+  [-] implausibly noisy sensor (v7 rewarded this): REJECTED [community_care]: provenance 0.55 < 0.75
+
+[2] DEMURRAGE (idle 4% + 10% on balance above 500 TC, everyone)
+  month 1: active= 2428.30 | idle= 1987.57 (burned 254.99)
+  month 2: active= 2595.47 | idle= 1767.26 (burned 220.31)
+  month 3: active= 2745.92 | idle= 1576.91 (burned 190.35)
+  month 4: active= 2881.33 | idle= 1412.45 (burned 164.46)
+  month 5: active= 3003.20 | idle= 1270.36 (burned 142.09)
+  month 6: active= 3112.88 | idle= 1147.59 (burned 122.77)
+  active-pod bound at 400 TC/month inflow: 4100 TC
+
+[3] MUNICIPAL ZONES (fragility-scaled tolls)
+  Jeju    (85% load, fragility 1.5): toll 53.62
+  Seorak  (20% load, fragility 0.8): toll 25.00
+
+[4] TRIP BOOKING
+  POD-000 -> Jeju: APPROVED | 53.62
+
+[5] ESCALATION LADDER (fictional/proposed mechanism, not a real UN process)
+  after child-labor record (severity major): stage 2 (PARTIAL_SUSP)
+  appeal filed: PENDING (needs 3 independent reviewers)
+   review R1: PENDING
+   review R3: FAILED (reviewer not independent)
+   review R2: PENDING
+   review R4: GRANTED (stage 2 -> 1)
+  later minor violation; stage now (2, 'PARTIAL_SUSP') (appeal still respected)
+  forced labor -> stage 4 (DECERTIFICATION)
+  POD-000 -> Seorak: DENIED | polity River Watershed at stage 4 (DECERTIFICATION); cross-border travel suspended
+
+[6] AUDITORS + SPONSORS (random assignment, HMAC certificates)
+  Korea Green Energy Co. -> POD-000: CONTRIBUTED
+  Korea Green Energy Co. -> POD-001: CONTRIBUTED
+  Korea Green Energy Co. -> POD-002: CONTRIBUTED
+  cert 31745cbf assigned to AUD-002; verifies=True
+  tampered amount verifies=False
+  slash: SLASHED bond_after 1200.0 removed=False (1 slash, 1 certs: below minimum sample)
+
+[7] MULTI-SPONSOR ATTRIBUTION
+  1000 TC to POD-000: {'SP-001': 400.0, 'SP-002': 600.0}
+  largest sponsor: SP-002 at 60%
+
+[8] FEDERATION (fees to treasury)
+  transfer: SETTLED | delivered 49.25 | fee treasury 0.75
+
+[9] EXIT (settle balance, keep personhood unless deletion asked)
+  POD-004: EXITED settled 242.56 TC, personhood kept=True
+  POD-003: EXITED settled 242.56 TC, erased 2 log references
+
+[10] TRANSPARENCY (pseudonymous, aggregated)
+  sample mint event: {'pod_id': 'ps:578c30f2ef45', 'domain': 'community_care', 'provenance': 0.867, 'minted': 142.56, 'capped': False}
+  aggregate: [{'day': 1, 'domain': 'community_care', 'hours': 30.0, 'contributors': 5}]
+  total transparency events: 8
+
+[11] POD MODEL (sourced + labeled assumptions; see README_v8.md)
+  Assumed pod: 2 persons @ 2,500 kcal, 10 m2 LED canopy (250 umol/m2/s, 16 h, 2.7 umol/J), 6 kWp PV, 15 kWh battery
+  indoor food:       153 kcal/day = 3.0% of 5000 kcal need (light ceiling 2058)
+  grow electricity:  17.8 kWh/day (116 kWh per 1,000 kcal)
+  load vs PV:        25.8 kWh/day vs 19.6 mean / 11.4 Dec -> needs 13.6 kWp for December
+  water balance:     -24 L/day
+  capex:             $27,980 {'pv': 6480, 'battery': 10500, 'grow': 8000, 'water': 3000}
+  annualized cost:   $2,754/yr = $1,377/person/yr
+  energy_ok=False water_ok=False food_self_sufficient=False -> sustainable=False
+  FULL diet indoors, best case (2.6 kcal/mol): 237 kWh/day = 73 kWp PV (annual mean)
+  FULL diet outdoors (potato, KR avg yield): 961 m2 for 2 persons
+
+[12] GOAL-WEIGHT CALORIE PLAN -> POD DEMAND (general guidance, not medical advice)
+  BMR 1698.8 | TDEE 2633.1 | target 2133.1 kcal/day | ~17.6 weeks
+  one-person 10 m2 pod supplies 152.6 kcal = 7.2%
+  underweight goal: REFUSED
+
+[13] HEALTH SNAPSHOT
+  pods: 5 | registered persons: 5
+  total TC in pods: 5299.41

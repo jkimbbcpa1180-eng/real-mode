@@ -1,0 +1,53 @@
+========================================================================================
+SUBSTRATE v7 — FULL STACK DEMO
+========================================================================================
+
+[1] MINTING (mesh consensus + non-linear entropy)
+  [+] POD-000: minted 123.90 TC (entropy 0.819, quorum 2/3)
+  [+] POD-001: minted 123.90 TC (entropy 0.819, quorum 2/3)
+  [+] POD-002: minted 123.90 TC (entropy 0.819, quorum 2/3)
+  [+] POD-003: minted 123.90 TC (entropy 0.819, quorum 2/3)
+  [+] POD-004: minted 123.90 TC (entropy 0.819, quorum 2/3)
+
+[2] DEMURRAGE (idle vs active, 4% monthly)
+  month 1: active=  223.90 | idle=  214.94 (burned 8.96)
+  month 2: active=  223.90 | idle=  206.34 (burned 8.60)
+  month 3: active=  223.90 | idle=  198.09 (burned 8.25)
+  month 4: active=  223.90 | idle=  190.17 (burned 7.92)
+  month 5: active=  223.90 | idle=  182.56 (burned 7.61)
+  month 6: active=  223.90 | idle=  175.26 (burned 7.30)
+
+[3] MUNICIPAL ZONES (fragility-scaled tolls)
+  Jeju    (85% load, fragility 1.5): toll 53.62
+  Seorak  (20% load, fragility 0.8): toll 25.00
+
+[4] TRIP BOOKING
+  POD-000 -> Jeju: APPROVED | 53.62
+
+[5] UN ESCALATION
+  polity stage: 4 (DECERTIFICATION)
+  POD-000 -> Seorak: DENIED | polity River Watershed at stage 4 (DECERTIFICATION); cross-border travel suspended
+
+[6] AUDITORS + SPONSORS
+  Korea Green Energy Co. -> POD-000: CONTRIBUTED
+  Korea Green Energy Co. -> POD-001: CONTRIBUTED
+  Korea Green Energy Co. -> POD-002: CONTRIBUTED
+  cert issued: 31745cbf by AUD-001
+  slash: SLASHED bond_after 1700.0
+
+[7] MULTI-SPONSOR ATTRIBUTION
+  1000 TC to POD-000: {'SP-001': 400.0, 'SP-002': 600.0}
+  largest sponsor: SP-002 at 60%
+
+[8] FEDERATION
+  cross-polity transfer: SETTLED | delivered 49.25
+
+[9] WATCHER
+  watcher read 1 events
+  total transparency events: 6
+
+[10] HEALTH SNAPSHOT
+  pods: 5
+  registered persons: 6
+  total TC in pods: 1867.24
+  transparency events: 6
