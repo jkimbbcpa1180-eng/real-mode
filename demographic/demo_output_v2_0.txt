@@ -1,0 +1,17 @@
+Real Mode demographic simulator v2.0
+UNCALIBRATED CONDITIONAL SCENARIO | baseline
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,300,000      --            --          --
+2036       43,754,828      190,384       938,941       0.720
+2046       36,175,468      104,514       978,336       0.720
+2056       27,800,183       64,312       951,376       0.720
+2066       20,399,568       85,149       797,530       0.720
+2076       15,005,392       64,090       571,503       0.720
+2086       11,591,485       43,265       364,118       0.720
+2096        9,723,276       41,813       241,372       0.720
+2106        8,533,797       40,612       215,685       0.720
+2116        7,364,763       33,047       204,202       0.720
+2126        6,494,396       29,668       156,529       0.720
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.

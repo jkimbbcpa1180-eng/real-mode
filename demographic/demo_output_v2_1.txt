@@ -1,0 +1,76 @@
+### baseline
+Real Mode demographic simulator v2.1
+UNCALIBRATED CONDITIONAL SCENARIO | baseline
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,352,106      242,662       561,142       0.798
+2046       46,718,766      193,486       728,529       0.794
+2056       41,323,054      140,982       814,369       0.796
+2066       35,338,975      120,273       782,631       0.802
+2076       29,849,403      104,640       705,831       0.801
+2086       24,951,484       86,181       630,912       0.801
+2096       20,696,047       71,738       537,881       0.803
+2106       17,404,464       65,771       429,940       0.803
+2116       15,022,950       58,912       344,076       0.803
+2126       13,237,737       52,542       293,474       0.803
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+
+### all_combined_low
+Real Mode demographic simulator v2.1
+UNCALIBRATED CONDITIONAL SCENARIO | all_combined_low
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,454,835      262,610       561,215       0.864
+2046       47,105,315      228,150       728,683       0.936
+2056       42,022,980      168,020       814,546       0.947
+2066       36,298,710      148,181       782,879       0.954
+2076       31,114,492      137,177       706,267       0.952
+2086       26,531,215      116,647       631,783       0.952
+2096       22,536,961       97,707       539,901       0.955
+2106       19,472,797       92,355       434,953       0.955
+2116       17,272,185       84,635       355,663       0.955
+2126       15,558,855       75,270       314,912       0.955
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+
+### all_combined_central
+Real Mode demographic simulator v2.1
+UNCALIBRATED CONDITIONAL SCENARIO | all_combined_central
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,629,055      297,154       561,341       0.977
+2046       47,791,753      292,370       728,964       1.199
+2056       43,294,085      218,620       814,870       1.228
+2066       38,068,933      203,571       783,343       1.237
+2076       33,523,316      207,660       707,097       1.234
+2086       29,643,221      185,430       633,409       1.234
+2096       26,250,080      157,700       543,590       1.238
+2106       23,750,404      158,057       444,037       1.239
+2116       22,073,138      151,682       376,681       1.238
+2126       20,685,236      135,410       354,293       1.239
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+
+### all_combined_high
+Real Mode demographic simulator v2.1
+UNCALIBRATED CONDITIONAL SCENARIO | all_combined_high
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,919,431      356,271       561,555       1.172
+2046       48,992,995      408,506       729,467       1.676
+2056       45,556,448      310,974       815,453       1.736
+2066       41,284,793      315,193       784,210       1.748
+2076       38,129,506      368,435       708,707       1.744
+2086       35,911,676      349,938       636,486       1.743
+2096       33,995,463      307,481       550,341       1.748
+2106       33,046,142      341,273       460,473       1.750
+2116       33,068,205      353,587       414,626       1.749
+2126       33,061,138      321,923       426,214       1.750
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+
