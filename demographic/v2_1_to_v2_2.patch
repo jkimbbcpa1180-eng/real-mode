@@ -1,0 +1,169 @@
+--- korea_demographic_v2_1.py	2026-10-12 01:58:48.473606109 +0900
++++ korea_demographic_v2_2.py	2026-10-13 06:49:26.099657343 +0900
+@@ -1,5 +1,26 @@
+ #!/usr/bin/env python3
+-"""Real Mode Korea demographic scenario simulator, v2.1 (Python 3.9+, stdlib).
++"""Real Mode Korea demographic scenario simulator, v2.2 (Python 3.9+, stdlib).
++
++v2.2 CHANGES (copy of v2.1; v2.1 file untouched):
++ * A Country of Kings: wealth concentration is an explicit driver ("wealth_concentration").
++   SOURCED anchor (Statistics Korea 2025 Survey of Household Finances and
++   Living Conditions, end-March 2025): top 10% of households hold 46.1% of net
++   assets, bottom 50% hold 9.1%, net-asset Gini 0.625; ~75.8% of household
++   assets are real assets (mostly property).
++ * Fertility drag term: relative TFR change = -ELASTICITY * (top10 share - anchor),
++   in percentage points. ELASTICITY IS A GUESS (low/central/high). No study
++   estimating Korea's TFR response to the top-10% wealth share was found/used.
++   The 2025 baseline TFR already contains today's concentration, so the drag
++   is zero at the anchor; it only moves when concentration moves.
++ * New policy scenario "A Country of Kings" (country_of_kings)_{low,central,high}: top-10% share falls
++   46.1% -> 40.0% (TARGET IS AN ILLUSTRATIVE CHOICE; 40% is not a sourced goal).
++ * Double counting with homes_for_families: much of wealth concentration's
++   effect on births plausibly runs through housing cost, which
++   homes_for_families already models. In all_combined only the NON-overlapping
++   share (1 - WEALTH_HOUSING_OVERLAP) of country_of_kings's log-odds effect is
++   added. Overlap 0.5 is a GUESS. country_of_kings alone gets its full effect.
++
++v2.1 CHANGES (copy of v2.0; original file untouched):
+ 
+ v2.1 CHANGES (copy of v2.0; original file untouched):
+  * Demo recalibrated toward 2025 Korea (see CALIBRATION in demo_config):
+@@ -87,7 +108,7 @@
+ import unittest
+ from pathlib import Path
+ 
+-VERSION = "2.1"
++VERSION = "2.2"
+ SEXES = ("female", "male")
+ BASE_SCENARIOS = ("baseline", "pro_natal", "surveillance_heavy", "immigration_support")
+ # GUESSED full-effect (after the 20-year ramp) relative change in TFR, by
+@@ -99,7 +120,37 @@
+     "equal_pay_subcontractors": (("job_insecurity",), (0.02, 0.06, 0.12)),
+     "free_care": (("support", "child_cost"), (0.05, 0.12, 0.25)),
+ }
++# --- A Country of Kings: wealth concentration (v2.2) ---
++# SOURCED: Statistics Korea 2025 Survey of Household Finances and Living Conditions.
++WEALTH_ANCHOR = {"top10_share_pct": 46.1, "bottom50_share_pct": 9.1, "gini_net_assets": 0.625,
++                 "real_asset_share_pct": 75.8, "as_of": "end-March 2025",
++                 "source": "Statistics Korea 2025 Survey of Household Finances and Living Conditions "
++                           "(korea.kr briefing newsId=156733201; Korea Times 2025-12-04; Hankyung 2025-12-04)"}
++# GUESS: relative TFR change per percentage point of top-10% share (low, central, high).
++WEALTH_ELASTICITY_GUESS = (0.005, 0.015, 0.03)
++# ILLUSTRATIVE CHOICE, not sourced: country_of_kings target for the top-10% share.
++COUNTRY_OF_KINGS_TARGET_PCT = 40.0
++# GUESS: share of the wealth effect already captured by homes_for_families (housing channel).
++WEALTH_HOUSING_OVERLAP = 0.5
++
++
++def _pct(x):
++    if isinstance(x, bool) or not isinstance(x, (int, float)) or not math.isfinite(x) or not 0 <= x <= 100:
++        raise ValueError("top10 share must be a finite percentage 0..100")
++    return float(x)
++
++
++def wealth_drag(top10_share_pct, variant="central"):
++    """Relative TFR change vs the 2025 anchor. Elasticity is a GUESS. Negative = drag."""
++    e = WEALTH_ELASTICITY_GUESS[VARIANTS.index(variant)] if isinstance(variant, str) else variant
++    return -e * (_pct(top10_share_pct) - WEALTH_ANCHOR["top10_share_pct"])
++
++
+ VARIANTS = ("low", "central", "high")
++POLICIES["country_of_kings"] = (("wealth_concentration",),
++                                tuple(wealth_drag(COUNTRY_OF_KINGS_TARGET_PCT, v) for v in VARIANTS))
++COMBINED_WEIGHT = {p: 1.0 for p in POLICIES}
++COMBINED_WEIGHT["country_of_kings"] = 1 - WEALTH_HOUSING_OVERLAP
+ POLICY_SCENARIOS = tuple(f"{p}_{v}" for p in list(POLICIES) + ["all_combined"] for v in VARIANTS)
+ SCENARIOS = BASE_SCENARIOS + POLICY_SCENARIOS
+ POLICY_EVIDENCE = {
+@@ -117,6 +168,11 @@
+     "free_care": "Rindfuss et al. (2010, Norway): childcare expansion raised completed fertility substantially; "
+                  "Raute (2019, Germany Elterngeld) and Milligan (2005, Quebec) found +10-25% in some groups. "
+                  "OECD 2025: Korea's 2013 free-childcare reform had 'underwhelming' fertility effects.",
++    "country_of_kings": "Anchor SOURCED (Statistics Korea 2025: top10 46.1%, bottom50 9.1%, Gini 0.625). "
++                        "Elasticity GUESS 0.5/1.5/3.0% TFR per pp of top-10% share; target 40% is illustrative. "
++                        "Qualitative support only: OECD 2025 / Kang (2022) on housing wealth and marriage.",
++    "all_combined_v22": "country_of_kings enters all_combined at (1 - WEALTH_HOUSING_OVERLAP) = 0.5 of its log-odds "
++                        "effect (GUESS) to avoid double counting the housing channel with homes_for_families.",
+     "all_combined": "Sum of the five in log-odds (assumes no overlap; free_care and end_hagwon both move child_cost, "
+                     "so this may OVERSTATE the combined effect).",
+ }
+@@ -401,7 +457,8 @@
+     pattern = [asfr5[(a - 15) // 5] if 15 <= a <= 49 else 0 for a in range(n)]
+     pattern = [x / sum(pattern) for x in pattern]
+     coefficients = dict(housing=-0.3, child_cost=-0.2, work_conflict=-0.3,
+-                        job_insecurity=-0.2, support=0.3, surveillance=0.0)
++                        job_insecurity=-0.2, support=0.3, surveillance=0.0,
++                        wealth_concentration=-0.3)  # wealth beta is a GUESS scale; effect set by elasticity
+     ramp = 20
+     mortality = {s: gompertz_table(LIFE_EXPECTANCY[s]) for s in SEXES}
+     regions = []
+@@ -420,7 +477,7 @@
+                 for k in drivers:  # split the log-odds change across the policy's drivers
+                     step = d_eta / len(drivers) / (ramp * coefficients[k])
+                     paths[f"{policy}_{v}"][k] += step
+-                    combined[k] += step
++                    combined[k] += step * COMBINED_WEIGHT[policy]
+             paths[f"all_combined_{v}"].update(combined)
+         pop = {"female": [x * share * female_share(a) for a, x in enumerate(total)],
+                "male": [x * share * (1 - female_share(a)) for a, x in enumerate(total)]}
+@@ -445,6 +502,11 @@
+                             "description": "Broad totals from Statistics Korea 2025; single-year detail, mortality "
+                                            "curve, migration and all policy effects are approximations/GUESSES.",
+                             "policy_evidence": POLICY_EVIDENCE,
++                            "wealth_anchor": WEALTH_ANCHOR,
++                            "wealth_elasticity": {"values": WEALTH_ELASTICITY_GUESS, "status": "GUESS"},
++                            "wealth_housing_overlap": {"value": WEALTH_HOUSING_OVERLAP, "status": "GUESS"},
++                            "country_of_kings_target_pct": {"value": COUNTRY_OF_KINGS_TARGET_PCT,
++                                                            "status": "ILLUSTRATIVE CHOICE"},
+                             "driver_units": "standardized scenario units; not measured percentages",
+                             "fertility_ceiling": "4.0 is an assumed numerical bound, not a target",
+                             "surveillance": "zero coefficient pending evidence; nonzero values are sensitivity assumptions"})
+@@ -570,6 +632,37 @@
+             self.assertGreater(tfr["all_combined_central"], tfr[p + "_central"])
+         self.assertEqual(rates_for(c, 0, "all_combined_high")[1], rates_for(c, 0, "baseline")[1])
+ 
++    def test_v22_wealth_drag(self):
++        self.assertEqual(wealth_drag(46.1), 0.0)
++        self.assertLess(wealth_drag(50.0), 0)
++        self.assertGreater(wealth_drag(40.0), 0)
++        self.assertAlmostEqual(wealth_drag(40.0, "central"), 0.015 * 6.1)
++        self.assertLess(wealth_drag(40.0, "low"), wealth_drag(40.0, "high"))
++        with self.assertRaises(ValueError):
++            wealth_drag(float("nan"))
++
++    def test_v22_country_of_kings_alone(self):
++        c = demo_config()
++        base = rates_for(c, 30, "baseline")[1]["Rest of Korea"]
++        for v in VARIANTS:
++            t = rates_for(c, 30, "country_of_kings_" + v)[1]["Rest of Korea"]
++            self.assertAlmostEqual(t / base, 1 + wealth_drag(COUNTRY_OF_KINGS_TARGET_PCT, v), places=6)
++
++    def test_v22_no_double_count(self):
++        c = demo_config()
++        for r in c["regions"]:
++            ac = r["annual_driver_change"]["all_combined_central"]["wealth_concentration"]
++            so = r["annual_driver_change"]["country_of_kings_central"]["wealth_concentration"]
++            self.assertAlmostEqual(ac, so * (1 - WEALTH_HOUSING_OVERLAP))
++            self.assertEqual(r["annual_driver_change"]["homes_for_families_central"]["wealth_concentration"], 0)
++        self.assertEqual(rates_for(c, 0, "country_of_kings_high")[1], rates_for(c, 0, "baseline")[1])
++
++    def test_v22_guess_labels(self):
++        p = demo_config()["provenance"]
++        self.assertEqual(p["wealth_elasticity"]["status"], "GUESS")
++        self.assertEqual(p["wealth_housing_overlap"]["status"], "GUESS")
++        self.assertEqual(p["wealth_anchor"]["top10_share_pct"], 46.1)
++
+     def test_zero_population(self):
+         c = demo_config()
+         for r in c["regions"]:
+@@ -620,6 +713,10 @@
+             print(f"{row['year']:<6} {row['total_pop']:14,.0f} {tail}")
+         print("Flows describe the preceding year. Terminal age is an open group.")
+         print("Policy coefficients are uncalibrated; no truth probability assigned.")
++        print(f"Wealth anchor SOURCED: top10 {WEALTH_ANCHOR['top10_share_pct']}%, bottom50 "
++              f"{WEALTH_ANCHOR['bottom50_share_pct']}%, Gini {WEALTH_ANCHOR['gini_net_assets']} (Statistics Korea 2025).")
++        print(f"Wealth elasticity {WEALTH_ELASTICITY_GUESS} = GUESS; housing overlap {WEALTH_HOUSING_OVERLAP} = GUESS; "
++              f"target {COUNTRY_OF_KINGS_TARGET_PCT}% = illustrative.")
+     return 0
+ 
+ 

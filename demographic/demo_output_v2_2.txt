@@ -1,0 +1,54 @@
+Ran 18 tests in 1.872s
+
+OK
+
+Real Mode demographic simulator v2.2
+UNCALIBRATED CONDITIONAL SCENARIO | baseline
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,352,106      242,662       561,142       0.798
+2046       46,718,766      193,486       728,529       0.794
+2056       41,323,054      140,982       814,369       0.796
+2066       35,338,975      120,273       782,631       0.802
+2076       29,849,403      104,640       705,831       0.801
+2086       24,951,484       86,181       630,912       0.801
+2096       20,696,047       71,738       537,881       0.803
+2106       17,404,464       65,771       429,940       0.803
+2116       15,022,950       58,912       344,076       0.803
+2126       13,237,737       52,542       293,474       0.803
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+Wealth anchor SOURCED: top10 46.1%, bottom50 9.1%, Gini 0.625 (Statistics Korea 2025).
+Wealth elasticity (0.005, 0.015, 0.03) = GUESS; housing overlap 0.5 = GUESS; target 40.0% = illustrative.
+
+Real Mode demographic simulator v2.2
+UNCALIBRATED CONDITIONAL SCENARIO | country_of_kings_central
+SYNTHETIC DEMO INPUTS
+Year       Population   Births/year   Deaths/year  Period TFR
+2026       51,700,000      --            --          --
+2036       50,402,876      252,478       561,178       0.830
+2046       46,907,909      210,281       728,603       0.863
+2056       41,663,766      154,052       814,455       0.869
+2066       35,804,667      133,614       782,751       0.876
+2076       30,459,543      119,918       706,041       0.874
+2086       25,708,367      100,359       631,334       0.874
+2096       21,573,983       83,773       538,864       0.876
+2106       18,386,153       77,932       432,384       0.877
+2116       16,084,129       70,555       349,722       0.876
+2126       14,325,522       62,803       303,891       0.877
+Flows describe the preceding year. Terminal age is an open group.
+Policy coefficients are uncalibrated; no truth probability assigned.
+Wealth anchor SOURCED: top10 46.1%, bottom50 9.1%, Gini 0.625 (Statistics Korea 2025).
+Wealth elasticity (0.005, 0.015, 0.03) = GUESS; housing overlap 0.5 = GUESS; target 40.0% = illustrative.
+
+COMPARISON (v2.2, A Country of Kings: wealth concentration). Effect sizes, wealth elasticity, overlap = GUESSES. Not forecasts.
+scenario                     TFR2056  Pop2056  Pop2126
+baseline                        0.80    41.3M    13.2M
+country_of_kings_low            0.82    41.4M    13.6M
+country_of_kings_central        0.87    41.7M    14.3M
+country_of_kings_high           0.94    42.0M    15.5M
+homes_for_families_central      0.89    41.8M    14.7M
+all_combined_low                0.96    42.1M    15.8M
+all_combined_central            1.28    43.5M    21.7M
+all_combined_high               1.84    46.0M    36.2M

@@ -87,3 +87,28 @@ and they overlap. Still, it is no accident that homes_for_families is tied for t
 largest single effect in the scenarios above. The way back is to spread ownership:
 homes families can own, fair pay down the subcontractor chain, and less wealth parked
 in idle land, so that each generation once again leaves a 1 for the next 0.
+
+## v2.2: A Country of Kings
+
+`korea_demographic_v2_2.py` (v2.1 is left unchanged; see `v2_1_to_v2_2.patch`) adds wealth concentration as its own factor, named **A Country of Kings: wealth concentration**.
+
+**Sourced anchors** (Statistics Korea 2025 Survey of Household Finances and Living Conditions, as of end-March 2025):
+top 10% of households hold 46.1% of net assets, bottom 50% hold 9.1%, net-asset Gini 0.625, and about 75.8% of household assets are real assets (mostly property).
+
+**Drag term:** relative change in TFR = -elasticity x (top-10% share - 46.1), in percentage points. The drag is zero at today's level, because the 2025 baseline TFR already includes today's concentration.
+
+- **Elasticity is a GUESS:** 0.5% (low), 1.5% (central), 3.0% (high) of TFR per point. No study measuring this for Korea was found.
+- **Scenario `country_of_kings`:** the top-10% share falls from 46.1% to 40% over 20 years. The 40% target is an illustrative choice, not a sourced goal.
+- **No double counting:** much of this effect probably runs through housing costs, which `homes_for_families` already models. So `all_combined` adds only 50% of the Country of Kings effect (in log-odds). The 50% overlap is a GUESS. On its own, `country_of_kings` gets its full effect.
+
+| Scenario | TFR 2056 | Population 2056 | Population 2126 |
+|---|---|---|---|
+| baseline | 0.80 | 41.3M | 13.2M |
+| country_of_kings low | 0.82 | 41.4M | 13.6M |
+| country_of_kings central | 0.87 | 41.7M | 14.3M |
+| country_of_kings high | 0.94 | 42.0M | 15.5M |
+| all_combined low | 0.96 | 42.1M | 15.8M |
+| all_combined central | 1.28 | 43.5M | 21.7M |
+| all_combined high | 1.84 | 46.0M | 36.2M |
+
+No scenario reaches replacement fertility (2.1). Wealth concentration is modeled as one cause among several, not the only one. All effect sizes are guesses; these are scenarios, not forecasts.
